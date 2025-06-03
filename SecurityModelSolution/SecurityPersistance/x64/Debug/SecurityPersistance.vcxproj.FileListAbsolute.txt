@@ -1,0 +1,2 @@
+C:\Users\ajup1\Downloads\SecurityModelSolutionv7\SecurityModelSolution\SecurityPersistance\x64\Debug\SecurityPersistance.vcxproj.AssemblyReference.cache
+C:\Users\ajup1\Downloads\SecurityModelSolutionv7\SecurityModelSolution\SecurityPersistance\x64\Debug\Security.100931C6.Up2Date
