@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\x64\Debug\SecurityModel.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\x64\Debug\SecurityPersistance.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\x64\Debug\SecurityController.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\x64\Debug\SecurityGUIApp.exe</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>
