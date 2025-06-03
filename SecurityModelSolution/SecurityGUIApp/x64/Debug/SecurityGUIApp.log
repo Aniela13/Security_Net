@@ -1,4 +1,5 @@
 ﻿  AdminForm.cpp
+<<<<<<< HEAD
 C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityGUIApp\MainForm.h(167,3): error C2065: 'AdminForm': identificador no declarado
   (compilando archivo de origen "AdminForm.cpp")
   
@@ -11,6 +12,8 @@ C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Secu
 C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityGUIApp\MainForm.h(169,3): error C2065: 'adminForm': identificador no declarado
   (compilando archivo de origen "AdminForm.cpp")
   
+=======
+>>>>>>> 848dfbeb0d6b2ff8684e4fc1160a9743a2c65d83
   AlarmHistorialForm.cpp
   AnswerForm.cpp
   AsignZonesForm.cpp
@@ -23,6 +26,7 @@ C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Secu
   NewQuestionForm.cpp
   NoiseSensorForm.cpp
   OperationsAdminForm.cpp
+<<<<<<< HEAD
 C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityGUIApp\AdminForm.h(196,5): error C2065: 'OperationsAdminForm': identificador no declarado
   (compilando archivo de origen "OperationsAdminForm.cpp")
   
@@ -35,6 +39,8 @@ C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Secu
 C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityGUIApp\AdminForm.h(198,5): error C2065: 'operationAdminForm': identificador no declarado
   (compilando archivo de origen "OperationsAdminForm.cpp")
   
+=======
+>>>>>>> 848dfbeb0d6b2ff8684e4fc1160a9743a2c65d83
   OperatorForm.cpp
   OperatorRegistration.cpp
   RecognizeAlertForm.cpp
@@ -42,6 +48,7 @@ C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Secu
   SatisfactionQuestion.cpp
   SecurityOperatorForm.cpp
   SurveillanceCameraForm.cpp
+<<<<<<< HEAD
   Generando código...
   Compilando...
   UpdateMapForm.cpp
@@ -60,4 +67,14 @@ C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Secu
   ValidateOpForm.cpp
   ZoneLocation.cpp
   .NETFramework,Version=v4.8.1.AssemblyAttributes.cpp
+=======
+>>>>>>> 848dfbeb0d6b2ff8684e4fc1160a9743a2c65d83
   Generando código...
+  Compilando...
+  UpdateMapForm.cpp
+  ValidateOpForm.cpp
+  ZoneLocation.cpp
+  .NETFramework,Version=v4.8.1.AssemblyAttributes.cpp
+  Generando código...
+  AdminForm.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+  SecurityGUIApp.vcxproj -> C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\x64\Debug\SecurityGUIApp.exe

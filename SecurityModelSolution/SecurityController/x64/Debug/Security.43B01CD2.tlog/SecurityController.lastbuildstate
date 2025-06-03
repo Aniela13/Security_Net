@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 PlatformToolSet=v143:VCToolArchitecture=Native64Bit:VCToolsVersion=14.43.34808:TargetPlatformVersion=10.0.22621.0:TargetFrameworkVersion=v4.8.1::EnableManagedIncrementalBuild=true:
 Debug|x64|C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\|
+=======
+PlatformToolSet=v143:VCToolArchitecture=Native64Bit:VCToolsVersion=14.41.34120:TargetPlatformVersion=10.0.22621.0:TargetFrameworkVersion=v4.8.1::EnableManagedIncrementalBuild=true:
+Debug|x64|C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\|
+>>>>>>> 848dfbeb0d6b2ff8684e4fc1160a9743a2c65d83

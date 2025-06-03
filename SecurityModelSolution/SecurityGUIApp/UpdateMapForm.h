@@ -1,6 +1,6 @@
 #pragma once
 #include "NewMapForm.h"
-#include "MainForm.h"
+
 namespace SecurityGUIApp {
 
 	using namespace System;

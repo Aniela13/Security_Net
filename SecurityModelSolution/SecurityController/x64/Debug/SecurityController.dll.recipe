@@ -2,6 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
+<<<<<<< HEAD
       <FullPath>C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\x64\Debug\SecurityModel.dll</FullPath>
     </ProjectOutput>
     <ProjectOutput>
@@ -9,6 +10,15 @@
     </ProjectOutput>
     <ProjectOutput>
       <FullPath>C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\x64\Debug\SecurityController.dll</FullPath>
+=======
+      <FullPath>C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\x64\Debug\SecurityModel.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\x64\Debug\SecurityPersistance.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\x64\Debug\SecurityController.dll</FullPath>
+>>>>>>> 848dfbeb0d6b2ff8684e4fc1160a9743a2c65d83
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

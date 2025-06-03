@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityModel\Administrator.cpp;C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityModel\x64\Debug\Administrator.obj
 C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityModel\AssemblyInfo.cpp;C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityModel\x64\Debug\AssemblyInfo.obj
 C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityModel\CameraSensor.cpp;C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityModel\x64\Debug\CameraSensor.obj
@@ -17,3 +18,24 @@ C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Secu
 C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityModel\Warning.cpp;C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityModel\x64\Debug\Warning.obj
 C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityModel\WarningReport.cpp;C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityModel\x64\Debug\WarningReport.obj
 C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityModel\x64\Debug\.NETFramework,Version=v4.8.1.AssemblyAttributes.cpp;C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityModel\x64\Debug\.NETFramework,Version=v4.8.1.AssemblyAttributes.obj
+=======
+C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\Administrator.cpp;C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\x64\Debug\Administrator.obj
+C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\AssemblyInfo.cpp;C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\x64\Debug\AssemblyInfo.obj
+C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\CameraSensor.cpp;C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\x64\Debug\CameraSensor.obj
+C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\Client.cpp;C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\x64\Debug\Client.obj
+C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\MallMap.cpp;C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\x64\Debug\MallMap.obj
+C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\pch.cpp;C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\x64\Debug\pch.obj
+C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\Point.cpp;C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\x64\Debug\Point.obj
+C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\Question.cpp;C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\x64\Debug\Question.obj
+C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\Route.cpp;C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\x64\Debug\Route.obj
+C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\SecurityBot.cpp;C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\x64\Debug\SecurityBot.obj
+C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\SecurityModel.cpp;C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\x64\Debug\SecurityModel.obj
+C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\SecurityOperator.cpp;C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\x64\Debug\SecurityOperator.obj
+C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\Sensors.cpp;C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\x64\Debug\Sensors.obj
+C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\SoundSensor.cpp;C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\x64\Debug\SoundSensor.obj
+C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\Ultrasonic.cpp;C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\x64\Debug\Ultrasonic.obj
+C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\UserNet.cpp;C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\x64\Debug\UserNet.obj
+C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\Warning.cpp;C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\x64\Debug\Warning.obj
+C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\WarningReport.cpp;C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\x64\Debug\WarningReport.obj
+C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\x64\Debug\.NETFramework,Version=v4.8.1.AssemblyAttributes.cpp;C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\SecurityModel\x64\Debug\.NETFramework,Version=v4.8.1.AssemblyAttributes.obj
+>>>>>>> 848dfbeb0d6b2ff8684e4fc1160a9743a2c65d83
