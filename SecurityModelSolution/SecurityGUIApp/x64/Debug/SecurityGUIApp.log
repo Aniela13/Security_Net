@@ -1,40 +1,63 @@
 ﻿  AdminForm.cpp
-C:\Users\ajup1\Downloads\SecurityModelSolutionv7\SecurityModelSolution\SecurityGUIApp\MainForm.h(167,3): error C2065: 'AdminForm': identificador no declarado
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityGUIApp\MainForm.h(167,3): error C2065: 'AdminForm': identificador no declarado
   (compilando archivo de origen "AdminForm.cpp")
   
-C:\Users\ajup1\Downloads\SecurityModelSolutionv7\SecurityModelSolution\SecurityGUIApp\MainForm.h(167,14): error C2065: 'adminForm': identificador no declarado
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityGUIApp\MainForm.h(167,14): error C2065: 'adminForm': identificador no declarado
   (compilando archivo de origen "AdminForm.cpp")
   
-C:\Users\ajup1\Downloads\SecurityModelSolutionv7\SecurityModelSolution\SecurityGUIApp\MainForm.h(167,32): error C2061: error de sintaxis: identificador 'AdminForm'
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityGUIApp\MainForm.h(167,32): error C2061: error de sintaxis: identificador 'AdminForm'
   (compilando archivo de origen "AdminForm.cpp")
   
-C:\Users\ajup1\Downloads\SecurityModelSolutionv7\SecurityModelSolution\SecurityGUIApp\MainForm.h(169,3): error C2065: 'adminForm': identificador no declarado
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityGUIApp\MainForm.h(169,3): error C2065: 'adminForm': identificador no declarado
   (compilando archivo de origen "AdminForm.cpp")
   
+  AlarmHistorialForm.cpp
+  AnswerForm.cpp
+  AsignZonesForm.cpp
+  ClientForm.cpp
+  FAQForm.cpp
+  MainForm.cpp
+  MaintainUser.cpp
+  ModifyFAQ.cpp
+  NewMapForm.cpp
+  NewQuestionForm.cpp
+  NoiseSensorForm.cpp
   OperationsAdminForm.cpp
-C:\Users\ajup1\Downloads\SecurityModelSolutionv7\SecurityModelSolution\SecurityGUIApp\AdminForm.h(196,5): error C2065: 'OperationsAdminForm': identificador no declarado
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityGUIApp\AdminForm.h(196,5): error C2065: 'OperationsAdminForm': identificador no declarado
   (compilando archivo de origen "OperationsAdminForm.cpp")
   
-C:\Users\ajup1\Downloads\SecurityModelSolutionv7\SecurityModelSolution\SecurityGUIApp\AdminForm.h(196,26): error C2065: 'operationAdminForm': identificador no declarado
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityGUIApp\AdminForm.h(196,26): error C2065: 'operationAdminForm': identificador no declarado
   (compilando archivo de origen "OperationsAdminForm.cpp")
   
-C:\Users\ajup1\Downloads\SecurityModelSolutionv7\SecurityModelSolution\SecurityGUIApp\AdminForm.h(196,53): error C2061: error de sintaxis: identificador 'OperationsAdminForm'
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityGUIApp\AdminForm.h(196,53): error C2061: error de sintaxis: identificador 'OperationsAdminForm'
   (compilando archivo de origen "OperationsAdminForm.cpp")
   
-C:\Users\ajup1\Downloads\SecurityModelSolutionv7\SecurityModelSolution\SecurityGUIApp\AdminForm.h(198,5): error C2065: 'operationAdminForm': identificador no declarado
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityGUIApp\AdminForm.h(198,5): error C2065: 'operationAdminForm': identificador no declarado
   (compilando archivo de origen "OperationsAdminForm.cpp")
   
+  OperatorForm.cpp
+  OperatorRegistration.cpp
+  RecognizeAlertForm.cpp
+  RobotPosition.cpp
+  SatisfactionQuestion.cpp
+  SecurityOperatorForm.cpp
+  SurveillanceCameraForm.cpp
+  Generando código...
+  Compilando...
   UpdateMapForm.cpp
-C:\Users\ajup1\Downloads\SecurityModelSolutionv7\SecurityModelSolution\SecurityGUIApp\OperationsAdminForm.h(184,3): error C2065: 'UpdateMapForm': identificador no declarado
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityGUIApp\OperationsAdminForm.h(184,3): error C2065: 'UpdateMapForm': identificador no declarado
   (compilando archivo de origen "UpdateMapForm.cpp")
   
-C:\Users\ajup1\Downloads\SecurityModelSolutionv7\SecurityModelSolution\SecurityGUIApp\OperationsAdminForm.h(184,18): error C2065: 'mapForm': identificador no declarado
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityGUIApp\OperationsAdminForm.h(184,18): error C2065: 'mapForm': identificador no declarado
   (compilando archivo de origen "UpdateMapForm.cpp")
   
-C:\Users\ajup1\Downloads\SecurityModelSolutionv7\SecurityModelSolution\SecurityGUIApp\OperationsAdminForm.h(184,34): error C2061: error de sintaxis: identificador 'UpdateMapForm'
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityGUIApp\OperationsAdminForm.h(184,34): error C2061: error de sintaxis: identificador 'UpdateMapForm'
   (compilando archivo de origen "UpdateMapForm.cpp")
   
-C:\Users\ajup1\Downloads\SecurityModelSolutionv7\SecurityModelSolution\SecurityGUIApp\OperationsAdminForm.h(186,3): error C2065: 'mapForm': identificador no declarado
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityGUIApp\OperationsAdminForm.h(186,3): error C2065: 'mapForm': identificador no declarado
   (compilando archivo de origen "UpdateMapForm.cpp")
   
+  ValidateOpForm.cpp
+  ZoneLocation.cpp
+  .NETFramework,Version=v4.8.1.AssemblyAttributes.cpp
   Generando código...

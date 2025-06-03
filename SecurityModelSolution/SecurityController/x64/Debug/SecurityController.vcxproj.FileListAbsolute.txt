@@ -1,2 +1,4 @@
 C:\Users\ajup1\Downloads\SecurityModelSolutionv7\SecurityModelSolution\SecurityController\x64\Debug\SecurityController.vcxproj.AssemblyReference.cache
 C:\Users\ajup1\Downloads\SecurityModelSolutionv7\SecurityModelSolution\SecurityController\x64\Debug\Security.8816178B.Up2Date
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityController\x64\Debug\SecurityController.vcxproj.AssemblyReference.cache
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\SecurityController\x64\Debug\Security.8816178B.Up2Date

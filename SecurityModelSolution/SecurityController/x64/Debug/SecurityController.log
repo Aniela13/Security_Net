@@ -1,1 +1,7 @@
-﻿  SecurityController.vcxproj -> C:\Users\ajup1\Downloads\SecurityModelSolutionv7\SecurityModelSolution\x64\Debug\SecurityController.dll
+﻿  pch.cpp
+  AssemblyInfo.cpp
+  SecurityController.cpp
+  Generando código...
+  .NETFramework,Version=v4.8.1.AssemblyAttributes.cpp
+  AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+  SecurityController.vcxproj -> C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\x64\Debug\SecurityController.dll

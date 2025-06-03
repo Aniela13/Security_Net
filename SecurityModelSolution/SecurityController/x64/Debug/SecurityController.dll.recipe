@@ -2,13 +2,13 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\ajup1\Downloads\SecurityModelSolutionv7\SecurityModelSolution\x64\Debug\SecurityModel.dll</FullPath>
+      <FullPath>C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\x64\Debug\SecurityModel.dll</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\Users\ajup1\Downloads\SecurityModelSolutionv7\SecurityModelSolution\x64\Debug\SecurityPersistance.dll</FullPath>
+      <FullPath>C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\x64\Debug\SecurityPersistance.dll</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\Users\ajup1\Downloads\SecurityModelSolutionv7\SecurityModelSolution\x64\Debug\SecurityController.dll</FullPath>
+      <FullPath>C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\x64\Debug\SecurityController.dll</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
