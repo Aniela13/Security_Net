@@ -1,11 +1,2 @@
-<<<<<<< HEAD
-﻿  pch.cpp
-  AssemblyInfo.cpp
-  SecurityPersistance.cpp
-  Generando código...
-  .NETFramework,Version=v4.8.1.AssemblyAttributes.cpp
-  AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-  SecurityPersistance.vcxproj -> C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\x64\Debug\SecurityPersistance.dll
-=======
-﻿  SecurityPersistance.vcxproj -> C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\x64\Debug\SecurityPersistance.dll
->>>>>>> 848dfbeb0d6b2ff8684e4fc1160a9743a2c65d83
+﻿  SecurityPersistance.vcxproj -> C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\x64\Debug\SecurityPersistance.dll
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(5678,5): error MSB3541: Files tiene un valor "<<<<<<< HEAD" no válido. Caracteres no válidos en la ruta de acceso.

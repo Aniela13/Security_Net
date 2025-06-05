@@ -1,26 +1,2 @@
-<<<<<<< HEAD
-﻿  pch.cpp
-  Administrator.cpp
-  AssemblyInfo.cpp
-  CameraSensor.cpp
-  Client.cpp
-  MallMap.cpp
-  Point.cpp
-  Question.cpp
-  Route.cpp
-  SecurityBot.cpp
-  SecurityModel.cpp
-  SecurityOperator.cpp
-  Sensors.cpp
-  SoundSensor.cpp
-  Ultrasonic.cpp
-  UserNet.cpp
-  Warning.cpp
-  WarningReport.cpp
-  Generando código...
-  .NETFramework,Version=v4.8.1.AssemblyAttributes.cpp
-  Administrator.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-  SecurityModel.vcxproj -> C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\x64\Debug\SecurityModel.dll
-=======
-﻿  SecurityModel.vcxproj -> C:\Users\USER\Desktop\GitHub\Security_Net\SecurityModelSolution\x64\Debug\SecurityModel.dll
->>>>>>> 848dfbeb0d6b2ff8684e4fc1160a9743a2c65d83
+﻿  SecurityModel.vcxproj -> C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\SecurityModelSolution\x64\Debug\SecurityModel.dll
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(5678,5): error MSB3541: Files tiene un valor "<<<<<<< HEAD" no válido. Caracteres no válidos en la ruta de acceso.
