@@ -1,0 +1,193 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly SecurityModel, Version=1.0.*, Culture=Todos los idiomas (todos los países): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class SecurityModel.UserNet: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String UserName : Public
+    Int32 Id : Public
+    System.String Password : Public
+  Methods:
+    Register(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+    Login(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask
+Class SecurityModel.Administrator: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :SecurityModel.UserNet
+    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Password 'get set' : 
+    System.String UserName 'get set' : 
+  Methods:
+    get_UserName(): PrivateScope, Public, HideBySig, SpecialName
+    set_UserName(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Password(): PrivateScope, Public, HideBySig, SpecialName
+    set_Password(String): PrivateScope, Public, HideBySig, SpecialName
+    AddEmployee(): PrivateScope, Public, HideBySig
+    ApproveSecurityOperator(): PrivateScope, Public, HideBySig
+    ConsultWarningHistorial(): PrivateScope, Public, HideBySig
+    MantainUser(): PrivateScope, Public, HideBySig
+    AddZone(): PrivateScope, Public, HideBySig
+    DeleteZone(): PrivateScope, Public, HideBySig
+    GetZones(): PrivateScope, Public, HideBySig
+    Register(): PrivateScope, Public, Virtual, HideBySig
+    Login(): PrivateScope, Public, Virtual, HideBySig
+Class SecurityModel.Sensors: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, Boolean): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String Type : Public
+    Boolean State : Public
+Class SecurityModel.CameraSensor: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :SecurityModel.Sensors
+    Void .ctor(Byte[], System.String, System.DateTime): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Byte[] Photo : Public
+    System.String Name : Public
+    System.DateTime Time : Public
+  Methods:
+    GetImages(): PrivateScope, Public, HideBySig
+Class SecurityModel.Client: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Boolean): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Boolean ButtonActivated 'get set' : 
+  Methods:
+    get_ButtonActivated(): PrivateScope, Public, HideBySig, SpecialName
+    set_ButtonActivated(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig, SpecialName
+    AskQuestion(): PrivateScope, Public, HideBySig
+    InvokeSOSAlert(): PrivateScope, Public, HideBySig
+    ShowZoneLocation(): PrivateScope, Public, HideBySig
+Class SecurityModel.Point: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Double, Double): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Double Y   'get set' : 
+    Double X   'get set' : 
+  Methods:
+    get_X(): PrivateScope, Public, HideBySig, SpecialName
+    set_X(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_Y(): PrivateScope, Public, HideBySig, SpecialName
+    set_Y(Double): PrivateScope, Public, HideBySig, SpecialName
+Class SecurityModel.MallMap: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Collections.Generic.Dictionary`2[System.String,SecurityModel.Point] Zones : Public
+    System.String MallName : Public
+    System.String District : Public
+  Properties:
+    Int32 Id   'get set' : 
+  Methods:
+    get_Id(): PrivateScope, Public, HideBySig, SpecialName
+    set_Id(Int32): PrivateScope, Public, HideBySig, SpecialName
+    ShowMap(): PrivateScope, Public, HideBySig
+Class SecurityModel.Question: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String question : Public
+    System.String Answer : Public
+Class SecurityModel.Route: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(SecurityModel.Point, SecurityModel.Point): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    SecurityModel.Point StartingPoint : Public
+    SecurityModel.Point EndingPoint : Public
+Class SecurityModel.SecurityBot: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, System.String, System.String, Int32, Boolean): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String Name : Public
+    System.String Model : Public
+    System.String InspectedZones : Public
+  Properties:
+    Boolean AlertActivated 'get set' : 
+    Int32 Speed 'get set' : 
+  Methods:
+    get_Speed(): PrivateScope, Public, HideBySig, SpecialName
+    set_Speed(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_AlertActivated(): PrivateScope, Public, HideBySig, SpecialName
+    set_AlertActivated(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig, SpecialName
+    Move(): PrivateScope, Public, HideBySig
+    ShowWarning(): PrivateScope, Public, HideBySig
+    SearchDestination(): PrivateScope, Public, HideBySig
+    MoveToDestination(): PrivateScope, Public, HideBySig
+    ShowUbication(): PrivateScope, Public, HideBySig
+    GetInspectedZones(): PrivateScope, Public, HideBySig
+    Stop(): PrivateScope, Public, HideBySig
+    Report(): PrivateScope, Public, HideBySig
+    ConsultSensor(): PrivateScope, Public, HideBySig
+Class SecurityModel.Class1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class SecurityModel.SecurityOperator: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :SecurityModel.UserNet
+    Void .ctor(System.String, System.String, System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String Name : Public
+    System.String LastName : Public
+    System.String DNI : Public
+  Properties:
+    Boolean HelpNeeded 'get set' : 
+    Boolean Authorized 'get set' : 
+  Methods:
+    get_Authorized(): PrivateScope, Public, HideBySig, SpecialName
+    set_Authorized(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig, SpecialName
+    get_HelpNeeded(): PrivateScope, Public, HideBySig, SpecialName
+    set_HelpNeeded(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig, SpecialName
+    AssignZoneInspection(): PrivateScope, Public, HideBySig
+    DefineStartingPoint(): PrivateScope, Public, HideBySig
+    StopAlarm(): PrivateScope, Public, HideBySig
+    ShowRobotCam(): PrivateScope, Public, HideBySig
+    GetRobotPosition(): PrivateScope, Public, HideBySig
+    GetNoiseReport(): PrivateScope, Public, HideBySig
+    ChangeRoute(): PrivateScope, Public, HideBySig
+    RecognizeWarning(): PrivateScope, Public, HideBySig
+    Register(): PrivateScope, Public, Virtual, HideBySig
+    Login(): PrivateScope, Public, Virtual, HideBySig
+Class SecurityModel.SoundSensor: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :SecurityModel.Sensors
+    Void .ctor(System.String, Double): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String Name : Public
+  Properties:
+    Double Decibeles 'get set' : 
+  Methods:
+    get_Decibeles(): PrivateScope, Public, HideBySig, SpecialName
+    set_Decibeles(Double): PrivateScope, Public, HideBySig, SpecialName
+    GetDecibeles(): PrivateScope, Public, HideBySig
+Class SecurityModel.Ultrasonic: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :SecurityModel.Sensors
+    Void .ctor(System.String, Double): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String Name : Public
+  Properties:
+    Double Distance 'get set' : 
+  Methods:
+    get_Distance(): PrivateScope, Public, HideBySig, SpecialName
+    set_Distance(Double): PrivateScope, Public, HideBySig, SpecialName
+    GetDistance(): PrivateScope, Public, HideBySig
+Class SecurityModel.Warning: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, System.ValueType, System.ValueType): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String Type : Public
+    System.ValueType StartingDate DateTime IsBoxed : Public
+    System.ValueType EndingDate DateTime IsBoxed : Public
+Class SecurityModel.WarningReport: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Collections.Generic.List`1[SecurityModel.Warning] WarningHistorial : Public
+  Methods:
+    AddWarning(): PrivateScope, Public, HideBySig

@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{7F83FD99-D2C7-1AE0-653A-31BE1044483C}</ProjectGuid>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>SecurityGUIApp</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>main</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SecurityController\SecurityController.vcxproj">
+      <Project>{43b01cd2-0cb6-cc4e-a00b-35c5701f5471}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\SecurityModel\SecurityModel.vcxproj">
+      <Project>{c1cd6f05-4195-fd72-1d6a-3d78ee8c919a}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AdminForm.cpp" />
+    <ClCompile Include="AlarmHistorialForm.cpp" />
+    <ClCompile Include="AnswerForm.cpp" />
+    <ClCompile Include="AsignZonesForm.cpp" />
+    <ClCompile Include="ClientForm.cpp" />
+    <ClCompile Include="CreateAlarmForm.cpp" />
+    <ClCompile Include="FAQForm.cpp" />
+    <ClCompile Include="MainForm.cpp" />
+    <ClCompile Include="MaintainUser.cpp" />
+    <ClCompile Include="ModifyFAQ.cpp" />
+    <ClCompile Include="NewMapForm.cpp" />
+    <ClCompile Include="NewQuestionForm.cpp" />
+    <ClCompile Include="NoiseSensorForm.cpp" />
+    <ClCompile Include="OperationsAdminForm.cpp" />
+    <ClCompile Include="OperatorForm.cpp" />
+    <ClCompile Include="OperatorRegistration.cpp" />
+    <ClCompile Include="RecognizeAlertForm.cpp" />
+    <ClCompile Include="RobotPosition.cpp" />
+    <ClCompile Include="SatisfactionQuestion.cpp" />
+    <ClCompile Include="SecurityOperatorForm.cpp" />
+    <ClCompile Include="SurveillanceCameraForm.cpp" />
+    <ClCompile Include="UpdateMapForm.cpp" />
+    <ClCompile Include="ValidateOpForm.cpp" />
+    <ClCompile Include="ZoneLocation.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AdminForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="AlarmHistorialForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="AnswerForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="AsignZonesForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ClientForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CreateAlarmForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FAQForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MainForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MaintainUser.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ModifyFAQ.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="NewMapForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="NewQuestionForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="NoiseSensorForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="OperationsAdminForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="RecognizeAlertForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="RobotPositionForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="SatisfactionQuestionForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="SurveillanceCameraForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="WelcomeOperatorForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="OperatorRegistration.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="SecurityOperatorForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="UpdateMapForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ValidateOpForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ZoneLocation.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AdminForm.resx">
+      <DependentUpon>AdminForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlarmHistorialForm.resx">
+      <DependentUpon>AlarmHistorialForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnswerForm.resx">
+      <DependentUpon>AnswerForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AsignZonesForm.resx">
+      <DependentUpon>AsignZonesForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientForm.resx">
+      <DependentUpon>ClientForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateAlarmForm.resx">
+      <DependentUpon>CreateAlarmForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FAQForm.resx">
+      <DependentUpon>FAQForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintainUser.resx">
+      <DependentUpon>MaintainUser.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyFAQ.resx">
+      <DependentUpon>ModifyFAQ.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewMapForm.resx">
+      <DependentUpon>NewMapForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewQuestionForm.resx">
+      <DependentUpon>NewQuestionForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NoiseSensorForm.resx">
+      <DependentUpon>NoiseSensorForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperationsAdminForm.resx">
+      <DependentUpon>OperationsAdminForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecognizeAlertForm.resx">
+      <DependentUpon>RecognizeAlertForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RobotPositionForm.resx">
+      <DependentUpon>RobotPositionForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SatisfactionQuestionForm.resx">
+      <DependentUpon>SatisfactionQuestionForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecurityOperatorForm.resx">
+      <DependentUpon>SecurityOperatorForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SurveillanceCameraForm.resx">
+      <DependentUpon>SurveillanceCameraForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WelcomeOperatorForm.resx">
+      <DependentUpon>WelcomeOperatorForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperatorRegistration.resx">
+      <DependentUpon>OperatorRegistration.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateMapForm.resx">
+      <DependentUpon>UpdateMapForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValidateOpForm.resx">
+      <DependentUpon>ValidateOpForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZoneLocation.resx">
+      <DependentUpon>ZoneLocation.h</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

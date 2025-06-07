@@ -1,0 +1,26 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly SecurityPersistance, Version=1.0.*, Culture=Todos los idiomas (todos los países): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly SecurityModel, Version=1.0.*, Culture=Todos los idiomas (todos los países): 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class SecurityPersistance.Persistance: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    PersistUsersTextFile(String, Object): PrivateScope, Public, Static, HideBySig
+    LoadUsersFromTextFile(String): PrivateScope, Public, Static, HideBySig
+    PersistValidationOperatorsTextFile(String, Object): PrivateScope, Public, Static, HideBySig
+    LoadValidationOperatorsFromTextFile(String): PrivateScope, Public, Static, HideBySig
+    PersistAlarmTextFile(String, Object): PrivateScope, Public, Static, HideBySig
+    LoadAlarmFromTextFile(String): PrivateScope, Public, Static, HideBySig
+    PersistQuestionsTextFile(String, Object): PrivateScope, Public, Static, HideBySig
+    LoadQuestionsFromTextFile(String): PrivateScope, Public, Static, HideBySig
+    PersistNewQuestionsTextFile(String, Object): PrivateScope, Public, Static, HideBySig
+    LoadNewQuestionsFromTextFile(String): PrivateScope, Public, Static, HideBySig

@@ -1,0 +1,325 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\NewQuestionForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|solutionrelative:SecurityGUIApp\\NewQuestionForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43B01CD2-0CB6-CC4E-A00B-35C5701F5471}|SecurityController\\SecurityController.vcxproj|C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityController\\SecurityController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{43B01CD2-0CB6-CC4E-A00B-35C5701F5471}|SecurityController\\SecurityController.vcxproj|solutionrelative:SecurityController\\SecurityController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\NewQuestionForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|solutionrelative:SecurityGUIApp\\NewQuestionForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC773F8-2CEA-7961-2EAE-7BE9E71E16B5}|SecurityPersistance\\SecurityPersistance.vcxproj|C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityPersistance\\SecurityPersistance.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CDC773F8-2CEA-7961-2EAE-7BE9E71E16B5}|SecurityPersistance\\SecurityPersistance.vcxproj|solutionrelative:SecurityPersistance\\SecurityPersistance.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\MaintainUser.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|solutionrelative:SecurityGUIApp\\MaintainUser.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\AlarmHistorialForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|solutionrelative:SecurityGUIApp\\AlarmHistorialForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\ClientForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|solutionrelative:SecurityGUIApp\\ClientForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\ClientForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|solutionrelative:SecurityGUIApp\\ClientForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\ValidateOpForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|solutionrelative:SecurityGUIApp\\ValidateOpForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\ValidateOpForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|solutionrelative:SecurityGUIApp\\ValidateOpForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\MainForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|solutionrelative:SecurityGUIApp\\MainForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\MaintainUser.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|solutionrelative:SecurityGUIApp\\MaintainUser.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\ModifyFAQ.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|solutionrelative:SecurityGUIApp\\ModifyFAQ.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\OperationsAdminForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|solutionrelative:SecurityGUIApp\\OperationsAdminForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\OperationsAdminForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|solutionrelative:SecurityGUIApp\\OperationsAdminForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC773F8-2CEA-7961-2EAE-7BE9E71E16B5}|SecurityPersistance\\SecurityPersistance.vcxproj|C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityPersistance\\SecurityPersistance.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{CDC773F8-2CEA-7961-2EAE-7BE9E71E16B5}|SecurityPersistance\\SecurityPersistance.vcxproj|solutionrelative:SecurityPersistance\\SecurityPersistance.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\ModifyFAQ.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|solutionrelative:SecurityGUIApp\\ModifyFAQ.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43B01CD2-0CB6-CC4E-A00B-35C5701F5471}|SecurityController\\SecurityController.vcxproj|C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityController\\SecurityController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{43B01CD2-0CB6-CC4E-A00B-35C5701F5471}|SecurityController\\SecurityController.vcxproj|solutionrelative:SecurityController\\SecurityController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1CD6F05-4195-FD72-1D6A-3D78EE8C919A}|SecurityModel\\SecurityModel.vcxproj|C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityModel\\WarningReport.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C1CD6F05-4195-FD72-1D6A-3D78EE8C919A}|SecurityModel\\SecurityModel.vcxproj|solutionrelative:SecurityModel\\WarningReport.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SecurityPersistance.h",
+              "DocumentMoniker": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityPersistance\\SecurityPersistance.h",
+              "RelativeDocumentMoniker": "SecurityPersistance\\SecurityPersistance.h",
+              "ToolTip": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityPersistance\\SecurityPersistance.h",
+              "RelativeToolTip": "SecurityPersistance\\SecurityPersistance.h",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-06T01:24:13.767Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "SecurityPersistance.cpp",
+              "DocumentMoniker": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityPersistance\\SecurityPersistance.cpp",
+              "RelativeDocumentMoniker": "SecurityPersistance\\SecurityPersistance.cpp",
+              "ToolTip": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityPersistance\\SecurityPersistance.cpp",
+              "RelativeToolTip": "SecurityPersistance\\SecurityPersistance.cpp",
+              "ViewState": "AgIAALEAAAAAAAAAAAAgwMsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-06T02:12:36.478Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SecurityController.cpp",
+              "DocumentMoniker": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityController\\SecurityController.cpp",
+              "RelativeDocumentMoniker": "SecurityController\\SecurityController.cpp",
+              "ToolTip": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityController\\SecurityController.cpp",
+              "RelativeToolTip": "SecurityController\\SecurityController.cpp",
+              "ViewState": "AgIAAN8AAAAAAAAAAAAcwOoAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-06T01:20:39.304Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ModifyFAQ.h",
+              "DocumentMoniker": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\ModifyFAQ.h",
+              "RelativeDocumentMoniker": "SecurityGUIApp\\ModifyFAQ.h",
+              "ToolTip": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\ModifyFAQ.h",
+              "RelativeToolTip": "SecurityGUIApp\\ModifyFAQ.h",
+              "ViewState": "AgIAAAoBAAAAAAAAAAAIwCQBAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-07T01:54:23.43Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MaintainUser.h",
+              "DocumentMoniker": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\MaintainUser.h",
+              "RelativeDocumentMoniker": "SecurityGUIApp\\MaintainUser.h",
+              "ToolTip": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\MaintainUser.h",
+              "RelativeToolTip": "SecurityGUIApp\\MaintainUser.h",
+              "ViewState": "AgIAAD8BAAAAAAAAAAD4v08BAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-07T02:15:15.861Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NewQuestionForm.h",
+              "DocumentMoniker": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\NewQuestionForm.h",
+              "RelativeDocumentMoniker": "SecurityGUIApp\\NewQuestionForm.h",
+              "ToolTip": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\NewQuestionForm.h",
+              "RelativeToolTip": "SecurityGUIApp\\NewQuestionForm.h",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAAAIYAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-07T02:45:29.419Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NewQuestionForm.h [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\NewQuestionForm.h",
+              "RelativeDocumentMoniker": "SecurityGUIApp\\NewQuestionForm.h",
+              "ToolTip": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\NewQuestionForm.h [Dise\u00F1o]",
+              "RelativeToolTip": "SecurityGUIApp\\NewQuestionForm.h [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-07T02:45:26.239Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AlarmHistorialForm.h",
+              "DocumentMoniker": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\AlarmHistorialForm.h",
+              "RelativeDocumentMoniker": "SecurityGUIApp\\AlarmHistorialForm.h",
+              "ToolTip": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\AlarmHistorialForm.h",
+              "RelativeToolTip": "SecurityGUIApp\\AlarmHistorialForm.h",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAAAFkAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-07T02:30:12.397Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ClientForm.h",
+              "DocumentMoniker": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\ClientForm.h",
+              "RelativeDocumentMoniker": "SecurityGUIApp\\ClientForm.h",
+              "ToolTip": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\ClientForm.h",
+              "RelativeToolTip": "SecurityGUIApp\\ClientForm.h",
+              "ViewState": "AgIAAMQAAAAAAAAAAAD4v8oAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-07T02:29:36.8Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ClientForm.h [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\ClientForm.h",
+              "RelativeDocumentMoniker": "SecurityGUIApp\\ClientForm.h",
+              "ToolTip": "C:\\Users\\geral\\Downloads\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\ClientForm.h [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\geral\\Downloads\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\ClientForm.h [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-06T00:28:29.262Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ValidateOpForm.h",
+              "DocumentMoniker": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\ValidateOpForm.h",
+              "RelativeDocumentMoniker": "SecurityGUIApp\\ValidateOpForm.h",
+              "ToolTip": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\ValidateOpForm.h",
+              "RelativeToolTip": "SecurityGUIApp\\ValidateOpForm.h",
+              "ViewState": "AgIAAM0AAAAAAAAAAAD4v9QAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-07T02:25:50.467Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ValidateOpForm.h [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\ValidateOpForm.h",
+              "RelativeDocumentMoniker": "SecurityGUIApp\\ValidateOpForm.h",
+              "ToolTip": "C:\\Users\\geral\\Downloads\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\ValidateOpForm.h [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\geral\\Downloads\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\ValidateOpForm.h [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-07T02:25:46.572Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MainForm.h [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\MainForm.h",
+              "RelativeDocumentMoniker": "SecurityGUIApp\\MainForm.h",
+              "ToolTip": "C:\\Users\\geral\\Downloads\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\MainForm.h [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\geral\\Downloads\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\MainForm.h [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-06T00:20:54.037Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MaintainUser.h [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\MaintainUser.h",
+              "RelativeDocumentMoniker": "SecurityGUIApp\\MaintainUser.h",
+              "ToolTip": "C:\\Users\\geral\\Downloads\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\MaintainUser.h [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\geral\\Downloads\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\MaintainUser.h [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-07T02:15:13.448Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ModifyFAQ.h [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\ModifyFAQ.h",
+              "RelativeDocumentMoniker": "SecurityGUIApp\\ModifyFAQ.h",
+              "ToolTip": "C:\\Users\\geral\\Downloads\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\ModifyFAQ.h [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\geral\\Downloads\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\ModifyFAQ.h [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-07T01:54:20.991Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "OperationsAdminForm.h [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\OperationsAdminForm.h",
+              "RelativeDocumentMoniker": "SecurityGUIApp\\OperationsAdminForm.h",
+              "ToolTip": "C:\\Users\\geral\\Downloads\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\OperationsAdminForm.h [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\geral\\Downloads\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\OperationsAdminForm.h [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-07T02:06:19.032Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "OperationsAdminForm.h",
+              "DocumentMoniker": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\OperationsAdminForm.h",
+              "RelativeDocumentMoniker": "SecurityGUIApp\\OperationsAdminForm.h",
+              "ToolTip": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityGUIApp\\OperationsAdminForm.h",
+              "RelativeToolTip": "SecurityGUIApp\\OperationsAdminForm.h",
+              "ViewState": "AgIAALsAAAAAAAAAAAD4v8IAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-07T02:00:58.464Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "SecurityController.h",
+              "DocumentMoniker": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityController\\SecurityController.h",
+              "RelativeDocumentMoniker": "SecurityController\\SecurityController.h",
+              "ToolTip": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityController\\SecurityController.h",
+              "RelativeToolTip": "SecurityController\\SecurityController.h",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAB8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-06T02:15:35.865Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "WarningReport.h",
+              "DocumentMoniker": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityModel\\WarningReport.h",
+              "RelativeDocumentMoniker": "SecurityModel\\WarningReport.h",
+              "ToolTip": "C:\\Users\\Letizia Castillo\\Downloads\\SecurityModelSolutionv9\\SecurityModelSolution (3)\\SecurityModelSolution\\SecurityModel\\WarningReport.h",
+              "RelativeToolTip": "SecurityModel\\WarningReport.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-07T01:30:25.196Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

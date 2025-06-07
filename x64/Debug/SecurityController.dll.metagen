@@ -1,0 +1,46 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly SecurityController, Version=1.0.*, Culture=Todos los idiomas (todos los países): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly SecurityModel, Version=1.0.*, Culture=Todos los idiomas (todos los países): 
+	hash=None, flags=None
+Assembly SecurityPersistance, Version=1.0.*, Culture=Todos los idiomas (todos los países): 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class SecurityController.Controller: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String TXT_USERS_FILE_NAME : Public, Static
+    System.String TXT_REGISTRATION_OP_FILE_NAME : Public, Static
+    System.String TXT_FAQ_FILE_NAME : Public, Static
+    System.String TXT_NEW_QUESTION_FILE_NAME : Public, Static
+    System.String TXT_ALARM_HISTORIAL_FILE_NAME : Public, Static
+    System.String TXT_MAPS_ZONES_FILE_NAME : Public, Static
+  Methods:
+    ValidateAdmin(Administrator): PrivateScope, Public, Static, HideBySig
+    AddUser(SecurityOperator): PrivateScope, Public, Static, HideBySig
+    ValidateOperator(String, String): PrivateScope, Public, Static, HideBySig
+    DeleteUser(SecurityOperator): PrivateScope, Public, Static, HideBySig
+    QueryUserbyUsername(String): PrivateScope, Public, Static, HideBySig
+    QueryAllUsers(): PrivateScope, Public, Static, HideBySig
+    AddQuestion(Question): PrivateScope, Public, Static, HideBySig
+    DeleteQuestion(String): PrivateScope, Public, Static, HideBySig
+    UpdateQuestion(Question): PrivateScope, Public, Static, HideBySig
+    QueryAllFAQ(): PrivateScope, Public, Static, HideBySig
+    QueryAllOnlyQuestions(): PrivateScope, Public, Static, HideBySig
+    QueryAnswerByQuestion(String): PrivateScope, Public, Static, HideBySig
+    AddWarning(Warning): PrivateScope, Public, Static, HideBySig
+    QueryAllWarnings(): PrivateScope, Public, Static, HideBySig
+    AddOperatortoValidation(SecurityOperator): PrivateScope, Public, Static, HideBySig
+    DeleteOperatortoValidation(String): PrivateScope, Public, Static, HideBySig
+    QueryNoOperatorbyDNI(String): PrivateScope, Public, Static, HideBySig
+    QueryAllNoRegisteredOperators(): PrivateScope, Public, Static, HideBySig
+    AddNewQuestion(String): PrivateScope, Public, Static, HideBySig
+    DeleteNewQuestion(String): PrivateScope, Public, Static, HideBySig
+    QueryAllNewQuestions(): PrivateScope, Public, Static, HideBySig
