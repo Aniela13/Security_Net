@@ -1,0 +1,4 @@
+Donde esta popeyes?|En el tercer piso, a la vuelta
+Donde esta el elevador?|En puerta principal
+Donde estan los baños de hombres?|En el 5to sotano
+Cual es el horario de atencion?|De lunes a viernes de 9:00 am a 11:00 pm

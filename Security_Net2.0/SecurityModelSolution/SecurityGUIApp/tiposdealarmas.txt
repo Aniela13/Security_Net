@@ -1,0 +1,6 @@
+0|Alarma de pánico | Botón de emergencia presionado por un usuario
+1|Comportamiento sospechoso | Personas merodeando sin intención de compra o intento de acceso a zonas no autorizadas
+2|Objetos sospechoso | Detección de objetos no identificados
+3|Seguridad infantil o familiar| Niños extraviados o adultos mayores desorientados
+4|Otra categoría| Describir aquí
+
