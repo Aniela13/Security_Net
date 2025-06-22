@@ -80,6 +80,7 @@ namespace SecurityController {
 		static int UpdateZoneMap(String^ namezone, Point^ coordenada);
 		static int DeleteZoneMap(String^ namezone);
 		static Dictionary<String^, Point^>^ QueryAllZones();
+		static Point^ QueryZonebyName(String^ namezone);
 	};
 
 

@@ -404,3 +404,23 @@ Dictionary<String^, Point^>^ SecurityController::Controller::QueryAllZones()
 	return nullptr;
 
 }
+
+Point^ SecurityController::Controller::QueryZonebyName(String^ namezone)
+{
+
+	try {
+		Dictionary<String^, Point^>^ zones = QueryAllZones();
+		if (zones != nullptr) {
+			if (zones->ContainsKey(namezone)) {
+				Point^ coordenada = zones[namezone];
+				return coordenada ;
+			}
+			
+		}
+	}
+	catch (Exception^ ex) {
+		throw ex;
+	}
+	return nullptr;
+
+}

@@ -147,6 +147,7 @@ namespace SecurityGUIApp {
 			this->dgvZonesPositions->RowTemplate->Height = 24;
 			this->dgvZonesPositions->Size = System::Drawing::Size(416, 559);
 			this->dgvZonesPositions->TabIndex = 9;
+			this->dgvZonesPositions->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &UpdateMapForm::dgvZonesPositions_CellClick);
 			// 
 			// ZonesColumn
 			// 
@@ -470,7 +471,6 @@ namespace SecurityGUIApp {
 				Controller::DeleteZoneMap(NameZone);
 				ShowZones();
 				ClearControls();
-
 				MessageBox::Show("Se ha eliminado la zona con nombre = " + NameZone + " de manera exitosa.");
 			}
 		}
@@ -497,5 +497,14 @@ namespace SecurityGUIApp {
 
 	}
 
+
+	private: System::Void dgvZonesPositions_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+		String^ namezone = dgvZonesPositions->Rows[dgvZonesPositions->SelectedCells[0]->RowIndex]->Cells[0]->Value->ToString();
+		SecurityModel::Point^ coordenada = Controller::QueryZonebyName(namezone);
+		txtNameZone->Text = namezone;
+		txtPointX->Text = Convert::ToString(coordenada->X);
+		txtPointY->Text = Convert::ToString(coordenada->Y);
+
+	}
 };
 }

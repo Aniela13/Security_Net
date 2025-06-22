@@ -54,3 +54,4 @@ Class SecurityController.Controller: AutoLayout, AnsiClass, Class, Public, Befor
     UpdateZoneMap(String, Point): PrivateScope, Public, Static, HideBySig
     DeleteZoneMap(String): PrivateScope, Public, Static, HideBySig
     QueryAllZones(): PrivateScope, Public, Static, HideBySig
+    QueryZonebyName(String): PrivateScope, Public, Static, HideBySig
