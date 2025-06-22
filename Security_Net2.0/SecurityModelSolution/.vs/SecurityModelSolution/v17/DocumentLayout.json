@@ -11,6 +11,10 @@
       "RelativeMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|solutionrelative:SecurityGUIApp\\UpdateMapForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|C:\\Users\\Letizia Castillo\\OneDrive\\Documentos\\POO\\Security_Net\\Security_Net2.0\\SecurityModelSolution\\SecurityGUIApp\\ClientForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|solutionrelative:SecurityGUIApp\\ClientForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{43B01CD2-0CB6-CC4E-A00B-35C5701F5471}|SecurityController\\SecurityController.vcxproj|C:\\Users\\Letizia Castillo\\OneDrive\\Documentos\\POO\\Security_Net\\Security_Net2.0\\SecurityModelSolution\\SecurityController\\SecurityController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{43B01CD2-0CB6-CC4E-A00B-35C5701F5471}|SecurityController\\SecurityController.vcxproj|solutionrelative:SecurityController\\SecurityController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -79,10 +83,6 @@
       "RelativeMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|solutionrelative:SecurityGUIApp\\ClientForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|C:\\Users\\Letizia Castillo\\OneDrive\\Documentos\\POO\\Security_Net\\Security_Net2.0\\SecurityModelSolution\\SecurityGUIApp\\ClientForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
-      "RelativeMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|solutionrelative:SecurityGUIApp\\ClientForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|C:\\Users\\Letizia Castillo\\OneDrive\\Documentos\\POO\\Security_Net\\Security_Net2.0\\SecurityModelSolution\\SecurityGUIApp\\AsignZonesForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
       "RelativeMoniker": "D:0:0:{7F83FD99-D2C7-1AE0-653A-31BE1044483C}|SecurityGUIApp\\SecurityGUIApp.vcxproj|solutionrelative:SecurityGUIApp\\AsignZonesForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
     },
@@ -134,7 +134,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Warning.h",
               "DocumentMoniker": "C:\\Users\\Letizia Castillo\\OneDrive\\Documentos\\POO\\Security_Net\\Security_Net2.0\\SecurityModelSolution\\SecurityModel\\Warning.h",
               "RelativeDocumentMoniker": "SecurityModel\\Warning.h",
@@ -147,7 +147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "RecognizeAlertForm.h",
               "DocumentMoniker": "C:\\Users\\Letizia Castillo\\OneDrive\\Documentos\\POO\\Security_Net\\Security_Net2.0\\SecurityModelSolution\\SecurityGUIApp\\RecognizeAlertForm.h",
               "RelativeDocumentMoniker": "SecurityGUIApp\\RecognizeAlertForm.h",
@@ -160,15 +160,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 2,
               "Title": "ClientForm.h [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Letizia Castillo\\OneDrive\\Documentos\\POO\\Security_Net\\Security_Net2.0\\SecurityModelSolution\\SecurityGUIApp\\ClientForm.h",
               "RelativeDocumentMoniker": "SecurityGUIApp\\ClientForm.h",
-              "ToolTip": "C:\\Users\\Letizia Castillo\\Downloads\\Security_Net2.0\\Security_Net-v2\\Security_Net-main\\Security_Net-main\\SecurityGUIApp\\ClientForm.h [Dise\u00F1o]",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Downloads\\Security_Net2.0\\Security_Net-v2\\Security_Net-main\\Security_Net-main\\SecurityGUIApp\\ClientForm.h [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\Letizia Castillo\\OneDrive\\Documentos\\POO\\Security_Net\\Security_Net2.0\\SecurityModelSolution\\SecurityGUIApp\\ClientForm.h [Dise\u00F1o]",
+              "RelativeToolTip": "SecurityGUIApp\\ClientForm.h [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-06-16T19:45:00.907Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
@@ -178,7 +179,7 @@
               "RelativeDocumentMoniker": "SecurityGUIApp\\UpdateMapForm.h",
               "ToolTip": "C:\\Users\\Letizia Castillo\\OneDrive\\Documentos\\POO\\Security_Net\\Security_Net2.0\\SecurityModelSolution\\SecurityGUIApp\\UpdateMapForm.h",
               "RelativeToolTip": "SecurityGUIApp\\UpdateMapForm.h",
-              "ViewState": "AgIAAO0AAAAAAAAAAAAAALYBAAALAAAAAAAAAA==",
+              "ViewState": "AgIAANUBAAAAAAAAAAAmwOgBAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-06-17T01:52:39.364Z",
               "IsPinned": true,
@@ -199,7 +200,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "SecurityPersistance.cpp",
               "DocumentMoniker": "C:\\Users\\Letizia Castillo\\OneDrive\\Documentos\\POO\\Security_Net\\Security_Net2.0\\SecurityModelSolution\\SecurityPersistance\\SecurityPersistance.cpp",
               "RelativeDocumentMoniker": "SecurityPersistance\\SecurityPersistance.cpp",
@@ -212,7 +213,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "AlarmHistorialForm.h",
               "DocumentMoniker": "C:\\Users\\Letizia Castillo\\OneDrive\\Documentos\\POO\\Security_Net\\Security_Net2.0\\SecurityModelSolution\\SecurityGUIApp\\AlarmHistorialForm.h",
               "RelativeDocumentMoniker": "SecurityGUIApp\\AlarmHistorialForm.h",
@@ -225,7 +226,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "AlarmHistorialForm.h [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Letizia Castillo\\OneDrive\\Documentos\\POO\\Security_Net\\Security_Net2.0\\SecurityModelSolution\\SecurityGUIApp\\AlarmHistorialForm.h",
               "RelativeDocumentMoniker": "SecurityGUIApp\\AlarmHistorialForm.h",
@@ -237,7 +238,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "SecurityController.cpp",
               "DocumentMoniker": "C:\\Users\\Letizia Castillo\\OneDrive\\Documentos\\POO\\Security_Net\\Security_Net2.0\\SecurityModelSolution\\SecurityController\\SecurityController.cpp",
               "RelativeDocumentMoniker": "SecurityController\\SecurityController.cpp",
@@ -250,7 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "SecurityController.h",
               "DocumentMoniker": "C:\\Users\\Letizia Castillo\\OneDrive\\Documentos\\POO\\Security_Net\\Security_Net2.0\\SecurityModelSolution\\SecurityController\\SecurityController.h",
               "RelativeDocumentMoniker": "SecurityController\\SecurityController.h",
@@ -263,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "SecurityPersistance.h",
               "DocumentMoniker": "C:\\Users\\Letizia Castillo\\OneDrive\\Documentos\\POO\\Security_Net\\Security_Net2.0\\SecurityModelSolution\\SecurityPersistance\\SecurityPersistance.h",
               "RelativeDocumentMoniker": "SecurityPersistance\\SecurityPersistance.h",
@@ -276,7 +277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "CreateAlarmForm.h [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Letizia Castillo\\OneDrive\\Documentos\\POO\\Security_Net\\Security_Net2.0\\SecurityModelSolution\\SecurityGUIApp\\CreateAlarmForm.h",
               "RelativeDocumentMoniker": "SecurityGUIApp\\CreateAlarmForm.h",
@@ -287,7 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "MallMap.h",
               "DocumentMoniker": "C:\\Users\\Letizia Castillo\\OneDrive\\Documentos\\POO\\Security_Net\\Security_Net2.0\\SecurityModelSolution\\SecurityModel\\MallMap.h",
               "RelativeDocumentMoniker": "SecurityModel\\MallMap.h",
@@ -299,7 +300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Point.h",
               "DocumentMoniker": "C:\\Users\\Letizia Castillo\\OneDrive\\Documentos\\POO\\Security_Net\\Security_Net2.0\\SecurityModelSolution\\SecurityModel\\Point.h",
               "RelativeDocumentMoniker": "SecurityModel\\Point.h",
@@ -311,7 +312,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "CreateAlarmForm.h",
               "DocumentMoniker": "C:\\Users\\Letizia Castillo\\OneDrive\\Documentos\\POO\\Security_Net\\Security_Net2.0\\SecurityModelSolution\\SecurityGUIApp\\CreateAlarmForm.h",
               "RelativeDocumentMoniker": "SecurityGUIApp\\CreateAlarmForm.h",
@@ -323,7 +324,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "WarningType.h",
               "DocumentMoniker": "C:\\Users\\Letizia Castillo\\OneDrive\\Documentos\\POO\\Security_Net\\Security_Net2.0\\SecurityModelSolution\\SecurityModel\\WarningType.h",
               "RelativeDocumentMoniker": "SecurityModel\\WarningType.h",
@@ -335,7 +336,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "SecurityOperator.h",
               "DocumentMoniker": "C:\\Users\\Letizia Castillo\\OneDrive\\Documentos\\POO\\Security_Net\\Security_Net2.0\\SecurityModelSolution\\SecurityModel\\SecurityOperator.h",
               "RelativeDocumentMoniker": "SecurityModel\\SecurityOperator.h",
@@ -347,7 +348,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "CameraSensor.h",
               "DocumentMoniker": "C:\\Users\\Letizia Castillo\\OneDrive\\Documentos\\POO\\Security_Net\\Security_Net2.0\\SecurityModelSolution\\SecurityModel\\CameraSensor.h",
               "RelativeDocumentMoniker": "SecurityModel\\CameraSensor.h",
@@ -359,7 +360,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "RecognizeAlertForm.h [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Letizia Castillo\\OneDrive\\Documentos\\POO\\Security_Net\\Security_Net2.0\\SecurityModelSolution\\SecurityGUIApp\\RecognizeAlertForm.h",
               "RelativeDocumentMoniker": "SecurityGUIApp\\RecognizeAlertForm.h",
@@ -370,7 +371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "ClientForm.h",
               "DocumentMoniker": "C:\\Users\\Letizia Castillo\\OneDrive\\Documentos\\POO\\Security_Net\\Security_Net2.0\\SecurityModelSolution\\SecurityGUIApp\\ClientForm.h",
               "RelativeDocumentMoniker": "SecurityGUIApp\\ClientForm.h",
@@ -378,7 +379,8 @@
               "RelativeToolTip": "SecurityGUIApp\\ClientForm.h",
               "ViewState": "AgIAAMAAAAAAAAAAAIAwwNkAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-16T19:45:04.561Z"
+              "WhenOpened": "2025-06-16T19:45:04.561Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

@@ -400,10 +400,11 @@ namespace SecurityGUIApp {
 			SecurityModel::Point^ ZonePoint = gcnew SecurityModel::Point(coordenadax, coordenaday);
 			if (Controller::AddZoneMap(NameZone, ZonePoint) == 1) {
 				MessageBox::Show("Se ha agregado una nueva zona");
+				ShowZones();
 				ClearControls();
 				return;
 			}
-			ShowZones();
+	
 
 		}
 		catch (Exception^ ex) {
@@ -451,6 +452,8 @@ namespace SecurityGUIApp {
 	}
 
 	private: System::Void UpdateMapForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		ShowZones();
+		ClearControls();
 	}
 
 	private: System::Void btnDelete_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -483,6 +486,7 @@ namespace SecurityGUIApp {
 		int y = e->Y;
 		Graphics^ g = pbMap->CreateGraphics();
 		g->FillEllipse(Brushes::Red, x - 3, y - 3, 6, 6);
+		
 		SecurityModel::Point^ coordenadas = PixelToGeo(x, y, pbMap->Width, pbMap->Height);
 		double lat = coordenadas->Y;
 		double lon = coordenadas->X;
@@ -492,5 +496,6 @@ namespace SecurityGUIApp {
 		//pbMap->Invalidate();
 
 	}
+
 };
 }
