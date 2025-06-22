@@ -25,3 +25,5 @@ Class SecurityPersistance.Persistance: AutoLayout, AnsiClass, Class, Public, Bef
     PersistNewQuestionsTextFile(String, Object): PrivateScope, Public, Static, HideBySig
     LoadNewQuestionsFromTextFile(String): PrivateScope, Public, Static, HideBySig
     LoadAlarmTypesFromTextFile(String): PrivateScope, Public, Static, HideBySig
+    PersistBinaryFile(String, Object): PrivateScope, Public, Static, HideBySig
+    LoadBinaryFile(String): PrivateScope, Public, Static, HideBySig

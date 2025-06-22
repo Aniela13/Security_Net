@@ -1,48 +1,7 @@
 ﻿  AdminForm.cpp
-  AlarmHistorialForm.cpp
-  AnswerForm.cpp
-  AsignZonesForm.cpp
-  ClientForm.cpp
-  ComboBoxItem.cpp
-  CreateAlarmForm.cpp
-  EmergencyForm.cpp
-  FAQForm.cpp
   MainForm.cpp
-  MaintainUser.cpp
-  ModifyFAQ.cpp
-  NewMapForm.cpp
-  NewQuestionForm.cpp
-  NoiseSensorForm.cpp
   OperationsAdminForm.cpp
-  OperatorForm.cpp
-  OperatorRegistration.cpp
-  RecognizeAlertForm.cpp
-  RobotPosition.cpp
-  Generando código...
-  Compilando...
-  SatisfactionQuestion.cpp
-  SecurityOperatorForm.cpp
-  SurveillanceCameraForm.cpp
   UpdateMapForm.cpp
-  ValidateOpForm.cpp
-  ZoneLocation.cpp
-  .NETFramework,Version=v4.8.1.AssemblyAttributes.cpp
   Generando código...
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(3426,5): error MSB3821: No se puede procesar el archivo AlarmHistorialForm.resx porque está en Internet o en una zona restringida, o bien tiene la marca de la Web. Quite esta marca si desea procesar los archivos.
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(3426,5): error MSB3821: No se puede procesar el archivo AnswerForm.resx porque está en Internet o en una zona restringida, o bien tiene la marca de la Web. Quite esta marca si desea procesar los archivos.
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(3426,5): error MSB3821: No se puede procesar el archivo AsignZonesForm.resx porque está en Internet o en una zona restringida, o bien tiene la marca de la Web. Quite esta marca si desea procesar los archivos.
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(3426,5): error MSB3821: No se puede procesar el archivo ClientForm.resx porque está en Internet o en una zona restringida, o bien tiene la marca de la Web. Quite esta marca si desea procesar los archivos.
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(3426,5): error MSB3821: No se puede procesar el archivo FAQForm.resx porque está en Internet o en una zona restringida, o bien tiene la marca de la Web. Quite esta marca si desea procesar los archivos.
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(3426,5): error MSB3821: No se puede procesar el archivo MainForm.resx porque está en Internet o en una zona restringida, o bien tiene la marca de la Web. Quite esta marca si desea procesar los archivos.
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(3426,5): error MSB3821: No se puede procesar el archivo ModifyFAQ.resx porque está en Internet o en una zona restringida, o bien tiene la marca de la Web. Quite esta marca si desea procesar los archivos.
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(3426,5): error MSB3821: No se puede procesar el archivo NewMapForm.resx porque está en Internet o en una zona restringida, o bien tiene la marca de la Web. Quite esta marca si desea procesar los archivos.
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(3426,5): error MSB3821: No se puede procesar el archivo NewQuestionForm.resx porque está en Internet o en una zona restringida, o bien tiene la marca de la Web. Quite esta marca si desea procesar los archivos.
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(3426,5): error MSB3821: No se puede procesar el archivo NoiseSensorForm.resx porque está en Internet o en una zona restringida, o bien tiene la marca de la Web. Quite esta marca si desea procesar los archivos.
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(3426,5): error MSB3821: No se puede procesar el archivo RecognizeAlertForm.resx porque está en Internet o en una zona restringida, o bien tiene la marca de la Web. Quite esta marca si desea procesar los archivos.
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(3426,5): error MSB3821: No se puede procesar el archivo RobotPositionForm.resx porque está en Internet o en una zona restringida, o bien tiene la marca de la Web. Quite esta marca si desea procesar los archivos.
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(3426,5): error MSB3821: No se puede procesar el archivo SatisfactionQuestionForm.resx porque está en Internet o en una zona restringida, o bien tiene la marca de la Web. Quite esta marca si desea procesar los archivos.
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(3426,5): error MSB3821: No se puede procesar el archivo SecurityOperatorForm.resx porque está en Internet o en una zona restringida, o bien tiene la marca de la Web. Quite esta marca si desea procesar los archivos.
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(3426,5): error MSB3821: No se puede procesar el archivo SurveillanceCameraForm.resx porque está en Internet o en una zona restringida, o bien tiene la marca de la Web. Quite esta marca si desea procesar los archivos.
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(3426,5): error MSB3821: No se puede procesar el archivo UpdateMapForm.resx porque está en Internet o en una zona restringida, o bien tiene la marca de la Web. Quite esta marca si desea procesar los archivos.
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(3426,5): error MSB3821: No se puede procesar el archivo ValidateOpForm.resx porque está en Internet o en una zona restringida, o bien tiene la marca de la Web. Quite esta marca si desea procesar los archivos.
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(3426,5): error MSB3821: No se puede procesar el archivo ZoneLocation.resx porque está en Internet o en una zona restringida, o bien tiene la marca de la Web. Quite esta marca si desea procesar los archivos.
+  AdminForm.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+  SecurityGUIApp.vcxproj -> C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityGUIApp.exe

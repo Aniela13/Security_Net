@@ -191,6 +191,16 @@ namespace SecurityGUIApp {
 		}
 #pragma endregion
 	public:
+		Warning^ CargarAlarm() {
+			System::Collections::Generic::Queue<Warning^>^ alarmsbybtn = Controller::QueryAllWarningsbyEmergencyButton();
+			if (alarmsbybtn == nullptr || alarmsbybtn->Count == 0)
+				return nullptr;
+
+			List<Warning^>^ alarms = gcnew List<Warning^>(alarmsbybtn);
+			Warning^ desactivatedalarm = alarms[alarms->Count - 1];
+			return desactivatedalarm;
+		}
+	public:
 		void ClearControls() {
 			for each (Control ^ control in this->Controls) {
 				if (control->GetType() == TextBox::typeid) {
@@ -205,7 +215,7 @@ namespace SecurityGUIApp {
 		}
 	public: 
 		void InitializeDateTimePickers() {
-			Warning^ newalarm = LoadAlarm();
+			Warning^ newalarm = CargarAlarm();
 			dtpStartingDate->Format = DateTimePickerFormat::Custom;
 			dtpEndingDate->Format = DateTimePickerFormat::Custom;
 			dtpStartingDate->CustomFormat = "dd/MM/yyyy HH:mm tt";
@@ -226,20 +236,10 @@ namespace SecurityGUIApp {
 				}
 			}
 		}
-	public:
-		Warning^ LoadAlarm() {
-			System::Collections::Generic::Queue<Warning^>^ alarmsbybtn = Controller::QueryAllWarningsbyEmergencyButton();
-			if (alarmsbybtn == nullptr || alarmsbybtn->Count == 0)
-				return nullptr;
-
-			List<Warning^>^ alarms = gcnew List<Warning^>(alarmsbybtn);
-			Warning^ desactivatedalarm = alarms[alarms->Count - 1];
-			return desactivatedalarm;
-		}
 
 	private: System::Void btnAddAlert_Click(System::Object^ sender, System::EventArgs^ e) {
 		try {
-			Warning^ newalarm = LoadAlarm();
+			Warning^ newalarm = CargarAlarm();
 			int selectedIndex = cmbAlarmType->SelectedIndex;
 			if (selectedIndex < 0) {
 				MessageBox::Show("Debe seleccionar una categoría de alarma");

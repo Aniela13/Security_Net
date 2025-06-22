@@ -32,6 +32,10 @@ namespace SecurityPersistance {
 
 		//Metodo para leer los tipos de alarmas en archivo de texto plano
 		static Object^ LoadAlarmTypesFromTextFile(String^ fileName);
+
+		//Metodo para guardar y leer las zonas del mapa en archivo binarios
+		static void PersistBinaryFile(String^ fileName, Object^ persistObject);
+		static Object^ LoadBinaryFile(String^ fileName);
 	
 
 	};

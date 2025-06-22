@@ -1,6 +1,7 @@
 using namespace System;
 
 namespace SecurityModel {
+    [Serializable]
     public ref class Point {
     public:
         property double X;

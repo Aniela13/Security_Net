@@ -21,7 +21,7 @@ Class SecurityController.Controller: AutoLayout, AnsiClass, Class, Public, Befor
     System.String TXT_FAQ_FILE_NAME : Public, Static
     System.String TXT_NEW_QUESTION_FILE_NAME : Public, Static
     System.String TXT_ALARM_HISTORIAL_FILE_NAME : Public, Static
-    System.String TXT_MAPS_ZONES_FILE_NAME : Public, Static
+    System.String BINARY_MAP_ZONES_FILE_NAME : Public, Static
     System.String TXT_WARNING_TYPE_FILE_NAME : Public, Static
   Methods:
     ValidateAdmin(Administrator): PrivateScope, Public, Static, HideBySig
@@ -50,3 +50,7 @@ Class SecurityController.Controller: AutoLayout, AnsiClass, Class, Public, Befor
     AddNewQuestion(String): PrivateScope, Public, Static, HideBySig
     DeleteNewQuestion(String): PrivateScope, Public, Static, HideBySig
     QueryAllNewQuestions(): PrivateScope, Public, Static, HideBySig
+    AddZoneMap(String, Point): PrivateScope, Public, Static, HideBySig
+    UpdateZoneMap(String, Point): PrivateScope, Public, Static, HideBySig
+    DeleteZoneMap(String): PrivateScope, Public, Static, HideBySig
+    QueryAllZones(): PrivateScope, Public, Static, HideBySig

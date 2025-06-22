@@ -4,6 +4,7 @@ using namespace System;
 using namespace System::Collections::Generic;
 
 namespace SecurityModel {
+    [Serializable]
     public ref class MallMap {
     public:
         Dictionary<String^, Point^>^ Zones;
@@ -12,6 +13,7 @@ namespace SecurityModel {
         property int Id; 
 
         MallMap() {
+            Zones = gcnew Dictionary<String^, Point^>();
         }
         MallMap(int id, String^ mallName, String^ district) {
             this->MallName = mallName;

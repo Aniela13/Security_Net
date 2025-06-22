@@ -67,7 +67,7 @@ Class SecurityModel.Client: AutoLayout, AnsiClass, Class, Public, BeforeFieldIni
     AskQuestion(): PrivateScope, Public, HideBySig
     InvokeSOSAlert(): PrivateScope, Public, HideBySig
     ShowZoneLocation(): PrivateScope, Public, HideBySig
-Class SecurityModel.Point: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+Class SecurityModel.Point: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
     Void .ctor(Double, Double): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Properties:
@@ -78,7 +78,7 @@ Class SecurityModel.Point: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     set_X(Double): PrivateScope, Public, HideBySig, SpecialName
     get_Y(): PrivateScope, Public, HideBySig, SpecialName
     set_Y(Double): PrivateScope, Public, HideBySig, SpecialName
-Class SecurityModel.MallMap: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+Class SecurityModel.MallMap: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
     Void .ctor(Int32, System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:

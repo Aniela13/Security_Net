@@ -338,3 +338,69 @@ List<String^>^ SecurityController::Controller::QueryAllNewQuestions()
 	}
 	return nullptr;
 }
+
+int SecurityController::Controller::AddZoneMap(String^ namezone, Point^ coordenada)
+{
+	try {
+		mallmap->Zones->Add(namezone, coordenada);
+		Persistance::PersistBinaryFile(BINARY_MAP_ZONES_FILE_NAME, mallmap);
+		return 1;
+	}
+	catch (FileNotFoundException^ ex) {
+		throw ex;
+	}
+	return 0;
+}
+
+int SecurityController::Controller::UpdateZoneMap(String^ namezone, Point^ coordenada)
+{
+	// Buscar por nombre
+	if (mallmap->Zones->ContainsKey(namezone)) {
+		mallmap->Zones[namezone] = coordenada;
+		Persistance::PersistBinaryFile(BINARY_MAP_ZONES_FILE_NAME, mallmap);
+		return 1;
+	}
+
+	// Buscar por valor (coordenada)
+	for each (KeyValuePair<String^, Point^> zona in mallmap->Zones) {
+		if (zona.Value->X == coordenada->X && zona.Value->Y == coordenada->Y) {
+			// Guardar el valor y eliminar la clave antigua
+			mallmap->Zones->Remove(zona.Key);
+			mallmap->Zones->Add(namezone, coordenada);
+			Persistance::PersistBinaryFile(BINARY_MAP_ZONES_FILE_NAME, mallmap);
+			return 1;
+		}
+	}
+
+	// No se encontró ni nombre ni coordenada
+	return 0;
+}
+
+int SecurityController::Controller::DeleteZoneMap(String^ namezone)
+{
+
+	if (mallmap->Zones->ContainsKey(namezone)) {
+		mallmap->Zones->Remove(namezone);
+		Persistance::PersistBinaryFile(BINARY_MAP_ZONES_FILE_NAME, mallmap);
+		return 1;
+	}
+	return 0;
+
+}
+
+Dictionary<String^, Point^>^ SecurityController::Controller::QueryAllZones()
+{
+
+	try {
+		mallmap = (MallMap^)Persistance::LoadBinaryFile(BINARY_MAP_ZONES_FILE_NAME);
+		if (mallmap == nullptr) {
+			mallmap = gcnew MallMap();
+		}
+		return mallmap->Zones;
+	}
+	catch (Exception^ ex) {
+		throw ex;
+	}
+	return nullptr;
+
+}

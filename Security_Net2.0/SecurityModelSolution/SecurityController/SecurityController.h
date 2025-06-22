@@ -19,6 +19,8 @@ namespace SecurityController {
 		static List<SecurityOperator^>^ operadoresporvalidar = gcnew List<SecurityOperator^>();
 		static List<String^>^ newquestions = gcnew  List<String^>();
 		static Queue<Warning^>^ alarmsbyclient = gcnew Queue<Warning^>();
+		static MallMap^ mallmap = gcnew MallMap();
+		//static MallMap^ mallmap = gcnew MallMap(0, "Piso 1", "Plaza San Miguel");
 	
 	public:
 		static String^ TXT_USERS_FILE_NAME = "usuarios.txt";
@@ -26,7 +28,7 @@ namespace SecurityController {
 		static String^ TXT_FAQ_FILE_NAME = "preguntasfrecuentes.txt";
 		static String^ TXT_NEW_QUESTION_FILE_NAME = "preguntasnuevas.txt";
 		static String^ TXT_ALARM_HISTORIAL_FILE_NAME = "alarmas.txt";
-		static String^ TXT_MAPS_ZONES_FILE_NAME = "zonas.txt";//Agregar para el mapa 
+		static String^ BINARY_MAP_ZONES_FILE_NAME = "mapa.bin";//Agregar para el mapa 
 		static String^ TXT_WARNING_TYPE_FILE_NAME = "tiposdealarmas.txt";
 
 
@@ -72,6 +74,12 @@ namespace SecurityController {
 		static int AddNewQuestion(String^ newquestion); 
 		static void DeleteNewQuestion(String^ newquestion);
 		static List<String^>^ QueryAllNewQuestions();
+
+		/*------CRUD MAPA y transaccciones-----*/ //interacción operador y cliente
+		static int AddZoneMap(String^ namezone, Point^ coordenada);
+		static int UpdateZoneMap(String^ namezone, Point^ coordenada);
+		static int DeleteZoneMap(String^ namezone);
+		static Dictionary<String^, Point^>^ QueryAllZones();
 	};
 
 
