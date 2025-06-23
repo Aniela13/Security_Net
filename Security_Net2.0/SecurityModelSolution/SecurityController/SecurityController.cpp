@@ -250,7 +250,7 @@ Queue<Warning^>^ SecurityController::Controller::QueryAllWarningsbyEmergencyButt
 
 int SecurityController::Controller::AddOperatortoValidation(SecurityOperator^ operador)
 {
-	try {
+	/*try {
 		operadoresporvalidar->Add(operador);
 		Persistance::PersistValidationOperatorsTextFile(TXT_REGISTRATION_OP_FILE_NAME, operadoresporvalidar);
 		return 1;
@@ -259,7 +259,8 @@ int SecurityController::Controller::AddOperatortoValidation(SecurityOperator^ op
 		throw ex;
 	}
 	return 0;
-	
+	*/
+	return Persistance::AddOperator(operador);
 }
 
 void SecurityController::Controller::DeleteOperatortoValidation(String^ dni)

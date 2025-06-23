@@ -12,6 +12,17 @@ namespace SecurityModel {
         String^ DNI;
         bool Authorized;
         bool HelpNeeded;
+        String^ UserName;
+        DateTime^ BirthDay;
+        String^ Address;
+        Char^ Gender;
+        String^ Phone_Number;
+        array<Byte>^ Photo;
+        Double^ Salary;
+        String^ Schedule;
+        DateTime^ Hire_Date;
+        String^ Email;
+        int Id;
 
         SecurityOperator() {}
         // Constructor 
@@ -20,9 +31,19 @@ namespace SecurityModel {
             LastName = lastName;
             DNI = dni;
             UserName = dni;
+            Id = Convert::ToInt32(dni);
             Password = password;
             Authorized = authorized;  // Se asigna el valor proporcionado
             HelpNeeded = helpneeded;
+            BirthDay = nullptr;
+            Address = nullptr;
+            Gender = nullptr;
+            Phone_Number = nullptr;
+            Photo = nullptr;
+            Salary = nullptr;
+            Schedule = nullptr;
+            Hire_Date = nullptr;
+            Email = nullptr;
         }
 
     public:

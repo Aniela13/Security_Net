@@ -1,7 +1,41 @@
 ﻿  AdminForm.cpp
+<<<<<<< HEAD
   MainForm.cpp
   OperationsAdminForm.cpp
   UpdateMapForm.cpp
   Generando código...
   AdminForm.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
   SecurityGUIApp.vcxproj -> C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityGUIApp.exe
+=======
+  AlarmHistorialForm.cpp
+  AnswerForm.cpp
+  AsignZonesForm.cpp
+  ClientForm.cpp
+  ComboBoxItem.cpp
+  CreateAlarmForm.cpp
+  EmergencyForm.cpp
+  FAQForm.cpp
+  MainForm.cpp
+  MaintainUser.cpp
+  ModifyFAQ.cpp
+  NewMapForm.cpp
+  NewQuestionForm.cpp
+  NoiseSensorForm.cpp
+  OperationsAdminForm.cpp
+  OperatorForm.cpp
+  OperatorRegistration.cpp
+  RecognizeAlertForm.cpp
+  RobotPosition.cpp
+  Generando código...
+  Compilando...
+  SatisfactionQuestion.cpp
+  SecurityOperatorForm.cpp
+  SurveillanceCameraForm.cpp
+  UpdateMapForm.cpp
+  ValidateOpForm.cpp
+  ZoneLocation.cpp
+  .NETFramework,Version=v4.8.1.AssemblyAttributes.cpp
+  Generando código...
+  AdminForm.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+  SecurityGUIApp.vcxproj -> C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityGUIApp.exe
+>>>>>>> 7c696d18b3fabce60ff8075bcdc71a21cf4cbac2

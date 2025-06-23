@@ -32,15 +32,14 @@ namespace SecurityController {
 		static String^ BINARY_MAP_ZONES_FILE_NAME = "mapa.bin";//Agregar para el mapa 
 		static String^ TXT_WARNING_TYPE_FILE_NAME = "tiposdealarmas.txt";
 		static String^ BINARY_ROUTE_ROBOT_FILE_NAME = "rutas.bin";//Agregar ruta al robot
-
-
+	
 	public:
 		/*-------VALIDATE ADMINISTRADOR-------*/
 		static int ValidateAdmin(Administrator^ administrator);
 
 		/*-------VALIDATE OPERADOR-------*/
-		static int AddUser(SecurityOperator^ operador);
-		static int ValidateOperator(String^ OpUser, String^ OpPassword);
+		static int AddUser(SecurityOperator^ operador);                      
+		static int ValidateOperator(String^ OpUser, String^ OpPassword);     
 		static int DeleteUser(SecurityOperator^ OpUser);
 		static SecurityOperator^ QueryUserbyUsername(String^ username);
 		static List<SecurityOperator^>^ QueryAllUsers();
@@ -65,9 +64,9 @@ namespace SecurityController {
 
 
 		/*-------REGISTER OPERADOR-------*/
-		static int AddOperatortoValidation(SecurityOperator^ operador);
+		static int AddOperatortoValidation(SecurityOperator^ operador);  //-------------AddOperator
 		static void DeleteOperatortoValidation(String^ dni);
-		static SecurityOperator^ QueryNoOperatorbyDNI(String^ dni);
+		static SecurityOperator^ QueryNoOperatorbyDNI(String^ dni);      //-------------QueryOperatorById
 		static List<SecurityOperator^>^ QueryAllNoRegisteredOperators(); 
 
 		/*------SISTEMA DE PREGUNTAS NUEVAS-----*/ //interacción operador y cliente
@@ -86,7 +85,6 @@ namespace SecurityController {
 		static int AddRoute(Route^ route);
 		static List<Route^>^ QueryAllRoutes();
 		static int GetLastRouteId();
+
 	};
-
-
 }
