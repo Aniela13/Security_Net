@@ -88,9 +88,10 @@ namespace SecurityGUIApp {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(411, 121);
+			this->label1->Location = System::Drawing::Point(308, 98);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(109, 28);
+			this->label1->Size = System::Drawing::Size(79, 20);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Pregunta:";
 			// 
@@ -99,9 +100,10 @@ namespace SecurityGUIApp {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(411, 249);
+			this->label2->Location = System::Drawing::Point(308, 202);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(127, 28);
+			this->label2->Size = System::Drawing::Size(92, 20);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Respuesta: ";
 			// 
@@ -112,9 +114,10 @@ namespace SecurityGUIApp {
 				static_cast<System::Byte>(0)));
 			this->btnGoBackMenu->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnGoBackMenu.Image")));
 			this->btnGoBackMenu->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnGoBackMenu->Location = System::Drawing::Point(497, 14);
+			this->btnGoBackMenu->Location = System::Drawing::Point(373, 11);
+			this->btnGoBackMenu->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnGoBackMenu->Name = L"btnGoBackMenu";
-			this->btnGoBackMenu->Size = System::Drawing::Size(150, 69);
+			this->btnGoBackMenu->Size = System::Drawing::Size(112, 56);
 			this->btnGoBackMenu->TabIndex = 37;
 			this->btnGoBackMenu->Text = L"MENU PRINCIPAL";
 			this->btnGoBackMenu->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -124,11 +127,12 @@ namespace SecurityGUIApp {
 			// 
 			this->dgvQuestionForm->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dgvQuestionForm->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(1) { this->NewQuestion });
-			this->dgvQuestionForm->Location = System::Drawing::Point(21, 121);
+			this->dgvQuestionForm->Location = System::Drawing::Point(16, 98);
+			this->dgvQuestionForm->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dgvQuestionForm->Name = L"dgvQuestionForm";
 			this->dgvQuestionForm->RowHeadersWidth = 51;
 			this->dgvQuestionForm->RowTemplate->Height = 24;
-			this->dgvQuestionForm->Size = System::Drawing::Size(361, 259);
+			this->dgvQuestionForm->Size = System::Drawing::Size(271, 210);
 			this->dgvQuestionForm->TabIndex = 38;
 			this->dgvQuestionForm->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &AnswerForm::dgvQuestionForm_CellContentClick);
 			// 
@@ -141,20 +145,22 @@ namespace SecurityGUIApp {
 			// 
 			// txtNewQuestion
 			// 
-			this->txtNewQuestion->Location = System::Drawing::Point(415, 155);
+			this->txtNewQuestion->Location = System::Drawing::Point(311, 126);
+			this->txtNewQuestion->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->txtNewQuestion->Multiline = true;
 			this->txtNewQuestion->Name = L"txtNewQuestion";
 			this->txtNewQuestion->ReadOnly = true;
-			this->txtNewQuestion->Size = System::Drawing::Size(198, 68);
+			this->txtNewQuestion->Size = System::Drawing::Size(150, 56);
 			this->txtNewQuestion->TabIndex = 39;
 			this->txtNewQuestion->TextChanged += gcnew System::EventHandler(this, &AnswerForm::txtNewQuestion_TextChanged);
 			// 
 			// txtAnswer
 			// 
-			this->txtAnswer->Location = System::Drawing::Point(416, 283);
+			this->txtAnswer->Location = System::Drawing::Point(312, 230);
+			this->txtAnswer->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->txtAnswer->Multiline = true;
 			this->txtAnswer->Name = L"txtAnswer";
-			this->txtAnswer->Size = System::Drawing::Size(198, 91);
+			this->txtAnswer->Size = System::Drawing::Size(150, 75);
 			this->txtAnswer->TabIndex = 40;
 			// 
 			// label3
@@ -162,9 +168,10 @@ namespace SecurityGUIApp {
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(36, 33);
+			this->label3->Location = System::Drawing::Point(27, 27);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(185, 28);
+			this->label3->Size = System::Drawing::Size(132, 20);
 			this->label3->TabIndex = 41;
 			this->label3->Text = L"Pregunta Nuevas";
 			// 
@@ -172,9 +179,10 @@ namespace SecurityGUIApp {
 			// 
 			this->btnNewQuestion->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->btnNewQuestion->Location = System::Drawing::Point(459, 400);
+			this->btnNewQuestion->Location = System::Drawing::Point(344, 325);
+			this->btnNewQuestion->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnNewQuestion->Name = L"btnNewQuestion";
-			this->btnNewQuestion->Size = System::Drawing::Size(107, 51);
+			this->btnNewQuestion->Size = System::Drawing::Size(80, 41);
 			this->btnNewQuestion->TabIndex = 42;
 			this->btnNewQuestion->Text = L"ENVIAR";
 			this->btnNewQuestion->UseVisualStyleBackColor = false;
@@ -182,9 +190,11 @@ namespace SecurityGUIApp {
 			// 
 			// AnswerForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(660, 508);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(524, 396);
 			this->Controls->Add(this->btnNewQuestion);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->txtAnswer);
@@ -193,6 +203,8 @@ namespace SecurityGUIApp {
 			this->Controls->Add(this->btnGoBackMenu);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
+			this->DoubleBuffered = true;
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"AnswerForm";
 			this->Text = L"AnswerForm";
 			this->Load += gcnew System::EventHandler(this, &AnswerForm::AnswerForm_Load);

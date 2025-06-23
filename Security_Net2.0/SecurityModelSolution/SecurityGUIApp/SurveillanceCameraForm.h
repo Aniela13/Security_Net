@@ -67,9 +67,10 @@ namespace SecurityGUIApp {
 			// btnChangeRoute
 			// 
 			this->btnChangeRoute->BackColor = System::Drawing::Color::PeachPuff;
-			this->btnChangeRoute->Location = System::Drawing::Point(635, 270);
+			this->btnChangeRoute->Location = System::Drawing::Point(476, 219);
+			this->btnChangeRoute->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnChangeRoute->Name = L"btnChangeRoute";
-			this->btnChangeRoute->Size = System::Drawing::Size(96, 71);
+			this->btnChangeRoute->Size = System::Drawing::Size(72, 58);
 			this->btnChangeRoute->TabIndex = 55;
 			this->btnChangeRoute->Text = L"CAMBIAR RUTA";
 			this->btnChangeRoute->UseVisualStyleBackColor = false;
@@ -81,9 +82,10 @@ namespace SecurityGUIApp {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label1->Location = System::Drawing::Point(213, 67);
+			this->label1->Location = System::Drawing::Point(261, 71);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(154, 35);
+			this->label1->Size = System::Drawing::Size(113, 26);
 			this->label1->TabIndex = 54;
 			this->label1->Text = L"CAMARA";
 			this->label1->Click += gcnew System::EventHandler(this, &SurveillanceCameraForm::label1_Click);
@@ -95,9 +97,10 @@ namespace SecurityGUIApp {
 				static_cast<System::Byte>(0)));
 			this->btnGoBackMenu->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnGoBackMenu.Image")));
 			this->btnGoBackMenu->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnGoBackMenu->Location = System::Drawing::Point(623, 408);
+			this->btnGoBackMenu->Location = System::Drawing::Point(467, 332);
+			this->btnGoBackMenu->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnGoBackMenu->Name = L"btnGoBackMenu";
-			this->btnGoBackMenu->Size = System::Drawing::Size(150, 69);
+			this->btnGoBackMenu->Size = System::Drawing::Size(112, 56);
 			this->btnGoBackMenu->TabIndex = 53;
 			this->btnGoBackMenu->Text = L"MENU PRINCIPAL";
 			this->btnGoBackMenu->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -105,21 +108,26 @@ namespace SecurityGUIApp {
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->Location = System::Drawing::Point(105, 184);
+			this->pictureBox1->Location = System::Drawing::Point(79, 150);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(451, 293);
+			this->pictureBox1->Size = System::Drawing::Size(338, 238);
 			this->pictureBox1->TabIndex = 52;
 			this->pictureBox1->TabStop = false;
 			// 
 			// SurveillanceCameraForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(874, 544);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(656, 442);
 			this->Controls->Add(this->btnChangeRoute);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->btnGoBackMenu);
 			this->Controls->Add(this->pictureBox1);
+			this->DoubleBuffered = true;
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"SurveillanceCameraForm";
 			this->Text = L"SurveillanceCameraForm";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();

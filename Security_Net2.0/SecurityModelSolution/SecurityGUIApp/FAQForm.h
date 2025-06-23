@@ -91,9 +91,10 @@ namespace SecurityGUIApp {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(226, 35);
+			this->label1->Location = System::Drawing::Point(253, 27);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(187, 16);
+			this->label1->Size = System::Drawing::Size(149, 13);
 			this->label1->TabIndex = 6;
 			this->label1->Text = L"PREGUNTAS FRECUENTES";
 			// 
@@ -101,9 +102,10 @@ namespace SecurityGUIApp {
 			// 
 			this->btnNewQuestion->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(224)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->btnNewQuestion->Location = System::Drawing::Point(151, 473);
+			this->btnNewQuestion->Location = System::Drawing::Point(159, 384);
+			this->btnNewQuestion->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnNewQuestion->Name = L"btnNewQuestion";
-			this->btnNewQuestion->Size = System::Drawing::Size(418, 61);
+			this->btnNewQuestion->Size = System::Drawing::Size(314, 50);
 			this->btnNewQuestion->TabIndex = 9;
 			this->btnNewQuestion->Text = L"Tengo otra pregunta";
 			this->btnNewQuestion->UseVisualStyleBackColor = false;
@@ -116,9 +118,10 @@ namespace SecurityGUIApp {
 				static_cast<System::Byte>(0)));
 			this->btnGoBackMenu->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnGoBackMenu.Image")));
 			this->btnGoBackMenu->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnGoBackMenu->Location = System::Drawing::Point(608, 473);
+			this->btnGoBackMenu->Location = System::Drawing::Point(501, 384);
+			this->btnGoBackMenu->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnGoBackMenu->Name = L"btnGoBackMenu";
-			this->btnGoBackMenu->Size = System::Drawing::Size(150, 69);
+			this->btnGoBackMenu->Size = System::Drawing::Size(112, 56);
 			this->btnGoBackMenu->TabIndex = 37;
 			this->btnGoBackMenu->Text = L"MENU PRINCIPAL";
 			this->btnGoBackMenu->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -129,12 +132,13 @@ namespace SecurityGUIApp {
 			// 
 			this->dgvQuestions->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dgvQuestions->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(1) { this->Column1 });
-			this->dgvQuestions->Location = System::Drawing::Point(34, 77);
+			this->dgvQuestions->Location = System::Drawing::Point(57, 62);
+			this->dgvQuestions->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dgvQuestions->Name = L"dgvQuestions";
 			this->dgvQuestions->ReadOnly = true;
 			this->dgvQuestions->RowHeadersWidth = 51;
 			this->dgvQuestions->RowTemplate->Height = 24;
-			this->dgvQuestions->Size = System::Drawing::Size(350, 369);
+			this->dgvQuestions->Size = System::Drawing::Size(262, 300);
 			this->dgvQuestions->TabIndex = 38;
 			this->dgvQuestions->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &FAQForm::dgvQuestions_CellContentClick);
 			// 
@@ -148,24 +152,29 @@ namespace SecurityGUIApp {
 			// 
 			// txtAnswer
 			// 
-			this->txtAnswer->Location = System::Drawing::Point(406, 77);
+			this->txtAnswer->Location = System::Drawing::Point(350, 62);
+			this->txtAnswer->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->txtAnswer->Multiline = true;
 			this->txtAnswer->Name = L"txtAnswer";
 			this->txtAnswer->ReadOnly = true;
-			this->txtAnswer->Size = System::Drawing::Size(297, 369);
+			this->txtAnswer->Size = System::Drawing::Size(224, 301);
 			this->txtAnswer->TabIndex = 39;
 			this->txtAnswer->TextChanged += gcnew System::EventHandler(this, &FAQForm::txtAnswer_TextChanged);
 			// 
 			// FAQForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(770, 554);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(646, 464);
 			this->Controls->Add(this->txtAnswer);
 			this->Controls->Add(this->dgvQuestions);
 			this->Controls->Add(this->btnGoBackMenu);
 			this->Controls->Add(this->btnNewQuestion);
 			this->Controls->Add(this->label1);
+			this->DoubleBuffered = true;
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"FAQForm";
 			this->Text = L"FAQForm";
 			this->Load += gcnew System::EventHandler(this, &FAQForm::FAQForm_Load);

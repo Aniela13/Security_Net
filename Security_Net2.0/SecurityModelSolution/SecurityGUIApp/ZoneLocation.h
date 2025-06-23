@@ -67,9 +67,10 @@ namespace SecurityGUIApp {
 			// 
 			// picBoxMap
 			// 
-			this->picBoxMap->Location = System::Drawing::Point(12, 138);
+			this->picBoxMap->Location = System::Drawing::Point(9, 112);
+			this->picBoxMap->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->picBoxMap->Name = L"picBoxMap";
-			this->picBoxMap->Size = System::Drawing::Size(382, 336);
+			this->picBoxMap->Size = System::Drawing::Size(286, 273);
 			this->picBoxMap->TabIndex = 0;
 			this->picBoxMap->TabStop = false;
 			// 
@@ -78,9 +79,10 @@ namespace SecurityGUIApp {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Lucida Bright", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(209, 41);
+			this->label1->Location = System::Drawing::Point(157, 33);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(229, 30);
+			this->label1->Size = System::Drawing::Size(170, 22);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"Ubicación actual";
 			// 
@@ -88,18 +90,20 @@ namespace SecurityGUIApp {
 			// 
 			this->label2->AutoSize = true;
 			this->label2->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->label2->Location = System::Drawing::Point(21, 108);
+			this->label2->Location = System::Drawing::Point(16, 88);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(130, 16);
+			this->label2->Size = System::Drawing::Size(104, 13);
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"¿A dónde quieres ir\?";
 			// 
 			// listViewZones
 			// 
 			this->listViewZones->HideSelection = false;
-			this->listViewZones->Location = System::Drawing::Point(437, 138);
+			this->listViewZones->Location = System::Drawing::Point(328, 112);
+			this->listViewZones->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->listViewZones->Name = L"listViewZones";
-			this->listViewZones->Size = System::Drawing::Size(207, 328);
+			this->listViewZones->Size = System::Drawing::Size(156, 267);
 			this->listViewZones->TabIndex = 3;
 			this->listViewZones->UseCompatibleStateImageBehavior = false;
 			// 
@@ -110,9 +114,10 @@ namespace SecurityGUIApp {
 				static_cast<System::Byte>(0)));
 			this->btnGoBackMenu->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnGoBackMenu.Image")));
 			this->btnGoBackMenu->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnGoBackMenu->Location = System::Drawing::Point(525, 504);
+			this->btnGoBackMenu->Location = System::Drawing::Point(452, 402);
+			this->btnGoBackMenu->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnGoBackMenu->Name = L"btnGoBackMenu";
-			this->btnGoBackMenu->Size = System::Drawing::Size(150, 69);
+			this->btnGoBackMenu->Size = System::Drawing::Size(112, 56);
 			this->btnGoBackMenu->TabIndex = 37;
 			this->btnGoBackMenu->Text = L"MENU PRINCIPAL";
 			this->btnGoBackMenu->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -120,14 +125,18 @@ namespace SecurityGUIApp {
 			// 
 			// ZoneLocation
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(687, 585);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(591, 469);
 			this->Controls->Add(this->btnGoBackMenu);
 			this->Controls->Add(this->listViewZones);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->picBoxMap);
+			this->DoubleBuffered = true;
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"ZoneLocation";
 			this->Text = L"ZoneLocation";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->picBoxMap))->EndInit();

@@ -79,6 +79,7 @@ namespace SecurityGUIApp {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MaintainUser::typeid));
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->historialDeAlarmasToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->actualizarMapaToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -108,26 +109,27 @@ namespace SecurityGUIApp {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(924, 28);
+			this->menuStrip1->Padding = System::Windows::Forms::Padding(4, 2, 0, 2);
+			this->menuStrip1->Size = System::Drawing::Size(693, 24);
 			this->menuStrip1->TabIndex = 1;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
 			// historialDeAlarmasToolStripMenuItem
 			// 
 			this->historialDeAlarmasToolStripMenuItem->Name = L"historialDeAlarmasToolStripMenuItem";
-			this->historialDeAlarmasToolStripMenuItem->Size = System::Drawing::Size(158, 24);
+			this->historialDeAlarmasToolStripMenuItem->Size = System::Drawing::Size(125, 20);
 			this->historialDeAlarmasToolStripMenuItem->Text = L"Historial de Alarmas";
 			// 
 			// actualizarMapaToolStripMenuItem
 			// 
 			this->actualizarMapaToolStripMenuItem->Name = L"actualizarMapaToolStripMenuItem";
-			this->actualizarMapaToolStripMenuItem->Size = System::Drawing::Size(131, 24);
+			this->actualizarMapaToolStripMenuItem->Size = System::Drawing::Size(104, 20);
 			this->actualizarMapaToolStripMenuItem->Text = L"Actualizar Mapa";
 			// 
 			// verMapaToolStripMenuItem
 			// 
 			this->verMapaToolStripMenuItem->Name = L"verMapaToolStripMenuItem";
-			this->verMapaToolStripMenuItem->Size = System::Drawing::Size(86, 24);
+			this->verMapaToolStripMenuItem->Size = System::Drawing::Size(68, 20);
 			this->verMapaToolStripMenuItem->Text = L"Ver Mapa";
 			// 
 			// dgvMaintainUser
@@ -139,11 +141,12 @@ namespace SecurityGUIApp {
 					this->nombre, this->Surname
 			});
 			this->dgvMaintainUser->GridColor = System::Drawing::SystemColors::ActiveBorder;
-			this->dgvMaintainUser->Location = System::Drawing::Point(97, 271);
+			this->dgvMaintainUser->Location = System::Drawing::Point(73, 220);
+			this->dgvMaintainUser->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dgvMaintainUser->Name = L"dgvMaintainUser";
 			this->dgvMaintainUser->RowHeadersWidth = 51;
 			this->dgvMaintainUser->RowTemplate->Height = 24;
-			this->dgvMaintainUser->Size = System::Drawing::Size(546, 238);
+			this->dgvMaintainUser->Size = System::Drawing::Size(410, 193);
 			this->dgvMaintainUser->TabIndex = 2;
 			this->dgvMaintainUser->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MaintainUser::dgvMaintainUser_CellClick);
 			// 
@@ -173,35 +176,39 @@ namespace SecurityGUIApp {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Lucida Bright", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(245, 50);
+			this->label1->Location = System::Drawing::Point(184, 41);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(411, 34);
+			this->label1->Size = System::Drawing::Size(327, 27);
 			this->label1->TabIndex = 3;
 			this->label1->Text = L"Mantenimiento de usuario";
 			// 
 			// NameUser
 			// 
 			this->NameUser->AutoSize = true;
-			this->NameUser->Location = System::Drawing::Point(94, 142);
+			this->NameUser->Location = System::Drawing::Point(70, 115);
+			this->NameUser->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->NameUser->Name = L"NameUser";
-			this->NameUser->Size = System::Drawing::Size(56, 16);
+			this->NameUser->Size = System::Drawing::Size(44, 13);
 			this->NameUser->TabIndex = 4;
 			this->NameUser->Text = L"Nombre";
 			// 
 			// Usuario
 			// 
 			this->Usuario->AutoSize = true;
-			this->Usuario->Location = System::Drawing::Point(94, 191);
+			this->Usuario->Location = System::Drawing::Point(70, 155);
+			this->Usuario->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Usuario->Name = L"Usuario";
-			this->Usuario->Size = System::Drawing::Size(54, 16);
+			this->Usuario->Size = System::Drawing::Size(43, 13);
 			this->Usuario->TabIndex = 5;
 			this->Usuario->Text = L"Usuario";
 			// 
 			// btnSearch
 			// 
-			this->btnSearch->Location = System::Drawing::Point(322, 230);
+			this->btnSearch->Location = System::Drawing::Point(242, 187);
+			this->btnSearch->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnSearch->Name = L"btnSearch";
-			this->btnSearch->Size = System::Drawing::Size(75, 23);
+			this->btnSearch->Size = System::Drawing::Size(56, 19);
 			this->btnSearch->TabIndex = 6;
 			this->btnSearch->Text = L"BUSCAR";
 			this->btnSearch->UseVisualStyleBackColor = true;
@@ -209,9 +216,10 @@ namespace SecurityGUIApp {
 			// 
 			// btnDeleterUser
 			// 
-			this->btnDeleterUser->Location = System::Drawing::Point(693, 345);
+			this->btnDeleterUser->Location = System::Drawing::Point(520, 280);
+			this->btnDeleterUser->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnDeleterUser->Name = L"btnDeleterUser";
-			this->btnDeleterUser->Size = System::Drawing::Size(120, 35);
+			this->btnDeleterUser->Size = System::Drawing::Size(90, 28);
 			this->btnDeleterUser->TabIndex = 8;
 			this->btnDeleterUser->Text = L"ELIMINAR";
 			this->btnDeleterUser->UseVisualStyleBackColor = true;
@@ -220,9 +228,10 @@ namespace SecurityGUIApp {
 			// btnValidateOp
 			// 
 			this->btnValidateOp->Enabled = false;
-			this->btnValidateOp->Location = System::Drawing::Point(762, 50);
+			this->btnValidateOp->Location = System::Drawing::Point(552, 105);
+			this->btnValidateOp->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnValidateOp->Name = L"btnValidateOp";
-			this->btnValidateOp->Size = System::Drawing::Size(127, 78);
+			this->btnValidateOp->Size = System::Drawing::Size(95, 63);
 			this->btnValidateOp->TabIndex = 9;
 			this->btnValidateOp->Text = L"APROBAR\r\nOPERADOR";
 			this->btnValidateOp->UseVisualStyleBackColor = true;
@@ -231,24 +240,28 @@ namespace SecurityGUIApp {
 			// 
 			// txtName
 			// 
-			this->txtName->Location = System::Drawing::Point(183, 139);
+			this->txtName->Location = System::Drawing::Point(137, 113);
+			this->txtName->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->txtName->Name = L"txtName";
-			this->txtName->Size = System::Drawing::Size(214, 22);
+			this->txtName->Size = System::Drawing::Size(162, 20);
 			this->txtName->TabIndex = 10;
 			// 
 			// txtUser
 			// 
-			this->txtUser->Location = System::Drawing::Point(180, 191);
+			this->txtUser->Location = System::Drawing::Point(135, 155);
+			this->txtUser->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->txtUser->Name = L"txtUser";
-			this->txtUser->Size = System::Drawing::Size(217, 22);
+			this->txtUser->Size = System::Drawing::Size(164, 20);
 			this->txtUser->TabIndex = 11;
 			// 
 			// MaintainUser
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
-			this->ClientSize = System::Drawing::Size(924, 542);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(693, 440);
 			this->Controls->Add(this->txtUser);
 			this->Controls->Add(this->txtName);
 			this->Controls->Add(this->btnValidateOp);
@@ -259,7 +272,9 @@ namespace SecurityGUIApp {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->dgvMaintainUser);
 			this->Controls->Add(this->menuStrip1);
+			this->DoubleBuffered = true;
 			this->MainMenuStrip = this->menuStrip1;
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"MaintainUser";
 			this->Text = L"MaintainUser";
 			this->Load += gcnew System::EventHandler(this, &MaintainUser::MaintainUser_Load);

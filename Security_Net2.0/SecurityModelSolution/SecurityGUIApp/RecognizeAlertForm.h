@@ -105,9 +105,10 @@ namespace SecurityGUIApp {
 				static_cast<System::Byte>(0)));
 			this->btnGoBackMenu->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnGoBackMenu.Image")));
 			this->btnGoBackMenu->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnGoBackMenu->Location = System::Drawing::Point(1069, 423);
+			this->btnGoBackMenu->Location = System::Drawing::Point(802, 344);
+			this->btnGoBackMenu->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnGoBackMenu->Name = L"btnGoBackMenu";
-			this->btnGoBackMenu->Size = System::Drawing::Size(150, 69);
+			this->btnGoBackMenu->Size = System::Drawing::Size(112, 56);
 			this->btnGoBackMenu->TabIndex = 55;
 			this->btnGoBackMenu->Text = L"MENU PRINCIPAL";
 			this->btnGoBackMenu->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -115,9 +116,10 @@ namespace SecurityGUIApp {
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->Location = System::Drawing::Point(406, 78);
+			this->pictureBox1->Location = System::Drawing::Point(304, 63);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(311, 414);
+			this->pictureBox1->Size = System::Drawing::Size(233, 336);
 			this->pictureBox1->TabIndex = 54;
 			this->pictureBox1->TabStop = false;
 			// 
@@ -128,9 +130,10 @@ namespace SecurityGUIApp {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label1->Location = System::Drawing::Point(438, 29);
+			this->label1->Location = System::Drawing::Point(328, 24);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(118, 29);
+			this->label1->Size = System::Drawing::Size(97, 24);
 			this->label1->TabIndex = 56;
 			this->label1->Text = L"CAMARA";
 			// 
@@ -141,65 +144,73 @@ namespace SecurityGUIApp {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label2->Location = System::Drawing::Point(749, 29);
+			this->label2->Location = System::Drawing::Point(562, 24);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(94, 29);
+			this->label2->Size = System::Drawing::Size(73, 24);
 			this->label2->TabIndex = 58;
 			this->label2->Text = L"RUIDO";
 			// 
 			// pictureBox2
 			// 
-			this->pictureBox2->Location = System::Drawing::Point(755, 78);
+			this->pictureBox2->Location = System::Drawing::Point(566, 63);
+			this->pictureBox2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(197, 197);
+			this->pictureBox2->Size = System::Drawing::Size(148, 160);
 			this->pictureBox2->TabIndex = 57;
 			this->pictureBox2->TabStop = false;
 			// 
 			// txtPointY
 			// 
-			this->txtPointY->Location = System::Drawing::Point(889, 449);
+			this->txtPointY->Location = System::Drawing::Point(667, 365);
+			this->txtPointY->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->txtPointY->Name = L"txtPointY";
-			this->txtPointY->Size = System::Drawing::Size(58, 22);
+			this->txtPointY->Size = System::Drawing::Size(44, 20);
 			this->txtPointY->TabIndex = 64;
 			// 
 			// txtPointX
 			// 
-			this->txtPointX->Location = System::Drawing::Point(889, 413);
+			this->txtPointX->Location = System::Drawing::Point(667, 336);
+			this->txtPointX->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->txtPointX->Name = L"txtPointX";
-			this->txtPointX->Size = System::Drawing::Size(58, 22);
+			this->txtPointX->Size = System::Drawing::Size(44, 20);
 			this->txtPointX->TabIndex = 63;
 			// 
 			// txtNameZone
 			// 
-			this->txtNameZone->Location = System::Drawing::Point(889, 381);
+			this->txtNameZone->Location = System::Drawing::Point(667, 310);
+			this->txtNameZone->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->txtNameZone->Name = L"txtNameZone";
-			this->txtNameZone->Size = System::Drawing::Size(156, 22);
+			this->txtNameZone->Size = System::Drawing::Size(118, 20);
 			this->txtNameZone->TabIndex = 62;
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(760, 452);
+			this->label4->Location = System::Drawing::Point(570, 367);
+			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(98, 16);
+			this->label4->Size = System::Drawing::Size(78, 13);
 			this->label4->TabIndex = 61;
 			this->label4->Text = L"Coordenada Y:";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(760, 413);
+			this->label3->Location = System::Drawing::Point(570, 336);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(97, 16);
+			this->label3->Size = System::Drawing::Size(78, 13);
 			this->label3->TabIndex = 60;
 			this->label3->Text = L"Coordenada X:";
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(760, 381);
+			this->label5->Location = System::Drawing::Point(570, 310);
+			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(96, 16);
+			this->label5->Size = System::Drawing::Size(78, 13);
 			this->label5->TabIndex = 59;
 			this->label5->Text = L"Nombre Zona: ";
 			// 
@@ -210,18 +221,20 @@ namespace SecurityGUIApp {
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label6->Location = System::Drawing::Point(757, 323);
+			this->label6->Location = System::Drawing::Point(568, 262);
+			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(138, 29);
+			this->label6->Size = System::Drawing::Size(107, 24);
 			this->label6->TabIndex = 65;
 			this->label6->Text = L"POSICION";
 			// 
 			// btnReviewAlarm
 			// 
 			this->btnReviewAlarm->BackColor = System::Drawing::Color::RosyBrown;
-			this->btnReviewAlarm->Location = System::Drawing::Point(1069, 323);
+			this->btnReviewAlarm->Location = System::Drawing::Point(802, 262);
+			this->btnReviewAlarm->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnReviewAlarm->Name = L"btnReviewAlarm";
-			this->btnReviewAlarm->Size = System::Drawing::Size(134, 73);
+			this->btnReviewAlarm->Size = System::Drawing::Size(100, 59);
 			this->btnReviewAlarm->TabIndex = 66;
 			this->btnReviewAlarm->Text = L"INICIAR ALERTA";
 			this->btnReviewAlarm->UseVisualStyleBackColor = false;
@@ -229,9 +242,10 @@ namespace SecurityGUIApp {
 			// 
 			// btnStopWarning
 			// 
-			this->btnStopWarning->Location = System::Drawing::Point(1069, 226);
+			this->btnStopWarning->Location = System::Drawing::Point(802, 184);
+			this->btnStopWarning->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnStopWarning->Name = L"btnStopWarning";
-			this->btnStopWarning->Size = System::Drawing::Size(134, 79);
+			this->btnStopWarning->Size = System::Drawing::Size(100, 64);
 			this->btnStopWarning->TabIndex = 67;
 			this->btnStopWarning->Text = L"DETENER ALERTA";
 			this->btnStopWarning->UseVisualStyleBackColor = true;
@@ -244,11 +258,12 @@ namespace SecurityGUIApp {
 				this->Column1,
 					this->Column2
 			});
-			this->dgvPendingAlarms->Location = System::Drawing::Point(39, 78);
+			this->dgvPendingAlarms->Location = System::Drawing::Point(29, 63);
+			this->dgvPendingAlarms->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dgvPendingAlarms->Name = L"dgvPendingAlarms";
 			this->dgvPendingAlarms->RowHeadersWidth = 51;
 			this->dgvPendingAlarms->RowTemplate->Height = 24;
-			this->dgvPendingAlarms->Size = System::Drawing::Size(302, 414);
+			this->dgvPendingAlarms->Size = System::Drawing::Size(226, 336);
 			this->dgvPendingAlarms->TabIndex = 68;
 			// 
 			// Column1
@@ -268,17 +283,20 @@ namespace SecurityGUIApp {
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(36, 59);
+			this->label7->Location = System::Drawing::Point(27, 48);
+			this->label7->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(273, 16);
+			this->label7->Size = System::Drawing::Size(214, 13);
 			this->label7->TabIndex = 69;
 			this->label7->Text = L"Alarmas activadas por botón de emergencia";
 			// 
 			// RecognizeAlertForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1278, 523);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(933, 516);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->dgvPendingAlarms);
 			this->Controls->Add(this->btnStopWarning);
@@ -295,6 +313,8 @@ namespace SecurityGUIApp {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->btnGoBackMenu);
 			this->Controls->Add(this->pictureBox1);
+			this->DoubleBuffered = true;
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"RecognizeAlertForm";
 			this->Text = L"RecognizeAlertForm";
 			this->Load += gcnew System::EventHandler(this, &RecognizeAlertForm::RecognizeAlertForm_Load);

@@ -69,6 +69,7 @@ namespace SecurityGUIApp {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(OperatorRegistration::typeid));
 			this->txtOpPassword = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->txtSecurityUser = (gcnew System::Windows::Forms::TextBox());
@@ -87,18 +88,20 @@ namespace SecurityGUIApp {
 			// 
 			this->txtOpPassword->BackColor = System::Drawing::SystemColors::InactiveCaption;
 			this->txtOpPassword->Enabled = false;
-			this->txtOpPassword->Location = System::Drawing::Point(385, 407);
+			this->txtOpPassword->Location = System::Drawing::Point(289, 331);
+			this->txtOpPassword->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->txtOpPassword->Name = L"txtOpPassword";
 			this->txtOpPassword->ReadOnly = true;
-			this->txtOpPassword->Size = System::Drawing::Size(100, 22);
+			this->txtOpPassword->Size = System::Drawing::Size(76, 20);
 			this->txtOpPassword->TabIndex = 34;
 			// 
 			// label6
 			// 
 			this->label6->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->label6->Location = System::Drawing::Point(144, 407);
+			this->label6->Location = System::Drawing::Point(108, 331);
+			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(400, 25);
+			this->label6->Size = System::Drawing::Size(300, 20);
 			this->label6->TabIndex = 33;
 			this->label6->Text = L"Contraseña: ";
 			// 
@@ -106,27 +109,29 @@ namespace SecurityGUIApp {
 			// 
 			this->txtSecurityUser->BackColor = System::Drawing::SystemColors::InactiveCaption;
 			this->txtSecurityUser->Enabled = false;
-			this->txtSecurityUser->Location = System::Drawing::Point(385, 347);
+			this->txtSecurityUser->Location = System::Drawing::Point(289, 282);
+			this->txtSecurityUser->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->txtSecurityUser->Name = L"txtSecurityUser";
 			this->txtSecurityUser->ReadOnly = true;
-			this->txtSecurityUser->Size = System::Drawing::Size(100, 22);
+			this->txtSecurityUser->Size = System::Drawing::Size(76, 20);
 			this->txtSecurityUser->TabIndex = 32;
-			//this->txtSecurityUser->TextChanged += gcnew System::EventHandler(this, &OperatorRegistration::txtSecurityUser_TextChanged);
 			// 
 			// txtOpDNI
 			// 
-			this->txtOpDNI->Location = System::Drawing::Point(385, 293);
+			this->txtOpDNI->Location = System::Drawing::Point(289, 238);
+			this->txtOpDNI->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->txtOpDNI->Name = L"txtOpDNI";
-			this->txtOpDNI->Size = System::Drawing::Size(100, 22);
+			this->txtOpDNI->Size = System::Drawing::Size(76, 20);
 			this->txtOpDNI->TabIndex = 31;
 			this->txtOpDNI->TextChanged += gcnew System::EventHandler(this, &OperatorRegistration::txtOpDNI_TextChanged);
 			// 
 			// label4
 			// 
 			this->label4->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->label4->Location = System::Drawing::Point(144, 347);
+			this->label4->Location = System::Drawing::Point(108, 282);
+			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(400, 25);
+			this->label4->Size = System::Drawing::Size(300, 20);
 			this->label4->TabIndex = 30;
 			this->label4->Text = L"Usuario: ";
 			// 
@@ -134,9 +139,10 @@ namespace SecurityGUIApp {
 			// 
 			this->label5->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
 			this->label5->ForeColor = System::Drawing::SystemColors::MenuText;
-			this->label5->Location = System::Drawing::Point(144, 293);
+			this->label5->Location = System::Drawing::Point(108, 238);
+			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(400, 25);
+			this->label5->Size = System::Drawing::Size(300, 20);
 			this->label5->TabIndex = 29;
 			this->label5->Text = L"DNI: ";
 			// 
@@ -147,32 +153,36 @@ namespace SecurityGUIApp {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label1->Location = System::Drawing::Point(259, 62);
+			this->label1->Location = System::Drawing::Point(194, 50);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(168, 32);
+			this->label1->Size = System::Drawing::Size(134, 26);
 			this->label1->TabIndex = 28;
 			this->label1->Text = L"REGISTRO";
 			// 
 			// txtOpLastName
 			// 
-			this->txtOpLastName->Location = System::Drawing::Point(385, 237);
+			this->txtOpLastName->Location = System::Drawing::Point(289, 193);
+			this->txtOpLastName->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->txtOpLastName->Name = L"txtOpLastName";
-			this->txtOpLastName->Size = System::Drawing::Size(100, 22);
+			this->txtOpLastName->Size = System::Drawing::Size(76, 20);
 			this->txtOpLastName->TabIndex = 27;
 			// 
 			// txtOpName
 			// 
-			this->txtOpName->Location = System::Drawing::Point(385, 183);
+			this->txtOpName->Location = System::Drawing::Point(289, 149);
+			this->txtOpName->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->txtOpName->Name = L"txtOpName";
-			this->txtOpName->Size = System::Drawing::Size(100, 22);
+			this->txtOpName->Size = System::Drawing::Size(76, 20);
 			this->txtOpName->TabIndex = 26;
 			// 
 			// label3
 			// 
 			this->label3->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->label3->Location = System::Drawing::Point(144, 237);
+			this->label3->Location = System::Drawing::Point(108, 193);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(400, 25);
+			this->label3->Size = System::Drawing::Size(300, 20);
 			this->label3->TabIndex = 25;
 			this->label3->Text = L"Apellidos: ";
 			// 
@@ -180,17 +190,19 @@ namespace SecurityGUIApp {
 			// 
 			this->label2->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
 			this->label2->ForeColor = System::Drawing::SystemColors::MenuText;
-			this->label2->Location = System::Drawing::Point(144, 183);
+			this->label2->Location = System::Drawing::Point(108, 149);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(400, 25);
+			this->label2->Size = System::Drawing::Size(300, 20);
 			this->label2->TabIndex = 24;
 			this->label2->Text = L"Nombres: ";
 			// 
 			// btnSolicitarRegistro
 			// 
-			this->btnSolicitarRegistro->Location = System::Drawing::Point(583, 478);
+			this->btnSolicitarRegistro->Location = System::Drawing::Point(437, 388);
+			this->btnSolicitarRegistro->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnSolicitarRegistro->Name = L"btnSolicitarRegistro";
-			this->btnSolicitarRegistro->Size = System::Drawing::Size(105, 74);
+			this->btnSolicitarRegistro->Size = System::Drawing::Size(79, 60);
 			this->btnSolicitarRegistro->TabIndex = 23;
 			this->btnSolicitarRegistro->Text = L"SOLICITAR REGISTRO";
 			this->btnSolicitarRegistro->UseVisualStyleBackColor = true;
@@ -198,9 +210,12 @@ namespace SecurityGUIApp {
 			// 
 			// OperatorRegistration
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(737, 571);
+			this->AutoSize = true;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(570, 464);
 			this->Controls->Add(this->txtOpPassword);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->txtSecurityUser);
@@ -213,6 +228,8 @@ namespace SecurityGUIApp {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->btnSolicitarRegistro);
+			this->DoubleBuffered = true;
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"OperatorRegistration";
 			this->Text = L"Registration";
 			this->ResumeLayout(false);

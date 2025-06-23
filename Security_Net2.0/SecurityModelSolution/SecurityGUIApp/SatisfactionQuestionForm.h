@@ -74,9 +74,10 @@ namespace SecurityGUIApp {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label1->Location = System::Drawing::Point(42, 68);
+			this->label1->Location = System::Drawing::Point(32, 55);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(788, 35);
+			this->label1->Size = System::Drawing::Size(570, 26);
 			this->label1->TabIndex = 49;
 			this->label1->Text = L"¿OBTUVISTE UNA RESPUESTA SATISFACTORIA\?";
 			// 
@@ -89,7 +90,8 @@ namespace SecurityGUIApp {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->btnYesSatisfation->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->btnYesSatisfation->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnYesSatisfation.Image")));
-			this->btnYesSatisfation->Location = System::Drawing::Point(121, 184);
+			this->btnYesSatisfation->Location = System::Drawing::Point(91, 150);
+			this->btnYesSatisfation->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnYesSatisfation->Name = L"btnYesSatisfation";
 			this->btnYesSatisfation->Size = System::Drawing::Size(201, 201);
 			this->btnYesSatisfation->TabIndex = 50;
@@ -105,7 +107,8 @@ namespace SecurityGUIApp {
 				static_cast<System::Byte>(0)));
 			this->btnNoSatisfation->ForeColor = System::Drawing::SystemColors::ButtonFace;
 			this->btnNoSatisfation->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnNoSatisfation.Image")));
-			this->btnNoSatisfation->Location = System::Drawing::Point(462, 183);
+			this->btnNoSatisfation->Location = System::Drawing::Point(346, 149);
+			this->btnNoSatisfation->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnNoSatisfation->Name = L"btnNoSatisfation";
 			this->btnNoSatisfation->Size = System::Drawing::Size(184, 195);
 			this->btnNoSatisfation->TabIndex = 51;
@@ -119,9 +122,10 @@ namespace SecurityGUIApp {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Marlett", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::SystemColors::GrayText;
-			this->label2->Location = System::Drawing::Point(286, 144);
+			this->label2->Location = System::Drawing::Point(214, 117);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(153, 23);
+			this->label2->Size = System::Drawing::Size(115, 19);
 			this->label2->TabIndex = 52;
 			this->label2->Text = L"SI";
 			// 
@@ -131,9 +135,10 @@ namespace SecurityGUIApp {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Marlett", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::SystemColors::GrayText;
-			this->label3->Location = System::Drawing::Point(495, 157);
+			this->label3->Location = System::Drawing::Point(371, 128);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(153, 23);
+			this->label3->Size = System::Drawing::Size(115, 19);
 			this->label3->TabIndex = 53;
 			this->label3->Text = L"NO";
 			// 
@@ -144,9 +149,10 @@ namespace SecurityGUIApp {
 				static_cast<System::Byte>(0)));
 			this->btnGoBackMenu->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnGoBackMenu.Image")));
 			this->btnGoBackMenu->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnGoBackMenu->Location = System::Drawing::Point(662, 448);
+			this->btnGoBackMenu->Location = System::Drawing::Point(496, 364);
+			this->btnGoBackMenu->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnGoBackMenu->Name = L"btnGoBackMenu";
-			this->btnGoBackMenu->Size = System::Drawing::Size(150, 69);
+			this->btnGoBackMenu->Size = System::Drawing::Size(112, 56);
 			this->btnGoBackMenu->TabIndex = 54;
 			this->btnGoBackMenu->Text = L"MENU PRINCIPAL";
 			this->btnGoBackMenu->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -155,15 +161,19 @@ namespace SecurityGUIApp {
 			// 
 			// SatisfactionQuestion
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(837, 529);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(645, 438);
 			this->Controls->Add(this->btnGoBackMenu);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->btnNoSatisfation);
 			this->Controls->Add(this->btnYesSatisfation);
 			this->Controls->Add(this->label1);
+			this->DoubleBuffered = true;
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"SatisfactionQuestion";
 			this->Text = L"s";
 			this->ResumeLayout(false);

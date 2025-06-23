@@ -91,11 +91,12 @@ namespace SecurityGUIApp {
 				this->NameColumn,
 					this->SurnameColumn, this->id
 			});
-			this->dgvValidateOp->Location = System::Drawing::Point(162, 131);
+			this->dgvValidateOp->Location = System::Drawing::Point(122, 106);
+			this->dgvValidateOp->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dgvValidateOp->Name = L"dgvValidateOp";
 			this->dgvValidateOp->RowHeadersWidth = 51;
 			this->dgvValidateOp->RowTemplate->Height = 24;
-			this->dgvValidateOp->Size = System::Drawing::Size(515, 334);
+			this->dgvValidateOp->Size = System::Drawing::Size(386, 271);
 			this->dgvValidateOp->TabIndex = 0;
 			this->dgvValidateOp->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ValidateOpForm::dgvValidateOp_CellContentClick);
 			// 
@@ -125,18 +126,20 @@ namespace SecurityGUIApp {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Lucida Bright", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(225, 51);
+			this->label1->Location = System::Drawing::Point(169, 41);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(211, 19);
+			this->label1->Size = System::Drawing::Size(172, 16);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"Aprobación de Usuario";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(12, 215);
+			this->label2->Location = System::Drawing::Point(9, 175);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(144, 32);
+			this->label2->Size = System::Drawing::Size(112, 26);
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"Operadores en espera\r\n de aprobación:";
 			// 
@@ -144,9 +147,10 @@ namespace SecurityGUIApp {
 			// 
 			this->btnApprove->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->btnApprove->Location = System::Drawing::Point(15, 282);
+			this->btnApprove->Location = System::Drawing::Point(11, 229);
+			this->btnApprove->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnApprove->Name = L"btnApprove";
-			this->btnApprove->Size = System::Drawing::Size(120, 41);
+			this->btnApprove->Size = System::Drawing::Size(90, 33);
 			this->btnApprove->TabIndex = 3;
 			this->btnApprove->Text = L"APROBAR";
 			this->btnApprove->UseVisualStyleBackColor = false;
@@ -159,9 +163,10 @@ namespace SecurityGUIApp {
 				static_cast<System::Byte>(0)));
 			this->btnGoBackMenu->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnGoBackMenu.Image")));
 			this->btnGoBackMenu->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnGoBackMenu->Location = System::Drawing::Point(573, 483);
+			this->btnGoBackMenu->Location = System::Drawing::Point(430, 392);
+			this->btnGoBackMenu->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnGoBackMenu->Name = L"btnGoBackMenu";
-			this->btnGoBackMenu->Size = System::Drawing::Size(150, 69);
+			this->btnGoBackMenu->Size = System::Drawing::Size(112, 56);
 			this->btnGoBackMenu->TabIndex = 37;
 			this->btnGoBackMenu->Text = L"MENU PRINCIPAL";
 			this->btnGoBackMenu->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -169,14 +174,18 @@ namespace SecurityGUIApp {
 			// 
 			// ValidateOpForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(735, 575);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(551, 467);
 			this->Controls->Add(this->btnGoBackMenu);
 			this->Controls->Add(this->btnApprove);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->dgvValidateOp);
+			this->DoubleBuffered = true;
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"ValidateOpForm";
 			this->Text = L"ValidateOpForm";
 			this->Load += gcnew System::EventHandler(this, &ValidateOpForm::ValidateOpForm_Load);

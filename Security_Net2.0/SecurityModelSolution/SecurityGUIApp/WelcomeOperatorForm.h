@@ -45,7 +45,7 @@ namespace SecurityGUIApp {
 	private: System::Windows::Forms::Button^ btnIngresarSecurity;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Label^ label1;
+
 
 	private:
 		/// <summary>
@@ -60,20 +60,21 @@ namespace SecurityGUIApp {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(WelcomeOperatorForm::typeid));
 			this->btnLogInSecurity = (gcnew System::Windows::Forms::Button());
 			this->txtSecurityPassword = (gcnew System::Windows::Forms::TextBox());
 			this->txtSecurityUser = (gcnew System::Windows::Forms::TextBox());
 			this->btnIngresarSecurity = (gcnew System::Windows::Forms::Button());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// btnLogInSecurity
 			// 
-			this->btnLogInSecurity->Location = System::Drawing::Point(270, 361);
+			this->btnLogInSecurity->Location = System::Drawing::Point(159, 241);
+			this->btnLogInSecurity->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnLogInSecurity->Name = L"btnLogInSecurity";
-			this->btnLogInSecurity->Size = System::Drawing::Size(121, 34);
+			this->btnLogInSecurity->Size = System::Drawing::Size(91, 28);
 			this->btnLogInSecurity->TabIndex = 19;
 			this->btnLogInSecurity->Text = L"INICIAR SESION";
 			this->btnLogInSecurity->UseVisualStyleBackColor = true;
@@ -81,23 +82,26 @@ namespace SecurityGUIApp {
 			// 
 			// txtSecurityPassword
 			// 
-			this->txtSecurityPassword->Location = System::Drawing::Point(455, 294);
+			this->txtSecurityPassword->Location = System::Drawing::Point(308, 187);
+			this->txtSecurityPassword->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->txtSecurityPassword->Name = L"txtSecurityPassword";
-			this->txtSecurityPassword->Size = System::Drawing::Size(100, 22);
+			this->txtSecurityPassword->Size = System::Drawing::Size(76, 20);
 			this->txtSecurityPassword->TabIndex = 18;
 			// 
 			// txtSecurityUser
 			// 
-			this->txtSecurityUser->Location = System::Drawing::Point(455, 240);
+			this->txtSecurityUser->Location = System::Drawing::Point(308, 143);
+			this->txtSecurityUser->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->txtSecurityUser->Name = L"txtSecurityUser";
-			this->txtSecurityUser->Size = System::Drawing::Size(100, 22);
+			this->txtSecurityUser->Size = System::Drawing::Size(76, 20);
 			this->txtSecurityUser->TabIndex = 17;
 			// 
 			// btnIngresarSecurity
 			// 
-			this->btnIngresarSecurity->Location = System::Drawing::Point(455, 361);
+			this->btnIngresarSecurity->Location = System::Drawing::Point(308, 241);
+			this->btnIngresarSecurity->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnIngresarSecurity->Name = L"btnIngresarSecurity";
-			this->btnIngresarSecurity->Size = System::Drawing::Size(105, 34);
+			this->btnIngresarSecurity->Size = System::Drawing::Size(79, 28);
 			this->btnIngresarSecurity->TabIndex = 16;
 			this->btnIngresarSecurity->Text = L"REGISTRAR";
 			this->btnIngresarSecurity->UseVisualStyleBackColor = true;
@@ -106,9 +110,10 @@ namespace SecurityGUIApp {
 			// label3
 			// 
 			this->label3->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->label3->Location = System::Drawing::Point(214, 294);
+			this->label3->Location = System::Drawing::Point(127, 187);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(400, 25);
+			this->label3->Size = System::Drawing::Size(300, 20);
 			this->label3->TabIndex = 15;
 			this->label3->Text = L"Contraseña:";
 			// 
@@ -116,37 +121,28 @@ namespace SecurityGUIApp {
 			// 
 			this->label2->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
 			this->label2->ForeColor = System::Drawing::SystemColors::MenuText;
-			this->label2->Location = System::Drawing::Point(214, 240);
+			this->label2->Location = System::Drawing::Point(127, 143);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(400, 25);
+			this->label2->Size = System::Drawing::Size(300, 20);
 			this->label2->TabIndex = 14;
 			this->label2->Text = L"Usuario:";
 			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label1->Location = System::Drawing::Point(331, 166);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(167, 32);
-			this->label1->TabIndex = 13;
-			this->label1->Text = L"Bienvenido";
-			// 
 			// WelcomeOperatorForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(828, 560);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(594, 388);
 			this->Controls->Add(this->btnLogInSecurity);
 			this->Controls->Add(this->txtSecurityPassword);
 			this->Controls->Add(this->txtSecurityUser);
 			this->Controls->Add(this->btnIngresarSecurity);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
+			this->DoubleBuffered = true;
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"WelcomeOperatorForm";
 			this->Text = L"WelcomeOperatorForm";
 			this->ResumeLayout(false);

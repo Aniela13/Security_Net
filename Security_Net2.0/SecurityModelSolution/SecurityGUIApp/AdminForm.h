@@ -38,7 +38,7 @@ namespace SecurityGUIApp {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^ label1;
+
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::TextBox^ txtAdminName;
@@ -69,7 +69,7 @@ namespace SecurityGUIApp {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->label1 = (gcnew System::Windows::Forms::Label());
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(AdminForm::typeid));
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->txtAdminName = (gcnew System::Windows::Forms::TextBox());
@@ -78,58 +78,50 @@ namespace SecurityGUIApp {
 			this->lblErrorValidation = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label1->Location = System::Drawing::Point(202, 34);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(178, 35);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"Bienvenido";
-			// 
 			// label2
 			// 
 			this->label2->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
 			this->label2->ForeColor = System::Drawing::SystemColors::MenuText;
-			this->label2->Location = System::Drawing::Point(85, 108);
+			this->label2->Location = System::Drawing::Point(64, 88);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(400, 25);
+			this->label2->Size = System::Drawing::Size(300, 20);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Usuario:";
 			// 
 			// label3
 			// 
 			this->label3->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->label3->Location = System::Drawing::Point(85, 156);
+			this->label3->Location = System::Drawing::Point(64, 127);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(400, 25);
+			this->label3->Size = System::Drawing::Size(300, 20);
 			this->label3->TabIndex = 2;
 			this->label3->Text = L"Contraseña:";
 			// 
 			// txtAdminName
 			// 
-			this->txtAdminName->Location = System::Drawing::Point(288, 108);
+			this->txtAdminName->Location = System::Drawing::Point(216, 88);
+			this->txtAdminName->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->txtAdminName->Name = L"txtAdminName";
-			this->txtAdminName->Size = System::Drawing::Size(154, 22);
+			this->txtAdminName->Size = System::Drawing::Size(116, 20);
 			this->txtAdminName->TabIndex = 3;
 			// 
 			// txtAdminPassword
 			// 
-			this->txtAdminPassword->Location = System::Drawing::Point(288, 156);
+			this->txtAdminPassword->Location = System::Drawing::Point(216, 127);
+			this->txtAdminPassword->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->txtAdminPassword->Name = L"txtAdminPassword";
 			this->txtAdminPassword->PasswordChar = '*';
-			this->txtAdminPassword->Size = System::Drawing::Size(154, 22);
+			this->txtAdminPassword->Size = System::Drawing::Size(116, 20);
 			this->txtAdminPassword->TabIndex = 4;
 			// 
 			// btnValidateAdmin
 			// 
-			this->btnValidateAdmin->Location = System::Drawing::Point(380, 229);
+			this->btnValidateAdmin->Location = System::Drawing::Point(285, 186);
+			this->btnValidateAdmin->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnValidateAdmin->Name = L"btnValidateAdmin";
-			this->btnValidateAdmin->Size = System::Drawing::Size(105, 34);
+			this->btnValidateAdmin->Size = System::Drawing::Size(79, 28);
 			this->btnValidateAdmin->TabIndex = 5;
 			this->btnValidateAdmin->Text = L"INGRESAR";
 			this->btnValidateAdmin->UseVisualStyleBackColor = true;
@@ -141,25 +133,29 @@ namespace SecurityGUIApp {
 			this->lblErrorValidation->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lblErrorValidation->ForeColor = System::Drawing::Color::Red;
-			this->lblErrorValidation->Location = System::Drawing::Point(85, 89);
+			this->lblErrorValidation->Location = System::Drawing::Point(64, 72);
+			this->lblErrorValidation->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->lblErrorValidation->Name = L"lblErrorValidation";
-			this->lblErrorValidation->Size = System::Drawing::Size(268, 18);
+			this->lblErrorValidation->Size = System::Drawing::Size(201, 13);
 			this->lblErrorValidation->TabIndex = 6;
 			this->lblErrorValidation->Text = L"*Contrasela y/o usuario incorrecto";
 			this->lblErrorValidation->Visible = false;
 			// 
 			// AdminForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(612, 286);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->ClientSize = System::Drawing::Size(444, 296);
 			this->Controls->Add(this->lblErrorValidation);
 			this->Controls->Add(this->btnValidateAdmin);
 			this->Controls->Add(this->txtAdminPassword);
 			this->Controls->Add(this->txtAdminName);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->MaximumSize = System::Drawing::Size(460, 335);
+			this->MinimumSize = System::Drawing::Size(460, 335);
 			this->Name = L"AdminForm";
 			this->Text = L"AdminForm";
 			this->Load += gcnew System::EventHandler(this, &AdminForm::AdminForm_Load);

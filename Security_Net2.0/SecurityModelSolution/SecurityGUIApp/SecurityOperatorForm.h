@@ -95,9 +95,10 @@ namespace SecurityGUIApp {
 			// 
 			// btnAsignZone
 			// 
-			this->btnAsignZone->Location = System::Drawing::Point(41, 293);
+			this->btnAsignZone->Location = System::Drawing::Point(31, 238);
+			this->btnAsignZone->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnAsignZone->Name = L"btnAsignZone";
-			this->btnAsignZone->Size = System::Drawing::Size(136, 69);
+			this->btnAsignZone->Size = System::Drawing::Size(102, 56);
 			this->btnAsignZone->TabIndex = 26;
 			this->btnAsignZone->Text = L"ASIGNAR ZONA DE INSPECCION";
 			this->btnAsignZone->UseVisualStyleBackColor = true;
@@ -105,10 +106,11 @@ namespace SecurityGUIApp {
 			// 
 			// txtActualRobot
 			// 
-			this->txtActualRobot->Location = System::Drawing::Point(469, 168);
+			this->txtActualRobot->Location = System::Drawing::Point(352, 136);
+			this->txtActualRobot->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->txtActualRobot->Name = L"txtActualRobot";
 			this->txtActualRobot->ReadOnly = true;
-			this->txtActualRobot->Size = System::Drawing::Size(100, 22);
+			this->txtActualRobot->Size = System::Drawing::Size(76, 20);
 			this->txtActualRobot->TabIndex = 24;
 			// 
 			// label2
@@ -117,9 +119,10 @@ namespace SecurityGUIApp {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Leelawadee UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::SystemColors::GrayText;
-			this->label2->Location = System::Drawing::Point(282, 167);
+			this->label2->Location = System::Drawing::Point(212, 136);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(153, 23);
+			this->label2->Size = System::Drawing::Size(115, 19);
 			this->label2->TabIndex = 21;
 			this->label2->Text = L"Robot en linea: ";
 			// 
@@ -130,9 +133,10 @@ namespace SecurityGUIApp {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label1->Location = System::Drawing::Point(313, 80);
+			this->label1->Location = System::Drawing::Point(235, 65);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(227, 46);
+			this->label1->Size = System::Drawing::Size(183, 37);
 			this->label1->TabIndex = 20;
 			this->label1->Text = L"Bienvenido";
 			// 
@@ -140,18 +144,20 @@ namespace SecurityGUIApp {
 			// 
 			this->btnDeactivateRobot->BackColor = System::Drawing::Color::Brown;
 			this->btnDeactivateRobot->ForeColor = System::Drawing::SystemColors::Control;
-			this->btnDeactivateRobot->Location = System::Drawing::Point(30, 450);
+			this->btnDeactivateRobot->Location = System::Drawing::Point(22, 366);
+			this->btnDeactivateRobot->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnDeactivateRobot->Name = L"btnDeactivateRobot";
-			this->btnDeactivateRobot->Size = System::Drawing::Size(203, 34);
+			this->btnDeactivateRobot->Size = System::Drawing::Size(152, 28);
 			this->btnDeactivateRobot->TabIndex = 28;
 			this->btnDeactivateRobot->Text = L"DESACTIVAR ROBOT";
 			this->btnDeactivateRobot->UseVisualStyleBackColor = false;
 			// 
 			// btnAccessCamera
 			// 
-			this->btnAccessCamera->Location = System::Drawing::Point(206, 293);
+			this->btnAccessCamera->Location = System::Drawing::Point(154, 238);
+			this->btnAccessCamera->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnAccessCamera->Name = L"btnAccessCamera";
-			this->btnAccessCamera->Size = System::Drawing::Size(136, 69);
+			this->btnAccessCamera->Size = System::Drawing::Size(102, 56);
 			this->btnAccessCamera->TabIndex = 29;
 			this->btnAccessCamera->Text = L"ACCEDER A CAMARA";
 			this->btnAccessCamera->UseVisualStyleBackColor = true;
@@ -159,9 +165,10 @@ namespace SecurityGUIApp {
 			// 
 			// btnGetActualPosition
 			// 
-			this->btnGetActualPosition->Location = System::Drawing::Point(361, 293);
+			this->btnGetActualPosition->Location = System::Drawing::Point(271, 238);
+			this->btnGetActualPosition->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnGetActualPosition->Name = L"btnGetActualPosition";
-			this->btnGetActualPosition->Size = System::Drawing::Size(136, 69);
+			this->btnGetActualPosition->Size = System::Drawing::Size(102, 56);
 			this->btnGetActualPosition->TabIndex = 30;
 			this->btnGetActualPosition->Text = L"POSICION ACTUAL";
 			this->btnGetActualPosition->UseVisualStyleBackColor = true;
@@ -173,17 +180,19 @@ namespace SecurityGUIApp {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Marlett", 15, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::IndianRed;
-			this->label3->Location = System::Drawing::Point(738, 309);
+			this->label3->Location = System::Drawing::Point(554, 251);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(142, 39);
+			this->label3->Size = System::Drawing::Size(106, 32);
 			this->label3->TabIndex = 31;
 			this->label3->Text = L"ALARMAS";
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(794, 368);
+			this->textBox1->Location = System::Drawing::Point(596, 299);
+			this->textBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(100, 22);
+			this->textBox1->Size = System::Drawing::Size(76, 20);
 			this->textBox1->TabIndex = 33;
 			// 
 			// label4
@@ -192,18 +201,20 @@ namespace SecurityGUIApp {
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft JhengHei", 9.134328F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::SystemColors::GrayText;
-			this->label4->Location = System::Drawing::Point(716, 368);
+			this->label4->Location = System::Drawing::Point(537, 299);
+			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(153, 23);
+			this->label4->Size = System::Drawing::Size(115, 19);
 			this->label4->TabIndex = 32;
 			this->label4->Text = L"Estado: ";
 			// 
 			// btnReviewAlarm
 			// 
 			this->btnReviewAlarm->BackColor = System::Drawing::Color::YellowGreen;
-			this->btnReviewAlarm->Location = System::Drawing::Point(743, 411);
+			this->btnReviewAlarm->Location = System::Drawing::Point(557, 334);
+			this->btnReviewAlarm->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnReviewAlarm->Name = L"btnReviewAlarm";
-			this->btnReviewAlarm->Size = System::Drawing::Size(134, 73);
+			this->btnReviewAlarm->Size = System::Drawing::Size(100, 59);
 			this->btnReviewAlarm->TabIndex = 34;
 			this->btnReviewAlarm->Text = L"REVISAR ALARMA";
 			this->btnReviewAlarm->UseVisualStyleBackColor = false;
@@ -216,9 +227,10 @@ namespace SecurityGUIApp {
 				static_cast<System::Byte>(0)));
 			this->btnGoBackMenu->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnGoBackMenu.Image")));
 			this->btnGoBackMenu->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnGoBackMenu->Location = System::Drawing::Point(12, 12);
+			this->btnGoBackMenu->Location = System::Drawing::Point(9, 10);
+			this->btnGoBackMenu->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnGoBackMenu->Name = L"btnGoBackMenu";
-			this->btnGoBackMenu->Size = System::Drawing::Size(150, 69);
+			this->btnGoBackMenu->Size = System::Drawing::Size(112, 56);
 			this->btnGoBackMenu->TabIndex = 36;
 			this->btnGoBackMenu->Text = L"MENU PRINCIPAL";
 			this->btnGoBackMenu->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -226,9 +238,10 @@ namespace SecurityGUIApp {
 			// 
 			// butnAnswerQuestion
 			// 
-			this->butnAnswerQuestion->Location = System::Drawing::Point(517, 293);
+			this->butnAnswerQuestion->Location = System::Drawing::Point(388, 238);
+			this->butnAnswerQuestion->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->butnAnswerQuestion->Name = L"butnAnswerQuestion";
-			this->butnAnswerQuestion->Size = System::Drawing::Size(136, 69);
+			this->butnAnswerQuestion->Size = System::Drawing::Size(102, 56);
 			this->butnAnswerQuestion->TabIndex = 37;
 			this->butnAnswerQuestion->Text = L"RESPONDER PREGUNTAS";
 			this->butnAnswerQuestion->UseVisualStyleBackColor = true;
@@ -236,9 +249,11 @@ namespace SecurityGUIApp {
 			// 
 			// SecurityOperatorForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(905, 508);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(679, 413);
 			this->Controls->Add(this->butnAnswerQuestion);
 			this->Controls->Add(this->btnGoBackMenu);
 			this->Controls->Add(this->btnReviewAlarm);
@@ -252,6 +267,8 @@ namespace SecurityGUIApp {
 			this->Controls->Add(this->txtActualRobot);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
+			this->DoubleBuffered = true;
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"SecurityOperatorForm";
 			this->Text = L"SecurityOperatorForm";
 			this->Load += gcnew System::EventHandler(this, &SecurityOperatorForm::SecurityOperatorForm_Load);
