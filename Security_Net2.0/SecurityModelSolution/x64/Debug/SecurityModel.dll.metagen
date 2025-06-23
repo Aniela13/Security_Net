@@ -149,6 +149,17 @@ Class SecurityModel.SecurityOperator: AutoLayout, AnsiClass, Class, Public, Befo
     System.String DNI : Public
     Boolean Authorized : Public
     Boolean HelpNeeded : Public
+    System.String UserName : Public
+    System.ValueType BirthDay DateTime IsBoxed : Public
+    System.String Address : Public
+    System.ValueType Gender Char IsBoxed : Public
+    System.String Phone_Number : Public
+    Byte[] Photo : Public
+    System.ValueType Salary Double IsBoxed : Public
+    System.String Schedule : Public
+    System.ValueType Hire_Date DateTime IsBoxed : Public
+    System.String Email : Public
+    Int32 Id : Public
   Methods:
     AssignZoneInspection(): PrivateScope, Public, HideBySig
     DefineStartingPoint(): PrivateScope, Public, HideBySig

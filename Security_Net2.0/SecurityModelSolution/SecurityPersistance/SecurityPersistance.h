@@ -3,11 +3,15 @@
 using namespace System;
 using namespace System::Collections::Generic;
 using namespace SecurityModel;
+using namespace System::Data::SqlClient;
 
 
 namespace SecurityPersistance {
 	public ref class Persistance
 	{
+	private:
+		static SqlConnection^ GetConnection();
+
 	public:
 		//Métodos para guardar y leer los datos de usuarios en archivos de texto plano
 		static void PersistUsersTextFile(String^ fileName, Object^ persistObject);
@@ -36,6 +40,10 @@ namespace SecurityPersistance {
 		//Metodo para guardar y leer las zonas del mapa en archivo binarios
 		static void PersistBinaryFile(String^ fileName, Object^ persistObject);
 		static Object^ LoadBinaryFile(String^ fileName);
+
+		//------- PROGGRAMACIÓN CON BASE DE DATOS ------
+		static int AddOperator(SecurityOperator^ operador); //Añaddir Operador (no validado)
+		static SecurityOperator^ QueryOperatorById(int operatorId); 
 	
 
 	};
