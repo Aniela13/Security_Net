@@ -71,19 +71,18 @@ namespace SecurityGUIApp {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Lucida Bright", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(241, 54);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Location = System::Drawing::Point(321, 66);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(119, 36);
+			this->label1->Size = System::Drawing::Size(143, 45);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"MAPA";
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->Location = System::Drawing::Point(43, 144);
-			this->pictureBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->pictureBox1->Location = System::Drawing::Point(57, 177);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(270, 281);
+			this->pictureBox1->Size = System::Drawing::Size(360, 346);
 			this->pictureBox1->TabIndex = 1;
 			this->pictureBox1->TabStop = false;
 			// 
@@ -94,12 +93,12 @@ namespace SecurityGUIApp {
 				this->ZonesColumn,
 					this->CoordenadasColumn
 			});
-			this->dataGridView1->Location = System::Drawing::Point(348, 144);
-			this->dataGridView1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->dataGridView1->Location = System::Drawing::Point(464, 177);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(238, 163);
+			this->dataGridView1->Size = System::Drawing::Size(317, 346);
 			this->dataGridView1->TabIndex = 2;
 			// 
 			// ZonesColumn
@@ -123,10 +122,10 @@ namespace SecurityGUIApp {
 				static_cast<System::Byte>(0)));
 			this->btnGoBackMenu->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnGoBackMenu.Image")));
 			this->btnGoBackMenu->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnGoBackMenu->Location = System::Drawing::Point(474, 404);
-			this->btnGoBackMenu->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnGoBackMenu->Location = System::Drawing::Point(692, 532);
+			this->btnGoBackMenu->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnGoBackMenu->Name = L"btnGoBackMenu";
-			this->btnGoBackMenu->Size = System::Drawing::Size(112, 56);
+			this->btnGoBackMenu->Size = System::Drawing::Size(149, 69);
 			this->btnGoBackMenu->TabIndex = 37;
 			this->btnGoBackMenu->Text = L"MENU PRINCIPAL";
 			this->btnGoBackMenu->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -134,17 +133,17 @@ namespace SecurityGUIApp {
 			// 
 			// NewMapForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(640, 497);
+			this->ClientSize = System::Drawing::Size(853, 612);
 			this->Controls->Add(this->btnGoBackMenu);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->label1);
 			this->DoubleBuffered = true;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"NewMapForm";
 			this->Text = L"NewMapForm";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();

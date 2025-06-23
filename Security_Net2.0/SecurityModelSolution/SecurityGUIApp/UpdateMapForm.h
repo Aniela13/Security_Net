@@ -74,6 +74,12 @@ namespace SecurityGUIApp {
 
 
 
+
+
+
+
+
+
 	private:
 		/// <summary>
 		/// Variable del diseñador necesaria.
@@ -112,10 +118,10 @@ namespace SecurityGUIApp {
 			// pbMap
 			// 
 			this->pbMap->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pbMap.Image")));
-			this->pbMap->Location = System::Drawing::Point(36, 66);
-			this->pbMap->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->pbMap->Location = System::Drawing::Point(48, 81);
+			this->pbMap->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->pbMap->Name = L"pbMap";
-			this->pbMap->Size = System::Drawing::Size(377, 577);
+			this->pbMap->Size = System::Drawing::Size(503, 710);
 			this->pbMap->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pbMap->TabIndex = 0;
 			this->pbMap->TabStop = false;
@@ -128,10 +134,9 @@ namespace SecurityGUIApp {
 			this->label1->BackColor = System::Drawing::SystemColors::ButtonFace;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold));
 			this->label1->ForeColor = System::Drawing::SystemColors::MenuHighlight;
-			this->label1->Location = System::Drawing::Point(257, 20);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Location = System::Drawing::Point(343, 25);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(274, 29);
+			this->label1->Size = System::Drawing::Size(335, 36);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"Actualización de mapa";
 			// 
@@ -143,12 +148,12 @@ namespace SecurityGUIApp {
 				this->ZonesColumn,
 					this->CoordenadasColumn
 			});
-			this->dgvZonesPositions->Location = System::Drawing::Point(450, 159);
-			this->dgvZonesPositions->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->dgvZonesPositions->Location = System::Drawing::Point(600, 196);
+			this->dgvZonesPositions->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dgvZonesPositions->Name = L"dgvZonesPositions";
 			this->dgvZonesPositions->RowHeadersWidth = 51;
 			this->dgvZonesPositions->RowTemplate->Height = 24;
-			this->dgvZonesPositions->Size = System::Drawing::Size(312, 454);
+			this->dgvZonesPositions->Size = System::Drawing::Size(416, 559);
 			this->dgvZonesPositions->TabIndex = 9;
 			this->dgvZonesPositions->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &UpdateMapForm::dgvZonesPositions_CellClick);
 			// 
@@ -168,10 +173,10 @@ namespace SecurityGUIApp {
 			// 
 			// btnAddZone
 			// 
-			this->btnAddZone->Location = System::Drawing::Point(335, 672);
-			this->btnAddZone->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnAddZone->Location = System::Drawing::Point(447, 827);
+			this->btnAddZone->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnAddZone->Name = L"btnAddZone";
-			this->btnAddZone->Size = System::Drawing::Size(68, 30);
+			this->btnAddZone->Size = System::Drawing::Size(91, 37);
 			this->btnAddZone->TabIndex = 10;
 			this->btnAddZone->Text = L"Añadir";
 			this->btnAddZone->UseVisualStyleBackColor = true;
@@ -179,30 +184,30 @@ namespace SecurityGUIApp {
 			// 
 			// btnModify
 			// 
-			this->btnModify->Location = System::Drawing::Point(335, 715);
-			this->btnModify->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnModify->Location = System::Drawing::Point(447, 880);
+			this->btnModify->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnModify->Name = L"btnModify";
-			this->btnModify->Size = System::Drawing::Size(68, 33);
+			this->btnModify->Size = System::Drawing::Size(91, 41);
 			this->btnModify->TabIndex = 11;
 			this->btnModify->Text = L"Modificar";
 			this->btnModify->UseVisualStyleBackColor = true;
 			// 
 			// btnDelete
 			// 
-			this->btnDelete->Location = System::Drawing::Point(335, 761);
-			this->btnDelete->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnDelete->Location = System::Drawing::Point(447, 937);
+			this->btnDelete->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnDelete->Name = L"btnDelete";
-			this->btnDelete->Size = System::Drawing::Size(68, 34);
+			this->btnDelete->Size = System::Drawing::Size(91, 42);
 			this->btnDelete->TabIndex = 13;
 			this->btnDelete->Text = L"Eliminar";
 			this->btnDelete->UseVisualStyleBackColor = true;
 			// 
 			// btnShow
 			// 
-			this->btnShow->Location = System::Drawing::Point(450, 686);
-			this->btnShow->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnShow->Location = System::Drawing::Point(600, 844);
+			this->btnShow->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnShow->Name = L"btnShow";
-			this->btnShow->Size = System::Drawing::Size(98, 42);
+			this->btnShow->Size = System::Drawing::Size(131, 52);
 			this->btnShow->TabIndex = 14;
 			this->btnShow->Text = L"Actualizar mapa";
 			this->btnShow->UseVisualStyleBackColor = true;
@@ -215,10 +220,10 @@ namespace SecurityGUIApp {
 				static_cast<System::Byte>(0)));
 			this->btnGoBackMenu->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnGoBackMenu.Image")));
 			this->btnGoBackMenu->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnGoBackMenu->Location = System::Drawing::Point(670, 751);
-			this->btnGoBackMenu->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnGoBackMenu->Location = System::Drawing::Point(893, 924);
+			this->btnGoBackMenu->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnGoBackMenu->Name = L"btnGoBackMenu";
-			this->btnGoBackMenu->Size = System::Drawing::Size(112, 56);
+			this->btnGoBackMenu->Size = System::Drawing::Size(149, 69);
 			this->btnGoBackMenu->TabIndex = 37;
 			this->btnGoBackMenu->Text = L"MENU PRINCIPAL";
 			this->btnGoBackMenu->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -227,75 +232,71 @@ namespace SecurityGUIApp {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(34, 689);
-			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label2->Location = System::Drawing::Point(45, 848);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(78, 13);
+			this->label2->Size = System::Drawing::Size(96, 16);
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"Nombre Zona: ";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(34, 715);
-			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label3->Location = System::Drawing::Point(45, 880);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(78, 13);
+			this->label3->Size = System::Drawing::Size(97, 16);
 			this->label3->TabIndex = 3;
 			this->label3->Text = L"Coordenada X:";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(34, 747);
-			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label4->Location = System::Drawing::Point(45, 919);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(78, 13);
+			this->label4->Size = System::Drawing::Size(98, 16);
 			this->label4->TabIndex = 4;
 			this->label4->Text = L"Coordenada Y:";
 			// 
 			// txtNameZone
 			// 
-			this->txtNameZone->Location = System::Drawing::Point(130, 689);
-			this->txtNameZone->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->txtNameZone->Location = System::Drawing::Point(173, 848);
+			this->txtNameZone->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtNameZone->Name = L"txtNameZone";
-			this->txtNameZone->Size = System::Drawing::Size(135, 20);
+			this->txtNameZone->Size = System::Drawing::Size(179, 22);
 			this->txtNameZone->TabIndex = 6;
 			// 
 			// txtPointX
 			// 
-			this->txtPointX->Location = System::Drawing::Point(130, 715);
-			this->txtPointX->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->txtPointX->Location = System::Drawing::Point(173, 880);
+			this->txtPointX->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtPointX->Name = L"txtPointX";
 			this->txtPointX->ReadOnly = true;
-			this->txtPointX->Size = System::Drawing::Size(110, 20);
+			this->txtPointX->Size = System::Drawing::Size(145, 22);
 			this->txtPointX->TabIndex = 7;
 			// 
 			// txtPointY
 			// 
-			this->txtPointY->Location = System::Drawing::Point(130, 744);
-			this->txtPointY->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->txtPointY->Location = System::Drawing::Point(173, 916);
+			this->txtPointY->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtPointY->Name = L"txtPointY";
 			this->txtPointY->ReadOnly = true;
-			this->txtPointY->Size = System::Drawing::Size(110, 20);
+			this->txtPointY->Size = System::Drawing::Size(145, 22);
 			this->txtPointY->TabIndex = 8;
 			// 
 			// lblcoordenadas
 			// 
 			this->lblcoordenadas->AutoSize = true;
-			this->lblcoordenadas->Location = System::Drawing::Point(34, 50);
-			this->lblcoordenadas->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->lblcoordenadas->Location = System::Drawing::Point(45, 62);
 			this->lblcoordenadas->Name = L"lblcoordenadas";
-			this->lblcoordenadas->Size = System::Drawing::Size(0, 13);
+			this->lblcoordenadas->Size = System::Drawing::Size(0, 16);
 			this->lblcoordenadas->TabIndex = 38;
 			// 
 			// UpdateMapForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(825, 812);
+			this->ClientSize = System::Drawing::Size(1100, 999);
 			this->Controls->Add(this->lblcoordenadas);
 			this->Controls->Add(this->btnGoBackMenu);
 			this->Controls->Add(this->btnShow);
@@ -312,7 +313,7 @@ namespace SecurityGUIApp {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->pbMap);
 			this->DoubleBuffered = true;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"UpdateMapForm";
 			this->Text = L"UpdateMapForm";
 			this->Load += gcnew System::EventHandler(this, &UpdateMapForm::UpdateMapForm_Load);

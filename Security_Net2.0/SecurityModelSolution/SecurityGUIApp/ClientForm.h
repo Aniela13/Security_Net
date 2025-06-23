@@ -74,10 +74,10 @@ namespace SecurityGUIApp {
 			// 
 			this->btnFAQ->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->btnFAQ->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnFAQ.Image")));
-			this->btnFAQ->Location = System::Drawing::Point(94, 134);
-			this->btnFAQ->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnFAQ->Location = System::Drawing::Point(125, 165);
+			this->btnFAQ->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnFAQ->Name = L"btnFAQ";
-			this->btnFAQ->Size = System::Drawing::Size(90, 91);
+			this->btnFAQ->Size = System::Drawing::Size(120, 112);
 			this->btnFAQ->TabIndex = 3;
 			this->btnFAQ->UseVisualStyleBackColor = false;
 			this->btnFAQ->Click += gcnew System::EventHandler(this, &ClientForm::btnFAQ_Click);
@@ -87,10 +87,10 @@ namespace SecurityGUIApp {
 			this->btnLocationClient->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->btnLocationClient->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->btnLocationClient->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnLocationClient.Image")));
-			this->btnLocationClient->Location = System::Drawing::Point(308, 134);
-			this->btnLocationClient->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnLocationClient->Location = System::Drawing::Point(411, 165);
+			this->btnLocationClient->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnLocationClient->Name = L"btnLocationClient";
-			this->btnLocationClient->Size = System::Drawing::Size(88, 91);
+			this->btnLocationClient->Size = System::Drawing::Size(117, 112);
 			this->btnLocationClient->TabIndex = 4;
 			this->btnLocationClient->UseVisualStyleBackColor = false;
 			this->btnLocationClient->Click += gcnew System::EventHandler(this, &ClientForm::btnLocationClient_Click);
@@ -99,10 +99,10 @@ namespace SecurityGUIApp {
 			// 
 			this->btnAlert->BackColor = System::Drawing::Color::FloralWhite;
 			this->btnAlert->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnAlert.Image")));
-			this->btnAlert->Location = System::Drawing::Point(442, 312);
-			this->btnAlert->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnAlert->Location = System::Drawing::Point(589, 384);
+			this->btnAlert->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnAlert->Name = L"btnAlert";
-			this->btnAlert->Size = System::Drawing::Size(86, 78);
+			this->btnAlert->Size = System::Drawing::Size(115, 96);
 			this->btnAlert->TabIndex = 5;
 			this->btnAlert->UseVisualStyleBackColor = false;
 			this->btnAlert->Click += gcnew System::EventHandler(this, &ClientForm::btnAlert_Click);
@@ -115,28 +115,27 @@ namespace SecurityGUIApp {
 				static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(439, 392);
-			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label5->Location = System::Drawing::Point(586, 482);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(90, 28);
+			this->label5->Size = System::Drawing::Size(103, 30);
 			this->label5->TabIndex = 8;
 			this->label5->Text = L"SOLO PARA \r\nEMERGENCIAS";
 			// 
 			// ClientForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ControlLightLight;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(563, 428);
+			this->ClientSize = System::Drawing::Size(751, 527);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->btnAlert);
 			this->Controls->Add(this->btnLocationClient);
 			this->Controls->Add(this->btnFAQ);
 			this->DoubleBuffered = true;
 			this->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"ClientForm";
 			this->Text = L"ClientForm";
 			this->ResumeLayout(false);
@@ -180,5 +179,6 @@ namespace SecurityGUIApp {
 
 		
 	}
+
 };
 }

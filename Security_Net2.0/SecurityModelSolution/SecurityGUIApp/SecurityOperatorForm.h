@@ -3,6 +3,7 @@
 #include "SurveillanceCameraForm.h"
 #include "RecognizeAlertForm.h"
 #include "AnswerForm.h"
+#include "AsignZonesForm.h"
 
 namespace SecurityGUIApp {
 
@@ -279,6 +280,9 @@ namespace SecurityGUIApp {
 #pragma endregion
 	
 	private: System::Void btnAsignZone_Click(System::Object^ sender, System::EventArgs^ e) {
+		AsignZonesForm^ asignarrutaform = gcnew AsignZonesForm();
+		//this->Hide();
+		asignarrutaform->Show();
 	}
 	private: System::Void btnAccessCamera_Click(System::Object^ sender, System::EventArgs^ e) {
 		SurveillanceCameraForm^ cameradataForm = gcnew SurveillanceCameraForm();

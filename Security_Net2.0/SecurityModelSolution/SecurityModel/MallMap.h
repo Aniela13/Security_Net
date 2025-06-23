@@ -18,7 +18,7 @@ namespace SecurityModel {
         MallMap(int id, String^ mallName, String^ district) {
             this->MallName = mallName;
             this->District = district; 
-            this->Id = id; 
+            this->Id = id;
             Zones = gcnew Dictionary<String^, Point^>();
         }
       

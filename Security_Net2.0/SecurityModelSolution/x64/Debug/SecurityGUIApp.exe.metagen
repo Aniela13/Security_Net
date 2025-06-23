@@ -111,6 +111,8 @@ Class SecurityGUIApp.AnswerForm: AutoLayout, AnsiClass, Class, Public, BeforeFie
 Class SecurityGUIApp.AsignZonesForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    FillZonesInComboBox(): PrivateScope, Public, HideBySig
 Class SecurityGUIApp.NewQuestionForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

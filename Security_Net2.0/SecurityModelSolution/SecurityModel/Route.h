@@ -7,6 +7,7 @@ namespace SecurityModel {
         Point^ StartingPoint;
         Point^ EndingPoint;
 
+
         Route() {}
         Route(Point^ start, Point^ end) {
             this->StartingPoint = start;
