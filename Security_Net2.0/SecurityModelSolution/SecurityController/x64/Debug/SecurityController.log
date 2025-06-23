@@ -1,7 +1,20 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 1f8f34708339b4ae8c1d53ce624e72465281822c
 ﻿  pch.cpp
   AssemblyInfo.cpp
   SecurityController.cpp
   Generando código...
+<<<<<<< HEAD
+=======
+  .NETFramework,Version=v4.8.1.AssemblyAttributes.cpp
+  AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+  SecurityController.vcxproj -> C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityController.dll
+=======
+﻿  SecurityController.cpp
+>>>>>>> 1f8f34708339b4ae8c1d53ce624e72465281822c
   .NETFramework,Version=v4.8.1.AssemblyAttributes.cpp
   AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
   SecurityController.vcxproj -> C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityController.dll
+>>>>>>> 7c696d18b3fabce60ff8075bcdc71a21cf4cbac2

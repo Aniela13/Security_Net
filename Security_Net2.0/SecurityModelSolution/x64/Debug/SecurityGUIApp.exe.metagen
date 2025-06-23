@@ -59,7 +59,6 @@ Class SecurityGUIApp.UpdateMapForm: AutoLayout, AnsiClass, Class, Public, Before
     ClearControls(): PrivateScope, Public, HideBySig
     ShowZones(): PrivateScope, Public, HideBySig
     PixelToGeo(Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
-    GeoToPixel(Double, Double, Int32, Int32): PrivateScope, Public, HideBySig
 Class ComboBoxItem: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(Int32, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
@@ -112,9 +111,15 @@ Class SecurityGUIApp.AsignZonesForm: AutoLayout, AnsiClass, Class, Public, Befor
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
+    Double latTopLeft : Public
+    Double lonTopLeft : Public
+    Double latBottomRight : Public
+    Double lonBottomRight : Public
     SecurityModel.Point pointbottomright : Public
     SecurityModel.Point pointtopleft : Public
   Methods:
+    InicializarListaPuntos(): PrivateScope, Public, HideBySig
+    AgregarPunto(Point): PrivateScope, Public, HideBySig
     FillZonesInComboBox(): PrivateScope, Public, HideBySig
     VerifyIteminGrid(String): PrivateScope, Public, HideBySig
     DeleteZoneinGrid(String): PrivateScope, Public, HideBySig

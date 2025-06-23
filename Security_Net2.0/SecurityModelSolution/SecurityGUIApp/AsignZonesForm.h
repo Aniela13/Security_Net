@@ -17,16 +17,38 @@ namespace SecurityGUIApp {
 	/// </summary>
 	public ref class AsignZonesForm : public System::Windows::Forms::Form
 	{
+		
 	public:
 		AsignZonesForm(void)
 		{
 			InitializeComponent();
-			puntosRuta = gcnew List<Drawing::Point>();
+			puntosRuta = nullptr;
 			/// <summary>
 			//
 			//TODO: agregar código de constructor aquí
 			//
 		}
+		// Método para inicializar la lista cuando sea necesario
+		void InicializarListaPuntos()
+		{
+			if (puntosRuta == nullptr)
+			{
+				puntosRuta = gcnew List<Drawing::Point>();
+			}
+		}
+
+		// Método para agregar un punto
+		void AgregarPunto(Drawing::Point punto)
+		{
+			if (puntosRuta == nullptr)
+			{
+				InicializarListaPuntos();
+			}
+			puntosRuta->Add(punto);
+		}
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ZonesColumn;
+	public:
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ CoordenadasColumn;
 
 	protected:
 		List<Drawing::Point>^ puntosRuta;
@@ -44,8 +66,8 @@ namespace SecurityGUIApp {
 	protected:
 
 	protected:
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ZonesColumn;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ CoordenadasColumn;
+
+
 	private: System::Windows::Forms::Label^ label1;
 
 
@@ -115,13 +137,13 @@ namespace SecurityGUIApp {
 				this->ZonesColumn,
 					this->CoordenadasColumn
 			});
-			this->dgvZonesRoute->Location = System::Drawing::Point(657, 284);
+			this->dgvZonesRoute->Location = System::Drawing::Point(620, 279);
 			this->dgvZonesRoute->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dgvZonesRoute->Name = L"dgvZonesRoute";
 			this->dgvZonesRoute->ReadOnly = true;
 			this->dgvZonesRoute->RowHeadersWidth = 51;
 			this->dgvZonesRoute->RowTemplate->Height = 24;
-			this->dgvZonesRoute->Size = System::Drawing::Size(326, 593);
+			this->dgvZonesRoute->Size = System::Drawing::Size(453, 546);
 			this->dgvZonesRoute->TabIndex = 10;
 			this->dgvZonesRoute->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &AsignZonesForm::dgvZonesRoute_CellClick);
 			// 
@@ -131,7 +153,7 @@ namespace SecurityGUIApp {
 			this->ZonesColumn->MinimumWidth = 6;
 			this->ZonesColumn->Name = L"ZonesColumn";
 			this->ZonesColumn->ReadOnly = true;
-			this->ZonesColumn->Width = 125;
+			this->ZonesColumn->Width = 200;
 			// 
 			// CoordenadasColumn
 			// 
@@ -139,7 +161,7 @@ namespace SecurityGUIApp {
 			this->CoordenadasColumn->MinimumWidth = 6;
 			this->CoordenadasColumn->Name = L"CoordenadasColumn";
 			this->CoordenadasColumn->ReadOnly = true;
-			this->CoordenadasColumn->Width = 125;
+			this->CoordenadasColumn->Width = 200;
 			// 
 			// label1
 			// 
@@ -157,7 +179,7 @@ namespace SecurityGUIApp {
 			// 
 			// btnDelete
 			// 
-			this->btnDelete->Location = System::Drawing::Point(448, 189);
+			this->btnDelete->Location = System::Drawing::Point(835, 219);
 			this->btnDelete->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnDelete->Name = L"btnDelete";
 			this->btnDelete->Size = System::Drawing::Size(111, 42);
@@ -168,7 +190,7 @@ namespace SecurityGUIApp {
 			// 
 			// btnAddZone
 			// 
-			this->btnAddZone->Location = System::Drawing::Point(448, 137);
+			this->btnAddZone->Location = System::Drawing::Point(620, 222);
 			this->btnAddZone->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnAddZone->Name = L"btnAddZone";
 			this->btnAddZone->Size = System::Drawing::Size(111, 37);
@@ -179,7 +201,7 @@ namespace SecurityGUIApp {
 			// 
 			// txtPointY
 			// 
-			this->txtPointY->Location = System::Drawing::Point(215, 212);
+			this->txtPointY->Location = System::Drawing::Point(746, 177);
 			this->txtPointY->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtPointY->Name = L"txtPointY";
 			this->txtPointY->ReadOnly = true;
@@ -188,7 +210,7 @@ namespace SecurityGUIApp {
 			// 
 			// txtPointX
 			// 
-			this->txtPointX->Location = System::Drawing::Point(215, 176);
+			this->txtPointX->Location = System::Drawing::Point(746, 141);
 			this->txtPointX->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtPointX->Name = L"txtPointX";
 			this->txtPointX->ReadOnly = true;
@@ -198,7 +220,7 @@ namespace SecurityGUIApp {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(86, 215);
+			this->label4->Location = System::Drawing::Point(617, 180);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(98, 16);
 			this->label4->TabIndex = 33;
@@ -207,7 +229,7 @@ namespace SecurityGUIApp {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(86, 176);
+			this->label3->Location = System::Drawing::Point(617, 141);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(97, 16);
 			this->label3->TabIndex = 32;
@@ -216,7 +238,7 @@ namespace SecurityGUIApp {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(86, 144);
+			this->label2->Location = System::Drawing::Point(617, 109);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(96, 16);
 			this->label2->TabIndex = 31;
@@ -237,10 +259,10 @@ namespace SecurityGUIApp {
 			// 
 			this->btnAsignRoute->BackColor = System::Drawing::SystemColors::ControlDark;
 			this->btnAsignRoute->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->btnAsignRoute->Location = System::Drawing::Point(657, 890);
+			this->btnAsignRoute->Location = System::Drawing::Point(620, 843);
 			this->btnAsignRoute->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnAsignRoute->Name = L"btnAsignRoute";
-			this->btnAsignRoute->Size = System::Drawing::Size(326, 54);
+			this->btnAsignRoute->Size = System::Drawing::Size(260, 46);
 			this->btnAsignRoute->TabIndex = 41;
 			this->btnAsignRoute->Text = L"EMPEZAR INSPECCION";
 			this->btnAsignRoute->UseVisualStyleBackColor = false;
@@ -253,7 +275,7 @@ namespace SecurityGUIApp {
 				static_cast<System::Byte>(0)));
 			this->btnGoBackMenu->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnGoBackMenu.Image")));
 			this->btnGoBackMenu->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnGoBackMenu->Location = System::Drawing::Point(1013, 939);
+			this->btnGoBackMenu->Location = System::Drawing::Point(1018, 892);
 			this->btnGoBackMenu->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnGoBackMenu->Name = L"btnGoBackMenu";
 			this->btnGoBackMenu->Size = System::Drawing::Size(149, 69);
@@ -267,9 +289,9 @@ namespace SecurityGUIApp {
 			this->btnNewRoute->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnNewRoute->ForeColor = System::Drawing::Color::Blue;
-			this->btnNewRoute->Location = System::Drawing::Point(657, 949);
+			this->btnNewRoute->Location = System::Drawing::Point(620, 904);
 			this->btnNewRoute->Name = L"btnNewRoute";
-			this->btnNewRoute->Size = System::Drawing::Size(152, 48);
+			this->btnNewRoute->Size = System::Drawing::Size(152, 44);
 			this->btnNewRoute->TabIndex = 43;
 			this->btnNewRoute->Text = L"NUEVA RUTA";
 			this->btnNewRoute->UseVisualStyleBackColor = true;
@@ -278,10 +300,9 @@ namespace SecurityGUIApp {
 			// pbMapRoutes
 			// 
 			this->pbMapRoutes->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pbMapRoutes.Image")));
-			this->pbMapRoutes->Location = System::Drawing::Point(77, 284);
+			this->pbMapRoutes->Location = System::Drawing::Point(77, 109);
 			this->pbMapRoutes->Name = L"pbMapRoutes";
-			this->pbMapRoutes->Size = System::Drawing::Size(482, 684);
-			this->pbMapRoutes->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pbMapRoutes->Size = System::Drawing::Size(409, 838);
 			this->pbMapRoutes->TabIndex = 44;
 			this->pbMapRoutes->TabStop = false;
 			this->pbMapRoutes->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &AsignZonesForm::pbMapRoutes_Paint);
@@ -289,7 +310,7 @@ namespace SecurityGUIApp {
 			// cmbNameZone
 			// 
 			this->cmbNameZone->FormattingEnabled = true;
-			this->cmbNameZone->Location = System::Drawing::Point(215, 141);
+			this->cmbNameZone->Location = System::Drawing::Point(746, 106);
 			this->cmbNameZone->Name = L"cmbNameZone";
 			this->cmbNameZone->Size = System::Drawing::Size(200, 24);
 			this->cmbNameZone->TabIndex = 45;
@@ -298,15 +319,15 @@ namespace SecurityGUIApp {
 			// lblid
 			// 
 			this->lblid->AutoSize = true;
-			this->lblid->Location = System::Drawing::Point(161, 109);
+			this->lblid->Location = System::Drawing::Point(615, 77);
 			this->lblid->Name = L"lblid";
-			this->lblid->Size = System::Drawing::Size(21, 16);
+			this->lblid->Size = System::Drawing::Size(52, 16);
 			this->lblid->TabIndex = 46;
-			this->lblid->Text = L"Id:";
+			this->lblid->Text = L"Id Ruta:";
 			// 
 			// txtId
 			// 
-			this->txtId->Location = System::Drawing::Point(215, 106);
+			this->txtId->Location = System::Drawing::Point(746, 75);
 			this->txtId->Name = L"txtId";
 			this->txtId->ReadOnly = true;
 			this->txtId->Size = System::Drawing::Size(75, 22);
@@ -318,7 +339,7 @@ namespace SecurityGUIApp {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(1162, 1009);
+			this->ClientSize = System::Drawing::Size(1173, 964);
 			this->Controls->Add(this->txtId);
 			this->Controls->Add(this->lblid);
 			this->Controls->Add(this->cmbNameZone);
@@ -398,15 +419,32 @@ namespace SecurityGUIApp {
 			}
 		}
 	public:
-		SecurityModel::Point^ pointbottomright = gcnew SecurityModel::Point(-77.07797, -12.07356);
-		SecurityModel::Point^ pointtopleft = gcnew SecurityModel::Point(-77.08229, -12.06464);
+		double latTopLeft = -12.06464, lonTopLeft = -77.08229;   // Coordenadas de la esquina superior izquierda
+		double latBottomRight = -12.07356, lonBottomRight = -77.07797; // Coordenadas de la esquina inferior derecha
+		SecurityModel::Point^ pointbottomright = gcnew SecurityModel::Point(lonBottomRight, latBottomRight);
+		SecurityModel::Point^ pointtopleft = gcnew SecurityModel::Point(lonTopLeft, latTopLeft);
 
 	public:
 
 		Drawing::Point^ GeoToPixel(double lat, double lon, int imgWidth, int imgHeight) {
-			double x = ((lon - pointtopleft->X) / (pointbottomright->X - pointtopleft->X)) * imgWidth;
-			double y = ((pointtopleft->Y - lat) / (pointtopleft->Y - pointbottomright->Y)) * imgHeight;
-			return gcnew Drawing::Point((int)Math::Round(x), (int)Math::Round(y));
+			// 1. Validar que los límites geográficos sean válidos
+			if (pointbottomright->X == pointtopleft->X || pointtopleft->Y == pointbottomright->Y) {
+				throw gcnew System::Exception("Las coordenadas de límite no pueden ser iguales");
+			}
+
+			// 2. Calcular posición X (longitud ? píxel horizontal)
+			double xRatio = (lon - pointtopleft->X) / (pointbottomright->X - pointtopleft->X);
+			int pixelX = (int)Math::Round(xRatio * imgWidth);
+
+			// 3. Calcular posición Y (latitud ? píxel vertical, invertido porque Y crece hacia abajo)
+			double yRatio = (pointtopleft->Y - lat) / (pointtopleft->Y - pointbottomright->Y);
+			int pixelY = (int)Math::Round(yRatio * imgHeight);
+
+			// 4. Asegurar que los píxeles estén dentro de los límites de la imagen
+			pixelX = Math::Max(0, Math::Min(imgWidth - 1, pixelX));
+			pixelY = Math::Max(0, Math::Min(imgHeight - 1, pixelY));
+
+			return gcnew Drawing::Point(pixelX, pixelY);
 		}
 
 	private: System::Void cmbNameZone_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -425,12 +463,7 @@ namespace SecurityGUIApp {
 			txtPointY->Text = "";
 		}
 	}
-	private: System::Void pbMapRoutes_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-		Graphics^ g = e->Graphics;
-		for each(Drawing::Point p in puntosRuta) {
-			g->FillEllipse(Brushes::Red, p.X - 3, p.Y - 3, 6, 6); // Círculo de radio 3 px
-		}
-	}
+
 	private: System::Void btnAddZone_Click(System::Object^ sender, System::EventArgs^ e) {
 		int selectedIndex = cmbNameZone->SelectedIndex;
 		if (selectedIndex < 0) {
@@ -442,15 +475,22 @@ namespace SecurityGUIApp {
 			String^ coordenadas = String::Format("({0:F4}, {1:F4})", txtPointX->Text, txtPointY->Text);
 			dgvZonesRoute->Rows->Add(gcnew array<String^> {itemSeleccionado->Name, coordenadas});
 			SecurityModel::Point^ coord = Controller::QueryZonebyName(itemSeleccionado->Name);
-			double latp = coord->Y; 
-			double longp = coord->X;
-			Drawing::Point^ punto = GeoToPixel( latp, longp, pbMapRoutes->Width, pbMapRoutes->Height);
-			puntosRuta->Add(*punto);
+			Drawing::Point^ punto = GeoToPixel(coord->Y, coord->X, pbMapRoutes->Width, pbMapRoutes->Height);
+			this->AgregarPunto(*punto);
 			pbMapRoutes->Invalidate(); // Forzar redibujado
 
 		}
 		ClearControls();
 	}
+	private: System::Void pbMapRoutes_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+		Graphics^ g = e->Graphics;
+		if (puntosRuta != nullptr) {
+			for each(Drawing::Point p in puntosRuta) {
+				g->FillEllipse(Brushes::Red, p.X - 3, p.Y - 3, 6, 6); // Círculo de radio 3 px
+			}
+		}
+	}
+
 
 	private: System::Void btnDelete_Click(System::Object^ sender, System::EventArgs^ e) {
 		ComboBoxItem^ itemSeleccionado = dynamic_cast<ComboBoxItem^>(cmbNameZone->SelectedItem);
@@ -545,6 +585,7 @@ namespace SecurityGUIApp {
 
 
 	}
+
 
 };
 }
