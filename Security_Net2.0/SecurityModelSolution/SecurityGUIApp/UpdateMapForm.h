@@ -118,11 +118,11 @@ namespace SecurityGUIApp {
 			// pbMap
 			// 
 			this->pbMap->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pbMap.Image")));
-			this->pbMap->Location = System::Drawing::Point(48, 81);
+			this->pbMap->Location = System::Drawing::Point(62, 100);
 			this->pbMap->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->pbMap->Name = L"pbMap";
-			this->pbMap->Size = System::Drawing::Size(503, 710);
-			this->pbMap->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pbMap->Size = System::Drawing::Size(409, 838);
+			this->pbMap->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
 			this->pbMap->TabIndex = 0;
 			this->pbMap->TabStop = false;
 			this->pbMap->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &UpdateMapForm::pbMap_MouseClick);
@@ -148,7 +148,7 @@ namespace SecurityGUIApp {
 				this->ZonesColumn,
 					this->CoordenadasColumn
 			});
-			this->dgvZonesPositions->Location = System::Drawing::Point(600, 196);
+			this->dgvZonesPositions->Location = System::Drawing::Point(547, 323);
 			this->dgvZonesPositions->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dgvZonesPositions->Name = L"dgvZonesPositions";
 			this->dgvZonesPositions->RowHeadersWidth = 51;
@@ -173,7 +173,7 @@ namespace SecurityGUIApp {
 			// 
 			// btnAddZone
 			// 
-			this->btnAddZone->Location = System::Drawing::Point(447, 827);
+			this->btnAddZone->Location = System::Drawing::Point(547, 243);
 			this->btnAddZone->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnAddZone->Name = L"btnAddZone";
 			this->btnAddZone->Size = System::Drawing::Size(91, 37);
@@ -184,7 +184,7 @@ namespace SecurityGUIApp {
 			// 
 			// btnModify
 			// 
-			this->btnModify->Location = System::Drawing::Point(447, 880);
+			this->btnModify->Location = System::Drawing::Point(672, 241);
 			this->btnModify->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnModify->Name = L"btnModify";
 			this->btnModify->Size = System::Drawing::Size(91, 41);
@@ -194,17 +194,18 @@ namespace SecurityGUIApp {
 			// 
 			// btnDelete
 			// 
-			this->btnDelete->Location = System::Drawing::Point(447, 937);
+			this->btnDelete->Location = System::Drawing::Point(807, 243);
 			this->btnDelete->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnDelete->Name = L"btnDelete";
 			this->btnDelete->Size = System::Drawing::Size(91, 42);
 			this->btnDelete->TabIndex = 13;
 			this->btnDelete->Text = L"Eliminar";
 			this->btnDelete->UseVisualStyleBackColor = true;
+			this->btnDelete->Click += gcnew System::EventHandler(this, &UpdateMapForm::btnDelete_Click);
 			// 
 			// btnShow
 			// 
-			this->btnShow->Location = System::Drawing::Point(600, 844);
+			this->btnShow->Location = System::Drawing::Point(547, 896);
 			this->btnShow->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnShow->Name = L"btnShow";
 			this->btnShow->Size = System::Drawing::Size(131, 52);
@@ -232,7 +233,7 @@ namespace SecurityGUIApp {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(45, 848);
+			this->label2->Location = System::Drawing::Point(544, 102);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(96, 16);
 			this->label2->TabIndex = 2;
@@ -241,7 +242,7 @@ namespace SecurityGUIApp {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(45, 880);
+			this->label3->Location = System::Drawing::Point(544, 134);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(97, 16);
 			this->label3->TabIndex = 3;
@@ -250,7 +251,7 @@ namespace SecurityGUIApp {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(45, 919);
+			this->label4->Location = System::Drawing::Point(544, 173);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(98, 16);
 			this->label4->TabIndex = 4;
@@ -258,7 +259,7 @@ namespace SecurityGUIApp {
 			// 
 			// txtNameZone
 			// 
-			this->txtNameZone->Location = System::Drawing::Point(173, 848);
+			this->txtNameZone->Location = System::Drawing::Point(672, 102);
 			this->txtNameZone->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtNameZone->Name = L"txtNameZone";
 			this->txtNameZone->Size = System::Drawing::Size(179, 22);
@@ -266,7 +267,7 @@ namespace SecurityGUIApp {
 			// 
 			// txtPointX
 			// 
-			this->txtPointX->Location = System::Drawing::Point(173, 880);
+			this->txtPointX->Location = System::Drawing::Point(672, 134);
 			this->txtPointX->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtPointX->Name = L"txtPointX";
 			this->txtPointX->ReadOnly = true;
@@ -275,7 +276,7 @@ namespace SecurityGUIApp {
 			// 
 			// txtPointY
 			// 
-			this->txtPointY->Location = System::Drawing::Point(173, 916);
+			this->txtPointY->Location = System::Drawing::Point(672, 170);
 			this->txtPointY->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtPointY->Name = L"txtPointY";
 			this->txtPointY->ReadOnly = true;
@@ -326,6 +327,8 @@ namespace SecurityGUIApp {
 
 		}
 #pragma endregion
+	private:
+		bool isWaitingForClick = false; // Bandera para controlar el clic
 
 	public:
 		void ClearControls() {
@@ -359,18 +362,21 @@ namespace SecurityGUIApp {
 	public:
 		SecurityModel::Point^ PixelToGeo(int x, int y, int imgWidth, int imgHeight)
 		{
-			double lon = pointtopleft->X + ((double)x / imgWidth) * (pointbottomright->X - pointtopleft->X);
+			/*double lon = pointtopleft->X + ((double)x / imgWidth) * (pointbottomright->X - pointtopleft->X);
 			double lat = pointtopleft->Y - ((double)y / imgHeight) * (pointbottomright->Y - pointtopleft->Y);
+			return gcnew SecurityModel::Point(lon, lat);*/
+
+			// 3. Cálculo de la longitud (X)
+			double xRatio = (double)x / imgWidth;
+			double lon = pointtopleft->X + xRatio * (pointbottomright->X - pointtopleft->X);
+
+			// 4. Cálculo de la latitud (Y) - invertido porque Y crece hacia abajo en píxeles
+			double yRatio = (double)y / imgHeight;
+			double lat = pointtopleft->Y - yRatio * (pointbottomright->Y - pointtopleft->Y);
+
+			// 5. Validación del resultad
+
 			return gcnew SecurityModel::Point(lon, lat);
-		}
-
-	public:
-
-		Drawing::Point^ GeoToPixel(double lat, double lon, int imgWidth, int imgHeight) {
-			//double x = (lon - lon_left) / (lon_right - lon_left) * imgWidth;
-			//double y = (lat_top - lat) / (lat_top - lat_bottom) * imgHeight;
-			//return Point((int)x, (int)y);
-			return nullptr;
 		}
 
 
@@ -388,15 +394,20 @@ namespace SecurityGUIApp {
 		   */
 
 	private: System::Void pbMap_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-		int x = e->X;
-		int y = e->Y;
+		if (e->X >= 0 && e->X < pbMap->Width && e->Y >= 0 && e->Y < pbMap->Height){
+			int x = e->X;
+			int y = e->Y;
 
-		SecurityModel::Point^ coordenadas = PixelToGeo(x, y, pbMap->Width, pbMap->Height);
-		double lat = coordenadas->Y;
-		double lon = coordenadas->X;
+			SecurityModel::Point^ coordenadas = PixelToGeo(x, y, pbMap->Width, pbMap->Height);
+			double lat = coordenadas->Y;
+			double lon = coordenadas->X;
 
-		// Mostrar coordenadas en los textbox
-		lblcoordenadas->Text = "Lat: " + Convert::ToString(lat) + " | Lon: " + Convert::ToString(lon);
+			// Mostrar coordenadas en los textbox
+			lblcoordenadas->Text = "Lat: " + Convert::ToString(lat) + " | Lon: " + Convert::ToString(lon);
+		}
+		else {
+			lblcoordenadas->Text = "Arrastra el cursor sobre el mapa";
+		}
 
 	}
 
@@ -423,6 +434,7 @@ namespace SecurityGUIApp {
 				MessageBox::Show("Se ha agregado una nueva zona");
 				ShowZones();
 				ClearControls();
+				pbMap->Invalidate();
 				return;
 			}
 	
@@ -502,18 +514,27 @@ namespace SecurityGUIApp {
 	}
 
 	private: System::Void pbMap_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-		int x = e->X;
-		int y = e->Y;
-		Graphics^ g = pbMap->CreateGraphics();
-		g->FillEllipse(Brushes::Red, x - 3, y - 3, 6, 6);
-		
-		SecurityModel::Point^ coordenadas = PixelToGeo(x, y, pbMap->Width, pbMap->Height);
-		double lat = coordenadas->Y;
-		double lon = coordenadas->X;
-		// Mostrar coordenadas en los textbox
-		txtPointX->Text = Convert::ToString(lon);
-		txtPointY->Text = Convert::ToString(lat);
-		//pbMap->Invalidate();
+		if (e->X >= 0 && e->X < pbMap->Width && e->Y >= 0 && e->Y < pbMap->Height) {
+			int x = e->X;
+			int y = e->Y;
+			Graphics^ g = pbMap->CreateGraphics();
+			g->FillEllipse(Brushes::Red, x - 3, y - 3, 6, 6);
+
+			SecurityModel::Point^ coordenadas = PixelToGeo(x, y, pbMap->Width, pbMap->Height);
+			double lat = coordenadas->Y;
+			double lon = coordenadas->X;
+			if (lon < pointtopleft->X || lon > pointbottomright->X ||
+				lat > pointtopleft->Y || lat < pointbottomright->Y) {
+				throw gcnew Exception("Coordenadas geográficas calculadas fuera del rango esperado");
+			}
+			// Mostrar coordenadas en los textbox
+			txtPointX->Text = Convert::ToString(lon);
+			txtPointY->Text = Convert::ToString(lat);
+			//pbMap->Invalidate();
+		}
+		else {
+			MessageBox::Show("Selecciona un punto dentro del mapa");
+		}
 
 	}
 
