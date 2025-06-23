@@ -64,7 +64,7 @@ namespace SecurityController {
 
 
 		/*-------REGISTER OPERADOR-------*/
-		static int AddOperatortoValidation(SecurityOperator^ operador);  //-------------AddOperator
+		static int AddOperatortoValidation(SecurityOperator^ operador);  //-------------AddOperator (sin validar)
 		static void DeleteOperatortoValidation(String^ dni);             
 		static SecurityOperator^ QueryNoOperatorbyDNI(String^ dni);      //-------------QueryOperatorById
 		static List<SecurityOperator^>^ QueryAllNoRegisteredOperators();   //

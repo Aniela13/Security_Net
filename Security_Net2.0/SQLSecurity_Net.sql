@@ -18,7 +18,7 @@ CREATE TABLE USER_NET (
 	NAME			VARCHAR(100) NOT NULL,
 	LASTNAME		VARCHAR(100) NOT NULL,
 	DNI				VARCHAR(10),
-	USERNAME		VARCHAR(100)  NULL,
+	USERNAME		VARCHAR(100) = DNI,
 	PASSWORD 		VARCHAR(100)  NULL, 
 	AUTHORIZED		CHAR(1)  NULL,-- SecOp 1:yes, 0: no
 	HELPNEEDED		CHAR(1)  NULL, -- SecOp	1:yes, 0: no
@@ -138,23 +138,23 @@ VALUES ('Sensor Camara','Captura imagenes', 32, 1, '1', '2', NULL, NULL);
 GO
 -- Sentencias SQL DML (data modifying language) para insertar registros a la tabla USER_NET	 --BIRTHDAY --YEAR-MONTH-DAY
 --Administrators
-INSERT INTO USER_NET (NAME, LASTNAME, DNI, USERNAME, PASSWORD, USER_TYPE, DOCUMENT_TYPE, BIRTHDAY, ADDRESS, GENDER, PHONE_NUMBER, PHOTO, SALARY, SCHEDULE,EMAIL, STATUS)
-VALUES ('erwin', 'smith', '12345678', 'erwin', '87654321', '0','1','19850115','Av. Universitaria 1600', 'M','967430423',NULL,4000,'T-N','erwin@gmail.com','A');	
+INSERT INTO USER_NET (NAME, LASTNAME, DNI, PASSWORD, USER_TYPE, DOCUMENT_TYPE, BIRTHDAY, ADDRESS, GENDER, PHONE_NUMBER, PHOTO, SALARY, SCHEDULE,EMAIL, STATUS)
+VALUES ('erwin', 'smith', '12345678',  '87654321', '0','1','19850115','Av. Universitaria 1600', 'M','967430423',NULL,4000,'T-N','erwin@gmail.com','A');	
 -- Security Operators authorized	
-INSERT INTO USER_NET (NAME, LASTNAME, DNI, USERNAME, PASSWORD, AUTHORIZED, HELPNEEDED, USER_TYPE, DOCUMENT_TYPE, BIRTHDAY, ADDRESS, GENDER, PHONE_NUMBER, PHOTO, SALARY, SCHEDULE,HIRE_DATE,EMAIL, STATUS)
-VALUES ('letizia', 'castillo', '12345678', '12345678', '87654321', '1','0','1','0','19900603','Jirón Las Hormigas 125', 'F','967430963',NULL,250000,'T-N','20220102', 'leti@correo.com', 'A'),
-		('angelica', 'apaza', '23456789', '23456789', '98765432', '1','0','1','0','19900603','Jirón Las Hormigas 126', 'F','96743096',NULL,250000,'T-N','20220103', 'angelica@correo.com', 'A');
+INSERT INTO USER_NET (NAME, LASTNAME, DNI, PASSWORD, AUTHORIZED, HELPNEEDED, USER_TYPE, DOCUMENT_TYPE, BIRTHDAY, ADDRESS, GENDER, PHONE_NUMBER, PHOTO, SALARY, SCHEDULE,HIRE_DATE,EMAIL, STATUS)
+VALUES ('letizia', 'castillo', '12345678', '87654321', '1','0','1','0','19900603','Jirón Las Hormigas 125', 'F','967430963',NULL,250000,'T-N','20220102', 'leti@correo.com', 'A'),
+		('angelica', 'apaza', '23456789', '98765432', '1','0','1','0','19900603','Jirón Las Hormigas 126', 'F','96743096',NULL,250000,'T-N','20220103', 'angelica@correo.com', 'A');
 -- Security Operators not authorized	
-INSERT INTO USER_NET (NAME, LASTNAME, DNI, USERNAME, PASSWORD, AUTHORIZED, HELPNEEDED, USER_TYPE, DOCUMENT_TYPE, BIRTHDAY, ADDRESS, GENDER, PHONE_NUMBER, PHOTO,EMAIL, STATUS)
-VALUES ('aniela', 'ubillus', '34567891', '34567891', '19876543', '0','0','1','0','19900603','Jirón Las Hormigas 666', 'F','96743097',NULL, 'aniela@correo.com', 'A'),
-('geraldine', 'peña', '45678912', '45678912', '21987654', '0','0','1','0','19900603','Jirón Las Hormigas 127', 'F','96743098',NULL,'geral@correo.com','A');
+INSERT INTO USER_NET (NAME, LASTNAME, DNI, PASSWORD, AUTHORIZED, HELPNEEDED, USER_TYPE, DOCUMENT_TYPE, BIRTHDAY, ADDRESS, GENDER, PHONE_NUMBER, PHOTO,EMAIL, STATUS)
+VALUES ('aniela', 'ubillus', '34567891', '19876543', '0','0','1','0','19900603','Jirón Las Hormigas 666', 'F','96743097',NULL, 'aniela@correo.com', 'A'),
+('geraldine', 'peña', '45678912', '21987654', '0','0','1','0','19900603','Jirón Las Hormigas 127', 'F','96743098',NULL,'geral@correo.com','A');
 -- Clients
 INSERT INTO USER_NET (NAME, LASTNAME, DNI, USER_TYPE, DOCUMENT_TYPE, BIRTHDAY, ADDRESS, GENDER, PHONE_NUMBER,EMAIL,SATISFACTION, STATUS)
 VALUES ('nhyo', 'rivas', '12345678', '2', '0','19900603','Jirón La Floresta 690', 'M','967430430', 'nhyorivas@correo.com','1', 'A'),
 		('jesus', 'nazaret', '98756314', '2', '1','19900603','Belen', 'M','967430430', 'yisus@correo.com','0', 'A'),
 		('dil', 'gil', '12345678', '2', '0','19900603','Cerro Candela 6666', 'M','967430430', 'gildil@correo.com','1', 'A');
 GO
--- Sentencia SQL para añadir un operador
+-- Sentencia SQL para añadir un operador  ----------
 IF EXISTS(	SELECT *
 			FROM sysobjects
 			WHERE id = object_id (N'[dbo].[usp_AddOperator]')
@@ -296,7 +296,7 @@ CREATE PROCEDURE usp_QueryOperatorById(
 		WHERE ID=@ID AND USER_TYPE='1'	
 	END
 GO
--- Sentencia SQL para consultar un operador por id (no autorizado)
+-- Sentencia SQL para consultar un operador por id (no autorizado)  --------
 IF EXISTS(  SELECT * 
 			FROM sysobjects
 			WHERE id = object_id(N'[dbo].[usp_QueryOperatorById]')

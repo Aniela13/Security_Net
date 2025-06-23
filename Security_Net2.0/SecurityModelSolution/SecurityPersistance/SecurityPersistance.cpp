@@ -473,7 +473,7 @@ SecurityOperator^ SecurityPersistance::Persistance::QueryOperatorById(int operat
             operador->Authorized = reader["AUTHORIZED"]->ToString()->Equals("S") ? true : false;
             operador->HelpNeeded = reader["HELPNEEDED"]->ToString()->Equals("S") ? true : false;
             operador->UserName = reader["USERNAME"]->ToString();
-            /*if (!DBNull::Value->Equals(reader["BIRTHDAY"]))
+            if (!DBNull::Value->Equals(reader["BIRTHDAY"]))
                 operador->BirthDay = Convert::ToDateTime(reader["BIRTHDAY"]);
             operador->Address = reader["ADDRESS"]->ToString();
             operador->Gender = reader["GENDER"]->ToString();
@@ -485,9 +485,7 @@ SecurityOperator^ SecurityPersistance::Persistance::QueryOperatorById(int operat
             if (!DBNull::Value->Equals(reader["HIRE_DATE"]))
                 operador->Hire_Date = Convert::ToDateTime(reader["HIRE_DATE"]);
             operador->Email = reader["EMAIL"]->ToString();
-            */
             operador->Id = Convert::ToInt32(reader["ID"]->ToString());
-            
         }
     }
     catch (Exception^ ex) {
