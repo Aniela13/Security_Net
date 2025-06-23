@@ -15,7 +15,7 @@ namespace SecurityModel {
         String^ UserName;
         DateTime^ BirthDay;
         String^ Address;
-        Char^ Gender;
+        String^ Gender;
         String^ Phone_Number;
         array<Byte>^ Photo;
         Double^ Salary;

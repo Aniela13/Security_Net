@@ -44,6 +44,7 @@ namespace SecurityPersistance {
 		//------- PROGGRAMACIÓN CON BASE DE DATOS ------
 		static int AddOperator(SecurityOperator^ operador); //Añaddir Operador (no validado)
 		static SecurityOperator^ QueryOperatorById(int operatorId); 
+
 	
 
 	};

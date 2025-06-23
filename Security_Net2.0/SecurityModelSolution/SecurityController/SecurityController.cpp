@@ -276,13 +276,14 @@ void SecurityController::Controller::DeleteOperatortoValidation(String^ dni)
 
 SecurityOperator^ SecurityController::Controller::QueryNoOperatorbyDNI(String^ dni)
 {
-	for (int i = 0; i < operadoresporvalidar->Count; i++) {
+	/*for (int i = 0; i < operadoresporvalidar->Count; i++) {
 		if (operadoresporvalidar[i]->DNI == dni) {
 			return operadoresporvalidar[i];
 		}
 	}
 	return nullptr;
-	
+	*/
+	return Persistance::QueryOperatorById(Convert::ToInt32(dni));
 }
 
 List<SecurityOperator^>^ SecurityController::Controller::QueryAllNoRegisteredOperators()

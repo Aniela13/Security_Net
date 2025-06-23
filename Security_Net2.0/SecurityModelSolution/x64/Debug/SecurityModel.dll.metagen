@@ -152,7 +152,7 @@ Class SecurityModel.SecurityOperator: AutoLayout, AnsiClass, Class, Public, Befo
     System.String UserName : Public
     System.ValueType BirthDay DateTime IsBoxed : Public
     System.String Address : Public
-    System.ValueType Gender Char IsBoxed : Public
+    System.String Gender : Public
     System.String Phone_Number : Public
     Byte[] Photo : Public
     System.ValueType Salary Double IsBoxed : Public

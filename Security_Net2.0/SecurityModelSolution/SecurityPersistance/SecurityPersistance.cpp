@@ -10,9 +10,9 @@ using namespace System::Runtime::Serialization::Formatters::Binary;
 SqlConnection^ SecurityPersistance::Persistance::GetConnection()
 {
     SqlConnection^ conn = gcnew SqlConnection();
-    String^ password = "XgKnzbGDasqJ"; // "1INF53_POO#123";
+    String^ password = "nXS64Nbq34hs$"; 
     String^ serverName = "200.16.7.140";
-    conn->ConnectionString = "Server=" + serverName + ";Database = a20216777;User ID = a20216777; Password = " +
+    conn->ConnectionString = "Server=" + serverName + ";Database = a20226663;User ID = a20226663; Password = " +
         password + ";";
     conn->Open();
     return conn;
@@ -382,14 +382,45 @@ int SecurityPersistance::Persistance::AddOperator(SecurityOperator^ operador)
         cmd->Parameters["@HELPNEEDED"]->Value = operador->HelpNeeded;
         cmd->Parameters["@USER_TYPE"]->Value = '1';
         cmd->Parameters["@DOCUMENT_TYPE"]->Value = '0';
-        cmd->Parameters["@BIRTHDAY"]->Value = operador->BirthDay;
-        cmd->Parameters["@ADDRESS"]->Value = operador->Address;
-        cmd->Parameters["@GENDER"]->Value = operador->Gender;
-        cmd->Parameters["@PHONE_NUMBER"]->Value = operador->Phone_Number;
-        cmd->Parameters["@SALARY"]->Value = operador->Salary;
-        cmd->Parameters["@SCHEDULE"]->Value = operador->Schedule;
-        cmd->Parameters["@HIRE_DATE"]->Value = operador->Hire_Date;
-        cmd->Parameters["@EMAIL"]->Value = operador->Email;
+        if (operador->BirthDay == nullptr)
+            cmd->Parameters["@BIRTHDAY"]->Value = DBNull::Value;
+        else
+            cmd->Parameters["@BIRTHDAY"]->Value = operador->BirthDay;
+
+        if (operador->Address == nullptr)
+            cmd->Parameters["@ADDRESS"]->Value = DBNull::Value;
+        else
+            cmd->Parameters["@ADDRESS"]->Value = operador->Address;
+
+        if (operador->Gender == nullptr)
+            cmd->Parameters["@GENDER"]->Value = DBNull::Value;
+        else
+            cmd->Parameters["@GENDER"]->Value = operador->Gender;
+
+        if (operador->Phone_Number == nullptr)
+            cmd->Parameters["@PHONE_NUMBER"]->Value = DBNull::Value;
+        else
+            cmd->Parameters["@PHONE_NUMBER"]->Value = operador->Phone_Number;
+
+        if (operador->Salary == nullptr)
+            cmd->Parameters["@SALARY"]->Value = DBNull::Value;
+        else
+            cmd->Parameters["@SALARY"]->Value = operador->Salary;
+
+        if (operador->Schedule == nullptr)
+            cmd->Parameters["@SCHEDULE"]->Value = DBNull::Value;
+        else
+            cmd->Parameters["@SCHEDULE"]->Value = operador->Schedule;
+        
+        if (operador->Hire_Date == nullptr)
+            cmd->Parameters["@HIRE_DATE"]->Value = DBNull::Value;
+        else
+            cmd->Parameters["@HIRE_DATE"]->Value = operador->Hire_Date;
+
+        if (operador->Email == nullptr)
+            cmd->Parameters["@EMAIL"]->Value = DBNull::Value;
+        else
+            cmd->Parameters["@EMAIL"]->Value = operador->Email;
 
         if (operador->Photo == nullptr)
             cmd->Parameters["@PHOTO"]->Value = DBNull::Value;
@@ -409,7 +440,7 @@ int SecurityPersistance::Persistance::AddOperator(SecurityOperator^ operador)
         //Paso 5: Cerrar los objetos de conexión de la BD.
         if (conn != nullptr) conn->Close();
     }
-    return operatorId;
+    return 1;
 }
 
 SecurityOperator^ SecurityPersistance::Persistance::QueryOperatorById(int operatorId)
@@ -442,26 +473,21 @@ SecurityOperator^ SecurityPersistance::Persistance::QueryOperatorById(int operat
             operador->Authorized = reader["AUTHORIZED"]->ToString()->Equals("S") ? true : false;
             operador->HelpNeeded = reader["HELPNEEDED"]->ToString()->Equals("S") ? true : false;
             operador->UserName = reader["USERNAME"]->ToString();
-            operador->BirthDay = reader["BIRTHDAY"]->ToString()->Equals("S") ? true : false;
-            operador->HelpNeeded = reader["HELPNEEDED"]->ToString()->Equals("S") ? true : false;
-            operador->HelpNeeded = reader["HELPNEEDED"]->ToString()->Equals("S") ? true : false;
-            operador->HelpNeeded = reader["HELPNEEDED"]->ToString()->Equals("S") ? true : false;
-            
-            
-            brand->Id = Convert::ToInt32(reader["BRAND_ID"]->ToString());
-            
-            brand->Country = reader["COUNTRY"]->ToString();
-            brand->Warranty = reader["WARRANTY"]->ToString();
-            robot->Brand = brand;
-            robot->Name = reader["NAME"]->ToString();
-            robot->LoadCapacity = Convert::ToDouble(reader["LOAD_CAPACITY"]->ToString());
-            robot->Model = reader["MODEL"]->ToString();
-            robot->Speed = Convert::ToDouble(reader["SPEED"]->ToString());
-            robot->Status = reader["STATUS"]->ToString();
-            if (!DBNull::Value->Equals(reader["PURCHASE_DATE"]))
-                robot->PurchaseDate = Convert::ToDateTime(reader["PURCHASE_DATE"]);
+            /*if (!DBNull::Value->Equals(reader["BIRTHDAY"]))
+                operador->BirthDay = Convert::ToDateTime(reader["BIRTHDAY"]);
+            operador->Address = reader["ADDRESS"]->ToString();
+            operador->Gender = reader["GENDER"]->ToString();
+            operador->Phone_Number = reader["PHONE_NUMBER"]->ToString();
             if (!DBNull::Value->Equals(reader["PHOTO"]))
-                robot->Photo = (array<Byte>^)reader["PHOTO"];
+                operador->Photo = (array<Byte>^)reader["PHOTO"];
+            operador->Salary = Convert::ToDouble(reader["SALARY"]->ToString());
+            operador->Schedule= reader["SCHEDULE"]->ToString();
+            if (!DBNull::Value->Equals(reader["HIRE_DATE"]))
+                operador->Hire_Date = Convert::ToDateTime(reader["HIRE_DATE"]);
+            operador->Email = reader["EMAIL"]->ToString();
+            */
+            operador->Id = Convert::ToInt32(reader["ID"]->ToString());
+            
         }
     }
     catch (Exception^ ex) {
