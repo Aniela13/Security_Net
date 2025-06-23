@@ -111,8 +111,15 @@ Class SecurityGUIApp.AnswerForm: AutoLayout, AnsiClass, Class, Public, BeforeFie
 Class SecurityGUIApp.AsignZonesForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    SecurityModel.Point pointbottomright : Public
+    SecurityModel.Point pointtopleft : Public
   Methods:
     FillZonesInComboBox(): PrivateScope, Public, HideBySig
+    VerifyIteminGrid(String): PrivateScope, Public, HideBySig
+    DeleteZoneinGrid(String): PrivateScope, Public, HideBySig
+    ClearControls(): PrivateScope, Public, HideBySig
+    GeoToPixel(Double, Double, Int32, Int32): PrivateScope, Public, HideBySig
 Class SecurityGUIApp.NewQuestionForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

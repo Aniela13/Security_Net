@@ -8,6 +8,9 @@ namespace SecurityGUIApp {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Collections::Generic;
+	using namespace SecurityModel;
+	using namespace SecurityController;
 
 	/// <summary>
 	/// Resumen de NewMapForm
@@ -79,10 +82,12 @@ namespace SecurityGUIApp {
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->Location = System::Drawing::Point(57, 177);
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(35, 127);
 			this->pictureBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(360, 346);
+			this->pictureBox1->Size = System::Drawing::Size(387, 536);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 1;
 			this->pictureBox1->TabStop = false;
 			// 
@@ -93,12 +98,12 @@ namespace SecurityGUIApp {
 				this->ZonesColumn,
 					this->CoordenadasColumn
 			});
-			this->dataGridView1->Location = System::Drawing::Point(464, 177);
+			this->dataGridView1->Location = System::Drawing::Point(485, 127);
 			this->dataGridView1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(317, 346);
+			this->dataGridView1->Size = System::Drawing::Size(316, 475);
 			this->dataGridView1->TabIndex = 2;
 			// 
 			// ZonesColumn
@@ -122,7 +127,7 @@ namespace SecurityGUIApp {
 				static_cast<System::Byte>(0)));
 			this->btnGoBackMenu->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnGoBackMenu.Image")));
 			this->btnGoBackMenu->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnGoBackMenu->Location = System::Drawing::Point(692, 532);
+			this->btnGoBackMenu->Location = System::Drawing::Point(712, 606);
 			this->btnGoBackMenu->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnGoBackMenu->Name = L"btnGoBackMenu";
 			this->btnGoBackMenu->Size = System::Drawing::Size(149, 69);
@@ -137,7 +142,7 @@ namespace SecurityGUIApp {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(853, 612);
+			this->ClientSize = System::Drawing::Size(873, 686);
 			this->Controls->Add(this->btnGoBackMenu);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->pictureBox1);
@@ -153,5 +158,7 @@ namespace SecurityGUIApp {
 
 		}
 #pragma endregion
+
+
 	};
 }

@@ -366,7 +366,7 @@ namespace SecurityGUIApp {
 
 	public:
 
-		SecurityModel::Point^ GeoToPixel(double lat, double lon, int imgWidth, int imgHeight) {
+		Drawing::Point^ GeoToPixel(double lat, double lon, int imgWidth, int imgHeight) {
 			//double x = (lon - lon_left) / (lon_right - lon_left) * imgWidth;
 			//double y = (lat_top - lat) / (lat_top - lat_bottom) * imgHeight;
 			//return Point((int)x, (int)y);

@@ -96,12 +96,23 @@ Class SecurityModel.Question: AutoLayout, AnsiClass, Class, Public, BeforeFieldI
   Fields:
     System.String question : Public
     System.String Answer : Public
-Class SecurityModel.Route: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-    Void .ctor(SecurityModel.Point, SecurityModel.Point): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class SecurityModel.Route: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
+    Void .ctor(Int32, System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Fields:
-    SecurityModel.Point StartingPoint : Public
-    SecurityModel.Point EndingPoint : Public
+  Properties:
+    System.Collections.Generic.List`1[System.Tuple`2[System.String,SecurityModel.Point]] RouteZones 'get set' : 
+    System.String Status 'get set' : 
+    System.String Date 'get set' : 
+    Int32 Id   'get set' : 
+  Methods:
+    get_Id(): PrivateScope, Public, HideBySig, SpecialName
+    set_Id(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Date(): PrivateScope, Public, HideBySig, SpecialName
+    set_Date(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Status(): PrivateScope, Public, HideBySig, SpecialName
+    set_Status(String): PrivateScope, Public, HideBySig, SpecialName
+    get_RouteZones(): PrivateScope, Public, HideBySig, SpecialName
+    set_RouteZones(List`1): PrivateScope, Public, HideBySig, SpecialName
 Class SecurityModel.SecurityBot: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(System.String, System.String, System.String, Int32, Boolean): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

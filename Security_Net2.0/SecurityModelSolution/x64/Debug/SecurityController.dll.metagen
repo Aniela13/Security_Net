@@ -23,6 +23,7 @@ Class SecurityController.Controller: AutoLayout, AnsiClass, Class, Public, Befor
     System.String TXT_ALARM_HISTORIAL_FILE_NAME : Public, Static
     System.String BINARY_MAP_ZONES_FILE_NAME : Public, Static
     System.String TXT_WARNING_TYPE_FILE_NAME : Public, Static
+    System.String BINARY_ROUTE_ROBOT_FILE_NAME : Public, Static
   Methods:
     ValidateAdmin(Administrator): PrivateScope, Public, Static, HideBySig
     AddUser(SecurityOperator): PrivateScope, Public, Static, HideBySig
@@ -55,3 +56,6 @@ Class SecurityController.Controller: AutoLayout, AnsiClass, Class, Public, Befor
     DeleteZoneMap(String): PrivateScope, Public, Static, HideBySig
     QueryAllZones(): PrivateScope, Public, Static, HideBySig
     QueryZonebyName(String): PrivateScope, Public, Static, HideBySig
+    AddRoute(Route): PrivateScope, Public, Static, HideBySig
+    QueryAllRoutes(): PrivateScope, Public, Static, HideBySig
+    GetLastRouteId(): PrivateScope, Public, Static, HideBySig

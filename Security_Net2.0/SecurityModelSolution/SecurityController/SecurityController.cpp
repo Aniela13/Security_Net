@@ -424,3 +424,32 @@ Point^ SecurityController::Controller::QueryZonebyName(String^ namezone)
 	return nullptr;
 
 }
+
+int SecurityController::Controller::AddRoute(Route^ route)
+{
+	try {
+		routes->Add(route);
+		Persistance::PersistBinaryFile(BINARY_ROUTE_ROBOT_FILE_NAME, routes);
+		return 1;
+	}
+	catch (Exception^ ex) {
+		throw ex;
+	}
+	return 0;
+}
+
+List<Route^>^ SecurityController::Controller::QueryAllRoutes()
+{
+	routes = (List<Route^>^)Persistance::LoadBinaryFile(BINARY_ROUTE_ROBOT_FILE_NAME);
+	if (routes == nullptr) {
+		routes = gcnew List<Route^>();
+	}
+	return routes;
+	
+}
+
+int SecurityController::Controller::GetLastRouteId()
+{
+	return QueryAllRoutes()->Count;
+}
+

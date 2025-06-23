@@ -21,6 +21,7 @@ namespace SecurityController {
 		static Queue<Warning^>^ alarmsbyclient = gcnew Queue<Warning^>();
 		static MallMap^ mallmap = gcnew MallMap();
 		//static MallMap^ mallmap = gcnew MallMap(0, "Piso 1", "Plaza San Miguel");
+		static List<Route^>^ routes = gcnew List<Route^>();
 	
 	public:
 		static String^ TXT_USERS_FILE_NAME = "usuarios.txt";
@@ -30,8 +31,7 @@ namespace SecurityController {
 		static String^ TXT_ALARM_HISTORIAL_FILE_NAME = "alarmas.txt";
 		static String^ BINARY_MAP_ZONES_FILE_NAME = "mapa.bin";//Agregar para el mapa 
 		static String^ TXT_WARNING_TYPE_FILE_NAME = "tiposdealarmas.txt";
-
-
+		static String^ BINARY_ROUTE_ROBOT_FILE_NAME = "rutas.bin";//Agregar ruta al robot
 
 
 	public:
@@ -81,6 +81,11 @@ namespace SecurityController {
 		static int DeleteZoneMap(String^ namezone);
 		static Dictionary<String^, Point^>^ QueryAllZones();
 		static Point^ QueryZonebyName(String^ namezone);
+
+		/*---------SISTEMA DE ASIGNACIÓN DE RUTAS-----*/
+		static int AddRoute(Route^ route);
+		static List<Route^>^ QueryAllRoutes();
+		static int GetLastRouteId();
 	};
 
 
