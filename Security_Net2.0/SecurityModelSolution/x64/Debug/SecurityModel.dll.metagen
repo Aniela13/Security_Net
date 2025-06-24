@@ -92,14 +92,25 @@ Class SecurityModel.MallMap: AutoLayout, AnsiClass, Class, Public, Serializable,
     set_Id(Int32): PrivateScope, Public, HideBySig, SpecialName
     ShowMap(): PrivateScope, Public, HideBySig
 Class SecurityModel.Question: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-    Void .ctor(Int32, System.String, System.String, Boolean, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32, System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     Int32 ID : Public
-    System.String question : Public
-    System.String Answer : Public
-    Boolean FAQ : Public
-    System.String Status : Public
+  Properties:
+    System.String Status 'get set' : 
+    Boolean FAQ 'get set' : 
+    System.String Answer 'get set' : 
+    System.String question 'get set' : 
+  Methods:
+    get_question(): PrivateScope, Public, HideBySig, SpecialName
+    set_question(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Answer(): PrivateScope, Public, HideBySig, SpecialName
+    set_Answer(String): PrivateScope, Public, HideBySig, SpecialName
+    get_FAQ(): PrivateScope, Public, HideBySig, SpecialName
+    set_FAQ(Boolean(HasFieldMarshal)): PrivateScope, Public, HideBySig, SpecialName
+    get_Status(): PrivateScope, Public, HideBySig, SpecialName
+    set_Status(String): PrivateScope, Public, HideBySig, SpecialName
 Class SecurityModel.Route: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
     Void .ctor(Int32, System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -164,6 +175,7 @@ Class SecurityModel.SecurityOperator: AutoLayout, AnsiClass, Class, Public, Befo
     System.ValueType Hire_Date DateTime IsBoxed : Public
     System.String Email : Public
     Int32 Id : Public
+    System.String Status : Public
   Methods:
     AssignZoneInspection(): PrivateScope, Public, HideBySig
     DefineStartingPoint(): PrivateScope, Public, HideBySig
@@ -213,7 +225,7 @@ Class SecurityModel.WarningType: AutoLayout, AnsiClass, Class, Public, BeforeFie
     get_Description(): PrivateScope, Public, HideBySig, SpecialName
     set_Description(String): PrivateScope, Public, HideBySig, SpecialName
 Class SecurityModel.Warning: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-    Void .ctor(Int32, System.ValueType, System.ValueType, System.String, System.String, System.String, Boolean): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32, System.ValueType, System.ValueType, SecurityModel.WarningType, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     Int32 ID : Public
@@ -221,7 +233,7 @@ Class SecurityModel.Warning: AutoLayout, AnsiClass, Class, Public, BeforeFieldIn
   Properties:
     System.String Zone 'get set' : 
     System.String Description 'get set' : 
-    System.String Type 'get set' : 
+    SecurityModel.WarningType Type 'get set' : 
     System.ValueType EndingDate 'get set' DateTime IsBoxed : 
     System.ValueType StartingDate 'get set' DateTime IsBoxed : 
   Methods:
@@ -230,7 +242,7 @@ Class SecurityModel.Warning: AutoLayout, AnsiClass, Class, Public, BeforeFieldIn
     get_EndingDate(): PrivateScope, Public, HideBySig, SpecialName
     set_EndingDate(ValueType DateTime IsBoxed): PrivateScope, Public, HideBySig, SpecialName
     get_Type(): PrivateScope, Public, HideBySig, SpecialName
-    set_Type(String): PrivateScope, Public, HideBySig, SpecialName
+    set_Type(WarningType): PrivateScope, Public, HideBySig, SpecialName
     get_Description(): PrivateScope, Public, HideBySig, SpecialName
     set_Description(String): PrivateScope, Public, HideBySig, SpecialName
     get_Zone(): PrivateScope, Public, HideBySig, SpecialName

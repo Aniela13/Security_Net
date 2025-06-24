@@ -2,16 +2,16 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityModel.dll</FullPath>
+      <FullPath>C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityModel.dll</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityPersistance.dll</FullPath>
+      <FullPath>C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityPersistance.dll</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityController.dll</FullPath>
+      <FullPath>C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityController.dll</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityGUIApp.exe</FullPath>
+      <FullPath>C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityGUIApp.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

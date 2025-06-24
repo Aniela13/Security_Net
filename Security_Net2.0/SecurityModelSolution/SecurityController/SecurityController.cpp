@@ -12,7 +12,7 @@ int SecurityController::Controller::ValidateAdmin(Administrator^ administrator)
 
 int SecurityController::Controller::AddUser(SecurityOperator^ operador)
 {
-	try {
+	/*try {
 		operators->Add(operador);
 		Persistance::PersistUsersTextFile(TXT_USERS_FILE_NAME,operators);
 		return 1;
@@ -20,23 +20,26 @@ int SecurityController::Controller::AddUser(SecurityOperator^ operador)
 	catch (Exception^ ex) {
 		throw ex;
 	}
-	return 0;
+	return 0;*/
+	return Persistance::AddOperator(operador);
+
 }
 
 int SecurityController::Controller::ValidateOperator(String^ OpUser, String^ OpPassword)
 {
-	for each (SecurityOperator ^ operador in operators)
+	/*for each (SecurityOperator ^ operador in operators)
 	{
 		if (operador->UserName == OpUser && operador->Password == OpPassword) {
 			return 1;
 		}
 	}
-	return 0;
+	return 0;*/
+	return Persistance::ValidateOperator(OpUser,OpPassword);
 }
 
 int SecurityController::Controller::DeleteUser(SecurityOperator^ OpUser)
 {
-	for (int i = 0; i < operators->Count; i++)
+	/*for (int i = 0; i < operators->Count; i++)
 	{
 		if (operators[i]->UserName == OpUser->UserName) {
 			operators->RemoveAt(i);
@@ -44,7 +47,8 @@ int SecurityController::Controller::DeleteUser(SecurityOperator^ OpUser)
 			return 1;
 		}
 	}
-	return 0;
+	return 0;*/
+	return Persistance::UpdateSecurityOperator(OpUser);
 }
 
 SecurityOperator^ SecurityController::Controller::QueryOperatorByDNI(String^ operatorDNI)
@@ -61,7 +65,7 @@ SecurityOperator^ SecurityController::Controller::QueryOperatorByDNI(String^ ope
 }
 
 List<SecurityOperator^>^ SecurityController::Controller::QueryAllUsers(){
-	try {
+	/*try {
 		
 		operators = (List<SecurityOperator^>^)Persistance::LoadUsersFromTextFile(TXT_USERS_FILE_NAME);
 		if (operators == nullptr)
@@ -71,8 +75,8 @@ List<SecurityOperator^>^ SecurityController::Controller::QueryAllUsers(){
 	catch (Exception^ ex) {
 		throw ex;
 	}
-	return nullptr;
-	
+	return nullptr;*/
+	return Persistance::QueryAllOperators();
 }
 
 int SecurityController::Controller::UpdateSecurityOperator(SecurityOperator^ operador)
@@ -82,7 +86,7 @@ int SecurityController::Controller::UpdateSecurityOperator(SecurityOperator^ ope
 
 
 int SecurityController::Controller::AddQuestion(Question^ newquestion)
-{
+{/*
 	for each (Question^ pregunta in questions){
 		if (pregunta->question == newquestion->question) {
 			return 0;
@@ -96,36 +100,39 @@ int SecurityController::Controller::AddQuestion(Question^ newquestion)
 	catch (Exception^ ex) {
 		throw ex;
 	}
-	return 0;
+	return 0;*/
+	return Persistance::AddQuestion(newquestion);
 
 }
 
-void SecurityController::Controller::DeleteQuestion(String^ q)
+int SecurityController::Controller::DeleteQuestion(int questionId)
 {
-	for (int i = 0; i < questions->Count; i++) {
+	/*for (int i = 0; i < questions->Count; i++) {
 		if (questions[i]->question == q) {
 			questions->RemoveAt(i);
 			Persistance::PersistQuestionsTextFile(TXT_FAQ_FILE_NAME, questions);
 			
 		}
-	}
+	}*/
+	return Persistance::DeleteQuestion(questionId);
 }
 
 int SecurityController::Controller::UpdateQuestion(Question^ question)
 {
-	for (int i = 0; i < questions->Count; i++) {
+	/*for (int i = 0; i < questions->Count; i++) {
 		if (questions[i]->question == question->question) {
 			questions[i] = question;
 			Persistance::PersistQuestionsTextFile(TXT_FAQ_FILE_NAME, questions);
 			return 1;
 		}
 	}
-	return 0;
+	return 0;*/
+	return Persistance::UpdateQuestion(question);
 }
 
 List<Question^>^ SecurityController::Controller::QueryAllFAQ()
 {
-	try {
+	/*try {
 		questions = (List<Question^>^)Persistance::LoadQuestionsFromTextFile(TXT_FAQ_FILE_NAME);
 		if (questions == nullptr)
 			questions = gcnew List<Question^>();
@@ -134,44 +141,67 @@ List<Question^>^ SecurityController::Controller::QueryAllFAQ()
 	catch (Exception^ ex) {
 		throw ex;
 	}
-	return nullptr;
+	return nullptr;*/
+	return Persistance::QueryAllFAQ();
 }
 
 
 
 List<String^>^ SecurityController::Controller::QueryAllOnlyQuestions()
 {
-	List<String^>^ onlyquestions = gcnew List<String^>();
+	/*List<String^>^ onlyquestions = gcnew List<String^>();
 
 	for (int i = 0; i < questions->Count; i++)
 	{
 		onlyquestions->Add(questions[i]->question);
 	}
-	return onlyquestions;
+	return onlyquestions;*/
+	try {
+		List<Question^>^ questionsList = Persistance::QueryAllNewQuestions();
+		List<String^>^ lista;
+		if (questionsList == nullptr)
+		{
+			lista = gcnew List<String^>();
+			return lista;
+		}
+		else {
+			for each (Question ^ question in questionsList) {
+				if (question->Answer == "Por definir...") {
+					lista->Add(question->question);
+				}
+			}
+			return lista;
+		}
+	}
+	catch (Exception^ ex) {
+		throw ex;
+	}
 }
 
 String^ SecurityController::Controller::QueryAnswerByQuestion(String^ question)
 {
-	for each (Question ^ q in questions)
+	/*for each (Question ^ q in questions)
 	{
 		if (q->question == question) {
 			return q->Answer;
 		}
 	}
-	return nullptr;
+	return nullptr;*/
+	return Persistance::QueryAnswerByQuestion(question);
 }
 
 int SecurityController::Controller::AddWarning(Warning^ alarm)
 {
-	try {
-		alarms->Add(alarm);
-		Persistance::PersistAlarmTextFile(TXT_ALARM_HISTORIAL_FILE_NAME,alarms);
-		return 1;
-	}
-	catch (Exception^ ex) {
-		throw ex;
-	}
-	return 0;
+	//try {
+	//	alarms->Add(alarm);
+	//	Persistance::PersistAlarmTextFile(TXT_ALARM_HISTORIAL_FILE_NAME,alarms);
+	//	return 1;
+	//}
+	//catch (Exception^ ex) {
+	//	throw ex;
+	//}
+	//return 0;
+	return Persistance::AddWarning(alarm);
 }
 
 int SecurityController::Controller::UpdateWarning(Warning^ warning)
@@ -270,15 +300,16 @@ int SecurityController::Controller::AddOperatortoValidation(SecurityOperator^ op
 	return Persistance::AddOperator(operador);
 }
 
-void SecurityController::Controller::DeleteOperatortoValidation(String^ dni)
+int SecurityController::Controller::DeleteOperatortoValidation(SecurityOperator^ operador)
 {
-	for (int i = 0; i < operadoresporvalidar->Count; i++) {
+	/*for (int i = 0; i < operadoresporvalidar->Count; i++) {
 		if (operadoresporvalidar[i]->DNI == dni) {
 			operadoresporvalidar->RemoveAt(i);
 			Persistance::PersistValidationOperatorsTextFile(TXT_REGISTRATION_OP_FILE_NAME, operadoresporvalidar);
 
 		}
-	}
+	}*/
+	return Persistance::UpdateSecurityOperator(operador);
 }
 
 SecurityOperator^ SecurityController::Controller::QueryNoOperatorbyDNI(String^ dni)
@@ -310,9 +341,9 @@ List<SecurityOperator^>^ SecurityController::Controller::QueryAllNoRegisteredOpe
 	return Persistance::QueryAllNotAuthorizedOperators();
 }
 
-int SecurityController::Controller::AddNewQuestion(String^ newquestion)
+int SecurityController::Controller::AddNewQuestion(Question^ newquestion)
 {
-	try {
+	/*try {
 		newquestions->Add(newquestion);
 		Persistance::PersistNewQuestionsTextFile(TXT_NEW_QUESTION_FILE_NAME, newquestions);
 		return 1;
@@ -320,34 +351,22 @@ int SecurityController::Controller::AddNewQuestion(String^ newquestion)
 	catch (Exception^ ex) {
 		throw ex;
 	}
-	return 0;
+	return 0;*/
+	return Persistance::AddQuestion(newquestion);
 	
 }
 
-void SecurityController::Controller::DeleteNewQuestion(String^ newquestion)
+int SecurityController::Controller::DeleteNewQuestion(int questionId)
 {
-	for (int i = 0; i < newquestions->Count; i++) {
+	/*for (int i = 0; i < newquestions->Count; i++) {
 		if (newquestions[i] == newquestion) {
 			newquestions->RemoveAt(i);
 			Persistance::PersistNewQuestionsTextFile(TXT_NEW_QUESTION_FILE_NAME, newquestions);
 
 		}
-	}
-	
-}
+	}*/
+	return Persistance::DeleteQuestion(questionId);
 
-List<String^>^ SecurityController::Controller::QueryAllNewQuestions()
-{
-	try {
-		newquestions = (List<String^>^)Persistance::LoadQuestionsFromTextFile(TXT_NEW_QUESTION_FILE_NAME);
-		if (newquestions == nullptr)
-			newquestions = gcnew List<String^>();
-		return newquestions;
-	}
-	catch (Exception^ ex) {
-		throw ex;
-	}
-	return nullptr;
 }
 
 int SecurityController::Controller::AddZoneMap(String^ namezone, Point^ coordenada)
@@ -463,4 +482,5 @@ int SecurityController::Controller::GetLastRouteId()
 {
 	return QueryAllRoutes()->Count;
 }
+
 

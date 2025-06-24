@@ -42,6 +42,7 @@ namespace SecurityPersistance {
 		static Object^ LoadBinaryFile(String^ fileName);
 
 		//------- PROGGRAMACIÓN CON BASE DE DATOS ------
+		static int ValidateOperator(String^ username, String^ password);
 		static int AddOperator(SecurityOperator^ operador); //Añaddir Operador (no validado)
 		static SecurityOperator^ QueryOperatorByDNI(int operatorDNI);    //Consultar un operador por DNI (autorizado)
 		static SecurityOperator^ QueryNotAuthorizedOperatorByDNI(int operatorDNI);    //Consultar un operador por DNI (no autorizado)
@@ -55,9 +56,11 @@ namespace SecurityPersistance {
 		static int UpdateWarning(Warning^ warning);
 		static List<Warning^>^ QueryAllWarnings();
 		// ---------QUESTIONS -----------
-		static int AddQuestion(Warning^ question);
+		static int AddQuestion(Question^ question);
 		static List<Question^>^ QueryAllFAQ();
 		static List<Question^>^ QueryAllNewQuestions();
 		static String^ QueryAnswerByQuestion(String^ question);  //Obtener respuesta por pregunta
+		static int DeleteQuestion(int questionId);
+		static int UpdateQuestion(Question^ question);
 	};
 }

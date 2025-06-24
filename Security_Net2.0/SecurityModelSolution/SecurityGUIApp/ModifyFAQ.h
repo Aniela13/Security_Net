@@ -300,7 +300,9 @@ namespace SecurityGUIApp {
 				return;
 
 			}
-			Question^ question = gcnew Question(request, answer);
+			int id;
+			id = Controller::QueryAllFAQ()->Count + 1;
+			Question^ question = gcnew Question(id, request, answer);
 			if (Controller::AddQuestion(question) == 1) {
 				showFAQ();
 				MessageBox::Show("Se ha agregado correctamente una nueva pregunta\n");
@@ -326,19 +328,30 @@ namespace SecurityGUIApp {
 
 	private: System::Void btnDelete_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ request = txtQuestion->Text->Trim();
+		List<Question^>^ questionslist = Controller::QueryAllFAQ();
+		
 		if (request->Equals("")) {
 			MessageBox::Show("Debe seleccionar una pregunta y respuesta");
 			return;
 		}
 		try {
+			Question^ qt = gcnew Question();
+			for each (Question ^ question in questionslist) {
+				if (question->question == request) {
+					qt = question;
+				}
+			}
+
 			System::Windows::Forms::DialogResult dlgResult = MessageBox::Show("¿Desea eliminar a la pregunta y respuesta?",
 				"Confirmación", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
-
+			int id = qt->ID;
 			if (dlgResult == System::Windows::Forms::DialogResult::Yes) {
-				Controller::DeleteQuestion(request);
-				showFAQ();
-				ClearControls();
-				MessageBox::Show("Se ha eliminado a la pregunta y respuesta manera exitosa.");
+				if (Controller::DeleteQuestion(id) == 1) {
+					showFAQ();
+					ClearControls();
+					MessageBox::Show("Se ha eliminado a la pregunta y respuesta manera exitosa.");
+				}
+				
 			}
 		}
 		catch (Exception^ ex) {
@@ -357,7 +370,9 @@ namespace SecurityGUIApp {
 		try {
 			String^ request = txtQuestion->Text;
 			String^ answer = txtAnswer->Text;
-			Question^ question = gcnew Question(request, answer);
+			int id;
+			id = Controller::QueryAllFAQ()->Count + 1;
+			Question^ question = gcnew Question(id,request, answer);
 			Controller::UpdateQuestion(question);
 			showFAQ();
 			MessageBox::Show("Se ha modificado la pregunta");

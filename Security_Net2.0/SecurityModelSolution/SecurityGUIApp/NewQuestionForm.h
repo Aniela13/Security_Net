@@ -178,8 +178,11 @@ namespace SecurityGUIApp {
 	
 	private: System::Void btnAsk_Click(System::Object^ sender, System::EventArgs^ e) {
 		txtAnswerbyOp->Text = "";
-		String^ newq = txtNewQuestion->Text->Trim();
-		if (newq == "") {
+		int id;
+		id = Controller::QueryAllFAQ()->Count + 1;
+		Question^ newq = gcnew Question(id, txtNewQuestion->Text->Trim());
+		String^ pregunta = txtNewQuestion->Text->Trim();
+		if (pregunta == "") {
 			MessageBox::Show("Ingrese una nueva pregunta...\n"); 
 			return;
 		}

@@ -1,8 +1,4 @@
-﻿  pch.cpp
-  AssemblyInfo.cpp
-  SecurityController.cpp
-  Generando código...
+﻿  SecurityController.cpp
   .NETFramework,Version=v4.8.1.AssemblyAttributes.cpp
   AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-  SecurityController.vcxproj -> C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityController.dll
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(5678,5): error MSB3541: Files tiene un valor "<<<<<<< HEAD" no válido. Caracteres no válidos en la ruta de acceso.
+  SecurityController.vcxproj -> C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityController.dll

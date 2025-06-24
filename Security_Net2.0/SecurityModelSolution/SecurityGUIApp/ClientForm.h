@@ -161,7 +161,9 @@ namespace SecurityGUIApp {
 		try {
 			WarningType^ type = gcnew WarningType(); 
 			type->Name = "Por definir";
-			Warning^ warning = gcnew Warning(DateTime::Now, DateTime::Now,type, "Por definir...");
+			int id;
+			id = Controller::QueryAllWarnings()->Count + 1;
+			Warning^ warning = gcnew Warning(id, DateTime::Now, DateTime::Now, type, "Por definir...");
 
 			if (Controller::AddWarning(warning) == 1) {
 				EmergencyForm^ emergencia = gcnew EmergencyForm();

@@ -61,7 +61,7 @@ namespace SecurityGUIApp {
 		/// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -214,46 +214,46 @@ namespace SecurityGUIApp {
 
 		}
 #pragma endregion
-	
-	
-	
-public:
-	void showNewQuestions() {
-		List<String^>^ questionsList = Controller::QueryAllOnlyQuestions();
-		if (questionsList != nullptr) {
-			dgvQuestionForm->Rows->Clear();
-			for (int i = 0; i < questionsList->Count; i++) {
-				dgvQuestionForm->Rows->Add(gcnew array<String^> {questionsList[i]});
-			}
 
+
+
+	public:
+		void showNewQuestions() {
+			List<String^>^ questionsList = Controller::QueryAllOnlyQuestions();
+			if (questionsList != nullptr) {
+				dgvQuestionForm->Rows->Clear();
+				for (int i = 0; i < questionsList->Count; i++) {
+					dgvQuestionForm->Rows->Add(gcnew array<String^> {questionsList[i]});
+				}
+
+			}
 		}
-	}
 	public:
 		void ClearControls() {
-			for each(Control ^ control in this->Controls) {
+			for each (Control ^ control in this->Controls) {
 				if (control->GetType() == TextBox::typeid) {
 					dynamic_cast<TextBox^>(control)->Text = "";
 				}
 			}
 		}
-private: System::Void txtNewQuestion_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void txtNewQuestion_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 
-}
-private: System::Void AnswerForm_Load(System::Object^ sender, System::EventArgs^ e) {
-	showNewQuestions();
-}
+	}
+	private: System::Void AnswerForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		showNewQuestions();
+	}
 
-private: System::Void dgvQuestionForm_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-	String^ question = dgvQuestionForm->Rows[dgvQuestionForm->SelectedCells[0]->RowIndex]->Cells[0]->Value->ToString();
-	String^ answer = Controller::QueryAnswerByQuestion(question);
-	txtNewQuestion->Text = question;
-	txtAnswer->Text = answer;
-	showNewQuestions();
-}
-private: System::Void btnNewQuestion_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ question = txtNewQuestion->Text;
-	String^ answer = txtAnswer->Text;
-	MessageBox::Show("Se ha enviado correctamente la respuesta");
-}
-};
+	private: System::Void dgvQuestionForm_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+		String^ question = dgvQuestionForm->Rows[dgvQuestionForm->SelectedCells[0]->RowIndex]->Cells[0]->Value->ToString();
+		String^ answer = Controller::QueryAnswerByQuestion(question);
+		txtNewQuestion->Text = question;
+		txtAnswer->Text = answer;
+		showNewQuestions();
+	}
+	private: System::Void btnNewQuestion_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ question = txtNewQuestion->Text;
+		String^ answer = txtAnswer->Text;
+		MessageBox::Show("Se ha enviado correctamente la respuesta");
+	}
+	};
 }

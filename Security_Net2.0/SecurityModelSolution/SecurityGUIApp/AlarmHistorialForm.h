@@ -366,7 +366,8 @@ namespace SecurityGUIApp {
 		}
 	public:
 		void ClearControls() {
-			for each(Control ^ control in this->Controls) {
+			
+			for each (Control ^ control in this->Controls) {
 				if (control->GetType() == TextBox::typeid) {
 					dynamic_cast<TextBox^>(control)->Text = "";
 				}

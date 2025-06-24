@@ -13,8 +13,6 @@ Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e0
 	hash=None, flags=None
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
-Assembly SecurityModel, Version=1.0.*, Culture=Todos los idiomas (todos los países): 
-	hash=None, flags=None
 Class SecurityController.Controller: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
@@ -35,7 +33,7 @@ Class SecurityController.Controller: AutoLayout, AnsiClass, Class, Public, Befor
     QueryAllUsers(): PrivateScope, Public, Static, HideBySig
     UpdateSecurityOperator(SecurityOperator): PrivateScope, Public, Static, HideBySig
     AddQuestion(Question): PrivateScope, Public, Static, HideBySig
-    DeleteQuestion(String): PrivateScope, Public, Static, HideBySig
+    DeleteQuestion(Int32): PrivateScope, Public, Static, HideBySig
     UpdateQuestion(Question): PrivateScope, Public, Static, HideBySig
     QueryAllFAQ(): PrivateScope, Public, Static, HideBySig
     QueryAllOnlyQuestions(): PrivateScope, Public, Static, HideBySig
@@ -48,12 +46,11 @@ Class SecurityController.Controller: AutoLayout, AnsiClass, Class, Public, Befor
     QueryWarningTypeById(Int32): PrivateScope, Public, Static, HideBySig
     QueryAllWarningsbyEmergencyButton(): PrivateScope, Public, Static, HideBySig
     AddOperatortoValidation(SecurityOperator): PrivateScope, Public, Static, HideBySig
-    DeleteOperatortoValidation(String): PrivateScope, Public, Static, HideBySig
+    DeleteOperatortoValidation(SecurityOperator): PrivateScope, Public, Static, HideBySig
     QueryNoOperatorbyDNI(String): PrivateScope, Public, Static, HideBySig
     QueryAllNoRegisteredOperators(): PrivateScope, Public, Static, HideBySig
-    AddNewQuestion(String): PrivateScope, Public, Static, HideBySig
-    DeleteNewQuestion(String): PrivateScope, Public, Static, HideBySig
-    QueryAllNewQuestions(): PrivateScope, Public, Static, HideBySig
+    AddNewQuestion(Question): PrivateScope, Public, Static, HideBySig
+    DeleteNewQuestion(Int32): PrivateScope, Public, Static, HideBySig
     AddZoneMap(String, Point): PrivateScope, Public, Static, HideBySig
     UpdateZoneMap(String, Point): PrivateScope, Public, Static, HideBySig
     DeleteZoneMap(String): PrivateScope, Public, Static, HideBySig

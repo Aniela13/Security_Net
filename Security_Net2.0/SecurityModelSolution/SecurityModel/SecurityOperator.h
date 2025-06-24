@@ -23,6 +23,7 @@ namespace SecurityModel {
         DateTime^ Hire_Date;
         String^ Email;
         int Id;
+        String^ Status;
 
         SecurityOperator() {}
         // Constructor 
@@ -44,6 +45,7 @@ namespace SecurityModel {
             Schedule = nullptr;
             Hire_Date = nullptr;
             Email = nullptr;
+            Status = "A"; // abilide  
         }
 
     public:

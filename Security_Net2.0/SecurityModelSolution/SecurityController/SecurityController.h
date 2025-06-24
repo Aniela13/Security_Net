@@ -47,7 +47,7 @@ namespace SecurityController {
 
 		/*-------CRUD PREGUNTAS FRECUENTES-------*/
 		static int AddQuestion(Question^ newquestion);
-		static void DeleteQuestion(String^ q);
+		static int DeleteQuestion(int questionId);
 		static int UpdateQuestion(Question^ question);
 		static List<Question^>^ QueryAllFAQ(); 
 		static List<String^>^ QueryAllOnlyQuestions();
@@ -67,14 +67,13 @@ namespace SecurityController {
 
 		/*-------REGISTER OPERADOR-------*/
 		static int AddOperatortoValidation(SecurityOperator^ operador);  //-------------AddOperator (sin validar)
-		static void DeleteOperatortoValidation(String^ dni);             
+		static int DeleteOperatortoValidation(SecurityOperator^ operadori);
 		static SecurityOperator^ QueryNoOperatorbyDNI(String^ dni);      //-------------QueryNotAuthorizedOperatorByDNI
 		static List<SecurityOperator^>^ QueryAllNoRegisteredOperators();   //
 
 		/*------SISTEMA DE PREGUNTAS NUEVAS-----*/ //interacción operador y cliente
-		static int AddNewQuestion(String^ newquestion); 
-		static void DeleteNewQuestion(String^ newquestion);
-		static List<String^>^ QueryAllNewQuestions();
+		static int AddNewQuestion(Question^ newquestion); 
+		static int DeleteNewQuestion(int questionId);
 
 		/*------CRUD MAPA y transaccciones-----*/ //interacción operador y cliente
 		static int AddZoneMap(String^ namezone, Point^ coordenada);

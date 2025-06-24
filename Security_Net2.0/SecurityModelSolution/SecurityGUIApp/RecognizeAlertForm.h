@@ -331,7 +331,8 @@ namespace SecurityGUIApp {
 			System::Collections::Generic::Queue<Warning^>^ Alarmsbybtn = Controller::QueryAllWarningsbyEmergencyButton();
 			if (Alarmsbybtn != nullptr) {
 				dgvPendingAlarms->Rows->Clear();
-				for each (Warning ^ warning in Alarmsbybtn) {
+				
+				for each (Warning^ warning in Alarmsbybtn) {
 					dgvPendingAlarms->Rows->Add(gcnew array<String^> {
 						warning->StartingDate->ToString("dd/MM/yyyy HH:mm"),
 						warning->Description
@@ -387,7 +388,9 @@ namespace SecurityGUIApp {
 		try {
 			WarningType^ type = gcnew WarningType();
 			type->Name = "Por definir";
-			Warning^ warning = gcnew Warning(DateTime::Now, DateTime::Now, type, "Por definir...");
+			int id;
+			id = Controller::QueryAllWarnings()->Count + 1;
+			Warning^ warning = gcnew Warning(id,DateTime::Now, DateTime::Now, type, "Por definir...");
 
 			if (Controller::AddWarning(warning) == 1) {
 				MessageBox::Show("Se ha iniciado una alarma. Todos los operadores de seguridad serán notificados");

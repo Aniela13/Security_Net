@@ -5,17 +5,23 @@ namespace SecurityModel {
     public ref class Question {
     public:
         int ID;
-        String^ question;
-        String^ Answer;
-        bool FAQ;
-        String^ Status;
+        property String^ question;
+        property String^ Answer;
+        property bool FAQ;
+        property String^ Status;
         Question() {}
-        Question(int id, String^ question, String^ answer, bool faq, String^ status) {
+        Question(int id, String^ question, String^ answer) {
             ID = id;
             this->question = question;
             Answer = answer;
-            FAQ = faq;
-            Status = status;
+            FAQ = false;
+            Status = nullptr;
+        }
+        Question(int id, String^ question) {
+            ID = id;
+            this->question = question;
+            Answer = "Por definir...";
+  
         }
     };
 }
