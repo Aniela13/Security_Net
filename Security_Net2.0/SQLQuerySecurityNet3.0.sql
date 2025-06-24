@@ -8,8 +8,8 @@ IF OBJECT_ID('dbo.SENSOR','U') IS NOT NULL
 	drop table SENSOR;
 IF OBJECT_ID('dbo.QUESTION','U') IS NOT NULL	
 	drop table QUESTION;
-IF OBJECT_ID('dbo.ALARM','U') IS NOT NULL	
-	drop table ALARM;	
+IF OBJECT_ID('dbo.WARNING','U') IS NOT NULL	
+	drop table WARNING;	
 IF OBJECT_ID('dbo.USER_NET','U') IS NOT NULL	
 	drop table USER_NET;
 --Sentencia SQL DDL (data definition language) para crear la tabla ROBOT_WAITER
@@ -18,7 +18,7 @@ CREATE TABLE USER_NET (
 	NAME			VARCHAR(100) NOT NULL,
 	LASTNAME		VARCHAR(100) NOT NULL,
 	DNI				VARCHAR(10),
-	USERNAME		VARCHAR(100) = DNI,
+	USERNAME		VARCHAR(100)  NULL,
 	PASSWORD 		VARCHAR(100)  NULL, 
 	AUTHORIZED		CHAR(1)  NULL,-- SecOp 1:yes, 0: no
 	HELPNEEDED		CHAR(1)  NULL, -- SecOp	1:yes, 0: no
@@ -38,13 +38,30 @@ CREATE TABLE USER_NET (
 	STATUS			CHAR(1),
 );
 GO
-CREATE TABLE ALARM (
+-- Creamos procedimiento sql para inicializar  username como dni 
+IF OBJECT_ID('trg_SetUsernameAsDNI', 'TR') IS NOT NULL
+    DROP TRIGGER trg_SetUsernameAsDNI;
+GO
+
+CREATE TRIGGER trg_SetUsernameAsDNI
+ON USER_NET
+AFTER INSERT
+AS
+BEGIN
+    UPDATE USER_NET
+    SET USERNAME = I.DNI
+    FROM USER_NET U
+    INNER JOIN INSERTED I ON U.ID = I.ID
+    WHERE U.USERNAME IS NULL;
+END
+GO
+CREATE TABLE WARNING(
 	ID	INT	NOT NULL PRIMARY KEY IDENTITY(1,1),
 	START_DATE		DATETIME,
 	END_DATE		DATETIME,
-	ALARM_TYPE		CHAR(1) NOT NULL, -- 0: Camera, 1: Noise, 2: Button by client
-	DESCRIPTION		VARCHAR(500) NOT NULL,
-	ZONE 			VARCHAR(50),
+	WARNING_TYPE		CHAR(1) NOT NULL, -- 0: Camera, 1: Noise, 2: Button by client
+	DESCRIPTION		VARCHAR(500) NULL,
+	ZONE 			VARCHAR(50) NULL,
 	ACTIVE		VARCHAR(1) -- Alarm active or not
 
 );
@@ -116,8 +133,8 @@ INSERT INTO MAP_ZONE (ID, ZONE_NAME, MAP_NAME) VALUES
 (3,  'FCI', 'PUCP'),
 (4,  'CIA', 'PUCP'),
 (5,  'POLI', 'PUCP');
---  Sentencia SQL DML (data modifying language) para insertar registros a la tabla ALARM
-INSERT INTO ALARM (START_DATE, END_DATE, ALARM_TYPE, DESCRIPTION, ZONE, ACTIVE) VALUES
+--  Sentencia SQL DML (data modifying language) para insertar registros a la tabla WARNING
+INSERT INTO WARNING (START_DATE, END_DATE, WARNING_TYPE, DESCRIPTION, ZONE, ACTIVE) VALUES
 ('18/06/2025 07:33:19',  '18/06/2025 07:33:51','2','Botón de emergencia presionado por un usuario', NULL, '0');
 -- Sentencia SQL DML (data modifying language) para insertar registros a la tabla SECURITY_ROBOT
 INSERT INTO SECURITY_ROBOT (NAME, BRAND, MODEL, LOAD_CAPACITY, SPEED, STATUS, PURCHASE_DATE, PHOTO)
@@ -139,22 +156,22 @@ GO
 -- Sentencias SQL DML (data modifying language) para insertar registros a la tabla USER_NET	 --BIRTHDAY --YEAR-MONTH-DAY
 --Administrators
 INSERT INTO USER_NET (NAME, LASTNAME, DNI, PASSWORD, USER_TYPE, DOCUMENT_TYPE, BIRTHDAY, ADDRESS, GENDER, PHONE_NUMBER, PHOTO, SALARY, SCHEDULE,EMAIL, STATUS)
-VALUES ('erwin', 'smith', '12345678',  '87654321', '0','1','19850115','Av. Universitaria 1600', 'M','967430423',NULL,4000,'T-N','erwin@gmail.com','A');	
+VALUES ('erwin', 'smith', '12345678', '87654321', '0','1','19850115','Av. Universitaria 1600', 'M','967430423',NULL,4000,'T-N','erwin@gmail.com','A');	
 -- Security Operators authorized	
-INSERT INTO USER_NET (NAME, LASTNAME, DNI, PASSWORD, AUTHORIZED, HELPNEEDED, USER_TYPE, DOCUMENT_TYPE, BIRTHDAY, ADDRESS, GENDER, PHONE_NUMBER, PHOTO, SALARY, SCHEDULE,HIRE_DATE,EMAIL, STATUS)
-VALUES ('letizia', 'castillo', '12345678', '87654321', '1','0','1','0','19900603','Jirón Las Hormigas 125', 'F','967430963',NULL,250000,'T-N','20220102', 'leti@correo.com', 'A'),
-		('angelica', 'apaza', '23456789', '98765432', '1','0','1','0','19900603','Jirón Las Hormigas 126', 'F','96743096',NULL,250000,'T-N','20220103', 'angelica@correo.com', 'A');
+INSERT INTO USER_NET (NAME, LASTNAME, DNI, USERNAME, PASSWORD, AUTHORIZED, HELPNEEDED, USER_TYPE, DOCUMENT_TYPE, BIRTHDAY, ADDRESS, GENDER, PHONE_NUMBER, PHOTO, SALARY, SCHEDULE,HIRE_DATE,EMAIL, STATUS)
+VALUES ('letizia', 'castillo', '12345678', '12345678', '87654321', '1','0','1','0','19900603','Jirón Las Hormigas 125', 'F','967430963',NULL,250000,'T-N','20220102', 'leti@correo.com', 'A'),
+		('angelica', 'apaza', '23456789', '23456789', '98765432', '1','0','1','0','19900603','Jirón Las Hormigas 126', 'F','96743096',NULL,250000,'T-N','20220103', 'angelica@correo.com', 'A');
 -- Security Operators not authorized	
-INSERT INTO USER_NET (NAME, LASTNAME, DNI, PASSWORD, AUTHORIZED, HELPNEEDED, USER_TYPE, DOCUMENT_TYPE, BIRTHDAY, ADDRESS, GENDER, PHONE_NUMBER, PHOTO,EMAIL, STATUS)
-VALUES ('aniela', 'ubillus', '34567891', '19876543', '0','0','1','0','19900603','Jirón Las Hormigas 666', 'F','96743097',NULL, 'aniela@correo.com', 'A'),
-('geraldine', 'peña', '45678912', '21987654', '0','0','1','0','19900603','Jirón Las Hormigas 127', 'F','96743098',NULL,'geral@correo.com','A');
+INSERT INTO USER_NET (NAME, LASTNAME, DNI, USERNAME, PASSWORD, AUTHORIZED, HELPNEEDED, USER_TYPE, DOCUMENT_TYPE, BIRTHDAY, ADDRESS, GENDER, PHONE_NUMBER, PHOTO,EMAIL, STATUS)
+VALUES ('aniela', 'ubillus', '34567891', '34567891', '19876543', '0','0','1','0','19900603','Jirón Las Hormigas 666', 'F','96743097',NULL, 'aniela@correo.com', 'A'),
+('geraldine', 'peña', '45678912', '45678912', '21987654', '0','0','1','0','19900603','Jirón Las Hormigas 127', 'F','96743098',NULL,'geral@correo.com','A');
 -- Clients
 INSERT INTO USER_NET (NAME, LASTNAME, DNI, USER_TYPE, DOCUMENT_TYPE, BIRTHDAY, ADDRESS, GENDER, PHONE_NUMBER,EMAIL,SATISFACTION, STATUS)
 VALUES ('nhyo', 'rivas', '12345678', '2', '0','19900603','Jirón La Floresta 690', 'M','967430430', 'nhyorivas@correo.com','1', 'A'),
 		('jesus', 'nazaret', '98756314', '2', '1','19900603','Belen', 'M','967430430', 'yisus@correo.com','0', 'A'),
 		('dil', 'gil', '12345678', '2', '0','19900603','Cerro Candela 6666', 'M','967430430', 'gildil@correo.com','1', 'A');
 GO
--- Sentencia SQL para añadir un operador  ----------
+-- Sentencia SQL para añadir un operador
 IF EXISTS(	SELECT *
 			FROM sysobjects
 			WHERE id = object_id (N'[dbo].[usp_AddOperator]')
@@ -211,7 +228,46 @@ BEGIN
 	WHERE USERNAME=@USERNAME AND PASSWORD=@PASSWORD AND AUTHORIZED='1' AND USER_TYPE='1'
 END
 GO
--- Sentencia SQL para eliminar un operador (autorizado)
+-- Sentencia SQL para editar un user net por dni 
+IF EXISTS(  SELECT * 
+			FROM sysobjects
+			WHERE id = object_id(N'[dbo].[usp_UpdateUserNet]')
+			  AND OBJECTPROPERTY(id, N'IsProcedure') = 1 )
+BEGIN
+	DROP PROCEDURE [dbo].usp_UpdateUserNet
+END
+GO
+CREATE PROCEDURE usp_UpdateUserNet(
+	@NAME			VARCHAR(100) ,
+	@LASTNAME		VARCHAR(100) ,
+	@DNI			VARCHAR(10)  ,
+	@USERNAME		VARCHAR(100),
+	@PASSWORD 		VARCHAR(100), 
+	@AUTHORIZED		CHAR(1) ,-- SecOp 1:yes, 0: no
+	@HELPNEEDED		CHAR(1) , -- SecOp	1:yes, 0: no
+	@USER_TYPE		CHAR(1), -- 0: Administrator, 1: Security Operator , 2: Client
+	@DOCUMENT_TYPE	CHAR(1), -- 0: DNI, 1: Carnet de extranjería, 2: Pasaporte
+	@BIRTHDAY		DATETIME,
+	@ADDRESS		VARCHAR(50),
+	@GENDER			CHAR(1),
+	@PHONE_NUMBER	VARCHAR(15),
+	@PHOTO			IMAGE, -- SecOp, Admin
+	@SALARY			DECIMAL(10,2),-- SecOp, Admin
+	@SCHEDULE		VARCHAR(20),-- SecOp, Admin
+	@HIRE_DATE		DATETIME,-- SecOp
+	@EMAIL			VARCHAR(50),
+	@ID				INT OUT
+) AS
+	BEGIN
+		UPDATE USER_NET 
+		SET NAME=@NAME, LASTNAME=@LASTNAME, DNI=@DNI,USERNAME=@USERNAME,PASSWORD=@PASSWORD, AUTHORIZED=@AUTHORIZED, HELPNEEDED=@HELPNEEDED, 
+		USER_TYPE=@USER_TYPE, DOCUMENT_TYPE=@DOCUMENT_TYPE, BIRTHDAY=@BIRTHDAY, ADDRESS=@ADDRESS, GENDER=@GENDER, PHONE_NUMBER=@PHONE_NUMBER, PHOTO=@PHOTO,
+		SALARY=@SALARY, SCHEDULE=@SCHEDULE,HIRE_DATE=@HIRE_DATE,EMAIL=@EMAIL
+		WHERE DNI=@DNI
+	END
+GO
+-- Sentencia SQL para eliminar un operador (autorizado)/
+/*
 IF EXISTS(  SELECT * 
 			FROM sysobjects
 			WHERE id = object_id(N'[dbo].[usp_DeleteOperator]')
@@ -247,6 +303,7 @@ CREATE PROCEDURE usp_DeleteOperator(
 		WHERE ID=@ID AND USER_TYPE='1' AND AUTHORIZED='0'
 	END
 GO
+*/
 -- Sentencia SQL para consultar todos los operadores (autorizados)
 IF EXISTS(  SELECT * 
 			FROM sysobjects
@@ -266,51 +323,53 @@ GO
 -- Sentencia SQL para consultar todos los operadores (no autorizados)
 IF EXISTS(  SELECT * 
 			FROM sysobjects
-			WHERE id = object_id(N'[dbo].[usp_QueryAllOperators]')
+			WHERE id = object_id(N'[dbo].[usp_QueryAllNotAuthorizedOperators]')
 			  AND OBJECTPROPERTY(id, N'IsProcedure') = 1 )
 BEGIN
-	DROP PROCEDURE [dbo].usp_QueryAllOperators
+	DROP PROCEDURE [dbo].usp_QueryAllNotAuthorizedOperators
 END
 GO
-CREATE PROCEDURE usp_QueryAllOperators AS
+CREATE PROCEDURE usp_QueryAllNotAuthorizedOperators AS
 	BEGIN
 		SELECT *
 		FROM USER_NET
 		WHERE USER_TYPE='1' AND AUTHORIZED= '0'
 	END
 GO
--- Sentencia SQL para consultar un operador por id (autorizado)
+-- Sentencia SQL para consultar un operador por DNI (autorizado)
 IF EXISTS(  SELECT * 
 			FROM sysobjects
-			WHERE id = object_id(N'[dbo].[usp_QueryOperatorById]')
+			WHERE id = object_id(N'[dbo].[usp_QueryOperatorByDNI]')
 			  AND OBJECTPROPERTY(id, N'IsProcedure') = 1 )
 BEGIN
-	DROP PROCEDURE [dbo].usp_QueryOperatorById
+	DROP PROCEDURE [dbo].usp_QueryOperatorByDNI
 END
 GO
-CREATE PROCEDURE usp_QueryOperatorById(
-    @ID         INT
+CREATE PROCEDURE usp_QueryOperatorByDNI(
+    @ID         INT,
+	@DNI		VARCHAR(20)
 ) AS 
 	BEGIN
 		SELECT * FROM USER_NET 
-		WHERE ID=@ID AND USER_TYPE='1'	
+		WHERE ID=@ID AND USER_TYPE='1' AND DNI=@DNI
 	END
 GO
--- Sentencia SQL para consultar un operador por id (no autorizado)  --------
+-- Sentencia SQL para consultar un operador por DNI (no autorizado)
 IF EXISTS(  SELECT * 
 			FROM sysobjects
-			WHERE id = object_id(N'[dbo].[usp_QueryOperatorById]')
+			WHERE id = object_id(N'[dbo].[usp_QueryNotAuthorizedOperatorByDNI]')
 			  AND OBJECTPROPERTY(id, N'IsProcedure') = 1 )
 BEGIN
-	DROP PROCEDURE [dbo].usp_QueryOperatorById
+	DROP PROCEDURE [dbo].usp_QueryNotAuthorizedOperatorByDNI
 END
 GO
-CREATE PROCEDURE usp_QueryOperatorById(
-    @ID         INT
+CREATE PROCEDURE usp_QueryNotAuthorizedOperatorByDNI(
+    @ID         INT,
+	@DNI		VARCHAR(20)
 ) AS 
 	BEGIN
 		SELECT * FROM USER_NET 
-		WHERE ID=@ID AND USER_TYPE='1' AND AUTHORIZED='0'
+		WHERE ID=@ID AND USER_TYPE='1' AND AUTHORIZED='0' AND DNI=@DNI
 	END
 GO
 -- Sentencia SQL para consultar registros de la tabla USER_NET
@@ -329,11 +388,12 @@ CREATE PROCEDURE usp_AddQuestion(
 	@QUESTION		VARCHAR(500),
 	@ANSWER			VARCHAR(500),
 	@FAQ				CHAR(1),
+	@STATUS				CHAR(1),
 	@ID         INT OUT 
 ) AS
   BEGIN
-		INSERT INTO QUESTION(QUESTION,ANSWER, FAQ)
-		SELECT @QUESTION, @ANSWER, @FAQ
+		INSERT INTO QUESTION(QUESTION,ANSWER, FAQ, STATUS)
+		SELECT @QUESTION, @ANSWER, @FAQ , @STATUS	
 		SET @ID = SCOPE_IDENTITY()
   END
 GO
@@ -368,11 +428,12 @@ CREATE PROCEDURE usp_UpdateQuestion(
 	@QUESTION		VARCHAR(500),
 	@ANSWER			VARCHAR(500),
 	@FAQ				CHAR(1),
+	@STATUS				CHAR(1),
 	@ID         INT OUT 
 ) AS
 	BEGIN
 		UPDATE QUESTION 
-		SET QUESTION=@QUESTION, ANSWER=@ANSWER, FAQ=@FAQ
+		SET QUESTION=@QUESTION, ANSWER=@ANSWER, FAQ=@FAQ, STATUS=@STATUS	
 		WHERE ID=@ID
 	END
 GO
@@ -428,63 +489,65 @@ GO
 -- Sentencia SQL para anadir alarma
 IF EXISTS(	SELECT *
 			FROM sysobjects
-			WHERE id = object_id (N'[dbo].[usp_AddAlarm]')
+			WHERE id = object_id (N'[dbo].[usp_AddWarning]')
 				AND OBJECTPROPERTY(id, N'IsProcedure') = 1 )
 BEGIN
-	DROP PROCEDURE [dbo].usp_AddAlarm
+	DROP PROCEDURE [dbo].usp_AddWarning
 END
 GO
-CREATE PROCEDURE usp_AddAlarm(
+CREATE PROCEDURE usp_AddWarning(
 	@START_DATE		DATETIME,
 	@END_DATE		DATETIME,
-	@ALARM_TYPE		CHAR(1) , 
+	@WARNING_TYPE		CHAR(1) , 
 	@DESCRIPTION		VARCHAR(500),
 	@ZONE 			VARCHAR(50),
 	@ACTIVE		VARCHAR(1),
 	@ID         INT OUT 
 ) AS
   BEGIN
-		INSERT INTO ALARM(START_DATE,END_DATE, ALARM_TYPE, DESCRIPTION, ZONE, ACTIVE)
-		SELECT 	@START_DATE, @END_DATE, @ALARM_TYPE, @DESCRIPTION, @ZONE, @ACTIVE	
+		INSERT INTO WARNING(START_DATE,END_DATE, WARNING_TYPE, DESCRIPTION, ZONE, ACTIVE)
+		SELECT 	@START_DATE, @END_DATE, @WARNING_TYPE, @DESCRIPTION, @ZONE, @ACTIVE	
 		SET @ID = SCOPE_IDENTITY()
 	END
 GO
 -- Sentencia SQL para editar alarma
 IF EXISTS(  SELECT * 
 			FROM sysobjects
-			WHERE id = object_id(N'[dbo].[usp_UpdateAlarm]')
+			WHERE id = object_id(N'[dbo].[usp_UpdateWarning]')
 			  AND OBJECTPROPERTY(id, N'IsProcedure') = 1 )
 BEGIN
-	DROP PROCEDURE [dbo].usp_UpdateAlarm
+	DROP PROCEDURE [dbo].usp_UpdateWarning
 END
 GO
-CREATE PROCEDURE usp_UpdateAlarm(
+CREATE PROCEDURE usp_UpdateWarning(
 	@START_DATE		DATETIME,
 	@END_DATE		DATETIME,
-	@ALARM_TYPE		CHAR(1) , 
+	@WARNING_TYPE		CHAR(1) , 
 	@DESCRIPTION		VARCHAR(500),
 	@ZONE 			VARCHAR(50),
 	@ACTIVE		VARCHAR(1),
 	@ID         INT OUT 
 ) AS
 	BEGIN
-		UPDATE ALARM 
-		SET 	START_DATE=@START_DATE, END_DATE=@END_DATE, ALARM_TYPE=@ALARM_TYPE, DESCRIPTION=@DESCRIPTION, ZONE=@ZONE, ACTIVE=@ACTIVE	
+		UPDATE WARNING 
+		SET 	START_DATE=@START_DATE, END_DATE=@END_DATE, WARNING_TYPE=@WARNING_TYPE, DESCRIPTION=@DESCRIPTION, ZONE=@ZONE, ACTIVE=@ACTIVE	
 		WHERE ID=@ID
 	END
 GO
 -- Sentencia SQL para consultar todas alarma
 IF EXISTS(  SELECT * 
 			FROM sysobjects
-			WHERE id = object_id(N'[dbo].[usp_QueryAllAlarms]')
+			WHERE id = object_id(N'[dbo].[usp_QueryAllWarnings]')
 			  AND OBJECTPROPERTY(id, N'IsProcedure') = 1 )
 BEGIN
-	DROP PROCEDURE [dbo].usp_QueryAllAlarms
+	DROP PROCEDURE [dbo].usp_QueryAllWarnings
 END
 GO
-CREATE PROCEDURE usp_QueryAllAlarms AS
+CREATE PROCEDURE usp_QueryAllWarnings AS
 	BEGIN
 		SELECT *
-		FROM ALARM
+		FROM WARNING
 	END
 GO
+
+
