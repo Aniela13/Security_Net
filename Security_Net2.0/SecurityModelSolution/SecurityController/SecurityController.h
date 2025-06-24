@@ -41,8 +41,9 @@ namespace SecurityController {
 		static int AddUser(SecurityOperator^ operador);              //         
 		static int ValidateOperator(String^ OpUser, String^ OpPassword);     
 		static int DeleteUser(SecurityOperator^ OpUser);
-		static SecurityOperator^ QueryUserbyUsername(String^ username);        
+		static SecurityOperator^ QueryOperatorByDNI(String^ operatorDNI);      //L
 		static List<SecurityOperator^>^ QueryAllUsers();
+		static int UpdateSecurityOperator(SecurityOperator^ operador);
 
 		/*-------CRUD PREGUNTAS FRECUENTES-------*/
 		static int AddQuestion(Question^ newquestion);
@@ -51,6 +52,7 @@ namespace SecurityController {
 		static List<Question^>^ QueryAllFAQ(); 
 		static List<String^>^ QueryAllOnlyQuestions();
 		static String^ QueryAnswerByQuestion(String^ question);  //Obtener respuesta por pregunta
+		
 
 
 		/*-------CRUD HISTORIAL DE ALARMAS-------*/
@@ -66,7 +68,7 @@ namespace SecurityController {
 		/*-------REGISTER OPERADOR-------*/
 		static int AddOperatortoValidation(SecurityOperator^ operador);  //-------------AddOperator (sin validar)
 		static void DeleteOperatortoValidation(String^ dni);             
-		static SecurityOperator^ QueryNoOperatorbyDNI(String^ dni);      //-------------QueryOperatorById
+		static SecurityOperator^ QueryNoOperatorbyDNI(String^ dni);      //-------------QueryNotAuthorizedOperatorByDNI
 		static List<SecurityOperator^>^ QueryAllNoRegisteredOperators();   //
 
 		/*------SISTEMA DE PREGUNTAS NUEVAS-----*/ //interacción operador y cliente

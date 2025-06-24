@@ -1,41 +1,227 @@
 ﻿  AdminForm.cpp
-<<<<<<< HEAD
-  MainForm.cpp
-  OperationsAdminForm.cpp
-  UpdateMapForm.cpp
-  Generando código...
-  AdminForm.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-  SecurityGUIApp.vcxproj -> C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityGUIApp.exe
-=======
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AlarmHistorialForm.h(362,27): error C2039: "Name": no es un miembro de "System::String"
+  (compilando archivo de origen "AdminForm.cpp")
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AlarmHistorialForm.h(426,29): error C2039: "Name": no es un miembro de "System::String"
+  (compilando archivo de origen "AdminForm.cpp")
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AlarmHistorialForm.h(438,46): error C2039: "Name": no es un miembro de "System::String"
+  (compilando archivo de origen "AdminForm.cpp")
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AlarmHistorialForm.h(442,29): error C2039: "Name": no es un miembro de "System::String"
+  (compilando archivo de origen "AdminForm.cpp")
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AlarmHistorialForm.h(456,45): error C2039: "Name": no es un miembro de "System::String"
+  (compilando archivo de origen "AdminForm.cpp")
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AlarmHistorialForm.h(460,28): error C2039: "Name": no es un miembro de "System::String"
+  (compilando archivo de origen "AdminForm.cpp")
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\ModifyFAQ.h(303,39): error C2661: 'SecurityModel::Question::Question': ninguna función sobrecargada acepta 2 argumentos
+  (compilando archivo de origen "AdminForm.cpp")
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\ModifyFAQ.h(303,39):
+      al hacer coincidir la lista de argumentos '(System::String ^, System::String ^)'
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\ModifyFAQ.h(360,39): error C2661: 'SecurityModel::Question::Question': ninguna función sobrecargada acepta 2 argumentos
+  (compilando archivo de origen "AdminForm.cpp")
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\ModifyFAQ.h(360,39):
+      al hacer coincidir la lista de argumentos '(System::String ^, System::String ^)'
+  
   AlarmHistorialForm.cpp
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AlarmHistorialForm.h(362,27): error C2039: "Name": no es un miembro de "System::String"
+  (compilando archivo de origen "AlarmHistorialForm.cpp")
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AlarmHistorialForm.h(426,29): error C2039: "Name": no es un miembro de "System::String"
+  (compilando archivo de origen "AlarmHistorialForm.cpp")
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AlarmHistorialForm.h(438,46): error C2039: "Name": no es un miembro de "System::String"
+  (compilando archivo de origen "AlarmHistorialForm.cpp")
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AlarmHistorialForm.h(442,29): error C2039: "Name": no es un miembro de "System::String"
+  (compilando archivo de origen "AlarmHistorialForm.cpp")
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AlarmHistorialForm.h(456,45): error C2039: "Name": no es un miembro de "System::String"
+  (compilando archivo de origen "AlarmHistorialForm.cpp")
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AlarmHistorialForm.h(460,28): error C2039: "Name": no es un miembro de "System::String"
+  (compilando archivo de origen "AlarmHistorialForm.cpp")
+  
   AnswerForm.cpp
   AsignZonesForm.cpp
   ClientForm.cpp
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\ClientForm.h(164,36): error C2661: 'SecurityModel::Warning::Warning': ninguna función sobrecargada acepta 4 argumentos
+  (compilando archivo de origen "ClientForm.cpp")
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\ClientForm.h(164,36):
+      al hacer coincidir la lista de argumentos '(System::DateTime, System::DateTime, SecurityModel::WarningType ^, const char [15])'
+  
   ComboBoxItem.cpp
   CreateAlarmForm.cpp
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\CreateAlarmForm.h(261,13): error C2664: 'void SecurityModel::Warning::Type::set(System::String ^)': el argumento 1 no puede convertirse de 'SecurityModel::WarningType ^' a 'System::String ^'
+  (compilando archivo de origen "CreateAlarmForm.cpp")
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\CreateAlarmForm.h(261,22):
+      No hay un operador de conversión definida por el usuario disponible, o
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\CreateAlarmForm.h(261,22):
+      Los tipos señalados no están relacionados; la conversión requiere reinterpret_cast, conversión de estilo de C o conversión de estilo de función entre paréntesis
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\CreateAlarmForm.h(261,1):
+      vea la declaración de 'SecurityModel::Warning::Type::set'
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\CreateAlarmForm.h(261,13):
+      al hacer coincidir la lista de argumentos '(SecurityModel::WarningType ^)'
+  
   EmergencyForm.cpp
   FAQForm.cpp
   MainForm.cpp
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AlarmHistorialForm.h(362,27): error C2039: "Name": no es un miembro de "System::String"
+  (compilando archivo de origen "MainForm.cpp")
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AlarmHistorialForm.h(426,29): error C2039: "Name": no es un miembro de "System::String"
+  (compilando archivo de origen "MainForm.cpp")
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AlarmHistorialForm.h(438,46): error C2039: "Name": no es un miembro de "System::String"
+  (compilando archivo de origen "MainForm.cpp")
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AlarmHistorialForm.h(442,29): error C2039: "Name": no es un miembro de "System::String"
+  (compilando archivo de origen "MainForm.cpp")
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AlarmHistorialForm.h(456,45): error C2039: "Name": no es un miembro de "System::String"
+  (compilando archivo de origen "MainForm.cpp")
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AlarmHistorialForm.h(460,28): error C2039: "Name": no es un miembro de "System::String"
+  (compilando archivo de origen "MainForm.cpp")
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\ModifyFAQ.h(303,39): error C2661: 'SecurityModel::Question::Question': ninguna función sobrecargada acepta 2 argumentos
+  (compilando archivo de origen "MainForm.cpp")
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\ModifyFAQ.h(303,39):
+      al hacer coincidir la lista de argumentos '(System::String ^, System::String ^)'
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\ModifyFAQ.h(360,39): error C2661: 'SecurityModel::Question::Question': ninguna función sobrecargada acepta 2 argumentos
+  (compilando archivo de origen "MainForm.cpp")
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\ModifyFAQ.h(360,39):
+      al hacer coincidir la lista de argumentos '(System::String ^, System::String ^)'
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\ClientForm.h(164,36): error C2661: 'SecurityModel::Warning::Warning': ninguna función sobrecargada acepta 4 argumentos
+  (compilando archivo de origen "MainForm.cpp")
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\ClientForm.h(164,36):
+      al hacer coincidir la lista de argumentos '(System::DateTime, System::DateTime, SecurityModel::WarningType ^, const char [15])'
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\CreateAlarmForm.h(261,13): error C2664: 'void SecurityModel::Warning::Type::set(System::String ^)': el argumento 1 no puede convertirse de 'SecurityModel::WarningType ^' a 'System::String ^'
+  (compilando archivo de origen "MainForm.cpp")
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\CreateAlarmForm.h(261,22):
+      No hay un operador de conversión definida por el usuario disponible, o
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\CreateAlarmForm.h(261,22):
+      Los tipos señalados no están relacionados; la conversión requiere reinterpret_cast, conversión de estilo de C o conversión de estilo de función entre paréntesis
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\CreateAlarmForm.h(261,1):
+      vea la declaración de 'SecurityModel::Warning::Type::set'
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\CreateAlarmForm.h(261,13):
+      al hacer coincidir la lista de argumentos '(SecurityModel::WarningType ^)'
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\RecognizeAlertForm.h(390,36): error C2661: 'SecurityModel::Warning::Warning': ninguna función sobrecargada acepta 4 argumentos
+  (compilando archivo de origen "MainForm.cpp")
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\RecognizeAlertForm.h(390,36):
+      al hacer coincidir la lista de argumentos '(System::DateTime, System::DateTime, SecurityModel::WarningType ^, const char [15])'
+  
   MaintainUser.cpp
   ModifyFAQ.cpp
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\ModifyFAQ.h(303,39): error C2661: 'SecurityModel::Question::Question': ninguna función sobrecargada acepta 2 argumentos
+  (compilando archivo de origen "ModifyFAQ.cpp")
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\ModifyFAQ.h(303,39):
+      al hacer coincidir la lista de argumentos '(System::String ^, System::String ^)'
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\ModifyFAQ.h(360,39): error C2661: 'SecurityModel::Question::Question': ninguna función sobrecargada acepta 2 argumentos
+  (compilando archivo de origen "ModifyFAQ.cpp")
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\ModifyFAQ.h(360,39):
+      al hacer coincidir la lista de argumentos '(System::String ^, System::String ^)'
+  
   NewMapForm.cpp
   NewQuestionForm.cpp
   NoiseSensorForm.cpp
   OperationsAdminForm.cpp
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AlarmHistorialForm.h(362,27): error C2039: "Name": no es un miembro de "System::String"
+  (compilando archivo de origen "OperationsAdminForm.cpp")
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AlarmHistorialForm.h(426,29): error C2039: "Name": no es un miembro de "System::String"
+  (compilando archivo de origen "OperationsAdminForm.cpp")
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AlarmHistorialForm.h(438,46): error C2039: "Name": no es un miembro de "System::String"
+  (compilando archivo de origen "OperationsAdminForm.cpp")
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AlarmHistorialForm.h(442,29): error C2039: "Name": no es un miembro de "System::String"
+  (compilando archivo de origen "OperationsAdminForm.cpp")
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AlarmHistorialForm.h(456,45): error C2039: "Name": no es un miembro de "System::String"
+  (compilando archivo de origen "OperationsAdminForm.cpp")
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AlarmHistorialForm.h(460,28): error C2039: "Name": no es un miembro de "System::String"
+  (compilando archivo de origen "OperationsAdminForm.cpp")
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\ModifyFAQ.h(303,39): error C2661: 'SecurityModel::Question::Question': ninguna función sobrecargada acepta 2 argumentos
+  (compilando archivo de origen "OperationsAdminForm.cpp")
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\ModifyFAQ.h(303,39):
+      al hacer coincidir la lista de argumentos '(System::String ^, System::String ^)'
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\ModifyFAQ.h(360,39): error C2661: 'SecurityModel::Question::Question': ninguna función sobrecargada acepta 2 argumentos
+  (compilando archivo de origen "OperationsAdminForm.cpp")
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\ModifyFAQ.h(360,39):
+      al hacer coincidir la lista de argumentos '(System::String ^, System::String ^)'
+  
   OperatorForm.cpp
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\CreateAlarmForm.h(261,13): error C2664: 'void SecurityModel::Warning::Type::set(System::String ^)': el argumento 1 no puede convertirse de 'SecurityModel::WarningType ^' a 'System::String ^'
+  (compilando archivo de origen "OperatorForm.cpp")
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\CreateAlarmForm.h(261,22):
+      No hay un operador de conversión definida por el usuario disponible, o
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\CreateAlarmForm.h(261,22):
+      Los tipos señalados no están relacionados; la conversión requiere reinterpret_cast, conversión de estilo de C o conversión de estilo de función entre paréntesis
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\CreateAlarmForm.h(261,1):
+      vea la declaración de 'SecurityModel::Warning::Type::set'
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\CreateAlarmForm.h(261,13):
+      al hacer coincidir la lista de argumentos '(SecurityModel::WarningType ^)'
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\RecognizeAlertForm.h(390,36): error C2661: 'SecurityModel::Warning::Warning': ninguna función sobrecargada acepta 4 argumentos
+  (compilando archivo de origen "OperatorForm.cpp")
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\RecognizeAlertForm.h(390,36):
+      al hacer coincidir la lista de argumentos '(System::DateTime, System::DateTime, SecurityModel::WarningType ^, const char [15])'
+  
   OperatorRegistration.cpp
   RecognizeAlertForm.cpp
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\CreateAlarmForm.h(261,13): error C2664: 'void SecurityModel::Warning::Type::set(System::String ^)': el argumento 1 no puede convertirse de 'SecurityModel::WarningType ^' a 'System::String ^'
+  (compilando archivo de origen "RecognizeAlertForm.cpp")
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\CreateAlarmForm.h(261,22):
+      No hay un operador de conversión definida por el usuario disponible, o
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\CreateAlarmForm.h(261,22):
+      Los tipos señalados no están relacionados; la conversión requiere reinterpret_cast, conversión de estilo de C o conversión de estilo de función entre paréntesis
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\CreateAlarmForm.h(261,1):
+      vea la declaración de 'SecurityModel::Warning::Type::set'
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\CreateAlarmForm.h(261,13):
+      al hacer coincidir la lista de argumentos '(SecurityModel::WarningType ^)'
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\RecognizeAlertForm.h(390,36): error C2661: 'SecurityModel::Warning::Warning': ninguna función sobrecargada acepta 4 argumentos
+  (compilando archivo de origen "RecognizeAlertForm.cpp")
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\RecognizeAlertForm.h(390,36):
+      al hacer coincidir la lista de argumentos '(System::DateTime, System::DateTime, SecurityModel::WarningType ^, const char [15])'
+  
   RobotPosition.cpp
   Generando código...
   Compilando...
   SatisfactionQuestion.cpp
   SecurityOperatorForm.cpp
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\CreateAlarmForm.h(261,13): error C2664: 'void SecurityModel::Warning::Type::set(System::String ^)': el argumento 1 no puede convertirse de 'SecurityModel::WarningType ^' a 'System::String ^'
+  (compilando archivo de origen "SecurityOperatorForm.cpp")
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\CreateAlarmForm.h(261,22):
+      No hay un operador de conversión definida por el usuario disponible, o
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\CreateAlarmForm.h(261,22):
+      Los tipos señalados no están relacionados; la conversión requiere reinterpret_cast, conversión de estilo de C o conversión de estilo de función entre paréntesis
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\CreateAlarmForm.h(261,1):
+      vea la declaración de 'SecurityModel::Warning::Type::set'
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\CreateAlarmForm.h(261,13):
+      al hacer coincidir la lista de argumentos '(SecurityModel::WarningType ^)'
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\RecognizeAlertForm.h(390,36): error C2661: 'SecurityModel::Warning::Warning': ninguna función sobrecargada acepta 4 argumentos
+  (compilando archivo de origen "SecurityOperatorForm.cpp")
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\RecognizeAlertForm.h(390,36):
+      al hacer coincidir la lista de argumentos '(System::DateTime, System::DateTime, SecurityModel::WarningType ^, const char [15])'
+  
   SurveillanceCameraForm.cpp
   UpdateMapForm.cpp
   ValidateOpForm.cpp
   ZoneLocation.cpp
   .NETFramework,Version=v4.8.1.AssemblyAttributes.cpp
   Generando código...
-  AdminForm.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-  SecurityGUIApp.vcxproj -> C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityGUIApp.exe
->>>>>>> 7c696d18b3fabce60ff8075bcdc71a21cf4cbac2

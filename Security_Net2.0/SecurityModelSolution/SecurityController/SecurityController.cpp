@@ -47,15 +47,17 @@ int SecurityController::Controller::DeleteUser(SecurityOperator^ OpUser)
 	return 0;
 }
 
-SecurityOperator^ SecurityController::Controller::QueryUserbyUsername(String^ username)
+SecurityOperator^ SecurityController::Controller::QueryOperatorByDNI(String^ operatorDNI)
 {
-	operators = (List<SecurityOperator^>^)Persistance::LoadUsersFromTextFile(TXT_USERS_FILE_NAME);
+	/*operators = (List<SecurityOperator^>^)Persistance::LoadUsersFromTextFile(TXT_USERS_FILE_NAME);
 	for (int i = 0; i < operators->Count; i++) {
 		if (operators[i]->DNI == username) {
 			return operators[i];
 		}
 	}
 	return nullptr;
+	*/
+	return Persistance::QueryOperatorByDNI(Convert::ToInt32(operatorDNI));
 }
 
 List<SecurityOperator^>^ SecurityController::Controller::QueryAllUsers(){
@@ -71,6 +73,11 @@ List<SecurityOperator^>^ SecurityController::Controller::QueryAllUsers(){
 	}
 	return nullptr;
 	
+}
+
+int SecurityController::Controller::UpdateSecurityOperator(SecurityOperator^ operador)
+{
+	return Persistance::UpdateSecurityOperator(operador);
 }
 
 
@@ -283,12 +290,12 @@ SecurityOperator^ SecurityController::Controller::QueryNoOperatorbyDNI(String^ d
 	}
 	return nullptr;
 	*/
-	return Persistance::QueryOperatorById(Convert::ToInt32(dni));
+	return Persistance::QueryNotAuthorizedOperatorByDNI(Convert::ToInt32(dni));
 }
 
 List<SecurityOperator^>^ SecurityController::Controller::QueryAllNoRegisteredOperators()
 {
-	try {
+	/*try {
 		operadoresporvalidar = (List<SecurityOperator^>^)Persistance::LoadValidationOperatorsFromTextFile(TXT_REGISTRATION_OP_FILE_NAME);
 		if (operadoresporvalidar == nullptr)
 			operadoresporvalidar = gcnew List<SecurityOperator^>();
@@ -298,7 +305,9 @@ List<SecurityOperator^>^ SecurityController::Controller::QueryAllNoRegisteredOpe
 		throw ex;
 	}
 	return nullptr;
-	
+	*/
+
+	return Persistance::QueryAllNotAuthorizedOperators();
 }
 
 int SecurityController::Controller::AddNewQuestion(String^ newquestion)

@@ -161,7 +161,7 @@ namespace SecurityGUIApp {
 		
 		try {
 			String^ dni = txtSecurityUser->Text;
-			SecurityOperator^ op = Controller::QueryUserbyUsername(dni);
+			SecurityOperator^ op = Controller::QueryOperatorByDNI(dni);
 			// Devuelve nullptr si no esta en el archivo de usuarios validados
 			if (op != nullptr) {
 				if (op->Authorized == true) {

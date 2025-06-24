@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityModel\x64\Debug\SecurityModel.vcxproj.AssemblyReference.cache
-=======
 C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityModel\x64\Debug\SecurityModel.vcxproj.AssemblyReference.cache
->>>>>>> 7c696d18b3fabce60ff8075bcdc71a21cf4cbac2

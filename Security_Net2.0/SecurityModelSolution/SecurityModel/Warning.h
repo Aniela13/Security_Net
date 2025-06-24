@@ -6,18 +6,23 @@ namespace SecurityModel {
 
     public ref class Warning {
     public:
+        int ID;
         property DateTime^ StartingDate; // fecha y hora de alerta activada
         property DateTime^ EndingDate; //fecha y hora de alerta desactivada
-        property WarningType^ Type; //tipo de alarma
+        property String^ Type; //tipo de alarma
         property String^ Description; // descripcion de alerta
-
+        property String^ Zone;
+        bool Active;
 
         Warning() {}
-        Warning(DateTime^ startingDate, DateTime^ endingDate, WarningType^ type, String^ description) {
+        Warning(int id, DateTime^ startingDate, DateTime^ endingDate, String^ type, String^ description, String^ zone, bool active) {
+            ID = id;
             StartingDate = startingDate;
             EndingDate = endingDate;
             Type = type;
             Description = description;
+            Zone = zone;
+            Active = active;
         }
     };
 }

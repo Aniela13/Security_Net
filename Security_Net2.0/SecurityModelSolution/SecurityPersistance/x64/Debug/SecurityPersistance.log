@@ -1,13 +1,17 @@
-<<<<<<< HEAD
 ﻿  pch.cpp
   AssemblyInfo.cpp
   SecurityPersistance.cpp
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityPersistance\SecurityPersistance.cpp(128,109): error C2039: "Name": no es un miembro de "System::String"
+  (compilando archivo de origen "/SecurityPersistance.cpp")
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityPersistance\SecurityPersistance.cpp(154,40): error C2661: 'SecurityModel::Warning::Warning': ninguna función sobrecargada acepta 4 argumentos
+  (compilando archivo de origen "/SecurityPersistance.cpp")
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityPersistance\SecurityPersistance.cpp(154,40):
+      al hacer coincidir la lista de argumentos '(System::DateTime, System::DateTime, SecurityModel::WarningType ^, System::String ^)'
+  
+C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityPersistance\SecurityPersistance.cpp(207,33): error C2661: 'SecurityModel::Question::Question': ninguna función sobrecargada acepta 2 argumentos
+  (compilando archivo de origen "/SecurityPersistance.cpp")
+      C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityPersistance\SecurityPersistance.cpp(207,33):
+      al hacer coincidir la lista de argumentos '(System::String ^, System::String ^)'
+  
   Generando código...
-  .NETFramework,Version=v4.8.1.AssemblyAttributes.cpp
-  AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-  SecurityPersistance.vcxproj -> C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityPersistance.dll
-=======
-﻿  SecurityPersistance.cpp
-  AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-  SecurityPersistance.vcxproj -> C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityPersistance.dll
->>>>>>> 7c696d18b3fabce60ff8075bcdc71a21cf4cbac2

@@ -345,7 +345,7 @@ namespace SecurityGUIApp {
 	}
     private: System::Void dgvMaintainUser_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		String^ username = dgvMaintainUser->Rows[dgvMaintainUser->SelectedCells[0]->RowIndex]->Cells[0]->Value->ToString();
-		SecurityOperator^ op = Controller::QueryUserbyUsername(username);
+		SecurityOperator^ op = Controller::QueryOperatorByDNI(username);
 		txtUser->Text = op->DNI;
 		txtName->Text = op->Name;
 		ShowListaOperadores();
@@ -366,7 +366,7 @@ namespace SecurityGUIApp {
 				"Confirmación", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
 
 			if (dlgResult == System::Windows::Forms::DialogResult::Yes) {
-				SecurityOperator^ op = Controller::QueryUserbyUsername(username);
+				SecurityOperator^ op = Controller::QueryOperatorByDNI(username);
 
 				if (Controller::DeleteUser(op) == 1) {
 					ClearControls();

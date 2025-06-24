@@ -92,10 +92,14 @@ Class SecurityModel.MallMap: AutoLayout, AnsiClass, Class, Public, Serializable,
     set_Id(Int32): PrivateScope, Public, HideBySig, SpecialName
     ShowMap(): PrivateScope, Public, HideBySig
 Class SecurityModel.Question: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32, System.String, System.String, Boolean, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
+    Int32 ID : Public
     System.String question : Public
     System.String Answer : Public
+    Boolean FAQ : Public
+    System.String Status : Public
 Class SecurityModel.Route: AutoLayout, AnsiClass, Class, Public, Serializable, BeforeFieldInit
     Void .ctor(Int32, System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -209,11 +213,15 @@ Class SecurityModel.WarningType: AutoLayout, AnsiClass, Class, Public, BeforeFie
     get_Description(): PrivateScope, Public, HideBySig, SpecialName
     set_Description(String): PrivateScope, Public, HideBySig, SpecialName
 Class SecurityModel.Warning: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-    Void .ctor(System.ValueType, System.ValueType, SecurityModel.WarningType, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32, System.ValueType, System.ValueType, System.String, System.String, System.String, Boolean): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 ID : Public
+    Boolean Active : Public
   Properties:
+    System.String Zone 'get set' : 
     System.String Description 'get set' : 
-    SecurityModel.WarningType Type 'get set' : 
+    System.String Type 'get set' : 
     System.ValueType EndingDate 'get set' DateTime IsBoxed : 
     System.ValueType StartingDate 'get set' DateTime IsBoxed : 
   Methods:
@@ -222,9 +230,11 @@ Class SecurityModel.Warning: AutoLayout, AnsiClass, Class, Public, BeforeFieldIn
     get_EndingDate(): PrivateScope, Public, HideBySig, SpecialName
     set_EndingDate(ValueType DateTime IsBoxed): PrivateScope, Public, HideBySig, SpecialName
     get_Type(): PrivateScope, Public, HideBySig, SpecialName
-    set_Type(WarningType): PrivateScope, Public, HideBySig, SpecialName
+    set_Type(String): PrivateScope, Public, HideBySig, SpecialName
     get_Description(): PrivateScope, Public, HideBySig, SpecialName
     set_Description(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Zone(): PrivateScope, Public, HideBySig, SpecialName
+    set_Zone(String): PrivateScope, Public, HideBySig, SpecialName
 Class SecurityModel.WarningReport: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:

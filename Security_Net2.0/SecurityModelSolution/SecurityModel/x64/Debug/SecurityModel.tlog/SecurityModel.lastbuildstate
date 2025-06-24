@@ -1,7 +1,2 @@
-<<<<<<< HEAD
-PlatformToolSet=v143:VCToolArchitecture=Native64Bit:VCToolsVersion=14.44.35207:TargetPlatformVersion=10.0.26100.0:TargetFrameworkVersion=v4.8.1::EnableManagedIncrementalBuild=true:
-Debug|x64|C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\|
-=======
 PlatformToolSet=v143:VCToolArchitecture=Native64Bit:VCToolsVersion=14.43.34808:TargetPlatformVersion=10.0.22621.0:TargetFrameworkVersion=v4.8.1::EnableManagedIncrementalBuild=true:
 Debug|x64|C:\Users\geral\Desktop\POO\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\|
->>>>>>> 7c696d18b3fabce60ff8075bcdc71a21cf4cbac2

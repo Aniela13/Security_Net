@@ -230,10 +230,14 @@ namespace SecurityGUIApp {
 
 			if (dlgResult == System::Windows::Forms::DialogResult::Yes) {
 				newoperator->Authorized = true; // se actualiza el operador a autorizado
-				if (Controller::AddUser(newoperator) == 1) {
+				/*if (Controller::AddUser(newoperator) == 1) {
 					Controller::DeleteOperatortoValidation(dni);
+					showAllNoRegisteredOperators();	
+				}
+				*/
+
+				if (Controller::UpdateSecurityOperator(newoperator) == 1) {
 					showAllNoRegisteredOperators();
-					
 				}
 				
 			}

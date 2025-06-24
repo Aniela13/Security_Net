@@ -43,9 +43,21 @@ namespace SecurityPersistance {
 
 		//------- PROGGRAMACIÓN CON BASE DE DATOS ------
 		static int AddOperator(SecurityOperator^ operador); //Añaddir Operador (no validado)
-		static SecurityOperator^ QueryOperatorById(int operatorId); 
+		static SecurityOperator^ QueryOperatorByDNI(int operatorDNI);    //Consultar un operador por DNI (autorizado)
+		static SecurityOperator^ QueryNotAuthorizedOperatorByDNI(int operatorDNI);    //Consultar un operador por DNI (no autorizado)
+		static int UpdateSecurityOperator(SecurityOperator^ operador);
+		static List<SecurityOperator^>^ QueryAllNotAuthorizedOperators();
+		static List<SecurityOperator^>^ QueryAllOperators();          //Consultar todos los operadores (autorizados)
 
-	
 
+		// -------- WARNINGS --------------
+		static int AddWarning(Warning^ warning);
+		static int UpdateWarning(Warning^ warning);
+		static List<Warning^>^ QueryAllWarnings();
+		// ---------QUESTIONS -----------
+		static int AddQuestion(Warning^ question);
+		static List<Question^>^ QueryAllFAQ();
+		static List<Question^>^ QueryAllNewQuestions();
+		static String^ QueryAnswerByQuestion(String^ question);  //Obtener respuesta por pregunta
 	};
 }
