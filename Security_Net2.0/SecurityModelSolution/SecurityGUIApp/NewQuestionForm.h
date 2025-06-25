@@ -193,8 +193,8 @@ namespace SecurityGUIApp {
 		
 	
 	}
-private: System::Void txtNewQuestion_Click(System::Object^ sender, System::EventArgs^ e) {
-	txtNewQuestion->Text = "";//Que se borre lo anterior
-}
+	private: System::Void txtNewQuestion_Click(System::Object^ sender, System::EventArgs^ e) {
+		txtNewQuestion->Text = "";//Que se borre lo anterior
+	}
 };
 }

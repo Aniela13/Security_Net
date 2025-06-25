@@ -42,10 +42,10 @@ namespace SecurityPersistance {
 		static Object^ LoadBinaryFile(String^ fileName);
 
 		//------- PROGGRAMACIÓN CON BASE DE DATOS ------
-		static int ValidateOperator(String^ username, String^ password);
+		static SecurityOperator^ ValidateOperator(String^ username, String^ password);
 		static int AddOperator(SecurityOperator^ operador); //Añaddir Operador (no validado)
-		static SecurityOperator^ QueryOperatorByDNI(int operatorDNI);    //Consultar un operador por DNI (autorizado)
-		static SecurityOperator^ QueryNotAuthorizedOperatorByDNI(int operatorDNI);    //Consultar un operador por DNI (no autorizado)
+		static SecurityOperator^ QueryOperatorByDNI(String^ operatorDNI);    //Consultar un operador por DNI (autorizado)
+		static SecurityOperator^ QueryNotAuthorizedOperatorByDNI(String^ operatorDNI);    //Consultar un operador por DNI (no autorizado)
 		static int UpdateSecurityOperator(SecurityOperator^ operador);
 		static List<SecurityOperator^>^ QueryAllNotAuthorizedOperators();
 		static List<SecurityOperator^>^ QueryAllOperators();          //Consultar todos los operadores (autorizados)

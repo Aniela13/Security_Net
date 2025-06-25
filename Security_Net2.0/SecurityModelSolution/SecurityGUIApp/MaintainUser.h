@@ -367,7 +367,7 @@ namespace SecurityGUIApp {
 
 			if (dlgResult == System::Windows::Forms::DialogResult::Yes) {
 				SecurityOperator^ op = Controller::QueryOperatorByDNI(username);
-
+				op->Status = "U";
 				if (Controller::DeleteUser(op) == 1) {
 					ClearControls();
 					MessageBox::Show("Se ha eliminado al operador" + op->Name +" de seguridad de manera exitosa.");

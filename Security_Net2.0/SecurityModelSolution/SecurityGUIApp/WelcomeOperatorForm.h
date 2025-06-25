@@ -160,8 +160,9 @@ namespace SecurityGUIApp {
 	private: System::Void btnLogInSecurity_Click(System::Object^ sender, System::EventArgs^ e) {
 		
 		try {
-			String^ dni = txtSecurityUser->Text;
-			SecurityOperator^ op = Controller::QueryOperatorByDNI(dni);
+			String^ username = txtSecurityUser->Text;
+			String^ password = txtSecurityPassword->Text;
+			SecurityOperator^ op = Controller::ValidateOperator(username, password);
 			// Devuelve nullptr si no esta en el archivo de usuarios validados
 			if (op != nullptr) {
 				if (op->Authorized == true) {

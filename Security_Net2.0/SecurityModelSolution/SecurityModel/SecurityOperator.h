@@ -21,6 +21,7 @@ namespace SecurityModel {
         Double^ Salary;
         String^ Schedule;
         DateTime^ Hire_Date;
+        String^ Document_Type;
         String^ Email;
         int Id;
         String^ Status;
@@ -32,7 +33,8 @@ namespace SecurityModel {
             LastName = lastName;
             DNI = dni;
             UserName = dni;
-            Id = Convert::ToInt32(dni);
+            //Id = Convert::ToInt32(dni);
+            Document_Type = "0";
             Password = password;
             Authorized = authorized;  // Se asigna el valor proporcionado
             HelpNeeded = helpneeded;

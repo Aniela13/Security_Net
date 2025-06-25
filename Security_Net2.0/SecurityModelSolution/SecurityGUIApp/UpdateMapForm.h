@@ -327,6 +327,7 @@ namespace SecurityGUIApp {
 
 		}
 #pragma endregion
+		
 	private:
 		bool isWaitingForClick = false; // Bandera para controlar el clic
 
@@ -389,8 +390,9 @@ namespace SecurityGUIApp {
 			   MainForm^ form = gcnew MainForm();
 			   this->Hide();
 			   form->Show();
+			]
 
-		   }
+	
 		   */
 
 	private: System::Void pbMap_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
@@ -422,7 +424,7 @@ namespace SecurityGUIApp {
 		if (Name->Equals("")) {
 			MessageBox::Show("Debe determinar el nombre de la zona");
 			return;
-		}
+	}
 
 		try {
 
@@ -443,7 +445,7 @@ namespace SecurityGUIApp {
 		catch (Exception^ ex) {
 			MessageBox::Show("No se ha podido agregar la zona al mapa por el siguiente motivo:\n" +
 				ex->Message);
-		}
+	}
 
 
 
@@ -484,10 +486,10 @@ namespace SecurityGUIApp {
 
 	}
 
-	private: System::Void UpdateMapForm_Load(System::Object^ sender, System::EventArgs^ e) {
+     private: System::Void UpdateMapForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		ShowZones();
 		ClearControls();
-	}
+	 }
 
 	private: System::Void btnDelete_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ NameZone = txtNameZone->Text->Trim();

@@ -120,7 +120,6 @@ namespace SecurityGUIApp {
 			this->MinimumSize = System::Drawing::Size(710, 640);
 			this->Name = L"MainForm";
 			this->Text = L"MainForm";
-			this->Load += gcnew System::EventHandler(this, &MainForm::MainForm_Load);
 			this->ResumeLayout(false);
 
 		}
@@ -144,7 +143,6 @@ namespace SecurityGUIApp {
 		//this->Hide();
 		operatorForm->Show();
 	}
-private: System::Void MainForm_Load(System::Object^ sender, System::EventArgs^ e) {
-}
+
 };
 }

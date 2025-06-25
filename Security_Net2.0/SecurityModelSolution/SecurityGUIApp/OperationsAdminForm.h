@@ -85,19 +85,18 @@ namespace SecurityGUIApp {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::SystemColors::MenuHighlight;
-			this->label1->Location = System::Drawing::Point(255, 35);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Location = System::Drawing::Point(340, 43);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(163, 29);
+			this->label1->Size = System::Drawing::Size(194, 36);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Operaciones";
 			// 
 			// btnUptateMap
 			// 
-			this->btnUptateMap->Location = System::Drawing::Point(51, 162);
-			this->btnUptateMap->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnUptateMap->Location = System::Drawing::Point(68, 199);
+			this->btnUptateMap->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnUptateMap->Name = L"btnUptateMap";
-			this->btnUptateMap->Size = System::Drawing::Size(82, 57);
+			this->btnUptateMap->Size = System::Drawing::Size(109, 70);
 			this->btnUptateMap->TabIndex = 1;
 			this->btnUptateMap->Text = L"Actualizar Mapa";
 			this->btnUptateMap->UseVisualStyleBackColor = true;
@@ -105,10 +104,10 @@ namespace SecurityGUIApp {
 			// 
 			// btnAlarmHistorial
 			// 
-			this->btnAlarmHistorial->Location = System::Drawing::Point(187, 162);
-			this->btnAlarmHistorial->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnAlarmHistorial->Location = System::Drawing::Point(249, 199);
+			this->btnAlarmHistorial->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnAlarmHistorial->Name = L"btnAlarmHistorial";
-			this->btnAlarmHistorial->Size = System::Drawing::Size(70, 57);
+			this->btnAlarmHistorial->Size = System::Drawing::Size(93, 70);
 			this->btnAlarmHistorial->TabIndex = 2;
 			this->btnAlarmHistorial->Text = L"Historial de Alarmas";
 			this->btnAlarmHistorial->UseVisualStyleBackColor = true;
@@ -116,10 +115,10 @@ namespace SecurityGUIApp {
 			// 
 			// btnMaintainUser
 			// 
-			this->btnMaintainUser->Location = System::Drawing::Point(432, 162);
-			this->btnMaintainUser->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnMaintainUser->Location = System::Drawing::Point(576, 199);
+			this->btnMaintainUser->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnMaintainUser->Name = L"btnMaintainUser";
-			this->btnMaintainUser->Size = System::Drawing::Size(76, 58);
+			this->btnMaintainUser->Size = System::Drawing::Size(101, 71);
 			this->btnMaintainUser->TabIndex = 3;
 			this->btnMaintainUser->Text = L"Eliminar Operador";
 			this->btnMaintainUser->UseVisualStyleBackColor = true;
@@ -127,10 +126,10 @@ namespace SecurityGUIApp {
 			// 
 			// btnUptateQuestions
 			// 
-			this->btnUptateQuestions->Location = System::Drawing::Point(312, 162);
-			this->btnUptateQuestions->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnUptateQuestions->Location = System::Drawing::Point(416, 199);
+			this->btnUptateQuestions->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnUptateQuestions->Name = L"btnUptateQuestions";
-			this->btnUptateQuestions->Size = System::Drawing::Size(72, 58);
+			this->btnUptateQuestions->Size = System::Drawing::Size(96, 71);
 			this->btnUptateQuestions->TabIndex = 4;
 			this->btnUptateQuestions->Text = L"Administrar Preguntas";
 			this->btnUptateQuestions->UseVisualStyleBackColor = true;
@@ -138,10 +137,10 @@ namespace SecurityGUIApp {
 			// 
 			// btnValidateOp
 			// 
-			this->btnValidateOp->Location = System::Drawing::Point(554, 162);
-			this->btnValidateOp->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnValidateOp->Location = System::Drawing::Point(739, 199);
+			this->btnValidateOp->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnValidateOp->Name = L"btnValidateOp";
-			this->btnValidateOp->Size = System::Drawing::Size(79, 58);
+			this->btnValidateOp->Size = System::Drawing::Size(105, 71);
 			this->btnValidateOp->TabIndex = 5;
 			this->btnValidateOp->Text = L"Aprobar Operador";
 			this->btnValidateOp->UseVisualStyleBackColor = true;
@@ -152,20 +151,19 @@ namespace SecurityGUIApp {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(226, 98);
-			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label2->Location = System::Drawing::Point(301, 121);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(222, 17);
+			this->label2->Size = System::Drawing::Size(262, 20);
 			this->label2->TabIndex = 6;
 			this->label2->Text = L"Selecciona la operacion a realizar";
 			// 
 			// OperationsAdminForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->ClientSize = System::Drawing::Size(676, 250);
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(901, 308);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->btnValidateOp);
 			this->Controls->Add(this->btnUptateQuestions);
@@ -174,7 +172,7 @@ namespace SecurityGUIApp {
 			this->Controls->Add(this->btnUptateMap);
 			this->Controls->Add(this->label1);
 			this->DoubleBuffered = true;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"OperationsAdminForm";
 			this->Text = L"OperationsAdminForm";
 			this->ResumeLayout(false);

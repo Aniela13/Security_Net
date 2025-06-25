@@ -98,7 +98,7 @@ namespace SecurityGUIApp {
 			this->dgvValidateOp->RowTemplate->Height = 24;
 			this->dgvValidateOp->Size = System::Drawing::Size(386, 271);
 			this->dgvValidateOp->TabIndex = 0;
-			this->dgvValidateOp->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ValidateOpForm::dgvValidateOp_CellContentClick);
+			this->dgvValidateOp->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ValidateOpForm::dgvValidateOp_CellClick);
 			// 
 			// NameColumn
 			// 
@@ -209,7 +209,7 @@ namespace SecurityGUIApp {
 
 			}
 		}
-	private: System::Void dgvValidateOp_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	private: System::Void dgvValidateOp_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		if (dgvValidateOp->SelectedCells->Count == 1) {
 			String^ dni = dgvValidateOp->Rows[dgvValidateOp->SelectedCells[0]->RowIndex]->Cells[2]->Value->ToString();
 			btnApprove->BackColor = System::Drawing::Color::Green;
@@ -225,18 +225,13 @@ namespace SecurityGUIApp {
 		try {
 			String^ dni = dgvValidateOp->Rows[dgvValidateOp->SelectedCells[0]->RowIndex]->Cells[2]->Value->ToString();
 			SecurityOperator^ newoperator = Controller::QueryNoOperatorbyDNI(dni);
-			System::Windows::Forms::DialogResult dlgResult = MessageBox::Show("¿Desea validar agregar a este usuario de nombre "+ newoperator->Name + " y apellido " + newoperator->LastName + "? \n",
+			System::Windows::Forms::DialogResult dlgResult = MessageBox::Show("¿Desea validar a este usuario de nombre "+ newoperator->Name + " y apellido " + newoperator->LastName + "? \n",
 				"Confirmación", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
 
 			if (dlgResult == System::Windows::Forms::DialogResult::Yes) {
 				newoperator->Authorized = true; // se actualiza el operador a autorizado
-				/*if (Controller::AddUser(newoperator) == 1) {
-					Controller::DeleteOperatortoValidation(dni);
-					showAllNoRegisteredOperators();	
-				}
-				*/
-
-				if (Controller::UpdateSecurityOperator(newoperator) == 1) {
+				newoperator->Status = "A"; 
+				if (Controller::UpdateUser(newoperator) == 1) {
 					showAllNoRegisteredOperators();
 				}
 				

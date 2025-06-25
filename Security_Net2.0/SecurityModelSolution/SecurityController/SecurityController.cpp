@@ -1,6 +1,6 @@
 #include "pch.h"
-
 #include "SecurityController.h"
+
 
 int SecurityController::Controller::ValidateAdmin(Administrator^ administrator)
 {
@@ -10,7 +10,7 @@ int SecurityController::Controller::ValidateAdmin(Administrator^ administrator)
 	return 0;
 }
 
-int SecurityController::Controller::AddUser(SecurityOperator^ operador)
+int SecurityController::Controller::AddUser(UserNet^ user)
 {
 	/*try {
 		operators->Add(operador);
@@ -21,11 +21,15 @@ int SecurityController::Controller::AddUser(SecurityOperator^ operador)
 		throw ex;
 	}
 	return 0;*/
-	return Persistance::AddOperator(operador);
+	int res =0; 
+	if (user->GetType() == SecurityOperator::typeid) {
+		res= Persistance::AddOperator((SecurityOperator^)user);
+	}
+	return res;
 
 }
 
-int SecurityController::Controller::ValidateOperator(String^ OpUser, String^ OpPassword)
+SecurityOperator^ SecurityController::Controller::ValidateOperator(String^ OpUser, String^ OpPassword)
 {
 	/*for each (SecurityOperator ^ operador in operators)
 	{
@@ -61,7 +65,7 @@ SecurityOperator^ SecurityController::Controller::QueryOperatorByDNI(String^ ope
 	}
 	return nullptr;
 	*/
-	return Persistance::QueryOperatorByDNI(Convert::ToInt32(operatorDNI));
+	return Persistance::QueryOperatorByDNI(operatorDNI);
 }
 
 List<SecurityOperator^>^ SecurityController::Controller::QueryAllUsers(){
@@ -79,9 +83,12 @@ List<SecurityOperator^>^ SecurityController::Controller::QueryAllUsers(){
 	return Persistance::QueryAllOperators();
 }
 
-int SecurityController::Controller::UpdateSecurityOperator(SecurityOperator^ operador)
+int SecurityController::Controller::UpdateUser(UserNet^ user)
 {
-	return Persistance::UpdateSecurityOperator(operador);
+	int op = 0;
+	if(user->GetType()==SecurityOperator::typeid)
+	Persistance::UpdateSecurityOperator((SecurityOperator^)user);
+	return op;
 }
 
 
@@ -321,8 +328,10 @@ SecurityOperator^ SecurityController::Controller::QueryNoOperatorbyDNI(String^ d
 	}
 	return nullptr;
 	*/
-	return Persistance::QueryNotAuthorizedOperatorByDNI(Convert::ToInt32(dni));
+	return Persistance::QueryNotAuthorizedOperatorByDNI(dni);
 }
+	
+
 
 List<SecurityOperator^>^ SecurityController::Controller::QueryAllNoRegisteredOperators()
 {
