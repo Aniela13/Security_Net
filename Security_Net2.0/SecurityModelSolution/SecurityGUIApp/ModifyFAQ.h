@@ -211,7 +211,6 @@ namespace SecurityGUIApp {
 			this->btnValidateOp->TabIndex = 9;
 			this->btnValidateOp->Text = L"Aprobar\r\n Operador";
 			this->btnValidateOp->UseVisualStyleBackColor = true;
-			this->btnValidateOp->Click += gcnew System::EventHandler(this, &ModifyFAQ::btnValidateOp_Click);
 			// 
 			// btnGoBackMenu
 			// 
@@ -300,10 +299,10 @@ namespace SecurityGUIApp {
 				return;
 
 			}
-			int id;
-			id = Controller::QueryAllFAQ()->Count + 1;
-			Question^ question = gcnew Question(id, request, answer);
-			if (Controller::AddQuestion(question) == 1) {
+		
+			Question^ question = gcnew Question(request, answer, true);
+			int res = Controller::AddQuestion(question);
+			if ( res > 0) {
 				showFAQ();
 				MessageBox::Show("Se ha agregado correctamente una nueva pregunta\n");
 			}
@@ -320,36 +319,35 @@ namespace SecurityGUIApp {
 	}
 	private: System::Void dgvAllFAQ_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		String^ request = dgvAllFAQ->Rows[dgvAllFAQ->SelectedCells[0]->RowIndex]->Cells[0]->Value->ToString();
-		String^ answer = Controller::QueryAnswerByQuestion(request); 
+		Question^ q = Controller::QueryQuestionbyRequest(request); 
 		txtQuestion->Text = request; 
-		txtAnswer->Text = answer; 
+		txtAnswer->Text = q->Answer; 
 
 	}
 
 	private: System::Void btnDelete_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ request = txtQuestion->Text->Trim();
-		List<Question^>^ questionslist = Controller::QueryAllFAQ();
 		
-		if (request->Equals("")) {
+		if (request->Equals("") && dgvAllFAQ->SelectedRows->Count != 1) {
 			MessageBox::Show("Debe seleccionar una pregunta y respuesta");
 			return;
 		}
 		try {
-			Question^ qt = gcnew Question();
-			for each (Question ^ question in questionslist) {
-				if (question->question == request) {
-					qt = question;
-				}
-			}
+			request = dgvAllFAQ->SelectedRows[0]->Cells[1]->Value->ToString();
+			Question^ q = Controller::QueryQuestionbyRequest(request);
 
 			System::Windows::Forms::DialogResult dlgResult = MessageBox::Show("¿Desea eliminar a la pregunta y respuesta?",
 				"Confirmación", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
-			int id = qt->ID;
+			int questionid = q->Id;
 			if (dlgResult == System::Windows::Forms::DialogResult::Yes) {
-				if (Controller::DeleteQuestion(id) == 1) {
+				if (Controller::DeleteQuestion(questionid) == 1) {
 					showFAQ();
 					ClearControls();
 					MessageBox::Show("Se ha eliminado a la pregunta y respuesta manera exitosa.");
+				}
+				else {
+					MessageBox::Show("Intentelo de nuevo");
+					return;
 				}
 				
 			}
@@ -368,14 +366,25 @@ namespace SecurityGUIApp {
 			return;
 		}
 		try {
-			String^ request = txtQuestion->Text;
-			String^ answer = txtAnswer->Text;
-			int id;
-			id = Controller::QueryAllFAQ()->Count + 1;
-			Question^ question = gcnew Question(id,request, answer);
-			Controller::UpdateQuestion(question);
-			showFAQ();
-			MessageBox::Show("Se ha modificado la pregunta");
+			if (dgvAllFAQ->SelectedRows->Count == 1) {
+				request = dgvAllFAQ->SelectedRows[0]->Cells[1]->Value->ToString();
+				Question^ q = Controller::QueryQuestionbyRequest(request);
+				String^ preguntamodificada = txtQuestion->Text->Trim();
+				String^ respuestamodificada = txtAnswer->Text->Trim();
+				if (preguntamodificada!= "" && respuestamodificada!= "") {
+					q->question = preguntamodificada;
+					q->Answer = respuestamodificada;
+					int res = Controller::UpdateQuestion(q);
+					if ( res == 1) {
+						showFAQ();
+						MessageBox::Show("Se ha modificado la pregunta");
+					}
+				}
+				
+			}
+			 
+			
+			
 		}
 		catch (Exception^ ex) {
 			MessageBox::Show("No se ha podido modificar la pregunta por el siguiente motivo:\n" +
@@ -387,7 +396,6 @@ namespace SecurityGUIApp {
 	private: System::Void ModifyFAQ_Load(System::Object^ sender, System::EventArgs^ e) {
 		showFAQ();
 	}
-private: System::Void btnValidateOp_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+
 };
 }

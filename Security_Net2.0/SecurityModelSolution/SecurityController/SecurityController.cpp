@@ -68,7 +68,7 @@ SecurityOperator^ SecurityController::Controller::QueryOperatorByDNI(String^ ope
 	return Persistance::QueryOperatorByDNI(operatorDNI);
 }
 
-List<SecurityOperator^>^ SecurityController::Controller::QueryAllUsers(){
+List<SecurityOperator^>^ SecurityController::Controller::QueryAllOperators(){
 	/*try {
 		
 		operators = (List<SecurityOperator^>^)Persistance::LoadUsersFromTextFile(TXT_USERS_FILE_NAME);
@@ -86,8 +86,9 @@ List<SecurityOperator^>^ SecurityController::Controller::QueryAllUsers(){
 int SecurityController::Controller::UpdateUser(UserNet^ user)
 {
 	int op = 0;
-	if(user->GetType()==SecurityOperator::typeid)
-	Persistance::UpdateSecurityOperator((SecurityOperator^)user);
+	if (user->GetType() == SecurityOperator::typeid) {
+		op= Persistance::UpdateSecurityOperator((SecurityOperator^)user);
+	}
 	return op;
 }
 
@@ -122,7 +123,8 @@ int SecurityController::Controller::DeleteQuestion(int questionId)
 		}
 	}*/
 	return Persistance::DeleteQuestion(questionId);
-}
+	
+} 
 
 int SecurityController::Controller::UpdateQuestion(Question^ question)
 {
@@ -152,9 +154,7 @@ List<Question^>^ SecurityController::Controller::QueryAllFAQ()
 	return Persistance::QueryAllFAQ();
 }
 
-
-
-List<String^>^ SecurityController::Controller::QueryAllOnlyQuestions()
+List<Question^>^ SecurityController::Controller::QueryAllQuestionsbyClient()
 {
 	/*List<String^>^ onlyquestions = gcnew List<String^>();
 
@@ -163,29 +163,13 @@ List<String^>^ SecurityController::Controller::QueryAllOnlyQuestions()
 		onlyquestions->Add(questions[i]->question);
 	}
 	return onlyquestions;*/
-	try {
-		List<Question^>^ questionsList = Persistance::QueryAllNewQuestions();
-		List<String^>^ lista;
-		if (questionsList == nullptr)
-		{
-			lista = gcnew List<String^>();
-			return lista;
-		}
-		else {
-			for each (Question ^ question in questionsList) {
-				if (question->Answer == "Por definir...") {
-					lista->Add(question->question);
-				}
-			}
-			return lista;
-		}
-	}
-	catch (Exception^ ex) {
-		throw ex;
-	}
+
+	return Persistance::QueryAllNewQuestions();
 }
 
-String^ SecurityController::Controller::QueryAnswerByQuestion(String^ question)
+
+
+Question^ SecurityController::Controller::QueryQuestionbyRequest(String^ question)
 {
 	/*for each (Question ^ q in questions)
 	{
@@ -194,7 +178,7 @@ String^ SecurityController::Controller::QueryAnswerByQuestion(String^ question)
 		}
 	}
 	return nullptr;*/
-	return Persistance::QueryAnswerByQuestion(question);
+	return Persistance::QueryByQuestion(question);
 }
 
 int SecurityController::Controller::AddWarning(Warning^ alarm)
@@ -365,18 +349,18 @@ int SecurityController::Controller::AddNewQuestion(Question^ newquestion)
 	
 }
 
-int SecurityController::Controller::DeleteNewQuestion(int questionId)
+/*int SecurityController::Controller::DeleteNewQuestion(int questionId)
 {
-	/*for (int i = 0; i < newquestions->Count; i++) {
+	for (int i = 0; i < newquestions->Count; i++) {
 		if (newquestions[i] == newquestion) {
 			newquestions->RemoveAt(i);
 			Persistance::PersistNewQuestionsTextFile(TXT_NEW_QUESTION_FILE_NAME, newquestions);
 
 		}
-	}*/
+	}
 	return Persistance::DeleteQuestion(questionId);
 
-}
+}*/
 
 int SecurityController::Controller::AddZoneMap(String^ namezone, Point^ coordenada)
 {

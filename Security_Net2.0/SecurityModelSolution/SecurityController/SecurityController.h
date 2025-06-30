@@ -43,7 +43,7 @@ namespace SecurityController {
 		static int DeleteUser(SecurityOperator^ OpUser);
 		static SecurityOperator^ QueryOperatorByDNI(String^ operatorDNI);  //
 		static SecurityOperator^ QueryNoOperatorbyDNI(String^ dni);
-		static List<SecurityOperator^>^ QueryAllUsers();
+		static List<SecurityOperator^>^ QueryAllOperators();
 		static int UpdateUser(UserNet^ user);
 
 		/*-------CRUD PREGUNTAS FRECUENTES-------*/
@@ -51,8 +51,8 @@ namespace SecurityController {
 		static int DeleteQuestion(int questionId);
 		static int UpdateQuestion(Question^ question);
 		static List<Question^>^ QueryAllFAQ(); 
-		static List<String^>^ QueryAllOnlyQuestions();
-		static String^ QueryAnswerByQuestion(String^ question);  //Obtener respuesta por pregunta
+		static List<Question^>^ QueryAllQuestionsbyClient();
+		static Question^ QueryQuestionbyRequest(String^ question);  //Obtener respuesta por pregunta
 		
 
 
@@ -73,7 +73,7 @@ namespace SecurityController {
 
 		/*------SISTEMA DE PREGUNTAS NUEVAS-----*/ //interacción operador y cliente
 		static int AddNewQuestion(Question^ newquestion); 
-		static int DeleteNewQuestion(int questionId);
+		//static int DeleteNewQuestion(int questionId);
 
 		/*------CRUD MAPA y transaccciones-----*/ //interacción operador y cliente
 		static int AddZoneMap(String^ namezone, Point^ coordenada);

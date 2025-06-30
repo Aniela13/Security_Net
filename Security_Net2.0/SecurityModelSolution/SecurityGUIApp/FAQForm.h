@@ -140,7 +140,7 @@ namespace SecurityGUIApp {
 			this->dgvQuestions->RowTemplate->Height = 24;
 			this->dgvQuestions->Size = System::Drawing::Size(262, 300);
 			this->dgvQuestions->TabIndex = 38;
-			this->dgvQuestions->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &FAQForm::dgvQuestions_CellContentClick);
+			this->dgvQuestions->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &FAQForm::dgvQuestions_CellClick);
 			// 
 			// Column1
 			// 
@@ -159,7 +159,6 @@ namespace SecurityGUIApp {
 			this->txtAnswer->ReadOnly = true;
 			this->txtAnswer->Size = System::Drawing::Size(224, 301);
 			this->txtAnswer->TabIndex = 39;
-			this->txtAnswer->TextChanged += gcnew System::EventHandler(this, &FAQForm::txtAnswer_TextChanged);
 			// 
 			// FAQForm
 			// 
@@ -201,16 +200,24 @@ namespace SecurityGUIApp {
 
 			}
 		}
-	private: System::Void dgvQuestions_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	private: System::Void dgvQuestions_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		txtAnswer->Text = ""; //limpio el textbox
-		String^ question = dgvQuestions->Rows[dgvQuestions->SelectedCells[0]->RowIndex]->Cells[0]->Value->ToString();
-		String^ answer = Controller::QueryAnswerByQuestion(question);
-		txtAnswer->Text = answer;
+		if (dgvQuestions->SelectedRows->Count == 1) {
+			String^ question = dgvQuestions->SelectedRows[0]->Cells[0]->Value->ToString();
+			Question^ q = Controller::QueryQuestionbyRequest(question);
+			txtAnswer->Text = q->Answer;
+		}
+		else {
+			MessageBox::Show("Selecciona una pregunta");
+			return;
+		}
+	
 	}
 
 
 	private: System::Void FAQForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		showQuestions();
+		dgvQuestions->SelectionMode = DataGridViewSelectionMode::FullRowSelect;
 	}
 
 
@@ -221,7 +228,6 @@ namespace SecurityGUIApp {
 		satisfactionform->Show();*/
 	}
 
-private: System::Void txtAnswer_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
+
 };
 }

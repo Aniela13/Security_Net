@@ -12,7 +12,7 @@ IF OBJECT_ID('dbo.WARNING','U') IS NOT NULL
 	drop table WARNING;	
 IF OBJECT_ID('dbo.USER_NET','U') IS NOT NULL	
 	drop table USER_NET;
---Sentencia SQL DDL (data definition language) para crear la tabla ROBOT_WAITER
+--Sentencia SQL DDL (data definition language) para crear la tabla USER_NET
 CREATE TABLE USER_NET (
 	ID				INT	NOT NULL PRIMARY KEY IDENTITY(1,1),
 	NAME			VARCHAR(100) NOT NULL,
@@ -66,12 +66,13 @@ CREATE TABLE WARNING(
 
 );
 GO
+--Sentencia SQL DDL (data definition language) para crear la tabla QUESTION
 CREATE TABLE QUESTION (
 	ID		INT	NOT NULL PRIMARY KEY IDENTITY(1,1),
 	QUESTION		VARCHAR(500) NOT NULL,
 	ANSWER			VARCHAR(500),
 	FAQ				CHAR(1), -- 1: faq, 0: not faq
-	STATUS			CHAR(1),
+	STATUS			VARCHAR(15), --  vigente,  no vigente
 );
 
 CREATE TABLE SENSOR (
@@ -186,7 +187,7 @@ CREATE PROCEDURE dbo.usp_AddOperator(
 	@DNI			VARCHAR(10),
 	@USERNAME		VARCHAR(100),
 	@PASSWORD 		VARCHAR(100), 
-	@AUTHORIZED		CHAR(1) ,-- SecOp SI/NO
+	@AUTHORIZED		CHAR(3) ,-- SecOp SI/NO
 	@HELPNEEDED		CHAR(1) , -- SecOp	SI/NO
 --@USER_TYPE		CHAR(1), -- 0: Administrator, 1: Security Operator , 2: Client
 	@DOCUMENT_TYPE	CHAR(1), -- 0: DNI, 1: Carnet de extranjería, 2: Pasaporte
@@ -224,7 +225,7 @@ CREATE PROCEDURE dbo.usp_ValidateOperator (
 ) AS 
 BEGIN
 	SELECT * FROM USER_NET 
-	WHERE USERNAME=@USERNAME AND PASSWORD=@PASSWORD AND AUTHORIZED='1' AND USER_TYPE='1' AND STATUS='A'
+	WHERE USERNAME=@USERNAME AND PASSWORD=@PASSWORD AND AUTHORIZED='SI' AND USER_TYPE='1' AND STATUS='A'
 END
 GO
 /*
@@ -334,7 +335,7 @@ CREATE PROCEDURE dbo.usp_QueryAllOperators AS
 	BEGIN
 		SELECT *
 		FROM USER_NET
-		WHERE USER_TYPE='1' AND AUTHORIZED= '1'
+		WHERE USER_TYPE='1' AND AUTHORIZED= 'SI' AND STATUS = 'A'
 	END
 GO
 -- Sentencia SQL para consultar todos los operadores (no autorizados)
@@ -363,7 +364,7 @@ BEGIN
 END
 GO
 CREATE PROCEDURE dbo.usp_QueryOperatorByDNI(
-	@DNI		VARCHAR(20)
+	@DNI		VARCHAR(10)
 ) AS 
 	BEGIN
 		SELECT * FROM USER_NET 
@@ -380,11 +381,11 @@ BEGIN
 END
 GO
 CREATE PROCEDURE dbo.usp_QueryNotAuthorizedOperatorByDNI(
-	@DNI		VARCHAR(20)
+	@DNI		VARCHAR(10)
 ) AS 
 	BEGIN
 		SELECT * FROM USER_NET 
-		WHERE USER_TYPE='1' AND AUTHORIZED='NO' AND DNI=@DNI
+		WHERE DNI=@DNI AND USER_TYPE='1' AND AUTHORIZED='NO' 
 	END
 GO
 -- Sentencia SQL para consultar registros de la tabla USER_NET
@@ -403,8 +404,8 @@ CREATE PROCEDURE dbo.usp_AddQuestion(
 	@QUESTION		VARCHAR(500),
 	@ANSWER			VARCHAR(500),
 	@FAQ				CHAR(1),
-	@STATUS				CHAR(1),
-	@ID         INT OUT 
+	@STATUS				VARCHAR(15),
+	@ID                 INT OUT 
 ) AS
   BEGIN
 		INSERT INTO QUESTION(QUESTION,ANSWER, FAQ, STATUS)
@@ -443,8 +444,8 @@ CREATE PROCEDURE dbo.usp_UpdateQuestion(
 	@QUESTION		VARCHAR(500),
 	@ANSWER			VARCHAR(500),
 	@FAQ				CHAR(1),
-	@STATUS				CHAR(1),
-	@ID         INT OUT 
+	@STATUS			VARCHAR(15),
+	@ID                     INT 
 ) AS
 	BEGIN
 		UPDATE QUESTION 
@@ -494,11 +495,11 @@ BEGIN
 END
 GO
 CREATE PROCEDURE dbo.usp_QueryAnswerByQuestion(
-    @QUESTION         VARCHAR
+    @QUESTION         VARCHAR (500)
 ) AS 
 	BEGIN
-		SELECT ANSWER  FROM QUESTION 
-		WHERE QUESTION=@QUESTION
+		SELECT * FROM QUESTION 
+		WHERE QUESTION=@QUESTION AND STATUS = 'Vigente'
 	END
 GO
 -- Sentencia SQL para anadir alarma

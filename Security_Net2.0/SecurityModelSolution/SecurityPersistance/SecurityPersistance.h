@@ -59,7 +59,7 @@ namespace SecurityPersistance {
 		static int AddQuestion(Question^ question);
 		static List<Question^>^ QueryAllFAQ();
 		static List<Question^>^ QueryAllNewQuestions();
-		static String^ QueryAnswerByQuestion(String^ question);  //Obtener respuesta por pregunta
+		static Question^ QueryByQuestion(String^ question);  //Obtener respuesta por pregunta
 		static int DeleteQuestion(int questionId);
 		static int UpdateQuestion(Question^ question);
 	};

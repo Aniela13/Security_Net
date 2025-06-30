@@ -134,7 +134,7 @@ namespace SecurityGUIApp {
 			this->dgvQuestionForm->RowTemplate->Height = 24;
 			this->dgvQuestionForm->Size = System::Drawing::Size(271, 210);
 			this->dgvQuestionForm->TabIndex = 38;
-			this->dgvQuestionForm->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &AnswerForm::dgvQuestionForm_CellContentClick);
+			this->dgvQuestionForm->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &AnswerForm::dgvQuestionForm_CellClick);
 			// 
 			// NewQuestion
 			// 
@@ -152,7 +152,7 @@ namespace SecurityGUIApp {
 			this->txtNewQuestion->ReadOnly = true;
 			this->txtNewQuestion->Size = System::Drawing::Size(150, 56);
 			this->txtNewQuestion->TabIndex = 39;
-			this->txtNewQuestion->TextChanged += gcnew System::EventHandler(this, &AnswerForm::txtNewQuestion_TextChanged);
+
 			// 
 			// txtAnswer
 			// 
@@ -219,15 +219,18 @@ namespace SecurityGUIApp {
 
 	public:
 		void showNewQuestions() {
-			List<String^>^ questionsList = Controller::QueryAllOnlyQuestions();
+			List<Question^>^ questionsList = Controller::QueryAllQuestionsbyClient();
 			if (questionsList != nullptr) {
 				dgvQuestionForm->Rows->Clear();
+
 				for (int i = 0; i < questionsList->Count; i++) {
-					dgvQuestionForm->Rows->Add(gcnew array<String^> {questionsList[i]});
+					String^ qText = questionsList[i]->question;
+					dgvQuestionForm->Rows->Add(gcnew array<String^> {qText});
 				}
 
 			}
 		}
+
 	public:
 		void ClearControls() {
 			for each (Control ^ control in this->Controls) {
@@ -236,24 +239,55 @@ namespace SecurityGUIApp {
 				}
 			}
 		}
-	private: System::Void txtNewQuestion_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-
-	}
+	
 	private: System::Void AnswerForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		showNewQuestions();
 	}
 
-	private: System::Void dgvQuestionForm_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	private: System::Void dgvQuestionForm_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		String^ question = dgvQuestionForm->Rows[dgvQuestionForm->SelectedCells[0]->RowIndex]->Cells[0]->Value->ToString();
-		String^ answer = Controller::QueryAnswerByQuestion(question);
+		Question^ q = Controller::QueryQuestionbyRequest(question);
 		txtNewQuestion->Text = question;
-		txtAnswer->Text = answer;
+		txtAnswer->Text = q->Answer;
 		showNewQuestions();
 	}
 	private: System::Void btnNewQuestion_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ question = txtNewQuestion->Text;
-		String^ answer = txtAnswer->Text;
-		MessageBox::Show("Se ha enviado correctamente la respuesta");
+		String^ question = txtNewQuestion->Text->Trim();
+		if (question == "") {
+			MessageBox::Show("Selecciona una pregunta de la tabla");
+			return;
+		}
+		try {
+			
+			if (question != "") {
+				Question^ q = Controller::QueryQuestionbyRequest(question);
+				String^ newanswer = txtAnswer->Text->Trim();
+				if (newanswer != "Por definir" && newanswer != "") {
+					q->Answer = newanswer;
+					int res = Controller::UpdateQuestion(q);
+					if (res == 1) {
+						showNewQuestions();
+						MessageBox::Show("Se ha modificado la pregunta");
+					}
+				}
+				else {
+					MessageBox::Show("Ingresa una respuesta a la pregunta seleccionada");
+					ClearControls();
+					return;
+				}
+				
+			}
+
+			
+
+
+
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show("No se ha podido modificar la pregunta por el siguiente motivo:\n" +
+				ex->Message);
+		}
+		
 	}
 	};
 }

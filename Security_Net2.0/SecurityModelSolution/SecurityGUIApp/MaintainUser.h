@@ -63,6 +63,8 @@ namespace SecurityGUIApp {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Username;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ nombre;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Surname;
+	private: System::Windows::Forms::Button^ btnClearSearch;
+
 
 
 
@@ -96,6 +98,7 @@ namespace SecurityGUIApp {
 			this->btnValidateOp = (gcnew System::Windows::Forms::Button());
 			this->txtName = (gcnew System::Windows::Forms::TextBox());
 			this->txtUser = (gcnew System::Windows::Forms::TextBox());
+			this->btnClearSearch = (gcnew System::Windows::Forms::Button());
 			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvMaintainUser))->BeginInit();
 			this->SuspendLayout();
@@ -109,27 +112,27 @@ namespace SecurityGUIApp {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Padding = System::Windows::Forms::Padding(4, 2, 0, 2);
-			this->menuStrip1->Size = System::Drawing::Size(693, 24);
+			this->menuStrip1->Padding = System::Windows::Forms::Padding(5, 2, 0, 2);
+			this->menuStrip1->Size = System::Drawing::Size(924, 28);
 			this->menuStrip1->TabIndex = 1;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
 			// historialDeAlarmasToolStripMenuItem
 			// 
 			this->historialDeAlarmasToolStripMenuItem->Name = L"historialDeAlarmasToolStripMenuItem";
-			this->historialDeAlarmasToolStripMenuItem->Size = System::Drawing::Size(125, 20);
+			this->historialDeAlarmasToolStripMenuItem->Size = System::Drawing::Size(158, 24);
 			this->historialDeAlarmasToolStripMenuItem->Text = L"Historial de Alarmas";
 			// 
 			// actualizarMapaToolStripMenuItem
 			// 
 			this->actualizarMapaToolStripMenuItem->Name = L"actualizarMapaToolStripMenuItem";
-			this->actualizarMapaToolStripMenuItem->Size = System::Drawing::Size(104, 20);
+			this->actualizarMapaToolStripMenuItem->Size = System::Drawing::Size(131, 24);
 			this->actualizarMapaToolStripMenuItem->Text = L"Actualizar Mapa";
 			// 
 			// verMapaToolStripMenuItem
 			// 
 			this->verMapaToolStripMenuItem->Name = L"verMapaToolStripMenuItem";
-			this->verMapaToolStripMenuItem->Size = System::Drawing::Size(68, 20);
+			this->verMapaToolStripMenuItem->Size = System::Drawing::Size(86, 24);
 			this->verMapaToolStripMenuItem->Text = L"Ver Mapa";
 			// 
 			// dgvMaintainUser
@@ -141,12 +144,13 @@ namespace SecurityGUIApp {
 					this->nombre, this->Surname
 			});
 			this->dgvMaintainUser->GridColor = System::Drawing::SystemColors::ActiveBorder;
-			this->dgvMaintainUser->Location = System::Drawing::Point(73, 220);
-			this->dgvMaintainUser->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->dgvMaintainUser->Location = System::Drawing::Point(97, 271);
+			this->dgvMaintainUser->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dgvMaintainUser->Name = L"dgvMaintainUser";
+			this->dgvMaintainUser->ReadOnly = true;
 			this->dgvMaintainUser->RowHeadersWidth = 51;
 			this->dgvMaintainUser->RowTemplate->Height = 24;
-			this->dgvMaintainUser->Size = System::Drawing::Size(410, 193);
+			this->dgvMaintainUser->Size = System::Drawing::Size(547, 238);
 			this->dgvMaintainUser->TabIndex = 2;
 			this->dgvMaintainUser->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MaintainUser::dgvMaintainUser_CellClick);
 			// 
@@ -155,6 +159,7 @@ namespace SecurityGUIApp {
 			this->Username->HeaderText = L"Usuario";
 			this->Username->MinimumWidth = 6;
 			this->Username->Name = L"Username";
+			this->Username->ReadOnly = true;
 			this->Username->Width = 125;
 			// 
 			// nombre
@@ -162,6 +167,7 @@ namespace SecurityGUIApp {
 			this->nombre->HeaderText = L"Nombre";
 			this->nombre->MinimumWidth = 6;
 			this->nombre->Name = L"nombre";
+			this->nombre->ReadOnly = true;
 			this->nombre->Width = 125;
 			// 
 			// Surname
@@ -169,6 +175,7 @@ namespace SecurityGUIApp {
 			this->Surname->HeaderText = L"Apellido";
 			this->Surname->MinimumWidth = 6;
 			this->Surname->Name = L"Surname";
+			this->Surname->ReadOnly = true;
 			this->Surname->Width = 125;
 			// 
 			// label1
@@ -176,39 +183,36 @@ namespace SecurityGUIApp {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Lucida Bright", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(184, 41);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Location = System::Drawing::Point(245, 50);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(327, 27);
+			this->label1->Size = System::Drawing::Size(411, 34);
 			this->label1->TabIndex = 3;
 			this->label1->Text = L"Mantenimiento de usuario";
 			// 
 			// NameUser
 			// 
 			this->NameUser->AutoSize = true;
-			this->NameUser->Location = System::Drawing::Point(70, 115);
-			this->NameUser->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->NameUser->Location = System::Drawing::Point(93, 142);
 			this->NameUser->Name = L"NameUser";
-			this->NameUser->Size = System::Drawing::Size(44, 13);
+			this->NameUser->Size = System::Drawing::Size(56, 16);
 			this->NameUser->TabIndex = 4;
 			this->NameUser->Text = L"Nombre";
 			// 
 			// Usuario
 			// 
 			this->Usuario->AutoSize = true;
-			this->Usuario->Location = System::Drawing::Point(70, 155);
-			this->Usuario->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->Usuario->Location = System::Drawing::Point(93, 191);
 			this->Usuario->Name = L"Usuario";
-			this->Usuario->Size = System::Drawing::Size(43, 13);
+			this->Usuario->Size = System::Drawing::Size(54, 16);
 			this->Usuario->TabIndex = 5;
 			this->Usuario->Text = L"Usuario";
 			// 
 			// btnSearch
 			// 
-			this->btnSearch->Location = System::Drawing::Point(242, 187);
-			this->btnSearch->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnSearch->Location = System::Drawing::Point(323, 230);
+			this->btnSearch->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnSearch->Name = L"btnSearch";
-			this->btnSearch->Size = System::Drawing::Size(56, 19);
+			this->btnSearch->Size = System::Drawing::Size(75, 23);
 			this->btnSearch->TabIndex = 6;
 			this->btnSearch->Text = L"BUSCAR";
 			this->btnSearch->UseVisualStyleBackColor = true;
@@ -216,10 +220,10 @@ namespace SecurityGUIApp {
 			// 
 			// btnDeleterUser
 			// 
-			this->btnDeleterUser->Location = System::Drawing::Point(520, 280);
-			this->btnDeleterUser->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnDeleterUser->Location = System::Drawing::Point(693, 345);
+			this->btnDeleterUser->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnDeleterUser->Name = L"btnDeleterUser";
-			this->btnDeleterUser->Size = System::Drawing::Size(90, 28);
+			this->btnDeleterUser->Size = System::Drawing::Size(120, 34);
 			this->btnDeleterUser->TabIndex = 8;
 			this->btnDeleterUser->Text = L"ELIMINAR";
 			this->btnDeleterUser->UseVisualStyleBackColor = true;
@@ -228,10 +232,10 @@ namespace SecurityGUIApp {
 			// btnValidateOp
 			// 
 			this->btnValidateOp->Enabled = false;
-			this->btnValidateOp->Location = System::Drawing::Point(552, 105);
-			this->btnValidateOp->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnValidateOp->Location = System::Drawing::Point(736, 129);
+			this->btnValidateOp->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnValidateOp->Name = L"btnValidateOp";
-			this->btnValidateOp->Size = System::Drawing::Size(95, 63);
+			this->btnValidateOp->Size = System::Drawing::Size(127, 78);
 			this->btnValidateOp->TabIndex = 9;
 			this->btnValidateOp->Text = L"APROBAR\r\nOPERADOR";
 			this->btnValidateOp->UseVisualStyleBackColor = true;
@@ -240,28 +244,40 @@ namespace SecurityGUIApp {
 			// 
 			// txtName
 			// 
-			this->txtName->Location = System::Drawing::Point(137, 113);
-			this->txtName->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->txtName->Location = System::Drawing::Point(183, 139);
+			this->txtName->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtName->Name = L"txtName";
-			this->txtName->Size = System::Drawing::Size(162, 20);
+			this->txtName->Size = System::Drawing::Size(215, 22);
 			this->txtName->TabIndex = 10;
 			// 
 			// txtUser
 			// 
-			this->txtUser->Location = System::Drawing::Point(135, 155);
-			this->txtUser->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->txtUser->Location = System::Drawing::Point(180, 191);
+			this->txtUser->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtUser->Name = L"txtUser";
-			this->txtUser->Size = System::Drawing::Size(164, 20);
+			this->txtUser->Size = System::Drawing::Size(217, 22);
 			this->txtUser->TabIndex = 11;
+			// 
+			// btnClearSearch
+			// 
+			this->btnClearSearch->Location = System::Drawing::Point(490, 230);
+			this->btnClearSearch->Name = L"btnClearSearch";
+			this->btnClearSearch->Size = System::Drawing::Size(154, 23);
+			this->btnClearSearch->TabIndex = 12;
+			this->btnClearSearch->Text = L"Limpiar búsqueda";
+			this->btnClearSearch->UseVisualStyleBackColor = true;
+			this->btnClearSearch->Visible = false;
+			this->btnClearSearch->Click += gcnew System::EventHandler(this, &MaintainUser::btnClearSearch_Click);
 			// 
 			// MaintainUser
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(693, 440);
+			this->ClientSize = System::Drawing::Size(924, 542);
+			this->Controls->Add(this->btnClearSearch);
 			this->Controls->Add(this->txtUser);
 			this->Controls->Add(this->txtName);
 			this->Controls->Add(this->btnValidateOp);
@@ -274,7 +290,7 @@ namespace SecurityGUIApp {
 			this->Controls->Add(this->menuStrip1);
 			this->DoubleBuffered = true;
 			this->MainMenuStrip = this->menuStrip1;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"MaintainUser";
 			this->Text = L"MaintainUser";
 			this->Load += gcnew System::EventHandler(this, &MaintainUser::MaintainUser_Load);
@@ -297,10 +313,13 @@ namespace SecurityGUIApp {
 			validateOpForm->Show();
 
 		}
+		else {
+			this->btnValidateOp->Enabled = false;
+		}
 	}
 	public:
 		void ShowListaOperadores(){
-			List<SecurityOperator^>^ allops = Controller::QueryAllUsers();
+			List<SecurityOperator^>^ allops = Controller::QueryAllOperators();
 			if (allops != nullptr) {
 				dgvMaintainUser->Rows->Clear();
 				for (int i = 0; i < allops->Count; i++) {
@@ -322,30 +341,33 @@ namespace SecurityGUIApp {
     private: System::Void btnSearch_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ filtroNombre = txtName->Text->ToLower();
 		String^ filtroUsuario = txtUser->Text->ToLower();
-
-		for (int i = 0; i < dgvMaintainUser->Rows->Count; i++) {
-			DataGridViewRow^ fila = dgvMaintainUser->Rows[i];
-
-			// Evita la fila nueva vacía
-			if (fila->IsNewRow) continue;
-
-			String^ valorNombre = fila->Cells["Nombre"]->Value != nullptr ? fila->Cells["Nombre"]->Value->ToString()->ToLower() : "";
-			String^ valorUsuario = fila->Cells["Usuario"]->Value != nullptr ? fila->Cells["Usuario"]->Value->ToString()->ToLower() : "";
-
-			bool visible = true;
-
-			if (!String::IsNullOrEmpty(filtroNombre) && !valorNombre->Contains(filtroNombre))
-				visible = false;
-
-			if (!String::IsNullOrEmpty(filtroUsuario) && !valorUsuario->Contains(filtroUsuario))
-				visible = false;
-
-			fila->Visible = visible;
+	
+		if (filtroUsuario->Equals("")) {
+			MessageBox::Show("Debe seleccionar un operador en la tabla");
+			return;
 		}
+		else {
+			SecurityOperator^ op = Controller::QueryOperatorByDNI(filtroUsuario);
+			if (op != nullptr && filtroNombre == op->Name) {
+				dgvMaintainUser->Rows->Clear();
+				dgvMaintainUser->Rows->Add(gcnew array<String^> {op->UserName, op->Name, op->LastName});
+				btnClearSearch->Visible = true;
+				btnClearSearch->Enabled = true;
+				
+			}
+			else {
+				MessageBox::Show("No existe un operador con el usuario y/o nombre ingresado");
+				ClearControls();
+				ShowListaOperadores();
+				return;
+
+			}
+		}
+		
 	}
     private: System::Void dgvMaintainUser_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-		String^ username = dgvMaintainUser->Rows[dgvMaintainUser->SelectedCells[0]->RowIndex]->Cells[0]->Value->ToString();
-		SecurityOperator^ op = Controller::QueryOperatorByDNI(username);
+		String^ dni = dgvMaintainUser->Rows[dgvMaintainUser->SelectedCells[0]->RowIndex]->Cells[0]->Value->ToString();
+		SecurityOperator^ op = Controller::QueryOperatorByDNI(dni);
 		txtUser->Text = op->DNI;
 		txtName->Text = op->Name;
 		ShowListaOperadores();
@@ -353,12 +375,13 @@ namespace SecurityGUIApp {
 
 	private: System::Void MaintainUser_Load(System::Object^ sender, System::EventArgs^ e) {
 		ShowListaOperadores();
+		btnClearSearch->Enabled = false;
 	}
 
 	private: System::Void btnDeleterUser_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ username = txtUser->Text->Trim();
 		if (username->Equals("")) {
-			MessageBox::Show("Debe seleccionar un operador");
+			MessageBox::Show("Debe seleccionar un operador en la tabla");
 			return;
 		}
 		try {
@@ -371,9 +394,10 @@ namespace SecurityGUIApp {
 				if (Controller::DeleteUser(op) == 1) {
 					ClearControls();
 					MessageBox::Show("Se ha eliminado al operador" + op->Name +" de seguridad de manera exitosa.");
+					ShowListaOperadores();
 				}
 				else {
-					MessageBox::Show("No se ha podido modificar al operador de seguridad " + op->Name);
+					MessageBox::Show("No se ha podido eliminar al operador de seguridad " + op->Name);
 				}
 			}
 		}
@@ -381,6 +405,11 @@ namespace SecurityGUIApp {
 			MessageBox::Show("No ha sido posible eliminar al operador de seguridad por el siguiente motivo:\n" +
 				ex->Message);
 		}
+	}
+	private: System::Void btnClearSearch_Click(System::Object^ sender, System::EventArgs^ e) {
+		ClearControls(); 
+		ShowListaOperadores();
+		btnClearSearch->Visible = false;
 	}
 };
 }

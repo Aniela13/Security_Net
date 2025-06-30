@@ -515,7 +515,7 @@ SecurityOperator^ SecurityPersistance::Persistance::QueryOperatorByDNI(String^ o
         String^ sqlStr = "dbo.usp_QueryOperatorByDNI";
         SqlCommand^ cmd = gcnew SqlCommand(sqlStr, conn);
         cmd->CommandType = System::Data::CommandType::StoredProcedure;
-        cmd->Parameters->Add("@DNI", System::Data::SqlDbType::Int);
+        cmd->Parameters->Add("@DNI", System::Data::SqlDbType::VarChar, 10);
         cmd->Prepare();
         cmd->Parameters["@DNI"]->Value = operatorDNI;
 
@@ -575,7 +575,7 @@ SecurityOperator^ SecurityPersistance::Persistance::QueryNotAuthorizedOperatorBy
         String^ sqlStr = "dbo.usp_QueryNotAuthorizedOperatorByDNI";
         SqlCommand^ cmd = gcnew SqlCommand(sqlStr, conn);
         cmd->CommandType = System::Data::CommandType::StoredProcedure;
-        cmd->Parameters->Add("@DNI", System::Data::SqlDbType::Int);
+        cmd->Parameters->Add("@DNI", System::Data::SqlDbType::VarChar,10);
         cmd->Prepare();
         cmd->Parameters["@DNI"]->Value = operatorDNI;
 
@@ -593,7 +593,8 @@ SecurityOperator^ SecurityPersistance::Persistance::QueryNotAuthorizedOperatorBy
             operador->Status = reader["STATUS"]->ToString();
             operador->DNI = reader["DOCUMENT_NUMBER"]->ToString();
             operador->Document_Type = reader["DOCUMENT_TYPE"]->ToString();
-
+            operador->Authorized = reader["AUTHORIZED"]->ToString()->Equals("SI") ? true : false;
+            operador->HelpNeeded = reader["HELPNEEDED"]->ToString()->Equals("S") ? true : false;
             if (!DBNull::Value->Equals(reader["BIRTHDAY"]))
                 operador->BirthDay = Convert::ToDateTime(reader["BIRTHDAY"]);
             operador->Address = reader["ADDRESS"]->ToString();
@@ -807,7 +808,7 @@ List<SecurityOperator^>^ SecurityPersistance::Persistance::QueryAllOperators()
             operador->Name = reader["NAME"]->ToString();
             operador->LastName = reader["LASTNAME"]->ToString();
             operador->DNI = reader["DNI"]->ToString();
-            operador->Authorized = reader["AUTHORIZED"]->ToString()->Equals("S") ? true : false;
+            operador->Authorized = reader["AUTHORIZED"]->ToString()->Equals("SI") ? true : false;
             operador->HelpNeeded = reader["HELPNEEDED"]->ToString()->Equals("S") ? true : false;
             operador->UserName = reader["USERNAME"]->ToString();
             if (!DBNull::Value->Equals(reader["BIRTHDAY"]))
@@ -969,6 +970,7 @@ List<Warning^>^ SecurityPersistance::Persistance::QueryAllWarnings()
 
 int SecurityPersistance::Persistance::AddQuestion(Question^ question)
 {
+    int questionId = 0;
     SqlConnection^ conn;
     try {
         //Paso 1: Abrir y obtener la conexión a la BD
@@ -980,18 +982,21 @@ int SecurityPersistance::Persistance::AddQuestion(Question^ question)
         cmd->CommandType = System::Data::CommandType::StoredProcedure;
         cmd->Parameters->Add("@QUESTION", System::Data::SqlDbType::VarChar, 500);
         cmd->Parameters->Add("@ANSWER", System::Data::SqlDbType::VarChar, 500);
-        cmd->Parameters->Add("@FAQ", System::Data::SqlDbType::VarChar, 1);
+        cmd->Parameters->Add("@FAQ", System::Data::SqlDbType::Char, 1);
+        cmd->Parameters->Add("@STATUS", System::Data::SqlDbType::VarChar, 15);
         SqlParameter^ outputIdParam = gcnew SqlParameter("@ID", System::Data::SqlDbType::Int);
         outputIdParam->Direction = System::Data::ParameterDirection::Output;
         cmd->Parameters->Add(outputIdParam);
         cmd->Prepare();
         cmd->Parameters["@QUESTION"]->Value = question->question;
         cmd->Parameters["@ANSWER"]->Value = question->Answer;
-        cmd->Parameters["@FAQ"]->Value = question->FAQ;
+        cmd->Parameters["@FAQ"]->Value = question->IsFAQ ? "1" : "0";
+        cmd->Parameters["@STATUS"]->Value = question->Status;
 
 
         //Paso 3: Ejecutar la sentencia de BD
         cmd->ExecuteNonQuery();
+        questionId = Convert::ToInt32(cmd->Parameters["@ID"]->Value);
 
     }
     catch (Exception^ ex) {
@@ -1001,7 +1006,7 @@ int SecurityPersistance::Persistance::AddQuestion(Question^ question)
         //Paso 5: Cerrar los objetos de conexión de la BD.
         if (conn != nullptr) conn->Close();
     }
-    return 1;
+    return questionId;
 }
 
 List<Question^>^ SecurityPersistance::Persistance::QueryAllFAQ()
@@ -1026,19 +1031,11 @@ List<Question^>^ SecurityPersistance::Persistance::QueryAllFAQ()
         //Paso 4: Procesar los resultados
         while (reader->Read()) {
             Question^ question = gcnew Question();
-            question->ID = Convert::ToInt32(reader["ID"]->ToString());
-
-            cmd->Parameters->Add("@QUESTION", System::Data::SqlDbType::VarChar, 500);
-            cmd->Parameters->Add("@ANSWER", System::Data::SqlDbType::VarChar, 500);
-            cmd->Parameters->Add("@FAQ", System::Data::SqlDbType::VarChar, 1);
-
+            question->Id = Convert::ToInt32(reader["ID"]->ToString());
             question->question = reader["QUESTION"]->ToString();
             question->Answer = reader["ANSWER"]->ToString();
-            question->FAQ = Convert::ToBoolean(reader["FAQ"]);
-            /*   if (!DBNull::Value->Equals(reader["PURCHASE_DATE"]))
-                   robot->PurchaseDate = Convert::ToDateTime(reader["PURCHASE_DATE"]);
-               if (!DBNull::Value->Equals(reader["PHOTO"]))
-                   robot->Photo = (array<Byte>^)reader["PHOTO"];*/
+            question->IsFAQ = reader["FAQ"]->ToString()->Equals("1") ? true : false;
+            question->Status = reader["STATUS"]->ToString();
             FAQquestionsList->Add(question);
         }
     }
@@ -1064,7 +1061,7 @@ List<Question^>^ SecurityPersistance::Persistance::QueryAllNewQuestions()
 
         //Paso 2: Preparar la sentencia SQL
         //String^ sqlStr = "SELECT * FROM ROBOT_WAITER";
-        String^ sqlStr = "dbo.usp_QueryAllFAQ";
+        String^ sqlStr = "dbo.usp_QueryAllNewQuestions";
         SqlCommand^ cmd = gcnew SqlCommand(sqlStr, conn);
         cmd->CommandType = System::Data::CommandType::StoredProcedure;
         cmd->Prepare();
@@ -1074,21 +1071,14 @@ List<Question^>^ SecurityPersistance::Persistance::QueryAllNewQuestions()
 
         //Paso 4: Procesar los resultados
         while (reader->Read()) {
-            Question^ question = gcnew Question();
-            question->ID = Convert::ToInt32(reader["ID"]->ToString());
-
-            cmd->Parameters->Add("@QUESTION", System::Data::SqlDbType::VarChar, 500);
-            cmd->Parameters->Add("@ANSWER", System::Data::SqlDbType::VarChar, 500);
-            cmd->Parameters->Add("@FAQ", System::Data::SqlDbType::VarChar, 1);
-
-            question->question = reader["QUESTION"]->ToString();
-            question->Answer = reader["ANSWER"]->ToString();
-            question->FAQ = Convert::ToBoolean(reader["FAQ"]);
-            /*   if (!DBNull::Value->Equals(reader["PURCHASE_DATE"]))
-                   robot->PurchaseDate = Convert::ToDateTime(reader["PURCHASE_DATE"]);
-               if (!DBNull::Value->Equals(reader["PHOTO"]))
-                   robot->Photo = (array<Byte>^)reader["PHOTO"];*/
-            newquestionsList->Add(question);
+            Question^ q  = gcnew Question();
+            q->Id = Convert::ToInt32(reader["ID"]->ToString());
+            q->question = reader["QUESTION"]->ToString();
+            q->Answer = reader["ANSWER"]->ToString();
+            q->IsFAQ = reader["FAQ"]->ToString()->Equals("1") ? true : false;
+            q->Status = reader["STATUS"]->ToString();
+       
+            newquestionsList->Add(q);
         }
     }
     catch (Exception^ ex) {
@@ -1102,9 +1092,9 @@ List<Question^>^ SecurityPersistance::Persistance::QueryAllNewQuestions()
     return newquestionsList;
 }
 
-String^ SecurityPersistance::Persistance::QueryAnswerByQuestion(String^ question)
+Question^ SecurityPersistance::Persistance::QueryByQuestion(String^ question)
 {
-    String^ answer;
+    Question^ q;
     SqlConnection^ conn;
     SqlDataReader^ reader;
     try {
@@ -1116,26 +1106,22 @@ String^ SecurityPersistance::Persistance::QueryAnswerByQuestion(String^ question
         String^ sqlStr = "dbo.usp_QueryAnswerByQuestion";
         SqlCommand^ cmd = gcnew SqlCommand(sqlStr, conn);
         cmd->CommandType = System::Data::CommandType::StoredProcedure;
+        cmd->Parameters->Add("@QUESTION", System::Data::SqlDbType::VarChar, 500);
         cmd->Prepare();
-
+        cmd->Parameters["@QUESTION"]->Value = question;
         //Paso 3: Ejecutar la sentencia SQL
         reader = cmd->ExecuteReader();
 
         //Paso 4: Procesar los resultados
         while (reader->Read()) {
-            Question^ question = gcnew Question();
-            question->ID = Convert::ToInt32(reader["ID"]->ToString());
-
-            cmd->Parameters->Add("@QUESTION", System::Data::SqlDbType::VarChar, 500);
-            cmd->Parameters->Add("@ANSWER", System::Data::SqlDbType::VarChar, 500);
-            question->question = reader["QUESTION"]->ToString();
-            question->Answer = reader["ANSWER"]->ToString();
-            /*   if (!DBNull::Value->Equals(reader["PURCHASE_DATE"]))
-                   robot->PurchaseDate = Convert::ToDateTime(reader["PURCHASE_DATE"]);
-               if (!DBNull::Value->Equals(reader["PHOTO"]))
-                   robot->Photo = (array<Byte>^)reader["PHOTO"];*/
-            answer = question->Answer;
+            q = gcnew Question();
+            q->Id = Convert::ToInt32(reader["ID"]->ToString());
+            q->question = reader["QUESTION"]->ToString();
+            q->Answer = reader["ANSWER"]->ToString();
+            q->Status = reader["STATUS"]->ToString();
+            q->IsFAQ = reader["FAQ"]->ToString()->Equals("1") ? true : false;
         }
+
     }
     catch (Exception^ ex) {
         throw ex;
@@ -1145,7 +1131,7 @@ String^ SecurityPersistance::Persistance::QueryAnswerByQuestion(String^ question
         if (reader != nullptr) reader->Close();
         if (conn != nullptr) conn->Close();
     }
-    return answer;
+    return q;
 
 }
 
@@ -1181,6 +1167,7 @@ int SecurityPersistance::Persistance::DeleteQuestion(int questionId)
 
 int SecurityPersistance::Persistance::UpdateQuestion(Question^ question)
 {
+    int res = 0;
     SqlConnection^ conn = nullptr;
     try {
         //Paso 1: Obtener la conexión a la BD
@@ -1189,18 +1176,19 @@ int SecurityPersistance::Persistance::UpdateQuestion(Question^ question)
         String^ sqlStr = "dbo.usp_UpdateQuestion";
         SqlCommand^ cmd = gcnew SqlCommand(sqlStr, conn);
         Question^ question = gcnew Question();
+        cmd->Parameters->Add("@ID", System::Data::SqlDbType::Int);
         cmd->Parameters->Add("@QUESTION", System::Data::SqlDbType::VarChar, 500);
         cmd->Parameters->Add("@ANSWER", System::Data::SqlDbType::VarChar, 500);
-        cmd->Parameters->Add("@FAQ", System::Data::SqlDbType::VarChar, 1);
-        SqlParameter^ outputIdParam = gcnew SqlParameter("@ID", System::Data::SqlDbType::Int);
-        outputIdParam->Direction = System::Data::ParameterDirection::Output;
-        cmd->Parameters->Add(outputIdParam);
+        cmd->Parameters->Add("@FAQ", System::Data::SqlDbType::Char, 1);
+        cmd->Parameters->Add("@STATUS", System::Data::SqlDbType::VarChar, 15);
         cmd->Prepare();
+        cmd->Parameters["@ID"]->Value = question->Id;
         cmd->Parameters["@QUESTION"]->Value = question->question;
         cmd->Parameters["@ANSWER"]->Value = question->Answer;
-        cmd->Parameters["@FAQ"]->Value = question->FAQ;
+        cmd->Parameters["@FAQ"]->Value = question->IsFAQ ? '1' : '0';
+        cmd->Parameters["@STATUS"]->Value = question->Status;
         //Paso 3: Se ejecuta las sentncia SQL
-        cmd->ExecuteNonQuery();
+        res =cmd->ExecuteNonQuery();
 
         //Paso 4: Se procesan los resultados
         //robotId = Convert::ToInt32(cmd->Parameters["@ID"]->Value);
@@ -1211,7 +1199,7 @@ int SecurityPersistance::Persistance::UpdateQuestion(Question^ question)
     finally {
         if (conn != nullptr) conn->Close();
     }
-    return 1;
+    return res;
 }
 
 
