@@ -55,6 +55,7 @@ namespace SecurityPersistance {
 		static int AddWarning(Warning^ warning);
 		static int UpdateWarning(Warning^ warning);
 		static List<Warning^>^ QueryAllWarnings();
+		static List<Warning^>^ QueryWarningsInitalizedbyClient();
 		// ---------QUESTIONS -----------
 		static int AddQuestion(Question^ question);
 		static List<Question^>^ QueryAllFAQ();

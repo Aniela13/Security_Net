@@ -841,6 +841,7 @@ List<SecurityOperator^>^ SecurityPersistance::Persistance::QueryAllOperators()
 
 int SecurityPersistance::Persistance::AddWarning(Warning^ warning)
 {
+    int warningId = 0;
     SqlConnection^ conn;
     try {
         //Paso 1: Abrir y obtener la conexión a la BD
@@ -852,23 +853,24 @@ int SecurityPersistance::Persistance::AddWarning(Warning^ warning)
         cmd->CommandType = System::Data::CommandType::StoredProcedure;
         cmd->Parameters->Add("@START_DATE", System::Data::SqlDbType::DateTime);
         cmd->Parameters->Add("@END_DATE", System::Data::SqlDbType::DateTime);
-        cmd->Parameters->Add("@WARNING_TYPE", System::Data::SqlDbType::Char, 1);
+        cmd->Parameters->Add("@WARNING_TYPE", System::Data::SqlDbType::Int);
         cmd->Parameters->Add("@DESCRIPTION", System::Data::SqlDbType::VarChar, 500);
         cmd->Parameters->Add("@ZONE", System::Data::SqlDbType::VarChar, 50);
-        cmd->Parameters->Add("@ACTIVE", System::Data::SqlDbType::VarChar, 1);
+        cmd->Parameters->Add("@ACTIVE", System::Data::SqlDbType::VarChar, 3);
         SqlParameter^ outputIdParam = gcnew SqlParameter("@ID", System::Data::SqlDbType::Int);
         outputIdParam->Direction = System::Data::ParameterDirection::Output;
         cmd->Parameters->Add(outputIdParam);
         cmd->Prepare();
         cmd->Parameters["@START_DATE"]->Value = warning->StartingDate;
         cmd->Parameters["@END_DATE"]->Value = warning->EndingDate;
-        cmd->Parameters["@WARNING_TYPE"]->Value = warning->Type;
+        cmd->Parameters["@WARNING_TYPE"]->Value = warning->Type->Id;
         cmd->Parameters["@DESCRIPTION"]->Value = warning->Description;
         cmd->Parameters["@ZONE"]->Value = warning->Zone;
-        cmd->Parameters["@ACTIVE"]->Value = true;
+        cmd->Parameters["@ACTIVE"]->Value = warning->Active ? "SI" : "NO";
 
         //Paso 3: Ejecutar la sentencia de BD
         cmd->ExecuteNonQuery();
+        warningId = Convert::ToInt32(cmd->Parameters["@ID"]->Value);
 
     }
     catch (Exception^ ex) {
@@ -878,7 +880,7 @@ int SecurityPersistance::Persistance::AddWarning(Warning^ warning)
         //Paso 5: Cerrar los objetos de conexión de la BD.
         if (conn != nullptr) conn->Close();
     }
-    return 1;
+    return warningId;
 }
 
 int SecurityPersistance::Persistance::UpdateWarning(Warning^ warning)
@@ -943,7 +945,7 @@ List<Warning^>^ SecurityPersistance::Persistance::QueryAllWarnings()
         //Paso 4: Procesar los resultados
         while (reader->Read()) {
             Warning^ warning = gcnew Warning();
-            warning->ID = Convert::ToInt32(reader["ID"]->ToString());
+            warning->Id = Convert::ToInt32(reader["ID"]->ToString());
             warning->StartingDate = Convert::ToDateTime(reader["START_DATE"]);
             warning->EndingDate = Convert::ToDateTime(reader["END_DATE"]);
             warning->Type->Name= reader["WARNING_TYPE"]->ToString();
@@ -966,6 +968,50 @@ List<Warning^>^ SecurityPersistance::Persistance::QueryAllWarnings()
         if (conn != nullptr) conn->Close();
     }
     return warningsList;
+}
+
+List<Warning^>^ SecurityPersistance::Persistance::QueryWarningsInitalizedbyClient()
+{
+    List<Warning^>^ warningsList = gcnew List<Warning^>();
+    SqlConnection^ conn;
+    SqlDataReader^ reader;
+    try {
+        //Paso 1: Obtener la conexión a la BD
+        conn = GetConnection();
+
+        //Paso 2: Preparar la sentencia SQL
+        //String^ sqlStr = "SELECT * FROM ROBOT_WAITER";
+        String^ sqlStr = "dbo.usp_QueryWarningsInitalizedbyClient";
+        SqlCommand^ cmd = gcnew SqlCommand(sqlStr, conn);
+        cmd->CommandType = System::Data::CommandType::StoredProcedure;
+        cmd->Prepare();
+
+        //Paso 3: Ejecutar la sentencia SQL
+        reader = cmd->ExecuteReader();
+
+        //Paso 4: Procesar los resultados
+        while (reader->Read()) {
+            Warning^ warning = gcnew Warning();
+            warning->Id = Convert::ToInt32(reader["ID"]->ToString());
+            warning->StartingDate = Convert::ToDateTime(reader["START_DATE"]);
+            warning->EndingDate = Convert::ToDateTime(reader["END_DATE"]);
+            warning->Type->Id = Convert::ToInt32(reader["WARNING_TYPE"]->ToString());
+            warning->Description = reader["DESCRIPTION"]->ToString();
+            warning->Zone = reader["ZONE"]->ToString();
+            warning->Active = reader["ACTIVE"]->ToString()->Equals("SI") ? true : false;
+            warningsList->Add(warning);
+        }
+    }
+    catch (Exception^ ex) {
+        throw ex;
+    }
+    finally {
+        //Paso 5: Importante! Cerrar los objetos de conexión a la BD
+        if (reader != nullptr) reader->Close();
+        if (conn != nullptr) conn->Close();
+    }
+    return warningsList;
+    
 }
 
 int SecurityPersistance::Persistance::AddQuestion(Question^ question)

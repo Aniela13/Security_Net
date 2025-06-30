@@ -225,10 +225,10 @@ Class SecurityModel.WarningType: AutoLayout, AnsiClass, Class, Public, BeforeFie
     get_Description(): PrivateScope, Public, HideBySig, SpecialName
     set_Description(String): PrivateScope, Public, HideBySig, SpecialName
 Class SecurityModel.Warning: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-    Void .ctor(Int32, System.ValueType, System.ValueType, SecurityModel.WarningType, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.ValueType, System.ValueType, SecurityModel.WarningType, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
-    Int32 ID : Public
+    Int32 Id : Public
     Boolean Active : Public
   Properties:
     System.String Zone 'get set' : 

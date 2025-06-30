@@ -159,18 +159,17 @@ namespace SecurityGUIApp {
 	}
 	private: System::Void btnAlert_Click(System::Object^ sender, System::EventArgs^ e) {
 		try {
-			WarningType^ type = gcnew WarningType(); 
+			WarningType^ type = gcnew WarningType();
+			type->Id = 0;
 			type->Name = "Por definir";
-			int id;
-			id = Controller::QueryAllWarnings()->Count + 1;
-			Warning^ warning = gcnew Warning(id, DateTime::Now, DateTime::Now, type, "Por definir...");
-
-			if (Controller::AddWarning(warning) == 1) {
+			Warning^ warning = gcnew Warning(DateTime::Now, DateTime::Now, type, "Por definir por operador");
+			int warningid = Controller::AddWarning(warning);
+			if ( warningid > 0) {
 				EmergencyForm^ emergencia = gcnew EmergencyForm();
 				emergencia->Show();
 			}
 			else {
-				MessageBox::Show("No se ha podido agregar la alarma");
+				MessageBox::Show("No se ha podido agregar la alarma. Acercate al operador de seguridad más cercano");
 			}
 		}
 		catch (Exception^ ex) {

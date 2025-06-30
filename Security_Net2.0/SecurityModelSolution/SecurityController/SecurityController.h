@@ -63,7 +63,7 @@ namespace SecurityController {
 		static List<WarningType^>^ QueryAllWarningsType();
 		static WarningType^ QueryWarningTypeByName(String^ nametype);
 		static WarningType^ QueryWarningTypeById(int id);
-		static Queue<Warning^>^ QueryAllWarningsbyEmergencyButton();
+		static List<Warning^>^ QueryAllWarningsbyEmergencyButton();
 
 
 		/*-------REGISTER OPERADOR-------*/

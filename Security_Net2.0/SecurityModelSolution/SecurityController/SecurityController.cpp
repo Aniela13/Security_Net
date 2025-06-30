@@ -259,10 +259,10 @@ WarningType^ SecurityController::Controller::QueryWarningTypeById(int id)
 
 
 
-Queue<Warning^>^ SecurityController::Controller::QueryAllWarningsbyEmergencyButton()
+List<Warning^>^ SecurityController::Controller::QueryAllWarningsbyEmergencyButton()
 {
 	//Queue<Warning^>^ alarmsbyclient = gcnew Queue<Warning^>();
-	try {
+	/*try {
 		for each (Warning ^ alarm in  alarms) {
 			if (alarm->Description == "Por definir...") {
 				alarmsbyclient->Enqueue(alarm);
@@ -273,7 +273,9 @@ Queue<Warning^>^ SecurityController::Controller::QueryAllWarningsbyEmergencyButt
 	catch (Exception^ ex) {
 		throw ex;
 	}
-	return nullptr;
+	return nullptr;*/
+
+	return Persistance::QueryWarningsInitalizedbyClient();
 }
 
 int SecurityController::Controller::AddOperatortoValidation(SecurityOperator^ operador)
