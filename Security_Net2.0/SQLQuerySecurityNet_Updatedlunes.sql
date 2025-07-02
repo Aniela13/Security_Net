@@ -129,7 +129,6 @@ INSERT INTO WARNING_TYPE (ID, NAME, DESCRIPTION) VALUES
 (4, 'Objetos sospechoso' , 'Detección de objetos no identificados'),
 (5, 'Seguridad infantil o familiar' , 'Niños extraviados o adultos mayores desorientados'),
 (6, 'Otra categoría', 'Describir aquí');
-(
 GO
 --  Sentencia SQL DML (data modifying language) para insertar registros a la tabla QUEStion
 INSERT INTO QUESTION ( QUESTION, ANSWER, FAQ, STATUS) VALUES
@@ -554,34 +553,34 @@ BEGIN
 END
 GO
 CREATE PROCEDURE dbo.usp_UpdateWarning(
+	@ID         INT ,
 	@START_DATE		DATETIME,
 	@END_DATE		DATETIME,
-	@WARNING_TYPE		CHAR(1) , 
+	@WARNING_TYPE		INT , 
 	@DESCRIPTION		VARCHAR(500),
 	@ZONE 			VARCHAR(50),
-	@ACTIVE		VARCHAR(1),
-	@ID         INT OUT 
+	@ACTIVE		VARCHAR(3)
 ) AS
 	BEGIN
 		UPDATE WARNING 
-		SET 	START_DATE=@START_DATE, END_DATE=@END_DATE, WARNING_TYPE=@WARNING_TYPE, DESCRIPTION=@DESCRIPTION, ZONE=@ZONE, ACTIVE=@ACTIVE	
+		SET START_DATE=@START_DATE, END_DATE=@END_DATE, WARNING_TYPE=@WARNING_TYPE, DESCRIPTION=@DESCRIPTION, ZONE=@ZONE, ACTIVE=@ACTIVE	
 		WHERE ID=@ID
 	END
 GO
 -- Sentencia SQL para consultar todas alarma
 IF EXISTS(  SELECT * 
 			FROM sysobjects
-			WHERE id = object_id(N'[dbo].[usp_QueryWarningsInitalizedbyClient]')
+			WHERE id = object_id(N'[dbo].[usp_QueryActivatedWarnings]')
 			  AND OBJECTPROPERTY(id, N'IsProcedure') = 1 )
 BEGIN
 	DROP PROCEDURE [dbo].usp_QueryWarningsInitalizedbyClient
 END
 GO
-CREATE PROCEDURE dbo.usp_QueryAllWarnings AS
+CREATE PROCEDURE dbo.usp_QueryActivatedWarnings AS
 	BEGIN
 		SELECT *
 		FROM WARNING
-		WHERE DESCRIPTION='Por definir por operador' AND WARNING_TYPE = 0
+		WHERE DESCRIPTION IN ('Por definir por operador', 'Por definir') AND WARNING_TYPE = 0
 		ORDER BY START_DATE ASC
 	END
 GO

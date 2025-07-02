@@ -212,7 +212,7 @@ namespace SecurityGUIApp {
 			}
 		}
 	private: System::Void dgvValidateOp_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-		if (dgvValidateOp->SelectedCells->Count == 1) {
+		if (dgvValidateOp->SelectedRows->Count == 1) {
 			btnApprove->BackColor = System::Drawing::Color::Green;
 			btnApprove->Enabled = true;
 		}
@@ -224,9 +224,8 @@ namespace SecurityGUIApp {
     
 	private: System::Void btnApprove_Click(System::Object^ sender, System::EventArgs^ e) {
 		try {
-			String^ dni;
-			if (dgvValidateOp->SelectedRows->Count == 1) {
-				dni = dgvValidateOp->SelectedRows[0]->Cells[2]->Value->ToString();
+			//if (dgvValidateOp->SelectedRows->Count == 1) {
+			    String^ dni = dgvValidateOp->Rows[dgvValidateOp->SelectedCells[0]->RowIndex]->Cells[2]->Value->ToString();
 				SecurityOperator^ newoperator = Controller::QueryNoOperatorbyDNI(dni);
 				System::Windows::Forms::DialogResult dlgResult = MessageBox::Show("¿Desea validar a este usuario de nombre " + newoperator->Name + " y apellido " + newoperator->LastName + "? \n",
 					"Confirmación", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
@@ -238,7 +237,7 @@ namespace SecurityGUIApp {
 					}
 
 				}
-			}
+			//}
 	
 			
 			

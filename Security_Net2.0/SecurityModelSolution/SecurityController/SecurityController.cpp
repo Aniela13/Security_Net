@@ -2,6 +2,11 @@
 #include "SecurityController.h"
 
 
+List<Tuple<String^, String^>^>^ SecurityController::Controller::QueryDocument_Types()
+{
+	return Persistance::QueryDocumentTypes();
+}
+
 int SecurityController::Controller::ValidateAdmin(Administrator^ administrator)
 {
 	if (administrator->UserName == "user" && administrator->Password == "password") {
@@ -197,14 +202,15 @@ int SecurityController::Controller::AddWarning(Warning^ alarm)
 
 int SecurityController::Controller::UpdateWarning(Warning^ warning)
 {
-	for (int i = 0; i < alarms->Count; i++) {
+	/*for (int i = 0; i < alarms->Count; i++) {
 		if (alarms[i]->StartingDate == warning->StartingDate) {
 			alarms[i] = warning;
 			Persistance::PersistAlarmTextFile(TXT_ALARM_HISTORIAL_FILE_NAME, alarms);
 			return 1;
 		}
 	}
-	return 0;
+	return 0;*/
+	return Persistance::UpdateWarning(warning);
 }
 
 List<Warning^>^ SecurityController::Controller::QueryAllWarnings()

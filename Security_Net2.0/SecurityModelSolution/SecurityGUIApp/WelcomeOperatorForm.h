@@ -160,16 +160,16 @@ namespace SecurityGUIApp {
 	private: System::Void btnLogInSecurity_Click(System::Object^ sender, System::EventArgs^ e) {
 		
 		try {
-			String^ username = txtSecurityUser->Text;
-			String^ password = txtSecurityPassword->Text;
+			String^ username = txtSecurityUser->Text->Trim();
+			String^ password = txtSecurityPassword->Text->Trim();
 			SecurityOperator^ op = Controller::ValidateOperator(username, password);
 			// Devuelve nullptr si no esta en el archivo de usuarios validados
 			if (op != nullptr) {
-				if (op->Authorized == true) {
+				//if (op->Authorized == true) {
 					SecurityOperatorForm^ operationsOperadorForm = gcnew SecurityOperatorForm();
 					//this->Hide();
 					operationsOperadorForm->Show();
-				}
+				//}
 			}
 			else {
 				MessageBox::Show("El usuario ingresado no ha sido registrado o validado.");

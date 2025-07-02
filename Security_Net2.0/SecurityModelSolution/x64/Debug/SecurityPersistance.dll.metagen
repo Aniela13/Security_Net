@@ -37,6 +37,7 @@ Class SecurityPersistance.Persistance: AutoLayout, AnsiClass, Class, Public, Bef
     AddWarning(Warning): PrivateScope, Public, Static, HideBySig
     UpdateWarning(Warning): PrivateScope, Public, Static, HideBySig
     QueryAllWarnings(): PrivateScope, Public, Static, HideBySig
+    QueryWarningsInitalizedbyClient(): PrivateScope, Public, Static, HideBySig
     AddQuestion(Question): PrivateScope, Public, Static, HideBySig
     QueryAllFAQ(): PrivateScope, Public, Static, HideBySig
     QueryAllNewQuestions(): PrivateScope, Public, Static, HideBySig

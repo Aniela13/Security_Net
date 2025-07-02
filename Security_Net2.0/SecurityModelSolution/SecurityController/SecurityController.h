@@ -34,6 +34,9 @@ namespace SecurityController {
 		static String^ BINARY_ROUTE_ROBOT_FILE_NAME = "rutas.bin";//Agregar ruta al robot
 	
 	public:
+
+		/*-------AGREGAR DATOS A LOS COMBOBOX---*/
+		static List<Tuple<String^, String^>^>^ QueryDocument_Types(); 
 		/*-------VALIDATE ADMINISTRADOR-------*/
 		static int ValidateAdmin(Administrator^ administrator);
 

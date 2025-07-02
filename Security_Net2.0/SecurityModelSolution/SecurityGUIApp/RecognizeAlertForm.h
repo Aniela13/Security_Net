@@ -352,19 +352,22 @@ namespace SecurityGUIApp {
 				List<Warning^>^ alarmsbybtn = Controller::QueryAllWarningsbyEmergencyButton();
 				Warning^ alarm = alarmsbybtn[0];
 				alarm->EndingDate = DateTime::Now;
+				alarm->Active = false; 
 				if (Controller::UpdateWarning(alarm) == 1) {
 					System::Windows::Forms::DialogResult dlgResult = MessageBox::Show("¿Desea añadirla al historial de alarmas?",
 						"Confirmación", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
 					if (dlgResult == System::Windows::Forms::DialogResult::Yes) {
-						
 						CreateAlarmForm^ alarmform = gcnew CreateAlarmForm();
+						alarmform->SetWarning(alarm);
 						//this->Hide();
 						alarmform->Show();
 					}
 					else {
+						alarm->Type->Id = 1; 
 						alarm->Description = "Alarma descartada";
 						if (Controller::UpdateWarning(alarm) == 1){
 							MessageBox::Show("Se ha actualizado la alarma activada como falsa alarma");
+							return;
 						}
 					}
 
@@ -374,6 +377,7 @@ namespace SecurityGUIApp {
 			}
 			else {
 				MessageBox::Show("No se ha podido detener la alarma. La alarma sigue estando activa");
+				return;
 			}
 		}
 		catch (Exception^ ex) {
@@ -385,17 +389,17 @@ namespace SecurityGUIApp {
 	private: System::Void btnReviewAlarm_Click(System::Object^ sender, System::EventArgs^ e) {
 		try {
 			WarningType^ type = gcnew WarningType();
-			type->Name = "Por definir";
-			int id;
-			id = Controller::QueryAllWarnings()->Count + 1;
-			Warning^ warning = gcnew Warning(id,DateTime::Now, DateTime::Now, type, "Por definir...");
-
-			if (Controller::AddWarning(warning) == 1) {
+			type->Id = 0;
+			//type->Name = "Por definir";
+			Warning^ warning = gcnew Warning(DateTime::Now, DateTime::Now, type, "Por definir");
+			int warningid = Controller::AddWarning(warning);
+			if (warningid >0) {
 				MessageBox::Show("Se ha iniciado una alarma. Todos los operadores de seguridad serán notificados");
 				return;
 			}
 			else {
 				MessageBox::Show("No se ha podido agregar la alarma");
+				return;
 			}
 		}
 		catch (Exception^ ex) {
