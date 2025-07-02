@@ -25,6 +25,7 @@ Class SecurityController.Controller: AutoLayout, AnsiClass, Class, Public, Befor
     System.String TXT_WARNING_TYPE_FILE_NAME : Public, Static
     System.String BINARY_ROUTE_ROBOT_FILE_NAME : Public, Static
   Methods:
+    QueryDocument_Types(): PrivateScope, Public, Static, HideBySig
     ValidateAdmin(Administrator): PrivateScope, Public, Static, HideBySig
     AddUser(UserNet): PrivateScope, Public, Static, HideBySig
     ValidateOperator(String, String): PrivateScope, Public, Static, HideBySig

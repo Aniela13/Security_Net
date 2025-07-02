@@ -133,10 +133,10 @@ namespace SecurityGUIApp {
 			this->txtOpSalary = (gcnew System::Windows::Forms::TextBox());
 			this->txtOpSchedule = (gcnew System::Windows::Forms::TextBox());
 			this->groupBoxGender = (gcnew System::Windows::Forms::GroupBox());
+			this->rbtnMujer = (gcnew System::Windows::Forms::RadioButton());
+			this->rbtnHombre = (gcnew System::Windows::Forms::RadioButton());
 			this->txtOpPhoneNumber = (gcnew System::Windows::Forms::TextBox());
 			this->btnUploadPhoto = (gcnew System::Windows::Forms::Button());
-			this->rbtnHombre = (gcnew System::Windows::Forms::RadioButton());
-			this->rbtnMujer = (gcnew System::Windows::Forms::RadioButton());
 			this->lblFullfilldata = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbPhoto))->BeginInit();
 			this->groupBoxGender->SuspendLayout();
@@ -411,6 +411,28 @@ namespace SecurityGUIApp {
 			this->groupBoxGender->TabIndex = 51;
 			this->groupBoxGender->TabStop = false;
 			// 
+			// rbtnMujer
+			// 
+			this->rbtnMujer->AutoSize = true;
+			this->rbtnMujer->Location = System::Drawing::Point(109, 8);
+			this->rbtnMujer->Name = L"rbtnMujer";
+			this->rbtnMujer->Size = System::Drawing::Size(61, 20);
+			this->rbtnMujer->TabIndex = 55;
+			this->rbtnMujer->TabStop = true;
+			this->rbtnMujer->Text = L"Mujer";
+			this->rbtnMujer->UseVisualStyleBackColor = true;
+			// 
+			// rbtnHombre
+			// 
+			this->rbtnHombre->AutoSize = true;
+			this->rbtnHombre->Location = System::Drawing::Point(26, 8);
+			this->rbtnHombre->Name = L"rbtnHombre";
+			this->rbtnHombre->Size = System::Drawing::Size(77, 20);
+			this->rbtnHombre->TabIndex = 54;
+			this->rbtnHombre->TabStop = true;
+			this->rbtnHombre->Text = L"Hombre";
+			this->rbtnHombre->UseVisualStyleBackColor = true;
+			// 
 			// txtOpPhoneNumber
 			// 
 			this->txtOpPhoneNumber->Location = System::Drawing::Point(680, 252);
@@ -426,28 +448,7 @@ namespace SecurityGUIApp {
 			this->btnUploadPhoto->TabIndex = 53;
 			this->btnUploadPhoto->Text = L"Subir foto";
 			this->btnUploadPhoto->UseVisualStyleBackColor = true;
-			// 
-			// rbtnHombre
-			// 
-			this->rbtnHombre->AutoSize = true;
-			this->rbtnHombre->Location = System::Drawing::Point(26, 8);
-			this->rbtnHombre->Name = L"rbtnHombre";
-			this->rbtnHombre->Size = System::Drawing::Size(77, 20);
-			this->rbtnHombre->TabIndex = 54;
-			this->rbtnHombre->TabStop = true;
-			this->rbtnHombre->Text = L"Hombre";
-			this->rbtnHombre->UseVisualStyleBackColor = true;
-			// 
-			// rbtnMujer
-			// 
-			this->rbtnMujer->AutoSize = true;
-			this->rbtnMujer->Location = System::Drawing::Point(109, 8);
-			this->rbtnMujer->Name = L"rbtnMujer";
-			this->rbtnMujer->Size = System::Drawing::Size(61, 20);
-			this->rbtnMujer->TabIndex = 55;
-			this->rbtnMujer->TabStop = true;
-			this->rbtnMujer->Text = L"Mujer";
-			this->rbtnMujer->UseVisualStyleBackColor = true;
+			this->btnUploadPhoto->Click += gcnew System::EventHandler(this, &OperatorRegistration::btnUploadPhoto_Click);
 			// 
 			// lblFullfilldata
 			// 
@@ -541,22 +542,30 @@ namespace SecurityGUIApp {
 				MessageBox::Show("Debe ingresar su apellido.");
 				return;
 			}
+			int index = cmbDocument_Type->SelectedIndex;
+			if (cmbDocument_Type->SelectedIndex < 0) {
+				MessageBox::Show("Debe seleccionar un tipo de documento");
+				return;
+			}
 			String^ OperatorDNI = txtOpDNI->Text;
 			if (OperatorDNI == "") {
 				MessageBox::Show("Debe ingresar un número válido.");
 				return;
 			}
-			if (cmbDocument_Type->SelectedIndex < 0) {
-				MessageBox::Show("Debe seleccionar un tipo de documento");
+			if (txtOpAddress->Text->Trim() == "" || txtOpMail->Text->Trim() == "" || txtOpPhoneNumber->Text->Trim() == "") {
+				lblFullfilldata->Visible == true;
+			}
+			else {
+				ClearControls();
+				lblFullfilldata->Visible == false;
 				return;
 			}
-
 			String^ OperatorPassword = txtOpPassword->Text;
-
 			String^ OperatorUser = txtSecurityUser->Text;
 			txtOpSalary->Text = "1200";
 			SecurityOperator^ operador = gcnew SecurityOperator(OperatorName, OperatorLastName, OperatorDNI, OperatorPassword,false,false);
 			operador->Address = txtOpAddress->Text;
+			operador->Document_Type = Convert::ToString(index);
 			operador->BirthDay = dtpBirthday->Value;
 			operador->Gender = rbtnHombre->Checked ? "M" : "F";
 			operador->Phone_Number = txtOpPhoneNumber->Text;
@@ -572,7 +581,7 @@ namespace SecurityGUIApp {
 
 
 			if (Controller::AddOperatortoValidation(operador) > 0) {
-				MessageBox::Show("Registrado correctamente.");
+				MessageBox::Show("Registrado correctamente \n Usuario: \t" + operador->UserName + "\n Contraseña:\t"+ operador->Password);
 				ClearControls();
 			}
 			else {
@@ -619,6 +628,13 @@ namespace SecurityGUIApp {
 		FillDocTypesinCombo();
 	}
 
+	private: System::Void btnUploadPhoto_Click(System::Object^ sender, System::EventArgs^ e) {
+		OpenFileDialog^ ofd = gcnew OpenFileDialog();
+		ofd->Filter = "Image Files (*.jpg;*.jpeg;)|*.jpg;*.jpeg;";
+		if (ofd->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+			pbPhoto->Image = gcnew Bitmap(ofd->FileName);
+		}
+	}
 };
 
 }

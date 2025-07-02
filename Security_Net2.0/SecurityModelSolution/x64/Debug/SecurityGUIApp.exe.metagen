@@ -159,6 +159,7 @@ Class SecurityGUIApp.OperatorRegistration: AutoLayout, AnsiClass, Class, Public,
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
+    FillDocTypesinCombo(): PrivateScope, Public, HideBySig
     ReversePassword(String): PrivateScope, Public, HideBySig
     ClearControls(): PrivateScope, Public, HideBySig
 Class SecurityGUIApp.RobotPositionForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit

@@ -34,6 +34,7 @@ Class SecurityPersistance.Persistance: AutoLayout, AnsiClass, Class, Public, Bef
     UpdateSecurityOperator(SecurityOperator): PrivateScope, Public, Static, HideBySig
     QueryAllNotAuthorizedOperators(): PrivateScope, Public, Static, HideBySig
     QueryAllOperators(): PrivateScope, Public, Static, HideBySig
+    QueryDocumentTypes(): PrivateScope, Public, Static, HideBySig
     AddWarning(Warning): PrivateScope, Public, Static, HideBySig
     UpdateWarning(Warning): PrivateScope, Public, Static, HideBySig
     QueryAllWarnings(): PrivateScope, Public, Static, HideBySig
