@@ -1,28 +1,28 @@
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.vcxproj.AssemblyReference.cache
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.AdminForm.resources
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.AlarmHistorialForm.resources
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.AnswerForm.resources
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.AsignZonesForm.resources
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.ClientForm.resources
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.CreateAlarmForm.resources
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.EmergencyForm.resources
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.FAQForm.resources
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.MainForm.resources
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.MaintainUser.resources
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.ModifyFAQ.resources
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.NewMapForm.resources
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.NewQuestionForm.resources
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.NoiseSensorForm.resources
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.OperationsAdminForm.resources
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.RecognizeAlertForm.resources
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.RobotPositionForm.resources
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.SatisfactionQuestionForm.resources
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.SecurityOperatorForm.resources
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.SurveillanceCameraForm.resources
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.WelcomeOperatorForm.resources
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.OperatorRegistration.resources
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.UpdateMapForm.resources
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.ValidateOpForm.resources
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.ZoneLocation.resources
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.vcxproj.GenerateResource.cache
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\Security.A39EBA73.Up2Date
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.vcxproj.AssemblyReference.cache
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.AdminForm.resources
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.AlarmHistorialForm.resources
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.AnswerForm.resources
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.AsignZonesForm.resources
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.ClientForm.resources
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.CreateAlarmForm.resources
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.EmergencyForm.resources
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.FAQForm.resources
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.MainForm.resources
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.MaintainUser.resources
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.ModifyFAQ.resources
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.NewMapForm.resources
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.NewQuestionForm.resources
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.NoiseSensorForm.resources
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.OperationsAdminForm.resources
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.RecognizeAlertForm.resources
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.RobotPositionForm.resources
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.SatisfactionQuestionForm.resources
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.SecurityOperatorForm.resources
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.SurveillanceCameraForm.resources
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.WelcomeOperatorForm.resources
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.OperatorRegistration.resources
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.UpdateMapForm.resources
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.ValidateOpForm.resources
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.ZoneLocation.resources
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\SecurityGUIApp.vcxproj.GenerateResource.cache
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\x64\Debug\Security.A39EBA73.Up2Date

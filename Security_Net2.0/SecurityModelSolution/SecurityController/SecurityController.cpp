@@ -484,4 +484,14 @@ int SecurityController::Controller::GetLastRouteId()
 	return QueryAllRoutes()->Count;
 }
 
+array<Byte>^ SecurityController::Controller::GetImageFromCamara(String^ url)
+{
+	return Persistance::GetImageFromCamara(url);
+}
+
+void SecurityController::Controller::InsertarImagenEnSQL(String^ rutaImagen)
+{
+	return  Persistance::InsertarImagenEnSQL(rutaImagen);
+}
+
 

@@ -89,6 +89,10 @@ namespace SecurityController {
 		static int AddRoute(Route^ route);
 		static List<Route^>^ QueryAllRoutes();
 		static int GetLastRouteId();
+		//-----------CAMERA---------
+		static array<Byte>^ GetImageFromCamara(String^ url); // me devolvera en bytes la imagen
+		static void InsertarImagenEnSQL(String^ rutaImagen);
+
 
 	};
 }

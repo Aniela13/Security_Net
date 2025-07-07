@@ -1,8 +1,7 @@
 #pragma once
 #include "ValidateOpForm.h"
 #include "ComboBoxItem.h"
-using namespace SecurityModel; 
-using namespace SecurityController; 
+
 
 namespace SecurityGUIApp {
 
@@ -12,6 +11,8 @@ namespace SecurityGUIApp {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace SecurityModel;
+	using namespace SecurityController;
 
 	/// <summary>
 	/// Resumen de OperatorRegistration
@@ -553,11 +554,11 @@ namespace SecurityGUIApp {
 				return;
 			}
 			if (txtOpAddress->Text->Trim() == "" || txtOpMail->Text->Trim() == "" || txtOpPhoneNumber->Text->Trim() == "") {
-				lblFullfilldata->Visible == true;
+				lblFullfilldata->Visible = true;
 			}
 			else {
 				ClearControls();
-				lblFullfilldata->Visible == false;
+				lblFullfilldata->Visible = false;
 				return;
 			}
 			String^ OperatorPassword = txtOpPassword->Text;

@@ -137,6 +137,7 @@
     <ClCompile Include="CreateAlarmForm.cpp" />
     <ClCompile Include="EmergencyForm.cpp" />
     <ClCompile Include="FAQForm.cpp" />
+    <ClCompile Include="LeaFletMapForm.cpp" />
     <ClCompile Include="MainForm.cpp" />
     <ClCompile Include="MaintainUser.cpp" />
     <ClCompile Include="ModifyFAQ.cpp" />
@@ -179,6 +180,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="FAQForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="LeaFletMapForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MainForm.h">
@@ -258,6 +262,9 @@
     <EmbeddedResource Include="FAQForm.resx">
       <DependentUpon>FAQForm.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LeaFletMapForm.resx">
+      <DependentUpon>LeaFletMapForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.h</DependentUpon>
     </EmbeddedResource>
@@ -309,6 +316,9 @@
     <EmbeddedResource Include="ZoneLocation.resx">
       <DependentUpon>ZoneLocation.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="mapa.html" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

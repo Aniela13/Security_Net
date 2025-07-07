@@ -45,3 +45,5 @@ Class SecurityPersistance.Persistance: AutoLayout, AnsiClass, Class, Public, Bef
     QueryByQuestion(String): PrivateScope, Public, Static, HideBySig
     DeleteQuestion(Int32): PrivateScope, Public, Static, HideBySig
     UpdateQuestion(Question): PrivateScope, Public, Static, HideBySig
+    GetImageFromCamara(String): PrivateScope, Public, Static, HideBySig
+    InsertarImagenEnSQL(String): PrivateScope, Public, Static, HideBySig

@@ -64,5 +64,9 @@ namespace SecurityPersistance {
 		static Question^ QueryByQuestion(String^ question);  //Obtener respuesta por pregunta
 		static int DeleteQuestion(int questionId);
 		static int UpdateQuestion(Question^ question);
+		//-------CAMERA ------------------
+		static array<Byte>^ GetImageFromCamara(String^ url); // me devolvera en bytes la imagen
+		static void InsertarImagenEnSQL(String^ rutaImagen);
+
 	};
 }

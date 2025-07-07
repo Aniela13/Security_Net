@@ -5,6 +5,9 @@ using namespace System;
 using namespace System::IO;
 using namespace System::Collections::Generic;
 using namespace System::Runtime::Serialization::Formatters::Binary;
+using namespace System::Net;
+using namespace System::Data;
+using namespace System::Data::SqlClient;
 
 
 SqlConnection^ SecurityPersistance::Persistance::GetConnection()
@@ -1287,6 +1290,49 @@ int SecurityPersistance::Persistance::UpdateQuestion(Question^ question)
         if (conn != nullptr) conn->Close();
     }
     return res;
+}
+
+array<Byte>^ SecurityPersistance::Persistance::GetImageFromCamara(String^ url)
+{
+    try {
+        HttpWebRequest^ request = (HttpWebRequest^)WebRequest::Create(url);
+        HttpWebResponse^ response = (HttpWebResponse^)request->GetResponse();
+        Stream^ stream = response->GetResponseStream();
+
+        MemoryStream^ ms = gcnew MemoryStream();
+        stream->CopyTo(ms);
+
+        response->Close();
+        stream->Close();
+
+        return ms->ToArray();
+    }
+    catch (Exception^ ex) {
+        Console::WriteLine("Error: " + ex->Message);
+        return nullptr;
+    }
+}
+
+void SecurityPersistance::Persistance::InsertarImagenEnSQL(String^ rutaImagen)
+{
+    SqlConnection^ conn = nullptr;
+    try {
+        conn = GetConnection();
+        array<Byte>^ datos = File::ReadAllBytes(rutaImagen);
+        SqlCommand^ cmd = gcnew SqlCommand("INSERT INTO Imagenes (Foto, Fecha) VALUES (@img, GETDATE())", conn);
+        cmd->Parameters->Add("@img", SqlDbType::VarBinary)->Value = datos;
+
+        cmd->ExecuteNonQuery();
+        conn->Close();
+    }
+
+    catch (Exception^ ex) {
+        throw ex;
+    }
+    finally {
+        if (conn != nullptr) conn->Close();
+    }
+    //return res;
 }
 
 

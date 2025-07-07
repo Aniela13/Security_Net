@@ -1,8 +1,7 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppClean.targets(77,5): warning : El proceso no puede obtener acceso al archivo 'c:\users\letizia castillo\onedrive\documentos\poo\security_net\security_net2.0\securitymodelsolution\securitypersistance\x64\debug\security.cdc773f8.tlog\link.write.1.tlog' porque está siendo utilizado en otro proceso.
-  pch.cpp
+﻿  pch.cpp
   AssemblyInfo.cpp
   SecurityPersistance.cpp
   Generando código...
   .NETFramework,Version=v4.8.1.AssemblyAttributes.cpp
   AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-  SecurityPersistance.vcxproj -> C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityPersistance.dll
+  SecurityPersistance.vcxproj -> C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityPersistance.dll

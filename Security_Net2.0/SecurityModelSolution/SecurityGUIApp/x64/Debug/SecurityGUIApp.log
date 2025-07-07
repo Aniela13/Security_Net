@@ -1,32 +1,6 @@
-﻿  AdminForm.cpp
-  AlarmHistorialForm.cpp
-  AnswerForm.cpp
-  AsignZonesForm.cpp
-  ClientForm.cpp
-  ComboBoxItem.cpp
-  CreateAlarmForm.cpp
-  EmergencyForm.cpp
-  FAQForm.cpp
-  MainForm.cpp
-  MaintainUser.cpp
-  ModifyFAQ.cpp
-  NewMapForm.cpp
-  NewQuestionForm.cpp
-  NoiseSensorForm.cpp
-  OperationsAdminForm.cpp
-  OperatorForm.cpp
-  OperatorRegistration.cpp
-  RecognizeAlertForm.cpp
-  RobotPosition.cpp
-  Generando código...
-  Compilando...
-  SatisfactionQuestion.cpp
-  SecurityOperatorForm.cpp
-  SurveillanceCameraForm.cpp
-  UpdateMapForm.cpp
-  ValidateOpForm.cpp
-  ZoneLocation.cpp
-  .NETFramework,Version=v4.8.1.AssemblyAttributes.cpp
-  Generando código...
-  AdminForm.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-  SecurityGUIApp.vcxproj -> C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityGUIApp.exe
+﻿  LeaFletMapForm.cpp
+C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\LeaFletMapForm.h(153,10): error C2661: 'System::Windows::Forms::WebBrowser::Navigate': ninguna función sobrecargada acepta 0 argumentos
+  (compilando archivo de origen "LeaFletMapForm.cpp")
+      C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\LeaFletMapForm.h(153,10):
+      al hacer coincidir la lista de argumentos '()'
+  

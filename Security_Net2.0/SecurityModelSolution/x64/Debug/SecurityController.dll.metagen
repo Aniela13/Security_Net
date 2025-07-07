@@ -59,3 +59,5 @@ Class SecurityController.Controller: AutoLayout, AnsiClass, Class, Public, Befor
     AddRoute(Route): PrivateScope, Public, Static, HideBySig
     QueryAllRoutes(): PrivateScope, Public, Static, HideBySig
     GetLastRouteId(): PrivateScope, Public, Static, HideBySig
+    GetImageFromCamara(String): PrivateScope, Public, Static, HideBySig
+    InsertarImagenEnSQL(String): PrivateScope, Public, Static, HideBySig
