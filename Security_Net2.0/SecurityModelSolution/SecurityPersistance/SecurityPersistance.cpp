@@ -880,6 +880,85 @@ List<Tuple<String^, String^>^>^ SecurityPersistance::Persistance::QueryDocumentT
     return lista;
 }
 
+List<WarningType^>^ SecurityPersistance::Persistance::QueryWarningTypes()
+{
+    List<WarningType^>^ wtypes = gcnew List<WarningType^>();
+    SqlConnection^ conn;
+    SqlDataReader^ reader;
+    try {
+        //Paso 1: Obtener la conexión a la BD
+        conn = GetConnection();
+
+        //Paso 2: Preparar la sentencia SQL
+        String^ sqlStr = "dbo.usp_QueryAllWarningTypes";
+        SqlCommand^ cmd = gcnew SqlCommand(sqlStr, conn);
+        cmd->CommandType = System::Data::CommandType::StoredProcedure;
+        cmd->Prepare();
+
+        //Paso 3: Ejecutar la sentencia SQL
+        reader = cmd->ExecuteReader();
+
+        //Paso 4: Procesar los resultados
+        while (reader->Read()) {
+            WarningType^ type = gcnew WarningType();
+
+            type->Id = Convert::ToInt32(reader["ID"]->ToString());
+            type->Name = reader["NAME"]->ToString();
+            type->Description = reader["DESCRIPTION"]->ToString();
+            wtypes->Add(type);
+        }
+    }
+    catch (Exception^ ex) {
+        throw ex;
+    }
+    finally {
+        //Paso 5: Importante! Cerrar los objetos de conexión a la BD
+        if (reader != nullptr) reader->Close();
+        if (conn != nullptr) conn->Close();
+    }
+    return wtypes;
+}
+
+WarningType^ SecurityPersistance::Persistance::QueryWarningTypebyId(int id)
+{
+    WarningType^ type;
+    SqlConnection^ conn;
+    SqlDataReader^ reader;
+
+    try {
+        //Paso 1: Obtener la conexión a la BD
+        conn = GetConnection();
+
+        //Paso 2: Preparar la sentencia SQL
+        String^ sqlStr = "dbo.usp_QueryWarningTypebyId";
+        SqlCommand^ cmd = gcnew SqlCommand(sqlStr, conn);
+        cmd->CommandType = System::Data::CommandType::StoredProcedure;
+        cmd->Parameters->Add("@ID", System::Data::SqlDbType::Int);
+        cmd->Prepare();
+        cmd->Parameters["@ID"]->Value = id;
+
+        //Paso 3: Ejecutar la sentencia SQL
+        reader = cmd->ExecuteReader();
+
+        //Paso 4: Procesar los resultados
+        if (reader->Read()) {
+            type = gcnew WarningType();
+            type->Id = Convert::ToInt32(reader["ID"]->ToString());
+            type->Name = reader["NAME"]->ToString();
+            type->Description = reader["DESCRIPTION"]->ToString();
+        }
+    }
+    catch (Exception^ ex) {
+        throw ex;
+    }
+    finally {
+        //Paso 5: Importante! Cerrar los objetos de conexión a la BD
+        if (reader != nullptr) reader->Close();
+        if (conn != nullptr) conn->Close();
+    }
+    return type;
+}
+
 int SecurityPersistance::Persistance::AddWarning(Warning^ warning)
 {
     int warningId = 0;
@@ -1000,6 +1079,112 @@ List<Warning^>^ SecurityPersistance::Persistance::QueryAllWarnings()
                    robot->PurchaseDate = Convert::ToDateTime(reader["PURCHASE_DATE"]);
                if (!DBNull::Value->Equals(reader["PHOTO"]))
                    robot->Photo = (array<Byte>^)reader["PHOTO"];*/
+            warningsList->Add(warning);
+        }
+    }
+    catch (Exception^ ex) {
+        throw ex;
+    }
+    finally {
+        //Paso 5: Importante! Cerrar los objetos de conexión a la BD
+        if (reader != nullptr) reader->Close();
+        if (conn != nullptr) conn->Close();
+    }
+    return warningsList;
+}
+
+List<Warning^>^ SecurityPersistance::Persistance::QueryAllWarningsbydate(DateTime start, DateTime end)
+{
+    List<Warning^>^ warningsList = gcnew List<Warning^>();
+    SqlConnection^ conn;
+    SqlDataReader^ reader;
+    try {
+        //Paso 1: Obtener la conexión a la BD
+        conn = GetConnection();
+
+        //Paso 2: Preparar la sentencia SQL
+        String^ sqlStr = "dbo.usp_QueryAllWarningsbyDate";
+        SqlCommand^ cmd = gcnew SqlCommand(sqlStr, conn);
+        cmd->CommandType = System::Data::CommandType::StoredProcedure;
+        cmd->Parameters->Add("@start", System::Data::SqlDbType::DateTime);
+        cmd->Parameters->Add("@end", System::Data::SqlDbType::DateTime);
+        cmd->Prepare();
+        cmd->Parameters["@start"]->Value = start;
+        cmd->Parameters["@end"]->Value = end;
+
+        //Paso 3: Ejecutar la sentencia SQL
+        reader = cmd->ExecuteReader();
+
+        //Paso 4: Procesar los resultados
+        while (reader->Read()) {
+            Warning^ warning = gcnew Warning();
+            WarningType^ type = gcnew WarningType();
+            // Asignar datos de WARNING
+            warning->Id = Convert::ToInt32(reader["ID"]);
+            warning->StartingDate = Convert::ToDateTime(reader["START_DATE"]);
+            warning->EndingDate = Convert::ToDateTime(reader["END_DATE"]);
+            warning->Description = reader["WARNING_DESCRIPTION"]->ToString();
+            warning->Zone = reader["ZONE"]->ToString();
+            warning->Active = reader["ACTIVE"]->ToString()->Trim()->ToUpper()->Equals("SI") ? true : false;
+
+            // Asignar datos del tipo de warning (instanciarlo primero)
+            type->Id = Convert::ToInt32(reader["WARNING_TYPE_ID"]);
+            type->Name = reader["WARNING_TYPE_NAME"]->ToString();
+            type->Description = reader["WARNING_TYPE_DESCRIPTION"]->ToString();
+            warning->Type = type;
+            // Agregar a la lista
+            warningsList->Add(warning);
+        }
+    }
+    catch (Exception^ ex) {
+        throw ex;
+    }
+    finally {
+        //Paso 5: Importante! Cerrar los objetos de conexión a la BD
+        if (reader != nullptr) reader->Close();
+        if (conn != nullptr) conn->Close();
+    }
+    return warningsList;
+}
+
+List<Warning^>^ SecurityPersistance::Persistance::QueryAllWarningsbytype(int id)
+{
+    List<Warning^>^ warningsList = gcnew List<Warning^>();
+    SqlConnection^ conn;
+    SqlDataReader^ reader;
+    try {
+        //Paso 1: Obtener la conexión a la BD
+        conn = GetConnection();
+
+        //Paso 2: Preparar la sentencia SQL
+        String^ sqlStr = "dbo.usp_QueryAllWarningsbyType";
+        SqlCommand^ cmd = gcnew SqlCommand(sqlStr, conn);
+        cmd->CommandType = System::Data::CommandType::StoredProcedure;
+        cmd->Parameters->Add("@id_type", System::Data::SqlDbType::Int);
+        cmd->Prepare();
+        cmd->Parameters["@id_type"]->Value = id;
+
+        //Paso 3: Ejecutar la sentencia SQL
+        reader = cmd->ExecuteReader();
+
+        //Paso 4: Procesar los resultados
+        while (reader->Read()) {
+            Warning^ warning = gcnew Warning();
+            WarningType^ type = gcnew WarningType();
+            // Asignar datos de WARNING
+            warning->Id = Convert::ToInt32(reader["ID"]);
+            warning->StartingDate = Convert::ToDateTime(reader["START_DATE"]);
+            warning->EndingDate = Convert::ToDateTime(reader["END_DATE"]);
+            warning->Description = reader["WARNING_DESCRIPTION"]->ToString();
+            warning->Zone = reader["ZONE"]->ToString();
+            warning->Active = reader["ACTIVE"]->ToString()->Trim()->ToUpper()->Equals("SI") ? true : false;
+
+            // Asignar datos del tipo de warning (instanciarlo primero)
+            type->Id = Convert::ToInt32(reader["WARNING_TYPE_ID"]);
+            type->Name = reader["WARNING_TYPE_NAME"]->ToString();
+            type->Description = reader["WARNING_TYPE_DESCRIPTION"]->ToString();
+            warning->Type = type;
+            // Agregar a la lista
             warningsList->Add(warning);
         }
     }

@@ -149,6 +149,7 @@ namespace SecurityGUIApp {
 
 		}
 #pragma endregion
+
 	private: System::Void LeaFletMapForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		wbMAP->Navigate();
 	}

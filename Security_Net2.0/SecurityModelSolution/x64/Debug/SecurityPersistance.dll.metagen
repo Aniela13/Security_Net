@@ -35,9 +35,13 @@ Class SecurityPersistance.Persistance: AutoLayout, AnsiClass, Class, Public, Bef
     QueryAllNotAuthorizedOperators(): PrivateScope, Public, Static, HideBySig
     QueryAllOperators(): PrivateScope, Public, Static, HideBySig
     QueryDocumentTypes(): PrivateScope, Public, Static, HideBySig
+    QueryWarningTypes(): PrivateScope, Public, Static, HideBySig
+    QueryWarningTypebyId(Int32): PrivateScope, Public, Static, HideBySig
     AddWarning(Warning): PrivateScope, Public, Static, HideBySig
     UpdateWarning(Warning): PrivateScope, Public, Static, HideBySig
     QueryAllWarnings(): PrivateScope, Public, Static, HideBySig
+    QueryAllWarningsbydate(DateTime, DateTime): PrivateScope, Public, Static, HideBySig
+    QueryAllWarningsbytype(Int32): PrivateScope, Public, Static, HideBySig
     QueryWarningsInitalizedbyClient(): PrivateScope, Public, Static, HideBySig
     AddQuestion(Question): PrivateScope, Public, Static, HideBySig
     QueryAllFAQ(): PrivateScope, Public, Static, HideBySig

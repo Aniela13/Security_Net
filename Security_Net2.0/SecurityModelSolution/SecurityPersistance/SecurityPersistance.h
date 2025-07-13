@@ -41,7 +41,7 @@ namespace SecurityPersistance {
 		static void PersistBinaryFile(String^ fileName, Object^ persistObject);
 		static Object^ LoadBinaryFile(String^ fileName);
 
-		//------- PROGGRAMACIÓN CON BASE DE DATOS ------
+		//------- PROGRAMACIÓN CON BASE DE DATOS ------
 		static SecurityOperator^ ValidateOperator(String^ username, String^ password);
 		static int AddOperator(SecurityOperator^ operador); //Añaddir Operador (no validado)
 		static SecurityOperator^ QueryOperatorByDNI(String^ operatorDNI);    //Consultar un operador por DNI (autorizado)
@@ -51,11 +51,15 @@ namespace SecurityPersistance {
 		static List<SecurityOperator^>^ QueryAllOperators();          //Consultar todos los operadores (autorizados)
 	    //--------COMBOBOX------------------------------
 		static List<Tuple<String^, String^>^>^ QueryDocumentTypes();
+		static List<WarningType^>^ QueryWarningTypes();
+		static WarningType^ QueryWarningTypebyId(int id);
 
 		// -------- WARNINGS --------------
 		static int AddWarning(Warning^ warning);
 		static int UpdateWarning(Warning^ warning);
 		static List<Warning^>^ QueryAllWarnings();
+		static List<Warning^>^ QueryAllWarningsbydate(DateTime start, DateTime end);
+		static List<Warning^>^ QueryAllWarningsbytype(int id);
 		static List<Warning^>^ QueryWarningsInitalizedbyClient();
 		// ---------QUESTIONS -----------
 		static int AddQuestion(Question^ question);
