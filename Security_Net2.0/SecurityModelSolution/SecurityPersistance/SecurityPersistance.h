@@ -49,7 +49,7 @@ namespace SecurityPersistance {
 		static int UpdateSecurityOperator(SecurityOperator^ operador);
 		static List<SecurityOperator^>^ QueryAllNotAuthorizedOperators();
 		static List<SecurityOperator^>^ QueryAllOperators();          //Consultar todos los operadores (autorizados)
-	    //--------COMBOBOX------------------------------
+	    //--------COMBOBOX ACTUALIZADOS------------------------------
 		static List<Tuple<String^, String^>^>^ QueryDocumentTypes();
 		static List<WarningType^>^ QueryWarningTypes();
 		static WarningType^ QueryWarningTypebyId(int id);
