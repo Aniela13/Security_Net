@@ -96,6 +96,9 @@
     <ClCompile Include="LeaFletMapForm.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="WebMapForm.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainForm.h">
@@ -179,8 +182,20 @@
     <ClInclude Include="LeaFletMapForm.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="WebMapForm.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\servprov.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\urlmon.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="mapa.html" />
+    <None Include="packages.config" />
+    <None Include="..\x64\debug\SecurityController.dll" />
+    <None Include="..\x64\debug\securitymodel.dll" />
   </ItemGroup>
 </Project>

@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ﻿  LeaFletMapForm.cpp
   MainForm.cpp
 C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\LeaFletMapForm.h(154,10): error C2661: 'System::Windows::Forms::WebBrowser::Navigate': ninguna función sobrecargada acepta 0 argumentos
@@ -6,3 +7,12 @@ C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\S
       al hacer coincidir la lista de argumentos '()'
   
   Generando código...
+=======
+﻿  MainForm.cpp
+  OperatorForm.cpp
+  SecurityOperatorForm.cpp
+  WebMapForm.cpp
+  Generando código...
+  AdminForm.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+  SecurityGUIApp.vcxproj -> C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityGUIApp.exe
+>>>>>>> Stashed changes

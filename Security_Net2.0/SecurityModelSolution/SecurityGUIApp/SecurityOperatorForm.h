@@ -4,6 +4,7 @@
 #include "RecognizeAlertForm.h"
 #include "AnswerForm.h"
 #include "AsignZonesForm.h"
+#include "WebMapForm.h"
 
 namespace SecurityGUIApp {
 
@@ -280,9 +281,12 @@ namespace SecurityGUIApp {
 #pragma endregion
 	
 	private: System::Void btnAsignZone_Click(System::Object^ sender, System::EventArgs^ e) {
-		AsignZonesForm^ asignarrutaform = gcnew AsignZonesForm();
+		//AsignZonesForm^ asignarrutaform = gcnew AsignZonesForm();
+		////this->Hide();
+		//asignarrutaform->Show();
+		WebMapForm^ cameradataForm = gcnew WebMapForm();
 		//this->Hide();
-		asignarrutaform->Show();
+		cameradataForm->Show();
 	}
 	private: System::Void btnAccessCamera_Click(System::Object^ sender, System::EventArgs^ e) {
 		SurveillanceCameraForm^ cameradataForm = gcnew SurveillanceCameraForm();

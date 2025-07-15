@@ -1,9 +1,12 @@
 #pragma once
-
+#using <System.Web.Extensions.dll>
 using namespace System;
 using namespace System::Collections::Generic;
 using namespace SecurityModel;
 using namespace System::Data::SqlClient;
+using namespace System::Net;
+using namespace System::Threading::Tasks;
+using namespace System::Web::Script::Serialization; // Para deserializar JSON
 
 
 namespace SecurityPersistance {

@@ -1,15 +1,24 @@
 c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\vc143.pdb
+<<<<<<< Updated upstream
 c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\robotposition.obj
 c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\recognizealertform.obj
 c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\operatorregistration.obj
 c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\operatorform.obj
+=======
+c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\recognizealertform.obj
+c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\operatorregistration.obj
+>>>>>>> Stashed changes
 c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\operationsadminform.obj
 c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\noisesensorform.obj
 c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\newquestionform.obj
 c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\newmapform.obj
 c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\modifyfaq.obj
 c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\maintainuser.obj
+<<<<<<< Updated upstream
 c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\mainform.obj
+=======
+c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\leafletmapform.obj
+>>>>>>> Stashed changes
 c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\faqform.obj
 c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\emergencyform.obj
 c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\createalarmform.obj
@@ -23,6 +32,7 @@ c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\secu
 c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\zonelocation.obj
 c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\validateopform.obj
 c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\updatemapform.obj
+<<<<<<< Updated upstream
 c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\satisfactionquestion.obj
 c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\surveillancecameraform.obj
 c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\securityoperatorform.obj
@@ -98,3 +108,19 @@ c:\users\letizia castillo\onedrive\documentos\poo\security_net\security_net2.0\s
 c:\users\letizia castillo\onedrive\documentos\poo\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\securityguiapp.tlog\resgen.command.1.tlog
 c:\users\letizia castillo\onedrive\documentos\poo\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\securityguiapp.tlog\resgen.read.1.tlog
 c:\users\letizia castillo\onedrive\documentos\poo\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\securityguiapp.tlog\resgen.write.1.tlog
+=======
+c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\surveillancecameraform.obj
+c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\satisfactionquestion.obj
+c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\robotposition.obj
+c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\x64\debug\microsoft.web.webview2.core.dll
+c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\x64\debug\microsoft.web.webview2.winforms.dll
+c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\x64\debug\microsoft.web.webview2.core.xml
+c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\x64\debug\microsoft.web.webview2.winforms.xml
+c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\securityguiapp.vcxproj.assemblyreference.cache
+c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\securityguiapp.tlog\cl.command.1.tlog
+c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\securityguiapp.tlog\cl.read.1.tlog
+c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\securityguiapp.tlog\cl.write.1.tlog
+c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\securityguiapp.tlog\copylocal.read.1u.tlog
+c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\securityguiapp.tlog\copylocal.write.1u.tlog
+c:\users\ajup1\onedrive\escritorio\6to ciclo\prog. orientada objetos\github\security_net\security_net2.0\securitymodelsolution\securityguiapp\x64\debug\securityguiapp.tlog\metagen.write.1.tlog
+>>>>>>> Stashed changes

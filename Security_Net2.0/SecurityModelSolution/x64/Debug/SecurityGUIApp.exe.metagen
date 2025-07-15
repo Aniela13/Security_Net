@@ -6,6 +6,7 @@
   SecurityGUIApp.CreateAlarmForm.resources - Embedded, ContainedInManifestFile, 
   SecurityGUIApp.EmergencyForm.resources - Embedded, ContainedInManifestFile, 
   SecurityGUIApp.FAQForm.resources - Embedded, ContainedInManifestFile, 
+  SecurityGUIApp.LeaFletMapForm.resources - Embedded, ContainedInManifestFile, 
   SecurityGUIApp.MainForm.resources - Embedded, ContainedInManifestFile, 
   SecurityGUIApp.MaintainUser.resources - Embedded, ContainedInManifestFile, 
   SecurityGUIApp.ModifyFAQ.resources - Embedded, ContainedInManifestFile, 
@@ -18,6 +19,7 @@
   SecurityGUIApp.SatisfactionQuestionForm.resources - Embedded, ContainedInManifestFile, 
   SecurityGUIApp.SecurityOperatorForm.resources - Embedded, ContainedInManifestFile, 
   SecurityGUIApp.SurveillanceCameraForm.resources - Embedded, ContainedInManifestFile, 
+  SecurityGUIApp.WebMapForm.resources - Embedded, ContainedInManifestFile, 
   SecurityGUIApp.WelcomeOperatorForm.resources - Embedded, ContainedInManifestFile, 
   SecurityGUIApp.OperatorRegistration.resources - Embedded, ContainedInManifestFile, 
   SecurityGUIApp.UpdateMapForm.resources - Embedded, ContainedInManifestFile, 
@@ -28,6 +30,10 @@ Assembly SecurityGUIApp, Version=0.0.*, Culture=Todos los idiomas (todos los pa�
 	hash=SHA1, flags=PublicKey
 Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
+Assembly Microsoft.Web.WebView2.Core, Version=1.0.3351.48, Culture=neutral, PublicKeyToken=2a8ab48044d2601e: 
+	hash=None, flags=None
+Assembly Microsoft.Web.WebView2.WinForms, Version=1.0.3351.48, Culture=neutral, PublicKeyToken=2a8ab48044d2601e: 
+	hash=None, flags=None
 Assembly SecurityController, Version=1.0.*, Culture=Todos los idiomas (todos los países): 
 	hash=None, flags=None
 Assembly SecurityModel, Version=1.0.*, Culture=Todos los idiomas (todos los países): 
@@ -37,6 +43,10 @@ Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561
 Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
 Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35: 
 	hash=None, flags=None
 Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
@@ -155,6 +165,9 @@ Class SecurityGUIApp.CreateAlarmForm: AutoLayout, AnsiClass, Class, Public, Befo
     ClearControls(): PrivateScope, Public, HideBySig
     InitializeDateTimePickers(): PrivateScope, Public, HideBySig
     FillSectorsInComboBox(): PrivateScope, Public, HideBySig
+Class SecurityGUIApp.LeaFletMapForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class SecurityGUIApp.OperatorRegistration: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -173,6 +186,9 @@ Class SecurityGUIApp.RecognizeAlertForm: AutoLayout, AnsiClass, Class, Public, B
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
     ShowWarnings(): PrivateScope, Public, HideBySig
+Class SecurityGUIApp.WebMapForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class SecurityGUIApp.SecurityOperatorForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

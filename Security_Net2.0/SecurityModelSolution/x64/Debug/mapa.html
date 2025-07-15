@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Mapa de ruta</title>
+  <style>
+    html, body, #map { height: 100%; margin: 0; padding: 0; }
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+<div id="map"></div>
+<script>
+  var map = L.map('map').setView([-12.08, -77.03], 15);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+  var ruta = [];
+  var polyline = L.polyline(ruta, { color: 'red' }).addTo(map);
+
+  map.on('click', function(e) {
+    var latlng = e.latlng;
+    ruta.push([latlng.lat, latlng.lng]);
+    polyline.setLatLngs(ruta);
+    L.marker(latlng).addTo(map).bindPopup("Lat: " + latlng.lat.toFixed(5) + "<br>Lng: " + latlng.lng.toFixed(5)).openPopup();
+
+    console.log("Punto agregado:", latlng.lat, latlng.lng);
+  });
+</script>
+</body>
+</html>

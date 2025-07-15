@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "SecurityPersistance.h"
 
+#using <System.Web.Extensions.dll>
 using namespace System;
 using namespace System::IO;
 using namespace System::Collections::Generic;
@@ -8,6 +9,9 @@ using namespace System::Runtime::Serialization::Formatters::Binary;
 using namespace System::Net;
 using namespace System::Data;
 using namespace System::Data::SqlClient;
+using namespace System::Net;
+using namespace System::Threading::Tasks;
+using namespace System::Web::Script::Serialization; // Para deserializar JSON
 
 
 SqlConnection^ SecurityPersistance::Persistance::GetConnection()

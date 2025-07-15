@@ -9,6 +9,7 @@ namespace SecurityGUIApp {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
+
 	/// <summary>
 	/// Resumen de LeaFletMapForm
 	/// </summary>
@@ -40,9 +41,6 @@ namespace SecurityGUIApp {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ZonesColumn;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ CoordenadasColumn;
 
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::WebBrowser^ wbMAP;
-
 
 	private:
 		/// <summary>
@@ -62,8 +60,6 @@ namespace SecurityGUIApp {
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->ZonesColumn = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->CoordenadasColumn = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->wbMAP = (gcnew System::Windows::Forms::WebBrowser());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -112,46 +108,19 @@ namespace SecurityGUIApp {
 			this->CoordenadasColumn->Name = L"CoordenadasColumn";
 			this->CoordenadasColumn->Width = 125;
 			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Lucida Bright", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(491, 9);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(164, 52);
-			this->label1->TabIndex = 38;
-			this->label1->Text = L"MAPA";
-			// 
-			// wbMAP
-			// 
-			this->wbMAP->Location = System::Drawing::Point(27, 73);
-			this->wbMAP->MinimumSize = System::Drawing::Size(20, 20);
-			this->wbMAP->Name = L"wbMAP";
-			this->wbMAP->Size = System::Drawing::Size(776, 551);
-			this->wbMAP->TabIndex = 42;
-			// 
 			// LeaFletMapForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1166, 741);
-			this->Controls->Add(this->wbMAP);
-			this->Controls->Add(this->btnGoBackMenu);
-			this->Controls->Add(this->dataGridView1);
-			this->Controls->Add(this->label1);
+			/*this->ClientSize = System::Drawing::Size(913, 505);
 			this->Name = L"LeaFletMapForm";
-			this->Text = L"LeaFletMapForm";
-			this->Load += gcnew System::EventHandler(this, &LeaFletMapForm::LeaFletMapForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
-			this->ResumeLayout(false);
-			this->PerformLayout();
+			this->ResumeLayout(false);*/
 
 		}
 #pragma endregion
 
 	private: System::Void LeaFletMapForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		wbMAP->Navigate();
+		//String^ path = Application::StartupPath + "\\mapa.html";
+		//webView21->Source = gcnew Uri("file:///" + path->Replace("\\", "/"));
 	}
 };
 }
