@@ -56,9 +56,9 @@ namespace SecurityGUIApp {
 
 
 
-	private: System::Windows::Forms::Label^ label3;
 
-	private: System::Windows::Forms::TextBox^ txtType;
+
+
 
 
 
@@ -74,12 +74,26 @@ namespace SecurityGUIApp {
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::DateTimePicker^ dtpEndDate;
 
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ cstarting;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ cending;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
+
+
+
 	private: System::Windows::Forms::ComboBox^ cmbAlarmType;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Button^ btnFilterbyType;
+
+
+
+
+	private: System::Windows::Forms::Button^ btnClearSearch;
+	private: System::Windows::Forms::Button^ btnSearchbyDate;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ cstarting;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ cending;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
+
+
+
+
 
 
 
@@ -107,12 +121,7 @@ namespace SecurityGUIApp {
 			this->ReporteToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->dgvAlarmHistorial = (gcnew System::Windows::Forms::DataGridView());
-			this->cstarting = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->cending = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dtpFirstDate = (gcnew System::Windows::Forms::DateTimePicker());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->txtType = (gcnew System::Windows::Forms::TextBox());
 			this->btnValidateOp = (gcnew System::Windows::Forms::Button());
 			this->btnSearch = (gcnew System::Windows::Forms::Button());
 			this->btnGoBackMenu = (gcnew System::Windows::Forms::Button());
@@ -122,6 +131,12 @@ namespace SecurityGUIApp {
 			this->cmbAlarmType = (gcnew System::Windows::Forms::ComboBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->btnFilterbyType = (gcnew System::Windows::Forms::Button());
+			this->btnClearSearch = (gcnew System::Windows::Forms::Button());
+			this->btnSearchbyDate = (gcnew System::Windows::Forms::Button());
+			this->cstarting = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->cending = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvAlarmHistorial))->BeginInit();
 			this->SuspendLayout();
@@ -133,14 +148,14 @@ namespace SecurityGUIApp {
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Padding = System::Windows::Forms::Padding(5, 2, 0, 2);
-			this->menuStrip1->Size = System::Drawing::Size(900, 30);
+			this->menuStrip1->Size = System::Drawing::Size(1204, 28);
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
 			// ReporteToolStripMenuItem
 			// 
 			this->ReporteToolStripMenuItem->Name = L"ReporteToolStripMenuItem";
-			this->ReporteToolStripMenuItem->Size = System::Drawing::Size(155, 26);
+			this->ReporteToolStripMenuItem->Size = System::Drawing::Size(155, 24);
 			this->ReporteToolStripMenuItem->Text = L"Reporte de Alarmas";
 			// 
 			// label1
@@ -160,9 +175,9 @@ namespace SecurityGUIApp {
 			this->dgvAlarmHistorial->BackgroundColor = System::Drawing::SystemColors::GradientActiveCaption;
 			this->dgvAlarmHistorial->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dgvAlarmHistorial->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dgvAlarmHistorial->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {
+			this->dgvAlarmHistorial->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
 				this->cstarting,
-					this->cending, this->Column1
+					this->cending, this->Column1, this->Column2
 			});
 			this->dgvAlarmHistorial->GridColor = System::Drawing::Color::Gray;
 			this->dgvAlarmHistorial->Location = System::Drawing::Point(68, 254);
@@ -170,29 +185,9 @@ namespace SecurityGUIApp {
 			this->dgvAlarmHistorial->Name = L"dgvAlarmHistorial";
 			this->dgvAlarmHistorial->RowHeadersWidth = 51;
 			this->dgvAlarmHistorial->RowTemplate->Height = 24;
-			this->dgvAlarmHistorial->Size = System::Drawing::Size(465, 192);
+			this->dgvAlarmHistorial->Size = System::Drawing::Size(927, 345);
 			this->dgvAlarmHistorial->TabIndex = 3;
-			// 
-			// cstarting
-			// 
-			this->cstarting->HeaderText = L"Alarma Activada (Fecha y Hora)";
-			this->cstarting->MinimumWidth = 6;
-			this->cstarting->Name = L"cstarting";
-			this->cstarting->Width = 125;
-			// 
-			// cending
-			// 
-			this->cending->HeaderText = L"Alarma Desactivada (Fecha y Hora)";
-			this->cending->MinimumWidth = 6;
-			this->cending->Name = L"cending";
-			this->cending->Width = 125;
-			// 
-			// Column1
-			// 
-			this->Column1->HeaderText = L"Categoría";
-			this->Column1->MinimumWidth = 6;
-			this->Column1->Name = L"Column1";
-			this->Column1->Width = 125;
+			this->dgvAlarmHistorial->CellToolTipTextNeeded += gcnew System::Windows::Forms::DataGridViewCellToolTipTextNeededEventHandler(this, &AlarmHistorialForm::dgvAlarmHistorial_CellToolTipTextNeeded);
 			// 
 			// dtpFirstDate
 			// 
@@ -202,29 +197,10 @@ namespace SecurityGUIApp {
 			this->dtpFirstDate->Size = System::Drawing::Size(271, 22);
 			this->dtpFirstDate->TabIndex = 5;
 			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(41, 495);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(79, 16);
-			this->label3->TabIndex = 7;
-			this->label3->Text = L"Descripción";
-			// 
-			// txtType
-			// 
-			this->txtType->Location = System::Drawing::Point(144, 495);
-			this->txtType->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->txtType->Multiline = true;
-			this->txtType->Name = L"txtType";
-			this->txtType->ReadOnly = true;
-			this->txtType->Size = System::Drawing::Size(389, 86);
-			this->txtType->TabIndex = 9;
-			// 
 			// btnValidateOp
 			// 
 			this->btnValidateOp->BackColor = System::Drawing::Color::LimeGreen;
-			this->btnValidateOp->Location = System::Drawing::Point(715, 310);
+			this->btnValidateOp->Location = System::Drawing::Point(1075, 254);
 			this->btnValidateOp->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnValidateOp->Name = L"btnValidateOp";
 			this->btnValidateOp->Size = System::Drawing::Size(117, 79);
@@ -235,14 +211,13 @@ namespace SecurityGUIApp {
 			// 
 			// btnSearch
 			// 
-			this->btnSearch->Location = System::Drawing::Point(265, 201);
+			this->btnSearch->Location = System::Drawing::Point(387, 203);
 			this->btnSearch->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnSearch->Name = L"btnSearch";
-			this->btnSearch->Size = System::Drawing::Size(75, 23);
+			this->btnSearch->Size = System::Drawing::Size(147, 23);
 			this->btnSearch->TabIndex = 11;
 			this->btnSearch->Text = L"BUSCAR";
 			this->btnSearch->UseVisualStyleBackColor = true;
-			this->btnSearch->Click += gcnew System::EventHandler(this, &AlarmHistorialForm::btnSearch_Click);
 			// 
 			// btnGoBackMenu
 			// 
@@ -251,7 +226,7 @@ namespace SecurityGUIApp {
 				static_cast<System::Byte>(0)));
 			this->btnGoBackMenu->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnGoBackMenu.Image")));
 			this->btnGoBackMenu->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnGoBackMenu->Location = System::Drawing::Point(700, 436);
+			this->btnGoBackMenu->Location = System::Drawing::Point(1043, 351);
 			this->btnGoBackMenu->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnGoBackMenu->Name = L"btnGoBackMenu";
 			this->btnGoBackMenu->Size = System::Drawing::Size(149, 69);
@@ -307,13 +282,62 @@ namespace SecurityGUIApp {
 			// 
 			// btnFilterbyType
 			// 
-			this->btnFilterbyType->Location = System::Drawing::Point(347, 201);
+			this->btnFilterbyType->Location = System::Drawing::Point(569, 162);
 			this->btnFilterbyType->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnFilterbyType->Name = L"btnFilterbyType";
-			this->btnFilterbyType->Size = System::Drawing::Size(187, 23);
+			this->btnFilterbyType->Size = System::Drawing::Size(220, 23);
 			this->btnFilterbyType->TabIndex = 43;
 			this->btnFilterbyType->Text = L"BUSCAR POR CATEGORIA";
 			this->btnFilterbyType->UseVisualStyleBackColor = true;
+			this->btnFilterbyType->Click += gcnew System::EventHandler(this, &AlarmHistorialForm::btnFilterbyType_Click);
+			// 
+			// btnClearSearch
+			// 
+			this->btnClearSearch->Location = System::Drawing::Point(855, 226);
+			this->btnClearSearch->Name = L"btnClearSearch";
+			this->btnClearSearch->Size = System::Drawing::Size(140, 23);
+			this->btnClearSearch->TabIndex = 44;
+			this->btnClearSearch->Text = L"Limpiar búsqueda";
+			this->btnClearSearch->UseVisualStyleBackColor = true;
+			this->btnClearSearch->Click += gcnew System::EventHandler(this, &AlarmHistorialForm::btnClearSearch_Click);
+			// 
+			// btnSearchbyDate
+			// 
+			this->btnSearchbyDate->Location = System::Drawing::Point(569, 89);
+			this->btnSearchbyDate->Name = L"btnSearchbyDate";
+			this->btnSearchbyDate->Size = System::Drawing::Size(220, 30);
+			this->btnSearchbyDate->TabIndex = 45;
+			this->btnSearchbyDate->Text = L"BUSCAR POR FECHA";
+			this->btnSearchbyDate->UseVisualStyleBackColor = true;
+			this->btnSearchbyDate->Click += gcnew System::EventHandler(this, &AlarmHistorialForm::btnSearchbyDate_Click);
+			// 
+			// cstarting
+			// 
+			this->cstarting->HeaderText = L"Alarma Activada (Fecha y Hora)";
+			this->cstarting->MinimumWidth = 6;
+			this->cstarting->Name = L"cstarting";
+			this->cstarting->Width = 125;
+			// 
+			// cending
+			// 
+			this->cending->HeaderText = L"Alarma Desactivada (Fecha y Hora)";
+			this->cending->MinimumWidth = 6;
+			this->cending->Name = L"cending";
+			this->cending->Width = 125;
+			// 
+			// Column1
+			// 
+			this->Column1->HeaderText = L"Categoría";
+			this->Column1->MinimumWidth = 6;
+			this->Column1->Name = L"Column1";
+			this->Column1->Width = 125;
+			// 
+			// Column2
+			// 
+			this->Column2->HeaderText = L"Descripcion";
+			this->Column2->MinimumWidth = 6;
+			this->Column2->Name = L"Column2";
+			this->Column2->Width = 400;
 			// 
 			// AlarmHistorialForm
 			// 
@@ -321,7 +345,9 @@ namespace SecurityGUIApp {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(900, 628);
+			this->ClientSize = System::Drawing::Size(1204, 628);
+			this->Controls->Add(this->btnSearchbyDate);
+			this->Controls->Add(this->btnClearSearch);
 			this->Controls->Add(this->btnFilterbyType);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->cmbAlarmType);
@@ -331,8 +357,6 @@ namespace SecurityGUIApp {
 			this->Controls->Add(this->btnGoBackMenu);
 			this->Controls->Add(this->btnSearch);
 			this->Controls->Add(this->btnValidateOp);
-			this->Controls->Add(this->txtType);
-			this->Controls->Add(this->label3);
 			this->Controls->Add(this->dtpFirstDate);
 			this->Controls->Add(this->dgvAlarmHistorial);
 			this->Controls->Add(this->label1);
@@ -351,7 +375,7 @@ namespace SecurityGUIApp {
 
 		}
 #pragma endregion
-	public:
+		public:
 		void showAlarmHistorial() {
 			List<Warning^>^ historial = Controller::QueryAllWarnings();
 			if (historial != nullptr) {
@@ -399,74 +423,63 @@ namespace SecurityGUIApp {
 			List<WarningType^>^ alarmtypes = Controller::QueryAllWarningsType();
 			if (alarmtypes != nullptr) {
 				for each(WarningType ^ type in alarmtypes) {
-					cmbAlarmType->Items->Add(gcnew ComboBoxItem(type->Id, type->Name));
+					cmbAlarmType->Items->Add(gcnew ComboBoxItem(type->Id -1, type->Name));
 				}
+			}
+		}
+	public: 
+		void ShowHistorialbyDate(DateTime start, DateTime end) {
+			List<Warning^>^ warnings = Controller::QueryAllWarningsbyDate(start,end);
+			if (warnings != nullptr) {
+				dgvAlarmHistorial->Rows->Clear();
+				for (int i = 0; i < warnings->Count; i++) {
+					dgvAlarmHistorial->Rows->Add(gcnew array<String^> {warnings[i]->StartingDate->ToString("yy/MM/dd HH:mm tt"),
+						warnings[i]->EndingDate->ToString("yy/MM/dd HH:mm tt"),
+						warnings[i]->Type->Name});
+				}
+
+			}
+		}
+	public:
+		void ShowHistorialbyType(int idtype) {
+			/*Asegurar que la columna adicional exista
+			if (dgvAlarmHistorial->Columns["Tip"] == nullptr) {
+				DataGridViewTextBoxColumn^ colTipoExtra = gcnew DataGridViewTextBoxColumn();
+				colTipoExtra->Name = "TipoExtra";
+				colTipoExtra->HeaderText = "Tipo Extra";
+				dgvAlarmHistorial->Columns->Add(colTipoExtra);
+			}*/
+			List<Warning^>^ warnings = Controller::QueryAllWarningsbyType(idtype);
+			if (warnings != nullptr) {
+				dgvAlarmHistorial->Rows->Clear();
+				for (int i = 0; i < warnings->Count; i++) {
+					dgvAlarmHistorial->Rows->Add(gcnew array<String^> {warnings[i]->StartingDate->ToString("yy/MM/dd HH:mm tt"),
+						warnings[i]->EndingDate->ToString("yy/MM/dd HH:mm tt"),
+						warnings[i]->Type->Name});
+				}
+
 			}
 		}
 	private: System::Void btnGoBackMenu_Click(System::Object^ sender, System::EventArgs^ e) {
 		
 	}
 	
-	private: System::Void btnSearch_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void btnSearchbyDate_Click(System::Object^ sender, System::EventArgs^ e) {
+		btnFilterbyType->Visible = false;
+		cmbAlarmType->Visible = false; 
 		dtpFirstDate->ShowCheckBox = true;
 		dtpEndDate->ShowCheckBox = true;
-		int selectedIndex = cmbAlarmType->SelectedIndex;
-		List<Warning^>^ historial = Controller::QueryAllWarnings();
 
-		if (dtpFirstDate->Checked && dtpEndDate->Checked){
+		if (dtpFirstDate->Checked && dtpEndDate->Checked) {
 			DateTime startrange = dtpFirstDate->Value;
 			DateTime endrange = dtpEndDate->Value;
-			if (startrange< endrange && selectedIndex < 0) {
-				if (historial != nullptr) {
-					dgvAlarmHistorial->Rows->Clear();
-					for (int i = 0; i < historial->Count; i++) {
-						DateTime date1 = *historial[i]->StartingDate;
-						if (date1 > startrange && date1 < endrange) {
-							dgvAlarmHistorial->Rows->Add(gcnew array<String^> {historial[i]->StartingDate->ToString("yy/MM/dd HH:mm tt"),
-								historial[i]->EndingDate->ToString("yy/MM/dd HH:mm tt"),
-								historial[i]->Type->Name});
-
-						}
-					}
-				}
+			if (startrange < endrange) {
+				ShowHistorialbyDate(startrange, endrange); 
+				btnClearSearch->Visible;
 			}
-			if (startrange < endrange && selectedIndex >= 0) {
-				WarningType^ type = Controller::QueryWarningTypeById(((ComboBoxItem^)(cmbAlarmType->Items[cmbAlarmType->SelectedIndex]))->Value);
-				if (historial != nullptr) {
-					dgvAlarmHistorial->Rows->Clear();
-					for (int i = 0; i < historial->Count; i++) {
-						DateTime date1 = *historial[i]->StartingDate;
-						String^ category = historial[i]->Type->Name;
-						if (date1 > startrange && date1 < endrange && category == type->Name) {
-							dgvAlarmHistorial->Rows->Add(gcnew array<String^> {historial[i]->StartingDate->ToString("yy/MM/dd HH:mm tt"),
-								historial[i]->EndingDate->ToString("yy/MM/dd HH:mm tt"),
-								historial[i]->Type->Name});
-
-						}
-					}
-				}
-
-			}
-			
-		}	
-		else if (selectedIndex >= 0){
-			WarningType^ type = Controller::QueryWarningTypeById(((ComboBoxItem^)(cmbAlarmType->Items[cmbAlarmType->SelectedIndex]))->Value);
-			if (historial != nullptr) {
-				dgvAlarmHistorial->Rows->Clear();
-				for (int i = 0; i < historial->Count; i++) {
-					String^ category = historial[i]->Type->Name;
-					if (category == type->Name) {
-						dgvAlarmHistorial->Rows->Add(gcnew array<String^> {historial[i]->StartingDate->ToString("yy/MM/dd HH:mm tt"),
-							historial[i]->EndingDate->ToString("yy/MM/dd HH:mm tt"),
-							historial[i]->Type->Name});
-
-					}
-				}
-			}
-
 		}
 		else {
-			MessageBox::Show("Se debe seleccionar un rango de fechas o una categoría");
+			MessageBox::Show("Se debe seleccionar un rango de fechas");
 			return;
 		}
 		
@@ -476,10 +489,53 @@ namespace SecurityGUIApp {
 	private: System::Void btnValidateOp_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Hide();
 	}
+	
+	private: System::Void btnFilterbyType_Click(System::Object^ sender, System::EventArgs^ e) {
+		btnSearchbyDate->Visible = false; 
+		dtpEndDate->Visible = false; 
+		dtpFirstDate->Visible = false; 
+		int selectedIndex = cmbAlarmType->SelectedIndex;
+		if (selectedIndex >= 0) {
+			ShowHistorialbyType(selectedIndex+1);
+			btnClearSearch->Visible;
+		}
+		else {
+			MessageBox::Show("Se debe seleccionar una categoría del combobox");
+			return;
+		}
+	}
 	private: System::Void AlarmHistorialForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		showAlarmHistorial();
 		FillSectorsInComboBox();
 		InitializeDateTimePickers();
 	}
+
+	private: System::Void btnClearSearch_Click(System::Object^ sender, System::EventArgs^ e) {
+		dgvAlarmHistorial->Rows->Clear();
+		btnSearchbyDate->Visible = true;
+		dtpEndDate->Visible = true;
+		dtpFirstDate->Visible = true;
+		btnFilterbyType->Visible = true;
+		cmbAlarmType->Visible = true;
+		ClearControls();
+
+	}
+	private: System::Void dgvAlarmHistorial_CellToolTipTextNeeded(System::Object^ sender, System::Windows::Forms::DataGridViewCellToolTipTextNeededEventArgs^ e) {
+		if (e->RowIndex >= 0 && e->ColumnIndex >= 0) {
+			Object^ value = dgvAlarmHistorial->Rows[e->RowIndex]->Cells[e->ColumnIndex]->Value;
+			if (value != nullptr) {
+				String^ texto = value->ToString();
+				if (texto->Length > 40) { // si es muy largo, muestra tooltip
+					e->ToolTipText = texto;
+				}
+			}
+		}
+	}
+	private: System::Void ReporteToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	}
+
+
+
 };
 }

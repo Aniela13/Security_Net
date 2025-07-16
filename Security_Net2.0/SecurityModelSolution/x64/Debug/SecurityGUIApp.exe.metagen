@@ -15,6 +15,7 @@
   SecurityGUIApp.NoiseSensorForm.resources - Embedded, ContainedInManifestFile, 
   SecurityGUIApp.OperationsAdminForm.resources - Embedded, ContainedInManifestFile, 
   SecurityGUIApp.RecognizeAlertForm.resources - Embedded, ContainedInManifestFile, 
+  SecurityGUIApp.ReportAlarms.resources - Embedded, ContainedInManifestFile, 
   SecurityGUIApp.RobotPositionForm.resources - Embedded, ContainedInManifestFile, 
   SecurityGUIApp.SatisfactionQuestionForm.resources - Embedded, ContainedInManifestFile, 
   SecurityGUIApp.SecurityOperatorForm.resources - Embedded, ContainedInManifestFile, 
@@ -47,6 +48,8 @@ Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f
 Assembly System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
 	hash=None, flags=None
 Assembly System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35: 
+	hash=None, flags=None
+Assembly System.Windows.Forms.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35: 
 	hash=None, flags=None
 Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
@@ -84,6 +87,8 @@ Class SecurityGUIApp.AlarmHistorialForm: AutoLayout, AnsiClass, Class, Public, B
     ClearControls(): PrivateScope, Public, HideBySig
     InitializeDateTimePickers(): PrivateScope, Public, HideBySig
     FillSectorsInComboBox(): PrivateScope, Public, HideBySig
+    ShowHistorialbyDate(DateTime, DateTime): PrivateScope, Public, HideBySig
+    ShowHistorialbyType(Int32): PrivateScope, Public, HideBySig
 Class SecurityGUIApp.ValidateOpForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -199,5 +204,8 @@ Class SecurityGUIApp.MainForm: AutoLayout, AnsiClass, Class, Public, BeforeField
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class SecurityGUIApp.NoiseSensorForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class SecurityGUIApp.ReportAlarms: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

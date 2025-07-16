@@ -1061,7 +1061,7 @@ List<Warning^>^ SecurityPersistance::Persistance::QueryAllWarnings()
 
         //Paso 2: Preparar la sentencia SQL
         //String^ sqlStr = "SELECT * FROM ROBOT_WAITER";
-        String^ sqlStr = "dbo.usp_QueryAllRobotWaiters";
+        String^ sqlStr = "dbo.usp_QueryAllWarnings";
         SqlCommand^ cmd = gcnew SqlCommand(sqlStr, conn);
         cmd->CommandType = System::Data::CommandType::StoredProcedure;
         cmd->Prepare();
@@ -1072,17 +1072,21 @@ List<Warning^>^ SecurityPersistance::Persistance::QueryAllWarnings()
         //Paso 4: Procesar los resultados
         while (reader->Read()) {
             Warning^ warning = gcnew Warning();
-            warning->Id = Convert::ToInt32(reader["ID"]->ToString());
+            WarningType^ type = gcnew WarningType();
+            // Asignar datos de WARNING
+            warning->Id = Convert::ToInt32(reader["ID"]);
             warning->StartingDate = Convert::ToDateTime(reader["START_DATE"]);
             warning->EndingDate = Convert::ToDateTime(reader["END_DATE"]);
-            warning->Type->Name= reader["WARNING_TYPE"]->ToString();
-            warning->Description = reader["DESCRIPTION"]->ToString();
+            warning->Description = reader["WARNING_DESCRIPTION"]->ToString();
             warning->Zone = reader["ZONE"]->ToString();
-            warning->Active = Convert::ToBoolean(reader["ACTIVE"]);
-            /*   if (!DBNull::Value->Equals(reader["PURCHASE_DATE"]))
-                   robot->PurchaseDate = Convert::ToDateTime(reader["PURCHASE_DATE"]);
-               if (!DBNull::Value->Equals(reader["PHOTO"]))
-                   robot->Photo = (array<Byte>^)reader["PHOTO"];*/
+            warning->Active = reader["ACTIVE"]->ToString()->Trim()->ToUpper()->Equals("SI") ? true : false;
+
+            // Asignar datos del tipo de warning (instanciarlo primero)
+            type->Id = Convert::ToInt32(reader["WARNING_TYPE_ID"]);
+            type->Name = reader["WARNING_TYPE_NAME"]->ToString();
+            type->Description = reader["WARNING_TYPE_DESCRIPTION"]->ToString();
+            warning->Type = type;
+            // Agregar a la lista
             warningsList->Add(warning);
         }
     }

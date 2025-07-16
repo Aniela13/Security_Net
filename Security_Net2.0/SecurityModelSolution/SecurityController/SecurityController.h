@@ -68,7 +68,6 @@ namespace SecurityController {
 		static WarningType^ QueryWarningTypeById(int id);
 		static List<Warning^>^ QueryAllWarningsbyEmergencyButton();
 
-
 		/*-------REGISTER OPERADOR-------*/
 		static int AddOperatortoValidation(SecurityOperator^ operador);  //-------------AddOperator (sin validar)
 		static int DeleteOperatortoValidation(SecurityOperator^ operadori);
@@ -93,6 +92,10 @@ namespace SecurityController {
 		static array<Byte>^ GetImageFromCamara(String^ url); // me devolvera en bytes la imagen
 		static void InsertarImagenEnSQL(String^ rutaImagen);
 
+
+		/*---- - HISTORIAL DE ALARMAS------ - */
+		static List<Warning^>^ QueryAllWarningsbyDate(DateTime firstdate, DateTime lastdate);
+		static List<Warning^>^ QueryAllWarningsbyType(int type_id);
 
 	};
 }

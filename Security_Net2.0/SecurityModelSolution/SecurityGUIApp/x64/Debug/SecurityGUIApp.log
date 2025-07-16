@@ -20,6 +20,7 @@
   RecognizeAlertForm.cpp
   Generando código...
   Compilando...
+  ReportAlarms.cpp
   RobotPosition.cpp
   SatisfactionQuestion.cpp
   SecurityOperatorForm.cpp
@@ -31,4 +32,4 @@
   .NETFramework,Version=v4.8.1.AssemblyAttributes.cpp
   Generando código...
   AdminForm.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-  SecurityGUIApp.vcxproj -> C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityGUIApp.exe
+  SecurityGUIApp.vcxproj -> C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityGUIApp.exe

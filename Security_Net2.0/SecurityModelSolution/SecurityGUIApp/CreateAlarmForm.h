@@ -266,15 +266,14 @@ namespace SecurityGUIApp {
 				MessageBox::Show("Debe seleccionar una categoría de alarma");
 				return;
 			}
-			else {
-				WarningType^ type = Controller::QueryWarningTypeById(((ComboBoxItem^)(cmbAlarmType->Items[cmbAlarmType->SelectedIndex]))->Value);
-				newalarm->Type = type;
-				newalarm->Description = txtAlarmDescription->Text;
-			}
-
+			
+			WarningType^ type = Controller::QueryWarningTypeById(((ComboBoxItem^)(cmbAlarmType->Items[cmbAlarmType->SelectedIndex]))->Value + 1);
+			newalarm->Type = type;
+			newalarm->Description = txtAlarmDescription->Text;
+			
 			if (Controller::UpdateWarning(newalarm) == 1) {
 				//ClearControls();
-				MessageBox::Show("Se ha agregado una nueva alarma");
+				MessageBox::Show("Se ha agregado una nueva alarma al historial");
 			}
 			else {
 				MessageBox::Show("No se ha podido agregar la nueva alarma");
@@ -297,17 +296,7 @@ namespace SecurityGUIApp {
 	}
 
 	private: System::Void cmbAlarmType_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-		/*int selectedIndex = cmbAlarmType->SelectedIndex;
-		if (selectedIndex < 0) {
-			txtAlarmDescription->Text = "";
-		}
-		else {
-			WarningType^ type = Controller::QueryWarningTypeById(((ComboBoxItem^)(cmbAlarmType->Items[cmbAlarmType->SelectedIndex]))->Value);
-			txtAlarmDescription->Text = type->Description;
-		}*/
-
 		ComboBoxItem^ selectedItem = dynamic_cast<ComboBoxItem^>(cmbAlarmType->SelectedItem);
-
 		if (selectedItem == nullptr) {
 			txtAlarmDescription->Text = "";
 		}

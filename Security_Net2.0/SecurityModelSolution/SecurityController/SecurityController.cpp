@@ -215,30 +215,32 @@ int SecurityController::Controller::UpdateWarning(Warning^ warning)
 
 List<Warning^>^ SecurityController::Controller::QueryAllWarnings()
 {
-	alarms = (List<Warning^>^)Persistance::LoadAlarmFromTextFile(TXT_ALARM_HISTORIAL_FILE_NAME);
-	try{	
-		if (alarms == nullptr) {
-			alarms = gcnew List<Warning^>();
-		}
-		return alarms;
-	}
-	catch (Exception^ ex) {
-		throw ex;
-	}
-	return nullptr;
+	//alarms = (List<Warning^>^)Persistance::LoadAlarmFromTextFile(TXT_ALARM_HISTORIAL_FILE_NAME);
+	//try{	
+	//if (alarms == nullptr) {
+	//		alarms = gcnew List<Warning^>();
+	//	}
+	//	return alarms;
+	//}
+	//catch (Exception^ ex) {
+	//	throw ex;
+	//}
+	//return nullptr;
+	return Persistance::QueryAllWarnings();
 }
 
 List<WarningType^>^ SecurityController::Controller::QueryAllWarningsType()
 {
-	try {
-		alarmtypes = (List<WarningType^>^)Persistance::LoadAlarmTypesFromTextFile(TXT_WARNING_TYPE_FILE_NAME);
-		if (alarmtypes == nullptr)
-			alarmtypes = gcnew List<WarningType^>();
-	}
-	catch (FileNotFoundException^ ex) {
-		throw ex;
-	}
-	return alarmtypes;
+	//try {
+	//alarmtypes = (List<WarningType^>^)Persistance::LoadAlarmTypesFromTextFile(TXT_WARNING_TYPE_FILE_NAME);
+	//	if (alarmtypes == nullptr)
+	//		alarmtypes = gcnew List<WarningType^>();
+	//}
+	//catch (FileNotFoundException^ ex) {
+	//	throw ex;
+	//}
+	//return alarmtypes;
+	return Persistance::QueryWarningTypes();
 }
 
 WarningType^ SecurityController::Controller::QueryWarningTypeByName(String^ nametype)
@@ -254,36 +256,34 @@ WarningType^ SecurityController::Controller::QueryWarningTypeByName(String^ name
 
 WarningType^ SecurityController::Controller::QueryWarningTypeById(int id)
 {
-	alarmtypes = QueryAllWarningsType();
-	for (int i = 0; i < alarmtypes->Count; i++) {
-		if (alarmtypes[i]->Id == id) {
-			return alarmtypes[i];
-		}
-	}
-	return nullptr;
+	//alarmtypes = QueryAllWarningsType();
+	//for (int i = 0; i < alarmtypes->Count; i++) {
+	//	if (alarmtypes[i]->Id == id) {
+	//		return alarmtypes[i];
+	//	}
+	//}
+	//return nullptr;
+	return Persistance::QueryWarningTypebyId(id);
 }
-
-
 
 List<Warning^>^ SecurityController::Controller::QueryAllWarningsbyEmergencyButton()
 {
 	//Queue<Warning^>^ alarmsbyclient = gcnew Queue<Warning^>();
-	/*try {
-		for each (Warning ^ alarm in  alarms) {
-			if (alarm->Description == "Por definir...") {
-				alarmsbyclient->Enqueue(alarm);
-			}
-		}
-		return alarmsbyclient;
-	}
-	catch (Exception^ ex) {
-		throw ex;
-	}
-	return nullptr;*/
+	//try {
+	//	for each (Warning ^ alarm in  alarms) {
+	//		if (alarm->Description == "Por definir...") {
+	//			alarmsbyclient->Enqueue(alarm);
+	//		}
+	//	}
+	//	return alarmsbyclient;
+	//}
+	//catch (Exception^ ex) {
+	//	throw ex;
+	//}
+	//return nullptr;*/
 
 	return Persistance::QueryWarningsInitalizedbyClient();
 }
-
 int SecurityController::Controller::AddOperatortoValidation(SecurityOperator^ operador)
 {
 	/*try {
@@ -322,7 +322,7 @@ SecurityOperator^ SecurityController::Controller::QueryNoOperatorbyDNI(String^ d
 	*/
 	return Persistance::QueryNotAuthorizedOperatorByDNI(dni);
 }
-	
+
 
 
 List<SecurityOperator^>^ SecurityController::Controller::QueryAllNoRegisteredOperators()
@@ -492,6 +492,16 @@ array<Byte>^ SecurityController::Controller::GetImageFromCamara(String^ url)
 void SecurityController::Controller::InsertarImagenEnSQL(String^ rutaImagen)
 {
 	return  Persistance::InsertarImagenEnSQL(rutaImagen);
+}
+/*---------------------------------HISTORIAL DE ALARMAS-----------------*/
+List<Warning^>^ SecurityController::Controller::QueryAllWarningsbyDate(DateTime firstdate, DateTime lastdate)
+{
+	return Persistance::QueryAllWarningsbydate(firstdate, lastdate);
+}
+
+List<Warning^>^ SecurityController::Controller::QueryAllWarningsbyType(int type_id)
+{
+	return Persistance::QueryAllWarningsbytype(type_id);
 }
 
 
