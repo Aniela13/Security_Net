@@ -11,6 +11,7 @@ namespace SecurityGUIApp {
 	using namespace System::Drawing;
 	using namespace SecurityModel;
 	using namespace SecurityController;
+	using namespace System::Threading;
 
 	/// <summary>
 	/// Resumen de AnswerForm
@@ -18,6 +19,7 @@ namespace SecurityGUIApp {
 	public ref class AnswerForm : public System::Windows::Forms::Form
 	{
 	public:
+		Thread^ myThread;
 		AnswerForm(void)
 		{
 			InitializeComponent();
@@ -242,8 +244,22 @@ namespace SecurityGUIApp {
 	
 	private: System::Void AnswerForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		showNewQuestions();
+		myThread = gcnew Thread(gcnew ThreadStart(this, &AnswerForm::MyExecutionProcess));
+		myThread->Start();
 	}
+		   delegate void MyDelegate();
 
+		   void MyExecutionProcess() {
+			   while (true) {
+				   try {
+					   myThread->Sleep(5000);
+					   Invoke(gcnew MyDelegate(this, &AnswerForm::showNewQuestions));
+				   }
+				   catch (Exception^ ex) {
+					   return;
+				   }
+			   }
+		   }
 	private: System::Void dgvQuestionForm_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		String^ question = dgvQuestionForm->Rows[dgvQuestionForm->SelectedCells[0]->RowIndex]->Cells[0]->Value->ToString();
 		Question^ q = Controller::QueryQuestionbyRequest(question);

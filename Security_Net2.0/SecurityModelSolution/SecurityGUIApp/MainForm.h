@@ -1,7 +1,7 @@
 #pragma once
 #include "AdminForm.h"
 #include "ClientForm.h"
-#include "WelcomeOperatorForm.h"
+#include "SecurityOperatorForm.h"
 
 
 using namespace SecurityModel;
@@ -139,7 +139,7 @@ namespace SecurityGUIApp {
 		clientForm->Show();
 	}
 	private: System::Void btnOp_Click_1(System::Object^ sender, System::EventArgs^ e) {
-		WelcomeOperatorForm^ operatorForm = gcnew WelcomeOperatorForm();
+		SecurityOperatorForm^ operatorForm = gcnew	SecurityOperatorForm();
 		//this->Hide();
 		operatorForm->Show();
 	}

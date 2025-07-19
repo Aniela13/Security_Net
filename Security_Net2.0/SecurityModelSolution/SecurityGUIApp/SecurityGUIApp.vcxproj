@@ -165,6 +165,7 @@
     <ClCompile Include="UpdateMapForm.cpp" />
     <ClCompile Include="ValidateOpForm.cpp" />
     <ClCompile Include="WebMapForm.cpp" />
+    <ClCompile Include="WelcomeOperatorForm.cpp" />
     <ClCompile Include="ZoneLocation.cpp" />
   </ItemGroup>
   <ItemGroup>
