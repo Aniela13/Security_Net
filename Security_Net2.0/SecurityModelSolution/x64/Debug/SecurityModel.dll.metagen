@@ -131,6 +131,7 @@ Class SecurityModel.SecurityBot: AutoLayout, AnsiClass, Class, Public, BeforeFie
     Void .ctor(System.String, System.String, System.String, Int32, Boolean): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
+    Int32 Id : Public
     System.String Name : Public
     System.String Model : Public
     System.String InspectedZones : Public

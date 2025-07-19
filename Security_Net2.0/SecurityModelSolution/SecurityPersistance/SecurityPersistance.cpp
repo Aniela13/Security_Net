@@ -1528,6 +1528,139 @@ void SecurityPersistance::Persistance::InsertarImagenEnSQL(String^ rutaImagen)
     //return res;
 }
 
+int SecurityPersistance::Persistance::AddRobot(SecurityBot^ robot)
+{
+    int robotId;
+    SqlConnection^ conn;
+    try {
+        //Paso 1: Abrir y obtener la conexión a la BD
+        conn = GetConnection();
+
+        //Paso 2: Preparar la sentencia de BD
+        String^ sqlStr = "dbo.usp_AddRobotCar";
+        SqlCommand^ cmd = gcnew SqlCommand(sqlStr, conn);
+        cmd->CommandType = System::Data::CommandType::StoredProcedure;
+        cmd->Parameters->Add("@NAME", System::Data::SqlDbType::VarChar, 200);
+        cmd->Parameters->Add("@MODEL", System::Data::SqlDbType::VarChar, 100);
+        cmd->Parameters->Add("@INSPECTED_ZONES", System::Data::SqlDbType::VarChar, 300);
+        cmd->Parameters->Add("@SPEED", System::Data::SqlDbType::Int);
+
+        SqlParameter^ outputIdParam = gcnew SqlParameter("@ID", System::Data::SqlDbType::Int);
+        outputIdParam->Direction = System::Data::ParameterDirection::Output;
+        cmd->Parameters->Add(outputIdParam);
+        cmd->Prepare();
+        cmd->Parameters["@NAME"]->Value = robot->Name;
+        cmd->Parameters["@MODEL"]->Value = robot->Model;
+        cmd->Parameters["@INSPECTED_ZONES"]->Value = robot->InspectedZones;
+        cmd->Parameters["@SPEED"]->Value = robot->Speed;
+
+
+        //Paso 3: Ejecutar la sentencia de BD
+        cmd->ExecuteNonQuery();
+
+        //Paso 4: Se procesan los resultados
+        robotId = Convert::ToInt32(cmd->Parameters["@ID"]->Value);
+    }
+    catch (Exception^ ex) {
+        throw ex;
+    }
+    finally {
+        //Paso 5: Cerrar los objetos de conexión de la BD.
+        if (conn != nullptr) conn->Close();
+    }
+    return robotId;
+}
+
+
+List<SecurityBot^>^ SecurityPersistance::Persistance::QueryAllRobots()
+{
+    List<SecurityBot^>^ robotsList = gcnew List<SecurityBot^>();
+    SqlConnection^ conn;
+    SqlDataReader^ reader;
+    try {
+        //Paso 1: Obtener la conexión a la BD
+        conn = GetConnection();
+
+        //Paso 2: Preparar la sentencia SQL
+        //String^ sqlStr = "SELECT * FROM ROBOT_WAITER";
+        String^ sqlStr = "dbo.usp_QueryAllRobotCars";
+        SqlCommand^ cmd = gcnew SqlCommand(sqlStr, conn);
+        cmd->CommandType = System::Data::CommandType::StoredProcedure;
+        cmd->Prepare();
+
+        //Paso 3: Ejecutar la sentencia SQL
+        reader = cmd->ExecuteReader();
+
+        //Paso 4: Procesar los resultados
+        while (reader->Read()) {
+            SecurityBot^ robot = gcnew SecurityBot();
+            robot->Id = Convert::ToInt32(reader["ID"]->ToString());
+            robot->Name = reader["NAME"]->ToString();
+            robot->Model = reader["MODEL"]->ToString();
+            robot->InspectedZones = reader["INSPECTED_ZONES"]->ToString();
+            robot->Speed = reader["SPEED"] == DBNull::Value ? 0 : Convert::ToInt32(reader["SPEED"]);
+            robotsList->Add(robot);
+        }
+    }
+    catch (Exception^ ex) {
+        throw ex;
+    }
+    finally {
+        //Paso 5: Importante! Cerrar los objetos de conexión a la BD
+        if (reader != nullptr) reader->Close();
+        if (conn != nullptr) conn->Close();
+    }
+    return robotsList;
+}
+
+SecurityBot^ SecurityPersistance::Persistance::QueryRobotById(int robotId)
+{
+    SecurityBot^ robot;
+    SqlConnection^ conn;
+    SqlDataReader^ reader;
+
+    try {
+        //Paso 1: Obtener la conexión a la BD
+        conn = GetConnection();
+
+        //Paso 2: Preparar la sentencia SQL
+        //String^ sqlStr = "SELECT * FROM ROBOT_WAITER WHERE ID=" + robotId;
+        String^ sqlStr = "dbo.usp_QueryRobotCarById";
+        SqlCommand^ cmd = gcnew SqlCommand(sqlStr, conn);
+        cmd->CommandType = System::Data::CommandType::StoredProcedure;
+        cmd->Parameters->Add("@id", System::Data::SqlDbType::Int);
+        cmd->Prepare();
+        cmd->Parameters["@id"]->Value = robotId;
+
+        //Paso 3: Ejecutar la sentencia SQL
+        reader = cmd->ExecuteReader();
+
+        //Paso 4: Procesar los resultados
+        if (reader->Read()) {
+            robot = gcnew SecurityBot();
+            robot->Id = Convert::ToInt32(reader["ID"]->ToString());
+            robot->Name = reader["NAME"]->ToString();
+            robot->InspectedZones = reader["INSPECTED_ZONES"]->ToString();
+            robot->Model = reader["MODEL"]->ToString();
+            robot->Speed = reader["SPEED"] == DBNull::Value ? 0 : Convert::ToInt32(reader["SPEED"]);
+
+        }
+    }
+    catch (Exception^ ex) {
+        throw ex;
+    }
+    finally {
+        //Paso 5: Importante! Cerrar los objetos de conexión a la BD
+        if (reader != nullptr) reader->Close();
+        if (conn != nullptr) conn->Close();
+    }
+    return robot;
+}
+
+
+
+
+
 
 
 

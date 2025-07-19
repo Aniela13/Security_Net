@@ -196,6 +196,8 @@ Class SecurityGUIApp.WebMapForm: AutoLayout, AnsiClass, Class, Public, BeforeFie
 Class SecurityGUIApp.SecurityOperatorForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    FillRobotsInCombo(): PrivateScope, Public, HideBySig
 Class SecurityGUIApp.WelcomeOperatorForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

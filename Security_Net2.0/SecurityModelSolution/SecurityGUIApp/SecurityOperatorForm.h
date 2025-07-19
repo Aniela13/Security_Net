@@ -5,6 +5,7 @@
 #include "AnswerForm.h"
 #include "AsignZonesForm.h"
 #include "WebMapForm.h"
+#include "ComboBoxItem.h"
 
 namespace SecurityGUIApp {
 
@@ -45,7 +46,7 @@ namespace SecurityGUIApp {
 
 	protected:
 
-	private: System::Windows::Forms::TextBox^ txtActualRobot;
+
 
 
 
@@ -62,6 +63,8 @@ namespace SecurityGUIApp {
 
 	private: System::Windows::Forms::Button^ btnGoBackMenu;
 	private: System::Windows::Forms::Button^ butnAnswerQuestion;
+	private: System::Windows::Forms::ComboBox^ cmbRobot;
+
 
 
 
@@ -70,7 +73,7 @@ namespace SecurityGUIApp {
 		/// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -81,7 +84,6 @@ namespace SecurityGUIApp {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(SecurityOperatorForm::typeid));
 			this->btnAsignZone = (gcnew System::Windows::Forms::Button());
-			this->txtActualRobot = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->btnDeactivateRobot = (gcnew System::Windows::Forms::Button());
@@ -93,27 +95,19 @@ namespace SecurityGUIApp {
 			this->btnReviewAlarm = (gcnew System::Windows::Forms::Button());
 			this->btnGoBackMenu = (gcnew System::Windows::Forms::Button());
 			this->butnAnswerQuestion = (gcnew System::Windows::Forms::Button());
+			this->cmbRobot = (gcnew System::Windows::Forms::ComboBox());
 			this->SuspendLayout();
 			// 
 			// btnAsignZone
 			// 
 			this->btnAsignZone->Location = System::Drawing::Point(31, 238);
-			this->btnAsignZone->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnAsignZone->Margin = System::Windows::Forms::Padding(2);
 			this->btnAsignZone->Name = L"btnAsignZone";
 			this->btnAsignZone->Size = System::Drawing::Size(102, 56);
 			this->btnAsignZone->TabIndex = 26;
 			this->btnAsignZone->Text = L"ASIGNAR ZONA DE INSPECCION";
 			this->btnAsignZone->UseVisualStyleBackColor = true;
 			this->btnAsignZone->Click += gcnew System::EventHandler(this, &SecurityOperatorForm::btnAsignZone_Click);
-			// 
-			// txtActualRobot
-			// 
-			this->txtActualRobot->Location = System::Drawing::Point(352, 136);
-			this->txtActualRobot->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->txtActualRobot->Name = L"txtActualRobot";
-			this->txtActualRobot->ReadOnly = true;
-			this->txtActualRobot->Size = System::Drawing::Size(76, 20);
-			this->txtActualRobot->TabIndex = 24;
 			// 
 			// label2
 			// 
@@ -147,7 +141,7 @@ namespace SecurityGUIApp {
 			this->btnDeactivateRobot->BackColor = System::Drawing::Color::Brown;
 			this->btnDeactivateRobot->ForeColor = System::Drawing::SystemColors::Control;
 			this->btnDeactivateRobot->Location = System::Drawing::Point(22, 366);
-			this->btnDeactivateRobot->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnDeactivateRobot->Margin = System::Windows::Forms::Padding(2);
 			this->btnDeactivateRobot->Name = L"btnDeactivateRobot";
 			this->btnDeactivateRobot->Size = System::Drawing::Size(152, 28);
 			this->btnDeactivateRobot->TabIndex = 28;
@@ -157,7 +151,7 @@ namespace SecurityGUIApp {
 			// btnAccessCamera
 			// 
 			this->btnAccessCamera->Location = System::Drawing::Point(154, 238);
-			this->btnAccessCamera->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnAccessCamera->Margin = System::Windows::Forms::Padding(2);
 			this->btnAccessCamera->Name = L"btnAccessCamera";
 			this->btnAccessCamera->Size = System::Drawing::Size(102, 56);
 			this->btnAccessCamera->TabIndex = 29;
@@ -168,7 +162,7 @@ namespace SecurityGUIApp {
 			// btnGetActualPosition
 			// 
 			this->btnGetActualPosition->Location = System::Drawing::Point(271, 238);
-			this->btnGetActualPosition->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnGetActualPosition->Margin = System::Windows::Forms::Padding(2);
 			this->btnGetActualPosition->Name = L"btnGetActualPosition";
 			this->btnGetActualPosition->Size = System::Drawing::Size(102, 56);
 			this->btnGetActualPosition->TabIndex = 30;
@@ -192,7 +186,7 @@ namespace SecurityGUIApp {
 			// textBox1
 			// 
 			this->textBox1->Location = System::Drawing::Point(596, 299);
-			this->textBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBox1->Margin = System::Windows::Forms::Padding(2);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(76, 20);
 			this->textBox1->TabIndex = 33;
@@ -214,7 +208,7 @@ namespace SecurityGUIApp {
 			// 
 			this->btnReviewAlarm->BackColor = System::Drawing::Color::YellowGreen;
 			this->btnReviewAlarm->Location = System::Drawing::Point(557, 334);
-			this->btnReviewAlarm->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnReviewAlarm->Margin = System::Windows::Forms::Padding(2);
 			this->btnReviewAlarm->Name = L"btnReviewAlarm";
 			this->btnReviewAlarm->Size = System::Drawing::Size(100, 59);
 			this->btnReviewAlarm->TabIndex = 34;
@@ -230,7 +224,7 @@ namespace SecurityGUIApp {
 			this->btnGoBackMenu->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnGoBackMenu.Image")));
 			this->btnGoBackMenu->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->btnGoBackMenu->Location = System::Drawing::Point(9, 10);
-			this->btnGoBackMenu->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnGoBackMenu->Margin = System::Windows::Forms::Padding(2);
 			this->btnGoBackMenu->Name = L"btnGoBackMenu";
 			this->btnGoBackMenu->Size = System::Drawing::Size(112, 56);
 			this->btnGoBackMenu->TabIndex = 36;
@@ -241,13 +235,22 @@ namespace SecurityGUIApp {
 			// butnAnswerQuestion
 			// 
 			this->butnAnswerQuestion->Location = System::Drawing::Point(388, 238);
-			this->butnAnswerQuestion->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->butnAnswerQuestion->Margin = System::Windows::Forms::Padding(2);
 			this->butnAnswerQuestion->Name = L"butnAnswerQuestion";
 			this->butnAnswerQuestion->Size = System::Drawing::Size(102, 56);
 			this->butnAnswerQuestion->TabIndex = 37;
 			this->butnAnswerQuestion->Text = L"RESPONDER PREGUNTAS";
 			this->butnAnswerQuestion->UseVisualStyleBackColor = true;
 			this->butnAnswerQuestion->Click += gcnew System::EventHandler(this, &SecurityOperatorForm::butnAnswerQuestion_Click);
+			// 
+			// cmbRobot
+			// 
+			this->cmbRobot->FormattingEnabled = true;
+			this->cmbRobot->Location = System::Drawing::Point(332, 134);
+			this->cmbRobot->Name = L"cmbRobot";
+			this->cmbRobot->Size = System::Drawing::Size(121, 21);
+			this->cmbRobot->TabIndex = 38;
+			this->cmbRobot->SelectedIndexChanged += gcnew System::EventHandler(this, &SecurityOperatorForm::cmbRobot_SelectedIndexChanged);
 			// 
 			// SecurityOperatorForm
 			// 
@@ -256,6 +259,7 @@ namespace SecurityGUIApp {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(679, 413);
+			this->Controls->Add(this->cmbRobot);
 			this->Controls->Add(this->butnAnswerQuestion);
 			this->Controls->Add(this->btnGoBackMenu);
 			this->Controls->Add(this->btnReviewAlarm);
@@ -266,11 +270,10 @@ namespace SecurityGUIApp {
 			this->Controls->Add(this->btnAccessCamera);
 			this->Controls->Add(this->btnDeactivateRobot);
 			this->Controls->Add(this->btnAsignZone);
-			this->Controls->Add(this->txtActualRobot);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->DoubleBuffered = true;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"SecurityOperatorForm";
 			this->Text = L"SecurityOperatorForm";
 			this->Load += gcnew System::EventHandler(this, &SecurityOperatorForm::SecurityOperatorForm_Load);
@@ -279,7 +282,7 @@ namespace SecurityGUIApp {
 
 		}
 #pragma endregion
-	
+
 	private: System::Void btnAsignZone_Click(System::Object^ sender, System::EventArgs^ e) {
 		//AsignZonesForm^ asignarrutaform = gcnew AsignZonesForm();
 		////this->Hide();
@@ -300,20 +303,37 @@ namespace SecurityGUIApp {
 
 	}
 	private: System::Void btnReviewAlarm_Click(System::Object^ sender, System::EventArgs^ e) {
-		RecognizeAlertForm^ recognizeAlertForm = gcnew RecognizeAlertForm(); 
+		RecognizeAlertForm^ recognizeAlertForm = gcnew RecognizeAlertForm();
 		//this->Hide();
 		recognizeAlertForm->Show();
 
 	}
-private: System::Void butnAnswerQuestion_Click(System::Object^ sender, System::EventArgs^ e) {
-	AnswerForm^ answerForm = gcnew AnswerForm();
-	//this->Hide();
-	answerForm->Show();
+	private: System::Void butnAnswerQuestion_Click(System::Object^ sender, System::EventArgs^ e) {
+		AnswerForm^ answerForm = gcnew AnswerForm();
+		//this->Hide();
+		answerForm->Show();
 
-}
-private: System::Void SecurityOperatorForm_Load(System::Object^ sender, System::EventArgs^ e) {
-	txtActualRobot->Text = "Michi";
+	}
+	public:
+		void FillRobotsInCombo() {
+			cmbRobot->Items->Clear();
+			List<SecurityBot^>^ robotsList = Controller::QueryAllRobots();
+			MessageBox::Show("Robots encontrados: " + robotsList->Count);
+			for (int i = 0; i < robotsList->Count; i++) {
+				cmbRobot->Items->Add(gcnew ComboBoxItem(robotsList[i]->Id, robotsList[i]->Name + " "));
+			}
+		}
 
-}
-};
+	private: System::Void cmbRobot_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+		SecurityBot^ robot = Controller::QueryRobotById(
+			((ComboBoxItem^)(cmbRobot->Items[cmbRobot->SelectedIndex]))->Value);
+		//cmbRobot->Text = robot->Name;
+	}
+
+	private: System::Void SecurityOperatorForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		FillRobotsInCombo();
+	}
+
+
+	};
 }

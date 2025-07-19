@@ -74,6 +74,10 @@ namespace SecurityPersistance {
 		//-------CAMERA ------------------
 		static array<Byte>^ GetImageFromCamara(String^ url); // me devolvera en bytes la imagen
 		static void InsertarImagenEnSQL(String^ rutaImagen);
-
+		
+		//-----ROBOT---------
+		static int AddRobot(SecurityBot^ robot);
+		static List<SecurityBot^>^ QueryAllRobots();
+		static SecurityBot^ QueryRobotById(int robotId);
 	};
 }

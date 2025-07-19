@@ -3,6 +3,7 @@ using namespace System;
 namespace SecurityModel {
     public ref class SecurityBot {
     public:
+        int Id;
         String^ Name;
         String^ Model;
         String^ InspectedZones;
@@ -10,14 +11,13 @@ namespace SecurityModel {
         property bool AlertActivated;
 
         SecurityBot() {}
-        SecurityBot(String^ name, String^ model, String^ InspectedZones, int speed, bool AlertActivated) {
+        SecurityBot(String^ name, String^ model, String^ inspectedZones, int speed, bool alertActivated) {
             this->Name = name;
             this->Model = model;
-            this->InspectedZones = InspectedZones;
+            this->InspectedZones = inspectedZones;
             this->Speed = speed;
-            this->AlertActivated = AlertActivated; //Comenzará como falso, se activa cuando identifique una alerta
+            this->AlertActivated = false; //Comenzará como falso, se activa cuando identifique una alerta
         }
-
 
 
     public:

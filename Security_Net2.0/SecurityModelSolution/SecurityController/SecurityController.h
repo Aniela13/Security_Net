@@ -97,5 +97,9 @@ namespace SecurityController {
 		static List<Warning^>^ QueryAllWarningsbyDate(DateTime firstdate, DateTime lastdate);
 		static List<Warning^>^ QueryAllWarningsbyType(int type_id);
 
+		/*----- ROBOT --------------*/
+		static int AddRobotCar(SecurityBot^ robot);
+		static List<SecurityBot^>^ QueryAllRobots();
+		static SecurityBot^ QueryRobotById(int robotId);
 	};
 }

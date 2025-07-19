@@ -504,4 +504,21 @@ List<Warning^>^ SecurityController::Controller::QueryAllWarningsbyType(int type_
 	return Persistance::QueryAllWarningsbytype(type_id);
 }
 
+/*-ROBOT---*/
+int SecurityController::Controller::AddRobotCar(SecurityBot^ robot)
+{
+	return Persistance::AddRobot(robot);
+}
+
+List<SecurityBot^>^ SecurityController::Controller::QueryAllRobots()
+{
+	return Persistance::QueryAllRobots();
+}
+
+SecurityBot^ SecurityController::Controller::QueryRobotById(int robotId)
+{
+	return Persistance::QueryRobotById(robotId);
+}
+
+
 
