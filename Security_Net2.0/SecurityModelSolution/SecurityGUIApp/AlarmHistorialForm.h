@@ -90,6 +90,7 @@ namespace SecurityGUIApp {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ cending;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
+	private: System::Windows::Forms::LinkLabel^ linklblSearch;
 
 
 
@@ -121,6 +122,10 @@ namespace SecurityGUIApp {
 			this->ReporteToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->dgvAlarmHistorial = (gcnew System::Windows::Forms::DataGridView());
+			this->cstarting = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->cending = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dtpFirstDate = (gcnew System::Windows::Forms::DateTimePicker());
 			this->btnValidateOp = (gcnew System::Windows::Forms::Button());
 			this->btnSearch = (gcnew System::Windows::Forms::Button());
@@ -133,10 +138,7 @@ namespace SecurityGUIApp {
 			this->btnFilterbyType = (gcnew System::Windows::Forms::Button());
 			this->btnClearSearch = (gcnew System::Windows::Forms::Button());
 			this->btnSearchbyDate = (gcnew System::Windows::Forms::Button());
-			this->cstarting = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->cending = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->linklblSearch = (gcnew System::Windows::Forms::LinkLabel());
 			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvAlarmHistorial))->BeginInit();
 			this->SuspendLayout();
@@ -189,6 +191,34 @@ namespace SecurityGUIApp {
 			this->dgvAlarmHistorial->TabIndex = 3;
 			this->dgvAlarmHistorial->CellToolTipTextNeeded += gcnew System::Windows::Forms::DataGridViewCellToolTipTextNeededEventHandler(this, &AlarmHistorialForm::dgvAlarmHistorial_CellToolTipTextNeeded);
 			// 
+			// cstarting
+			// 
+			this->cstarting->HeaderText = L"Alarma Activada (Fecha y Hora)";
+			this->cstarting->MinimumWidth = 6;
+			this->cstarting->Name = L"cstarting";
+			this->cstarting->Width = 125;
+			// 
+			// cending
+			// 
+			this->cending->HeaderText = L"Alarma Desactivada (Fecha y Hora)";
+			this->cending->MinimumWidth = 6;
+			this->cending->Name = L"cending";
+			this->cending->Width = 125;
+			// 
+			// Column1
+			// 
+			this->Column1->HeaderText = L"Categoría";
+			this->Column1->MinimumWidth = 6;
+			this->Column1->Name = L"Column1";
+			this->Column1->Width = 125;
+			// 
+			// Column2
+			// 
+			this->Column2->HeaderText = L"Descripcion";
+			this->Column2->MinimumWidth = 6;
+			this->Column2->Name = L"Column2";
+			this->Column2->Width = 400;
+			// 
 			// dtpFirstDate
 			// 
 			this->dtpFirstDate->Location = System::Drawing::Point(263, 87);
@@ -218,6 +248,7 @@ namespace SecurityGUIApp {
 			this->btnSearch->TabIndex = 11;
 			this->btnSearch->Text = L"BUSCAR";
 			this->btnSearch->UseVisualStyleBackColor = true;
+			this->btnSearch->Click += gcnew System::EventHandler(this, &AlarmHistorialForm::btnSearch_Click);
 			// 
 			// btnGoBackMenu
 			// 
@@ -282,13 +313,14 @@ namespace SecurityGUIApp {
 			// 
 			// btnFilterbyType
 			// 
-			this->btnFilterbyType->Location = System::Drawing::Point(569, 162);
+			this->btnFilterbyType->Location = System::Drawing::Point(569, 139);
 			this->btnFilterbyType->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnFilterbyType->Name = L"btnFilterbyType";
 			this->btnFilterbyType->Size = System::Drawing::Size(220, 23);
 			this->btnFilterbyType->TabIndex = 43;
 			this->btnFilterbyType->Text = L"BUSCAR POR CATEGORIA";
 			this->btnFilterbyType->UseVisualStyleBackColor = true;
+			this->btnFilterbyType->Visible = false;
 			this->btnFilterbyType->Click += gcnew System::EventHandler(this, &AlarmHistorialForm::btnFilterbyType_Click);
 			// 
 			// btnClearSearch
@@ -299,6 +331,7 @@ namespace SecurityGUIApp {
 			this->btnClearSearch->TabIndex = 44;
 			this->btnClearSearch->Text = L"Limpiar búsqueda";
 			this->btnClearSearch->UseVisualStyleBackColor = true;
+			this->btnClearSearch->Visible = false;
 			this->btnClearSearch->Click += gcnew System::EventHandler(this, &AlarmHistorialForm::btnClearSearch_Click);
 			// 
 			// btnSearchbyDate
@@ -309,35 +342,19 @@ namespace SecurityGUIApp {
 			this->btnSearchbyDate->TabIndex = 45;
 			this->btnSearchbyDate->Text = L"BUSCAR POR FECHA";
 			this->btnSearchbyDate->UseVisualStyleBackColor = true;
+			this->btnSearchbyDate->Visible = false;
 			this->btnSearchbyDate->Click += gcnew System::EventHandler(this, &AlarmHistorialForm::btnSearchbyDate_Click);
 			// 
-			// cstarting
+			// linklblSearch
 			// 
-			this->cstarting->HeaderText = L"Alarma Activada (Fecha y Hora)";
-			this->cstarting->MinimumWidth = 6;
-			this->cstarting->Name = L"cstarting";
-			this->cstarting->Width = 125;
-			// 
-			// cending
-			// 
-			this->cending->HeaderText = L"Alarma Desactivada (Fecha y Hora)";
-			this->cending->MinimumWidth = 6;
-			this->cending->Name = L"cending";
-			this->cending->Width = 125;
-			// 
-			// Column1
-			// 
-			this->Column1->HeaderText = L"Categoría";
-			this->Column1->MinimumWidth = 6;
-			this->Column1->Name = L"Column1";
-			this->Column1->Width = 125;
-			// 
-			// Column2
-			// 
-			this->Column2->HeaderText = L"Descripcion";
-			this->Column2->MinimumWidth = 6;
-			this->Column2->Name = L"Column2";
-			this->Column2->Width = 400;
+			this->linklblSearch->AutoSize = true;
+			this->linklblSearch->Location = System::Drawing::Point(566, 206);
+			this->linklblSearch->Name = L"linklblSearch";
+			this->linklblSearch->Size = System::Drawing::Size(133, 16);
+			this->linklblSearch->TabIndex = 46;
+			this->linklblSearch->TabStop = true;
+			this->linklblSearch->Text = L"Búsqueda Avanzada";
+			this->linklblSearch->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &AlarmHistorialForm::linklblSearch_LinkClicked);
 			// 
 			// AlarmHistorialForm
 			// 
@@ -346,6 +363,7 @@ namespace SecurityGUIApp {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1204, 628);
+			this->Controls->Add(this->linklblSearch);
 			this->Controls->Add(this->btnSearchbyDate);
 			this->Controls->Add(this->btnClearSearch);
 			this->Controls->Add(this->btnFilterbyType);
@@ -435,7 +453,8 @@ namespace SecurityGUIApp {
 				for (int i = 0; i < warnings->Count; i++) {
 					dgvAlarmHistorial->Rows->Add(gcnew array<String^> {warnings[i]->StartingDate->ToString("yy/MM/dd HH:mm tt"),
 						warnings[i]->EndingDate->ToString("yy/MM/dd HH:mm tt"),
-						warnings[i]->Type->Name});
+						warnings[i]->Type->Name,
+						warnings[i]->Description });
 				}
 
 			}
@@ -455,7 +474,8 @@ namespace SecurityGUIApp {
 				for (int i = 0; i < warnings->Count; i++) {
 					dgvAlarmHistorial->Rows->Add(gcnew array<String^> {warnings[i]->StartingDate->ToString("yy/MM/dd HH:mm tt"),
 						warnings[i]->EndingDate->ToString("yy/MM/dd HH:mm tt"),
-						warnings[i]->Type->Name});
+						warnings[i]->Type->Name,
+						warnings[i]->Description});
 				}
 
 			}
@@ -517,6 +537,7 @@ namespace SecurityGUIApp {
 		dtpFirstDate->Visible = true;
 		btnFilterbyType->Visible = true;
 		cmbAlarmType->Visible = true;
+		linklblSearch->Visible = true;
 		ClearControls();
 
 	}
@@ -535,7 +556,15 @@ namespace SecurityGUIApp {
 
 	}
 
+	private: System::Void linklblSearch_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
+		btnClearSearch->Visible = false; 
+		btnSearchbyDate->Visible = true; 
+		btnFilterbyType->Visible = true; 
+		btnSearch->Visible = false; 
+		this->Visible = false;
+	}
+	private: System::Void btnSearch_Click(System::Object^ sender, System::EventArgs^ e) {
 
-
+	}
 };
 }

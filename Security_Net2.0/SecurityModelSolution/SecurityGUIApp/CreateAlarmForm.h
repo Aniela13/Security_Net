@@ -18,10 +18,10 @@ namespace SecurityGUIApp {
 	/// </summary>
 	public ref class CreateAlarmForm : public System::Windows::Forms::Form
 	{
-	public: 
-		static Warning^ AlertaCargada;
+
 	public:
-		CreateAlarmForm(void)
+		Warning^ AlertaCargada;
+		CreateAlarmForm(Warning^ alerta)
 		{
 
 			InitializeComponent();
@@ -30,10 +30,11 @@ namespace SecurityGUIApp {
 			//
 			//TODO: agregar código de constructor aquí
 			//
+			AlertaCargada = alerta;
 		}
-		void SetWarning(Warning^ w) {
+		/*void SetWarning(Warning^ w) {
 			AlertaCargada = w;
-		}
+		}*/
 
 	protected:
 		/// <summary>
@@ -260,7 +261,7 @@ namespace SecurityGUIApp {
 
 	private: System::Void btnAddAlert_Click(System::Object^ sender, System::EventArgs^ e) {
 		try {
-			Warning^ newalarm = AlertaCargada;
+			Warning^ newalarm = this->AlertaCargada;
 			int selectedIndex = cmbAlarmType->SelectedIndex;
 			if (selectedIndex < 0) {
 				MessageBox::Show("Debe seleccionar una categoría de alarma");

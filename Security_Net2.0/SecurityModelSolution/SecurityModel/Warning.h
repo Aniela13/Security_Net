@@ -19,8 +19,8 @@ namespace SecurityModel {
             StartingDate = startingDate;
             EndingDate = endingDate;
             Type = type;
+            Zone = "mall";
             Description = description;
-            Zone = nullptr;
             Active = true;
         }
     };

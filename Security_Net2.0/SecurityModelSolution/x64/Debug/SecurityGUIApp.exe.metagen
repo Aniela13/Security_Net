@@ -162,11 +162,10 @@ Class SecurityGUIApp.ClientForm: AutoLayout, AnsiClass, Class, Public, BeforeFie
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class SecurityGUIApp.CreateAlarmForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(SecurityModel.Warning): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
-    SecurityModel.Warning AlertaCargada : Public, Static
+    SecurityModel.Warning AlertaCargada : Public
   Methods:
-    SetWarning(Warning): PrivateScope, Public, HideBySig
     ClearControls(): PrivateScope, Public, HideBySig
     InitializeDateTimePickers(): PrivateScope, Public, HideBySig
     FillSectorsInComboBox(): PrivateScope, Public, HideBySig
