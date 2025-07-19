@@ -46,11 +46,12 @@ Class SecurityPersistance.Persistance: AutoLayout, AnsiClass, Class, Public, Bef
     QueryAllWarnings(): PrivateScope, Public, Static, HideBySig
     QueryAllWarningsbydate(DateTime, DateTime): PrivateScope, Public, Static, HideBySig
     QueryAllWarningsbytype(Int32): PrivateScope, Public, Static, HideBySig
-    QueryWarningsInitalizedbyClient(): PrivateScope, Public, Static, HideBySig
+    QueryActivatedWarnings(): PrivateScope, Public, Static, HideBySig
     AddQuestion(Question): PrivateScope, Public, Static, HideBySig
     QueryAllFAQ(): PrivateScope, Public, Static, HideBySig
     QueryAllNewQuestions(): PrivateScope, Public, Static, HideBySig
     QueryByQuestion(String): PrivateScope, Public, Static, HideBySig
+    QueryById(Int32): PrivateScope, Public, Static, HideBySig
     DeleteQuestion(Int32): PrivateScope, Public, Static, HideBySig
     UpdateQuestion(Question): PrivateScope, Public, Static, HideBySig
     GetImageFromCamara(String): PrivateScope, Public, Static, HideBySig

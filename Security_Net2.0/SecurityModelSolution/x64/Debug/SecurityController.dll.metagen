@@ -67,6 +67,7 @@ Class SecurityController.Controller: AutoLayout, AnsiClass, Class, Public, Befor
     InsertarImagenEnSQL(String): PrivateScope, Public, Static, HideBySig
     QueryAllWarningsbyDate(DateTime, DateTime): PrivateScope, Public, Static, HideBySig
     QueryAllWarningsbyType(Int32): PrivateScope, Public, Static, HideBySig
+    QueryQuestionbyId(Int32): PrivateScope, Public, Static, HideBySig
     AddRobotCar(SecurityBot): PrivateScope, Public, Static, HideBySig
     QueryAllRobots(): PrivateScope, Public, Static, HideBySig
     QueryRobotById(Int32): PrivateScope, Public, Static, HideBySig

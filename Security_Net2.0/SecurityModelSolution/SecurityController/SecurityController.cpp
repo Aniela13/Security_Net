@@ -282,7 +282,7 @@ List<Warning^>^ SecurityController::Controller::QueryAllWarningsbyEmergencyButto
 	//}
 	//return nullptr;*/
 
-	return Persistance::QueryWarningsInitalizedbyClient();
+	return Persistance::QueryActivatedWarnings();
 }
 int SecurityController::Controller::AddOperatortoValidation(SecurityOperator^ operador)
 {
@@ -502,6 +502,11 @@ List<Warning^>^ SecurityController::Controller::QueryAllWarningsbyDate(DateTime 
 List<Warning^>^ SecurityController::Controller::QueryAllWarningsbyType(int type_id)
 {
 	return Persistance::QueryAllWarningsbytype(type_id);
+}
+
+Question^ SecurityController::Controller::QueryQuestionbyId(int question_id)
+{
+	return Persistance::QueryById(question_id);
 }
 
 /*-ROBOT---*/

@@ -1207,7 +1207,7 @@ List<Warning^>^ SecurityPersistance::Persistance::QueryAllWarningsbytype(int id)
     return warningsList;
 }
 
-List<Warning^>^ SecurityPersistance::Persistance::QueryWarningsInitalizedbyClient()
+List<Warning^>^ SecurityPersistance::Persistance::QueryActivatedWarnings()
 {
     List<Warning^>^ warningsList = gcnew List<Warning^>();
     SqlConnection^ conn;
@@ -1232,6 +1232,7 @@ List<Warning^>^ SecurityPersistance::Persistance::QueryWarningsInitalizedbyClien
             warning->Id = Convert::ToInt32(reader["ID"]->ToString());
             warning->StartingDate = Convert::ToDateTime(reader["START_DATE"]);
             warning->EndingDate = Convert::ToDateTime(reader["END_DATE"]);
+            warning->Type = gcnew WarningType();
             warning->Type->Id = Convert::ToInt32(reader["WARNING_TYPE"]->ToString());
             warning->Description = reader["DESCRIPTION"]->ToString();
             warning->Zone = reader["ZONE"]->ToString();
@@ -1416,6 +1417,48 @@ Question^ SecurityPersistance::Persistance::QueryByQuestion(String^ question)
     }
     return q;
 
+}
+
+Question^ SecurityPersistance::Persistance::QueryById(int question_id)
+{
+    Question^ q;
+    SqlConnection^ conn;
+    SqlDataReader^ reader;
+    try {
+        //Paso 1: Obtener la conexión a la BD
+        conn = GetConnection();
+
+        //Paso 2: Preparar la sentencia SQL
+        //String^ sqlStr = "SELECT * FROM ROBOT_WAITER";
+        String^ sqlStr = "dbo.usp_QueryAnswerByQuestion";
+        SqlCommand^ cmd = gcnew SqlCommand(sqlStr, conn);
+        cmd->CommandType = System::Data::CommandType::StoredProcedure;
+        cmd->Parameters->Add("@id", System::Data::SqlDbType::Int);
+        cmd->Prepare();
+        cmd->Parameters["@id"]->Value = question_id;
+        //Paso 3: Ejecutar la sentencia SQL
+        reader = cmd->ExecuteReader();
+
+        //Paso 4: Procesar los resultados
+        while (reader->Read()) {
+            q = gcnew Question();
+            q->Id = Convert::ToInt32(reader["ID"]->ToString());
+            q->question = reader["QUESTION"]->ToString();
+            q->Answer = reader["ANSWER"]->ToString();
+            q->Status = reader["STATUS"]->ToString();
+            q->IsFAQ = reader["FAQ"]->ToString()->Equals("1") ? true : false;
+        }
+
+    }
+    catch (Exception^ ex) {
+        throw ex;
+    }
+    finally {
+        //Paso 5: Importante! Cerrar los objetos de conexión a la BD
+        if (reader != nullptr) reader->Close();
+        if (conn != nullptr) conn->Close();
+    }
+    return q;
 }
 
 int SecurityPersistance::Persistance::DeleteQuestion(int questionId)

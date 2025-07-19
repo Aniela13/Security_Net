@@ -53,6 +53,10 @@ namespace SecurityGUIApp {
 	private: System::Windows::Forms::Button^ btnDelete;
 	private: System::Windows::Forms::Button^ btnValidateOp;
 	private: System::Windows::Forms::Button^ btnGoBackMenu;
+	private: System::Windows::Forms::Label^ lblId;
+	private: System::Windows::Forms::TextBox^ txtId;
+
+
 
 
 
@@ -86,6 +90,8 @@ namespace SecurityGUIApp {
 			this->btnDelete = (gcnew System::Windows::Forms::Button());
 			this->btnValidateOp = (gcnew System::Windows::Forms::Button());
 			this->btnGoBackMenu = (gcnew System::Windows::Forms::Button());
+			this->lblId = (gcnew System::Windows::Forms::Label());
+			this->txtId = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvAllFAQ))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -93,13 +99,13 @@ namespace SecurityGUIApp {
 			// 
 			this->dgvAllFAQ->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dgvAllFAQ->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(2) { this->QColumn, this->AColumn });
-			this->dgvAllFAQ->Location = System::Drawing::Point(34, 131);
-			this->dgvAllFAQ->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->dgvAllFAQ->Location = System::Drawing::Point(45, 161);
+			this->dgvAllFAQ->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dgvAllFAQ->Name = L"dgvAllFAQ";
 			this->dgvAllFAQ->ReadOnly = true;
 			this->dgvAllFAQ->RowHeadersWidth = 51;
 			this->dgvAllFAQ->RowTemplate->Height = 24;
-			this->dgvAllFAQ->Size = System::Drawing::Size(304, 267);
+			this->dgvAllFAQ->Size = System::Drawing::Size(405, 329);
 			this->dgvAllFAQ->TabIndex = 0;
 			this->dgvAllFAQ->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ModifyFAQ::dgvAllFAQ_CellClick);
 			// 
@@ -124,57 +130,54 @@ namespace SecurityGUIApp {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 22.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(100, 39);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Location = System::Drawing::Point(133, 48);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(333, 39);
+			this->label1->Size = System::Drawing::Size(409, 48);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"Administrador de FAQ";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(398, 131);
-			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label2->Location = System::Drawing::Point(498, 249);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(50, 13);
+			this->label2->Size = System::Drawing::Size(61, 16);
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"Pregunta";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(398, 205);
-			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label3->Location = System::Drawing::Point(486, 340);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(58, 13);
+			this->label3->Size = System::Drawing::Size(73, 16);
 			this->label3->TabIndex = 3;
 			this->label3->Text = L"Respuesta";
 			// 
 			// txtQuestion
 			// 
-			this->txtQuestion->Location = System::Drawing::Point(457, 131);
-			this->txtQuestion->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->txtQuestion->Location = System::Drawing::Point(576, 249);
+			this->txtQuestion->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtQuestion->Multiline = true;
 			this->txtQuestion->Name = L"txtQuestion";
-			this->txtQuestion->Size = System::Drawing::Size(200, 50);
+			this->txtQuestion->Size = System::Drawing::Size(265, 61);
 			this->txtQuestion->TabIndex = 4;
 			// 
 			// txtAnswer
 			// 
-			this->txtAnswer->Location = System::Drawing::Point(457, 205);
-			this->txtAnswer->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->txtAnswer->Location = System::Drawing::Point(576, 340);
+			this->txtAnswer->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtAnswer->Multiline = true;
 			this->txtAnswer->Name = L"txtAnswer";
-			this->txtAnswer->Size = System::Drawing::Size(200, 60);
+			this->txtAnswer->Size = System::Drawing::Size(265, 73);
 			this->txtAnswer->TabIndex = 5;
 			// 
 			// btnAdd
 			// 
-			this->btnAdd->Location = System::Drawing::Point(374, 293);
-			this->btnAdd->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnAdd->Location = System::Drawing::Point(499, 456);
+			this->btnAdd->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnAdd->Name = L"btnAdd";
-			this->btnAdd->Size = System::Drawing::Size(90, 28);
+			this->btnAdd->Size = System::Drawing::Size(120, 34);
 			this->btnAdd->TabIndex = 6;
 			this->btnAdd->Text = L"AGREGAR";
 			this->btnAdd->UseVisualStyleBackColor = true;
@@ -182,10 +185,10 @@ namespace SecurityGUIApp {
 			// 
 			// btnModify
 			// 
-			this->btnModify->Location = System::Drawing::Point(479, 293);
-			this->btnModify->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnModify->Location = System::Drawing::Point(639, 456);
+			this->btnModify->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnModify->Name = L"btnModify";
-			this->btnModify->Size = System::Drawing::Size(90, 28);
+			this->btnModify->Size = System::Drawing::Size(120, 34);
 			this->btnModify->TabIndex = 7;
 			this->btnModify->Text = L"MODIFICAR";
 			this->btnModify->UseVisualStyleBackColor = true;
@@ -193,10 +196,10 @@ namespace SecurityGUIApp {
 			// 
 			// btnDelete
 			// 
-			this->btnDelete->Location = System::Drawing::Point(584, 293);
-			this->btnDelete->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnDelete->Location = System::Drawing::Point(779, 456);
+			this->btnDelete->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnDelete->Name = L"btnDelete";
-			this->btnDelete->Size = System::Drawing::Size(90, 28);
+			this->btnDelete->Size = System::Drawing::Size(120, 34);
 			this->btnDelete->TabIndex = 8;
 			this->btnDelete->Text = L"ELIMINAR";
 			this->btnDelete->UseVisualStyleBackColor = true;
@@ -204,10 +207,10 @@ namespace SecurityGUIApp {
 			// 
 			// btnValidateOp
 			// 
-			this->btnValidateOp->Location = System::Drawing::Point(584, 15);
-			this->btnValidateOp->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnValidateOp->Location = System::Drawing::Point(779, 18);
+			this->btnValidateOp->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnValidateOp->Name = L"btnValidateOp";
-			this->btnValidateOp->Size = System::Drawing::Size(90, 76);
+			this->btnValidateOp->Size = System::Drawing::Size(120, 94);
 			this->btnValidateOp->TabIndex = 9;
 			this->btnValidateOp->Text = L"Aprobar\r\n Operador";
 			this->btnValidateOp->UseVisualStyleBackColor = true;
@@ -219,23 +222,44 @@ namespace SecurityGUIApp {
 				static_cast<System::Byte>(0)));
 			this->btnGoBackMenu->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnGoBackMenu.Image")));
 			this->btnGoBackMenu->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnGoBackMenu->Location = System::Drawing::Point(562, 368);
-			this->btnGoBackMenu->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnGoBackMenu->Location = System::Drawing::Point(750, 511);
+			this->btnGoBackMenu->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnGoBackMenu->Name = L"btnGoBackMenu";
-			this->btnGoBackMenu->Size = System::Drawing::Size(112, 56);
+			this->btnGoBackMenu->Size = System::Drawing::Size(149, 69);
 			this->btnGoBackMenu->TabIndex = 37;
 			this->btnGoBackMenu->Text = L"MENU PRINCIPAL";
 			this->btnGoBackMenu->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->btnGoBackMenu->UseVisualStyleBackColor = false;
 			this->btnGoBackMenu->Click += gcnew System::EventHandler(this, &ModifyFAQ::btnGoBackMenu_Click);
 			// 
+			// lblId
+			// 
+			this->lblId->AutoSize = true;
+			this->lblId->Location = System::Drawing::Point(541, 179);
+			this->lblId->Name = L"lblId";
+			this->lblId->Size = System::Drawing::Size(18, 16);
+			this->lblId->TabIndex = 38;
+			this->lblId->Text = L"Id";
+			this->lblId->Visible = false;
+			// 
+			// txtId
+			// 
+			this->txtId->Location = System::Drawing::Point(576, 179);
+			this->txtId->Name = L"txtId";
+			this->txtId->ReadOnly = true;
+			this->txtId->Size = System::Drawing::Size(100, 22);
+			this->txtId->TabIndex = 39;
+			this->txtId->Visible = false;
+			// 
 			// ModifyFAQ
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(718, 488);
+			this->ClientSize = System::Drawing::Size(957, 601);
+			this->Controls->Add(this->txtId);
+			this->Controls->Add(this->lblId);
 			this->Controls->Add(this->btnGoBackMenu);
 			this->Controls->Add(this->btnValidateOp);
 			this->Controls->Add(this->btnDelete);
@@ -248,7 +272,7 @@ namespace SecurityGUIApp {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->dgvAllFAQ);
 			this->DoubleBuffered = true;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"ModifyFAQ";
 			this->Text = L"ModifyFAQ";
 			this->Load += gcnew System::EventHandler(this, &ModifyFAQ::ModifyFAQ_Load);
@@ -320,30 +344,29 @@ namespace SecurityGUIApp {
 	private: System::Void dgvAllFAQ_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		String^ request = dgvAllFAQ->Rows[dgvAllFAQ->SelectedCells[0]->RowIndex]->Cells[0]->Value->ToString();
 		Question^ q = Controller::QueryQuestionbyRequest(request); 
+		lblId->Visible = true; 
+		txtId->Visible = true; 
 		txtQuestion->Text = request; 
 		txtAnswer->Text = q->Answer; 
-
+		txtId->Text=Convert::ToString(q->Id);
 	}
 
 	private: System::Void btnDelete_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ request = txtQuestion->Text->Trim();
-		
-		if (request->Equals("") && dgvAllFAQ->SelectedRows->Count != 1) {
-			MessageBox::Show("Debe seleccionar una pregunta y respuesta");
+		String^ id = txtId->Text->Trim();
+		if (id->Equals("")) {
+			MessageBox::Show("Debe seleccionar una pregunta");
 			return;
 		}
 		try {
-			request = dgvAllFAQ->SelectedRows[0]->Cells[1]->Value->ToString();
-			Question^ q = Controller::QueryQuestionbyRequest(request);
-
 			System::Windows::Forms::DialogResult dlgResult = MessageBox::Show("¿Desea eliminar a la pregunta y respuesta?",
 				"Confirmación", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
-			int questionid = q->Id;
 			if (dlgResult == System::Windows::Forms::DialogResult::Yes) {
-				if (Controller::DeleteQuestion(questionid) == 1) {
+				if (Controller::DeleteQuestion(Convert::ToInt32(id)) == 1) {
 					showFAQ();
 					ClearControls();
 					MessageBox::Show("Se ha eliminado a la pregunta y respuesta manera exitosa.");
+					lblId->Visible = false;
+					txtId->Visible = false;
 				}
 				else {
 					MessageBox::Show("Intentelo de nuevo");
@@ -360,30 +383,26 @@ namespace SecurityGUIApp {
 	}
 
 	private: System::Void btnModify_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ request= txtQuestion->Text->Trim();
-		if (request->Equals("")) {
+		String^ id= txtId->Text->Trim();
+		if (id->Equals("")) {
 			MessageBox::Show("Debe seleccionar una pregunta");
 			return;
 		}
 		try {
-			if (dgvAllFAQ->SelectedRows->Count == 1) {
-				request = dgvAllFAQ->SelectedRows[0]->Cells[1]->Value->ToString();
-				Question^ q = Controller::QueryQuestionbyRequest(request);
-				String^ preguntamodificada = txtQuestion->Text->Trim();
-				String^ respuestamodificada = txtAnswer->Text->Trim();
-				if (preguntamodificada!= "" && respuestamodificada!= "") {
-					q->question = preguntamodificada;
-					q->Answer = respuestamodificada;
-					int res = Controller::UpdateQuestion(q);
-					if ( res == 1) {
-						showFAQ();
-						MessageBox::Show("Se ha modificado la pregunta");
-					}
+			Question^ q = Controller::QueryQuestionbyId(Convert::ToInt32(id));
+			String^ preguntamodificada = txtQuestion->Text->Trim();
+			String^ respuestamodificada = txtAnswer->Text->Trim();
+			if (preguntamodificada!= "" && respuestamodificada!= "") {
+				q->question = preguntamodificada;
+				q->Answer = respuestamodificada;
+				int res = Controller::UpdateQuestion(q);
+				if ( res == 1) {
+					showFAQ();
+					MessageBox::Show("Se ha modificado la pregunta");
+					lblId->Visible = false;
+					txtId->Visible = false;
 				}
-				
 			}
-			 
-			
 			
 		}
 		catch (Exception^ ex) {

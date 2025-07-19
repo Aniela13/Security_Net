@@ -63,12 +63,13 @@ namespace SecurityPersistance {
 		static List<Warning^>^ QueryAllWarnings();
 		static List<Warning^>^ QueryAllWarningsbydate(DateTime start, DateTime end);
 		static List<Warning^>^ QueryAllWarningsbytype(int id);
-		static List<Warning^>^ QueryWarningsInitalizedbyClient();
+		static List<Warning^>^ QueryActivatedWarnings();
 		// ---------QUESTIONS -----------
 		static int AddQuestion(Question^ question);
 		static List<Question^>^ QueryAllFAQ();
 		static List<Question^>^ QueryAllNewQuestions();
 		static Question^ QueryByQuestion(String^ question);  //Obtener respuesta por pregunta
+		static Question^ QueryById(int question_id);
 		static int DeleteQuestion(int questionId);
 		static int UpdateQuestion(Question^ question);
 		//-------CAMERA ------------------

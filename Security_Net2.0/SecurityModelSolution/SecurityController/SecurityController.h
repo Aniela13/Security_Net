@@ -96,6 +96,7 @@ namespace SecurityController {
 		/*---- - HISTORIAL DE ALARMAS------ - */
 		static List<Warning^>^ QueryAllWarningsbyDate(DateTime firstdate, DateTime lastdate);
 		static List<Warning^>^ QueryAllWarningsbyType(int type_id);
+		static Question^ QueryQuestionbyId(int question_id);
 
 		/*----- ROBOT --------------*/
 		static int AddRobotCar(SecurityBot^ robot);
