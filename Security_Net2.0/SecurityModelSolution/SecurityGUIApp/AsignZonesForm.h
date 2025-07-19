@@ -49,6 +49,7 @@ namespace SecurityGUIApp {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ZonesColumn;
 	public:
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ CoordenadasColumn;
+	private: Microsoft::Web::WebView2::WinForms::WebView2^ webViewRuta;
 
 	protected:
 		List<Drawing::Point>^ puntosRuta;
@@ -84,7 +85,7 @@ namespace SecurityGUIApp {
 
 	private: System::Windows::Forms::Button^ btnGoBackMenu;
 	private: System::Windows::Forms::Button^ btnNewRoute;
-	private: System::Windows::Forms::PictureBox^ pbMapRoutes;
+
 
 
 	private: System::Windows::Forms::ComboBox^ cmbNameZone;
@@ -122,12 +123,12 @@ namespace SecurityGUIApp {
 			this->btnAsignRoute = (gcnew System::Windows::Forms::Button());
 			this->btnGoBackMenu = (gcnew System::Windows::Forms::Button());
 			this->btnNewRoute = (gcnew System::Windows::Forms::Button());
-			this->pbMapRoutes = (gcnew System::Windows::Forms::PictureBox());
 			this->cmbNameZone = (gcnew System::Windows::Forms::ComboBox());
 			this->lblid = (gcnew System::Windows::Forms::Label());
 			this->txtId = (gcnew System::Windows::Forms::TextBox());
+			this->webViewRuta = (gcnew Microsoft::Web::WebView2::WinForms::WebView2());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvZonesRoute))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbMapRoutes))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->webViewRuta))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// dgvZonesRoute
@@ -173,7 +174,7 @@ namespace SecurityGUIApp {
 			this->label1->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->label1->Location = System::Drawing::Point(198, 21);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(598, 32);
+			this->label1->Size = System::Drawing::Size(644, 35);
 			this->label1->TabIndex = 29;
 			this->label1->Text = L"¿Qué zonas de inspeccion desea asignar\? ";
 			// 
@@ -251,7 +252,7 @@ namespace SecurityGUIApp {
 				static_cast<System::Byte>(0)));
 			this->label5->Location = System::Drawing::Point(74, 78);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(159, 18);
+			this->label5->Size = System::Drawing::Size(167, 19);
 			this->label5->TabIndex = 40;
 			this->label5->Text = L"Asignar manualmente";
 			// 
@@ -297,16 +298,6 @@ namespace SecurityGUIApp {
 			this->btnNewRoute->UseVisualStyleBackColor = true;
 			this->btnNewRoute->Click += gcnew System::EventHandler(this, &AsignZonesForm::btnNewRoute_Click);
 			// 
-			// pbMapRoutes
-			// 
-			this->pbMapRoutes->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pbMapRoutes.Image")));
-			this->pbMapRoutes->Location = System::Drawing::Point(77, 109);
-			this->pbMapRoutes->Name = L"pbMapRoutes";
-			this->pbMapRoutes->Size = System::Drawing::Size(409, 838);
-			this->pbMapRoutes->TabIndex = 44;
-			this->pbMapRoutes->TabStop = false;
-			this->pbMapRoutes->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &AsignZonesForm::pbMapRoutes_Paint);
-			// 
 			// cmbNameZone
 			// 
 			this->cmbNameZone->FormattingEnabled = true;
@@ -333,6 +324,17 @@ namespace SecurityGUIApp {
 			this->txtId->Size = System::Drawing::Size(75, 22);
 			this->txtId->TabIndex = 47;
 			// 
+			// webViewRuta
+			// 
+			this->webViewRuta->AllowExternalDrop = true;
+			this->webViewRuta->CreationProperties = nullptr;
+			this->webViewRuta->DefaultBackgroundColor = System::Drawing::Color::White;
+			this->webViewRuta->Location = System::Drawing::Point(33, 140);
+			this->webViewRuta->Name = L"webViewRuta";
+			this->webViewRuta->Size = System::Drawing::Size(560, 775);
+			this->webViewRuta->TabIndex = 48;
+			this->webViewRuta->ZoomFactor = 1;
+			// 
 			// AsignZonesForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -340,10 +342,10 @@ namespace SecurityGUIApp {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1173, 964);
+			this->Controls->Add(this->webViewRuta);
 			this->Controls->Add(this->txtId);
 			this->Controls->Add(this->lblid);
 			this->Controls->Add(this->cmbNameZone);
-			this->Controls->Add(this->pbMapRoutes);
 			this->Controls->Add(this->btnNewRoute);
 			this->Controls->Add(this->btnGoBackMenu);
 			this->Controls->Add(this->btnAsignRoute);
@@ -363,7 +365,7 @@ namespace SecurityGUIApp {
 			this->Text = L"AsignZonesForm";
 			this->Load += gcnew System::EventHandler(this, &AsignZonesForm::AsignZonesForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvZonesRoute))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbMapRoutes))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->webViewRuta))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

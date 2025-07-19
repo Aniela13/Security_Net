@@ -158,7 +158,7 @@ namespace SecurityGUIApp {
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void btnTakePhoto_Click(System::Object^ sender, System::EventArgs^ e) {
-	array<Byte>^ imagen = Controller::GetImageFromCamara("http://192.168.68.107/capture");
+	array<Byte>^ imagen = Controller::GetImageFromCamara("http://192.168.68.111/capture");
 	if (imagen != nullptr) {
 		MemoryStream^ ms = gcnew MemoryStream(imagen);
 		//Usar memoryStream para convertir los bytes de la imagen en una imagen para subirla  

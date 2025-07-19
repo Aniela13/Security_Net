@@ -37,7 +37,7 @@ namespace SecurityGUIApp {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::PictureBox^ pbMap;
+
 	protected:
 
 	protected:
@@ -65,6 +65,8 @@ namespace SecurityGUIApp {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ZonesColumn;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ CoordenadasColumn;
 	private: System::Windows::Forms::Label^ lblcoordenadas;
+	private: Microsoft::Web::WebView2::WinForms::WebView2^ webViewZone;
+
 
 
 
@@ -94,7 +96,6 @@ namespace SecurityGUIApp {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(UpdateMapForm::typeid));
-			this->pbMap = (gcnew System::Windows::Forms::PictureBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->dgvZonesPositions = (gcnew System::Windows::Forms::DataGridView());
 			this->ZonesColumn = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -111,22 +112,10 @@ namespace SecurityGUIApp {
 			this->txtPointX = (gcnew System::Windows::Forms::TextBox());
 			this->txtPointY = (gcnew System::Windows::Forms::TextBox());
 			this->lblcoordenadas = (gcnew System::Windows::Forms::Label());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbMap))->BeginInit();
+			this->webViewZone = (gcnew Microsoft::Web::WebView2::WinForms::WebView2());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvZonesPositions))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->webViewZone))->BeginInit();
 			this->SuspendLayout();
-			// 
-			// pbMap
-			// 
-			this->pbMap->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pbMap.Image")));
-			this->pbMap->Location = System::Drawing::Point(62, 100);
-			this->pbMap->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->pbMap->Name = L"pbMap";
-			this->pbMap->Size = System::Drawing::Size(409, 838);
-			this->pbMap->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
-			this->pbMap->TabIndex = 0;
-			this->pbMap->TabStop = false;
-			this->pbMap->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &UpdateMapForm::pbMap_MouseClick);
-			this->pbMap->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &UpdateMapForm::pbMap_MouseMove);
 			// 
 			// label1
 			// 
@@ -136,7 +125,7 @@ namespace SecurityGUIApp {
 			this->label1->ForeColor = System::Drawing::SystemColors::MenuHighlight;
 			this->label1->Location = System::Drawing::Point(343, 25);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(335, 36);
+			this->label1->Size = System::Drawing::Size(381, 39);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"Actualización de mapa";
 			// 
@@ -291,6 +280,17 @@ namespace SecurityGUIApp {
 			this->lblcoordenadas->Size = System::Drawing::Size(0, 16);
 			this->lblcoordenadas->TabIndex = 38;
 			// 
+			// webViewZone
+			// 
+			this->webViewZone->AllowExternalDrop = true;
+			this->webViewZone->CreationProperties = nullptr;
+			this->webViewZone->DefaultBackgroundColor = System::Drawing::Color::White;
+			this->webViewZone->Location = System::Drawing::Point(12, 71);
+			this->webViewZone->Name = L"webViewZone";
+			this->webViewZone->Size = System::Drawing::Size(510, 478);
+			this->webViewZone->TabIndex = 39;
+			this->webViewZone->ZoomFactor = 1;
+			// 
 			// UpdateMapForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -298,6 +298,7 @@ namespace SecurityGUIApp {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1100, 999);
+			this->Controls->Add(this->webViewZone);
 			this->Controls->Add(this->lblcoordenadas);
 			this->Controls->Add(this->btnGoBackMenu);
 			this->Controls->Add(this->btnShow);
@@ -312,7 +313,6 @@ namespace SecurityGUIApp {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->pbMap);
 			this->DoubleBuffered = true;
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"UpdateMapForm";
@@ -320,8 +320,8 @@ namespace SecurityGUIApp {
 			this->Load += gcnew System::EventHandler(this, &UpdateMapForm::UpdateMapForm_Load);
 			this->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &UpdateMapForm::pbMap_MouseClick);
 			this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &UpdateMapForm::pbMap_MouseMove);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbMap))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvZonesPositions))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->webViewZone))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
