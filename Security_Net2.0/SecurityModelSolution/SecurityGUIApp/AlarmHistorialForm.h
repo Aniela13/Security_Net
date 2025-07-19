@@ -561,7 +561,7 @@ namespace SecurityGUIApp {
 		btnSearchbyDate->Visible = true; 
 		btnFilterbyType->Visible = true; 
 		btnSearch->Visible = false; 
-		this->Visible = false;
+		linklblSearch->Visible = false;
 	}
 	private: System::Void btnSearch_Click(System::Object^ sender, System::EventArgs^ e) {
 

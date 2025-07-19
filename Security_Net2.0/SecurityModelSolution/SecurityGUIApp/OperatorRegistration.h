@@ -531,7 +531,7 @@ namespace SecurityGUIApp {
 		}
 	private: System::Void btnSolicitarRegistro_Click(System::Object^ sender, System::EventArgs^ e) {
 		try {
-			
+			txtOpSalary->Text = "1200";
 			String^ OperatorName = txtOpName->Text->Trim();
 			if (OperatorName->Length == 0) {
 				MessageBox::Show("Debe ingresar su nombre.");
@@ -555,15 +555,11 @@ namespace SecurityGUIApp {
 			}
 			if (txtOpAddress->Text->Trim() == "" || txtOpMail->Text->Trim() == "" || txtOpPhoneNumber->Text->Trim() == "") {
 				lblFullfilldata->Visible = true;
-			}
-			else {
-				ClearControls();
-				lblFullfilldata->Visible = false;
 				return;
 			}
+			
 			String^ OperatorPassword = txtOpPassword->Text;
 			String^ OperatorUser = txtSecurityUser->Text;
-			txtOpSalary->Text = "1200";
 			SecurityOperator^ operador = gcnew SecurityOperator(OperatorName, OperatorLastName, OperatorDNI, OperatorPassword,false,false);
 			operador->Address = txtOpAddress->Text;
 			operador->Document_Type = Convert::ToString(index);
@@ -573,6 +569,7 @@ namespace SecurityGUIApp {
 			operador->Salary = Convert::ToDouble(txtOpSalary->Text);
 			operador->Schedule = txtOpSchedule->Text;
 			operador->Hire_Date = dtpHireDate->Value;
+			operador->Email = txtOpEmail->Text;
 
 			if (pbPhoto != nullptr && pbPhoto->Image != nullptr) {
 				System::IO::MemoryStream^ ms = gcnew System::IO::MemoryStream();
@@ -580,8 +577,8 @@ namespace SecurityGUIApp {
 				operador->Photo = ms->ToArray();
 			}
 
-
-			if (Controller::AddOperatortoValidation(operador) > 0) {
+			int opId = Controller::AddOperatortoValidation(operador);
+			if (opId > 0) {
 				MessageBox::Show("Registrado correctamente \n Usuario: \t" + operador->UserName + "\n Contraseña:\t"+ operador->Password);
 				ClearControls();
 			}
@@ -614,7 +611,17 @@ namespace SecurityGUIApp {
 				if (control->GetType() == TextBox::typeid) {
 					dynamic_cast<TextBox^>(control)->Text = "";
 				}
+				if (control->GetType() == PictureBox::typeid) {
+					dynamic_cast<PictureBox^>(control)->Image = nullptr;
+					dynamic_cast<PictureBox^>(control)->Invalidate();
+				}
+				if (control->GetType() == RadioButton::typeid) {
+					dynamic_cast<RadioButton^>(control)->Checked = false;
+				}
+
 			}
+			cmbDocument_Type->SelectedIndex = -1; 
+
 		}
 	private: System::Void txtOpDNI_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 		String^ OperatorDNI = txtOpDNI->Text;
@@ -627,6 +634,7 @@ namespace SecurityGUIApp {
 
 	private: System::Void OperatorRegistration_Load(System::Object^ sender, System::EventArgs^ e) {
 		FillDocTypesinCombo();
+		txtOpSalary->Text = "1200";
 	}
 
 	private: System::Void btnUploadPhoto_Click(System::Object^ sender, System::EventArgs^ e) {
