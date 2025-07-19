@@ -323,7 +323,7 @@ namespace SecurityGUIApp {
 		void FillRobotsInCombo() {
 			cmbRobot->Items->Clear();
 			List<SecurityBot^>^ robotsList = Controller::QueryAllRobots();
-			MessageBox::Show("Robots encontrados: " + robotsList->Count);
+			//MessageBox::Show("Robots encontrados: " + robotsList->Count);
 			for (int i = 0; i < robotsList->Count; i++) {
 				cmbRobot->Items->Add(gcnew ComboBoxItem(robotsList[i]->Id, robotsList[i]->Name + " "));
 			}

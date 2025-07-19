@@ -274,8 +274,6 @@ namespace SecurityGUIApp {
 			return;
 		}
 		try {
-			
-			if (question != "") {
 				Question^ q = Controller::QueryQuestionbyRequest(question);
 				String^ newanswer = txtAnswer->Text->Trim();
 				if (newanswer != "Por definir" && newanswer != "") {
@@ -291,9 +289,6 @@ namespace SecurityGUIApp {
 					ClearControls();
 					return;
 				}
-				
-			}
-
 			
 
 
