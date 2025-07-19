@@ -1,0 +1,78 @@
+--COMBO BOX ROBOT
+IF OBJECT_ID('dbo.ROBOT_CAR','U') IS NOT NULL	
+	drop table ROBOT_CAR;
+
+--Tabla robot
+CREATE TABLE ROBOT_CAR (
+	ID				INT	NOT NULL PRIMARY KEY IDENTITY(1,1),
+	NAME			VARCHAR(200) NOT NULL,
+	MODEL			VARCHAR(100),
+	INSPECTED_ZONES	VARCHAR(300) NULL,
+	SPEED			INT NULL
+);
+
+INSERT INTO ROBOT_CAR (NAME, MODEL)
+VALUES  ('Patrol-Bot', 'BellaBot PD-10040'),
+		('Monitor-Bot','Servi Standard'),
+		('Watch-Bot', 'Servi Plus');
+
+--Crear combo box 
+IF EXISTS(	SELECT *
+			FROM sysobjects
+			WHERE id = object_id (N'[dbo].[usp_AddRobotCar]')
+				AND OBJECTPROPERTY(id, N'IsProcedure') = 1 )
+BEGIN
+	DROP PROCEDURE [dbo].[usp_AddRobotCar]
+END
+GO
+CREATE PROCEDURE usp_AddRobotCar(
+	@NAME			VARCHAR(200),
+	@MODEL			VARCHAR(100),
+	@INSPECTED_ZONES VARCHAR(300),
+	@SPEED			INT,
+	@ID				INT OUT
+) AS
+  BEGIN
+		INSERT INTO ROBOT_CAR(NAME, MODEL, INSPECTED_ZONES, SPEED)
+		SELECT @NAME , @MODEL, @INSPECTED_ZONES, @SPEED
+		SET @ID = SCOPE_IDENTITY()
+  END
+GO
+
+
+IF EXISTS(  SELECT * 
+			FROM sysobjects
+			WHERE id = object_id(N'[dbo].[usp_QueryAllRobotCars]')
+			  AND OBJECTPROPERTY(id, N'IsProcedure') = 1 )
+BEGIN
+	DROP PROCEDURE [dbo].[usp_QueryAllRobotCars]
+END
+GO
+CREATE PROCEDURE usp_QueryAllRobotCars AS
+	BEGIN
+		SELECT R.ID AS ID, R.NAME AS NAME, R.MODEL AS MODEL, R.INSPECTED_ZONES AS INSPECTED_ZONES, R.SPEED AS SPEED
+		FROM ROBOT_CAR AS R
+	END
+GO
+
+IF EXISTS(  SELECT * 
+			FROM sysobjects
+			WHERE id = object_id(N'[dbo].[usp_QueryRobotCarById]')
+			  AND OBJECTPROPERTY(id, N'IsProcedure') = 1 )
+BEGIN
+	DROP PROCEDURE [dbo].[usp_QueryRobotCarById]
+END
+GO
+CREATE PROCEDURE usp_QueryRobotCarById(
+	@id		INT
+) AS
+	BEGIN
+		SELECT R.ID AS ID, R.NAME AS NAME, R.MODEL AS MODEL, R.INSPECTED_ZONES AS INSPECTED_ZONES, R.SPEED AS SPEED
+		FROM ROBOT_CAR AS R	
+		WHERE R.ID=@id
+	END
+GO
+
+SELECT * FROM ROBOT_CAR
+
+EXEC usp_QueryAllRobotCars;

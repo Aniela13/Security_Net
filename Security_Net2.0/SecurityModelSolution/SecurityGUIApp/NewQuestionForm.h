@@ -11,6 +11,7 @@ namespace SecurityGUIApp {
 	using namespace System::Drawing;
 	using namespace SecurityModel;
 	using namespace SecurityController; 
+	using namespace System::Threading;
 
 	/// <summary>
 	/// Resumen de NewQuestionForm
@@ -18,6 +19,7 @@ namespace SecurityGUIApp {
 	public ref class NewQuestionForm : public System::Windows::Forms::Form
 	{
 	public:
+		Thread^ myThread;
 		NewQuestionForm(void)
 		{
 			InitializeComponent();
@@ -176,24 +178,73 @@ namespace SecurityGUIApp {
 		}
 #pragma endregion
 	
-	
+	public:
+		void UpdateWaitingLabel(String^ estado) {
+			lblWaitAnswer->Text = estado;
+		}
+	public:
+		void ShowAnswer(String^ respuesta) {
+			pbCharging->Visible = false;
+			lblWaitAnswer->Visible = false;
+			txtAnswerbyOp->Visible = true;
+			txtAnswerbyOp->Text = respuesta;
+
+		}
 	private: System::Void btnAsk_Click(System::Object^ sender, System::EventArgs^ e) {
 		txtAnswerbyOp->Text = "";
 		String^ pregunta = txtNewQuestion->Text->Trim();
 		if (pregunta == "") {
-			MessageBox::Show("Ingrese una nueva pregunta...\n"); 
+			MessageBox::Show("Ingrese una nueva pregunta...\n");
 			return;
 		}
 		else {
-			Question^ newq = gcnew Question(pregunta,"Por definir", false);
-			if (Controller::AddNewQuestion(newq) > 0) {
+			Question^ newq = gcnew Question(pregunta, "Por definir", false);
+			int res = Controller::AddNewQuestion(newq);
+			if (res > 0) {
 				pbCharging->Visible = true;
 				lblWaitAnswer->Visible = true;
+				txtAnswerbyOp->Visible = false;
+				myThread = gcnew Thread(gcnew ThreadStart(this, &NewQuestionForm::MyExecutionProcess));
+				myThread->Start();
 			}
 		}
-		
 	
 	}
+		   delegate void MyDelegate(String^);
+		   delegate void AnimationDelegate(String^);
+
+		   void MyExecutionProcess() {
+			   String^ pregunta = txtNewQuestion->Text->Trim();
+			   if (pregunta == "") {
+				   MessageBox::Show("Ingrese una nueva pregunta...\n");
+				   return;
+			   }
+			   array<String^>^ estados = { "Esperando respuesta del operador.",
+								"Esperando respuesta del operador..",
+								"Esperando respuesta del operador..." };
+
+			   int i = 0;
+			   while (true) {
+				   try {
+					   // Mostrar animación del label con puntos cambiantes
+					   String^ estadoActual = estados[i % estados->Length];
+					   Invoke(gcnew AnimationDelegate(this, &NewQuestionForm::UpdateWaitingLabel), estadoActual);
+					   i++;
+
+					   // Revisar si ya hay respuesta
+					   Question^ q = Controller::QueryQuestionbyRequest(pregunta);
+					   if (q != nullptr && q->Answer != "Por definir") {
+						   Invoke(gcnew MyDelegate(this, &NewQuestionForm::ShowAnswer), q->Answer);
+						   break;
+					   }
+
+					   Thread::Sleep(1000); // Esperar 1 segundo antes del siguiente cambio de estado
+				   }
+				   catch (Exception^ ex) {
+					   return;
+				   }
+			   }
+		   }
 	private: System::Void txtNewQuestion_Click(System::Object^ sender, System::EventArgs^ e) {
 		txtNewQuestion->Text = "";//Que se borre lo anterior
 	}

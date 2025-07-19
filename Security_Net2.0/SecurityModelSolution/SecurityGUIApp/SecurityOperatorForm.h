@@ -6,6 +6,7 @@
 #include "AsignZonesForm.h"
 #include "WebMapForm.h"
 #include "ComboBoxItem.h"
+#include "WelcomeOperatorForm.h"
 
 namespace SecurityGUIApp {
 
@@ -15,6 +16,9 @@ namespace SecurityGUIApp {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Threading;
+	using namespace SecurityModel;
+	using namespace SecurityController;
 
 	/// <summary>
 	/// Resumen de SecurityOperatorForm
@@ -22,6 +26,7 @@ namespace SecurityGUIApp {
 	public ref class SecurityOperatorForm : public System::Windows::Forms::Form
 	{
 	public:
+		static  SecurityOperator^ OperadorRegistrado;
 		SecurityOperatorForm(void)
 		{
 			InitializeComponent();
@@ -318,7 +323,7 @@ namespace SecurityGUIApp {
 		void FillRobotsInCombo() {
 			cmbRobot->Items->Clear();
 			List<SecurityBot^>^ robotsList = Controller::QueryAllRobots();
-			MessageBox::Show("Robots encontrados: " + robotsList->Count);
+			//MessageBox::Show("Robots encontrados: " + robotsList->Count);
 			for (int i = 0; i < robotsList->Count; i++) {
 				cmbRobot->Items->Add(gcnew ComboBoxItem(robotsList[i]->Id, robotsList[i]->Name + " "));
 			}
@@ -329,10 +334,33 @@ namespace SecurityGUIApp {
 			((ComboBoxItem^)(cmbRobot->Items[cmbRobot->SelectedIndex]))->Value);
 		//cmbRobot->Text = robot->Name;
 	}
+		   Thread^ myThread;
 
 	private: System::Void SecurityOperatorForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		FillRobotsInCombo();
+		WelcomeOperatorForm^ login = gcnew WelcomeOperatorForm(this);
+		login->ShowDialog();
+		myThread = gcnew Thread(gcnew ThreadStart(this, &SecurityOperatorForm::MyExecutionProcess));
+		myThread->Start();
 	}
+		   delegate void MyDelegate(String^);
+
+		   void MyExecutionProcess() {
+			   String^ title = "Sistema de Seguridad - " + OperadorRegistrado->Name + " " + OperadorRegistrado->LastName + " - ";
+			   while (true) {
+				   try {
+					   myThread->Sleep(1000);
+					   Invoke(gcnew MyDelegate(this, &SecurityOperatorForm::UpdateTitle), title + DateTime::Now);
+				   }
+				   catch (Exception^ ex) {
+					   return;
+				   }
+			   }
+		   }
+
+		   void UpdateTitle(String^ newTitle) {
+			   this->Text = newTitle;
+		   }
 
 
 	};

@@ -1395,7 +1395,6 @@ Question^ SecurityPersistance::Persistance::QueryByQuestion(String^ question)
         cmd->Parameters["@QUESTION"]->Value = question;
         //Paso 3: Ejecutar la sentencia SQL
         reader = cmd->ExecuteReader();
-
         //Paso 4: Procesar los resultados
         while (reader->Read()) {
             q = gcnew Question();
@@ -1501,7 +1500,8 @@ int SecurityPersistance::Persistance::UpdateQuestion(Question^ question)
         //Paso 2: Se prepara la sentencia
         String^ sqlStr = "dbo.usp_UpdateQuestion";
         SqlCommand^ cmd = gcnew SqlCommand(sqlStr, conn);
-        Question^ question = gcnew Question();
+        cmd->CommandType = System::Data::CommandType::StoredProcedure;
+
         cmd->Parameters->Add("@ID", System::Data::SqlDbType::Int);
         cmd->Parameters->Add("@QUESTION", System::Data::SqlDbType::VarChar, 500);
         cmd->Parameters->Add("@ANSWER", System::Data::SqlDbType::VarChar, 500);

@@ -119,6 +119,8 @@ Class SecurityGUIApp.AdminForm: AutoLayout, AnsiClass, Class, Public, BeforeFiel
 Class SecurityGUIApp.AnswerForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Threading.Thread myThread : Public
   Methods:
     showNewQuestions(): PrivateScope, Public, HideBySig
     ClearControls(): PrivateScope, Public, HideBySig
@@ -143,6 +145,11 @@ Class SecurityGUIApp.AsignZonesForm: AutoLayout, AnsiClass, Class, Public, Befor
 Class SecurityGUIApp.NewQuestionForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Threading.Thread myThread : Public
+  Methods:
+    UpdateWaitingLabel(String): PrivateScope, Public, HideBySig
+    ShowAnswer(String): PrivateScope, Public, HideBySig
 Class SecurityGUIApp.SatisfactionQuestion: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -172,13 +179,6 @@ Class SecurityGUIApp.CreateAlarmForm: AutoLayout, AnsiClass, Class, Public, Befo
 Class SecurityGUIApp.LeaFletMapForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class SecurityGUIApp.OperatorRegistration: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Methods:
-    FillDocTypesinCombo(): PrivateScope, Public, HideBySig
-    ReversePassword(String): PrivateScope, Public, HideBySig
-    ClearControls(): PrivateScope, Public, HideBySig
 Class SecurityGUIApp.RobotPositionForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -193,20 +193,31 @@ Class SecurityGUIApp.RecognizeAlertForm: AutoLayout, AnsiClass, Class, Public, B
 Class SecurityGUIApp.WebMapForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class SecurityGUIApp.WelcomeOperatorForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(System.Windows.Forms.Form): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Form refMainForm : Public
 Class SecurityGUIApp.SecurityOperatorForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    SecurityModel.SecurityOperator OperadorRegistrado : Public, Static
   Methods:
     FillRobotsInCombo(): PrivateScope, Public, HideBySig
-Class SecurityGUIApp.WelcomeOperatorForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class SecurityGUIApp.MainForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class SecurityGUIApp.NoiseSensorForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class SecurityGUIApp.OperatorRegistration: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    FillDocTypesinCombo(): PrivateScope, Public, HideBySig
+    ReversePassword(String): PrivateScope, Public, HideBySig
+    ClearControls(): PrivateScope, Public, HideBySig
 Class SecurityGUIApp.ReportAlarms: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
