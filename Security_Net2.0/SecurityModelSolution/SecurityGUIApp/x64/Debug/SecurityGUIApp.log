@@ -1,4 +1,6 @@
-﻿  MainForm.cpp
+﻿  AdminForm.cpp
+  AlarmHistorialForm.cpp
+  MainForm.cpp
 C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AnswerForm.h(258,26): warning C4101: 'ex': variable local sin referencia
   (compilando archivo de origen "MainForm.cpp")
   
@@ -8,20 +10,7 @@ C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\S
 C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\SecurityOperatorForm.h(353,26): warning C4101: 'ex': variable local sin referencia
   (compilando archivo de origen "MainForm.cpp")
   
-  SecurityOperatorForm.cpp
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AnswerForm.h(258,26): warning C4101: 'ex': variable local sin referencia
-  (compilando archivo de origen "SecurityOperatorForm.cpp")
-  
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\SecurityOperatorForm.h(353,26): warning C4101: 'ex': variable local sin referencia
-  (compilando archivo de origen "SecurityOperatorForm.cpp")
-  
-  WelcomeOperatorForm.cpp
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AnswerForm.h(258,26): warning C4101: 'ex': variable local sin referencia
-  (compilando archivo de origen "WelcomeOperatorForm.cpp")
-  
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\SecurityOperatorForm.h(353,26): warning C4101: 'ex': variable local sin referencia
-  (compilando archivo de origen "WelcomeOperatorForm.cpp")
-  
+  OperationsAdminForm.cpp
   Generando código...
   AdminForm.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
   SecurityGUIApp.vcxproj -> C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityGUIApp.exe

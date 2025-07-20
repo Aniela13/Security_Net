@@ -402,7 +402,8 @@ namespace SecurityGUIApp {
 				for (int i = 0; i < historial->Count; i++) {
 					dgvAlarmHistorial->Rows->Add(gcnew array<String^> {historial[i]->StartingDate->ToString("yy/MM/dd HH:mm tt"),
 						historial[i]->EndingDate->ToString("yy/MM/dd HH:mm tt"),
-						historial[i]->Type->Name});
+						historial[i]->Type->Name,
+						historial[i]->Description});
 				}
 
 			}
