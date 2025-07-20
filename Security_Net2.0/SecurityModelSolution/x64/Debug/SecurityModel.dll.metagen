@@ -73,7 +73,10 @@ Class SecurityModel.Point: AutoLayout, AnsiClass, Class, Public, Serializable, B
   Properties:
     Double Y   'get set' : 
     Double X   'get set' : 
+    Int32 Id   'get set' : 
   Methods:
+    get_Id(): PrivateScope, Public, HideBySig, SpecialName
+    set_Id(Int32): PrivateScope, Public, HideBySig, SpecialName
     get_X(): PrivateScope, Public, HideBySig, SpecialName
     set_X(Double): PrivateScope, Public, HideBySig, SpecialName
     get_Y(): PrivateScope, Public, HideBySig, SpecialName
@@ -254,3 +257,17 @@ Class SecurityModel.WarningReport: AutoLayout, AnsiClass, Class, Public, BeforeF
     System.Collections.Generic.List`1[SecurityModel.Warning] WarningHistorial : Public
   Methods:
     AddWarning(): PrivateScope, Public, HideBySig
+Class SecurityModel.Zone: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(SecurityModel.Point, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    System.String Zona 'get set' : 
+    SecurityModel.Point Coordenada 'get set' : 
+    Int32 Id   'get set' : 
+  Methods:
+    get_Id(): PrivateScope, Public, HideBySig, SpecialName
+    set_Id(Int32): PrivateScope, Public, HideBySig, SpecialName
+    get_Coordenada(): PrivateScope, Public, HideBySig, SpecialName
+    set_Coordenada(Point): PrivateScope, Public, HideBySig, SpecialName
+    get_Zona(): PrivateScope, Public, HideBySig, SpecialName
+    set_Zona(String): PrivateScope, Public, HideBySig, SpecialName

@@ -342,6 +342,21 @@ List<SecurityOperator^>^ SecurityController::Controller::QueryAllNoRegisteredOpe
 	return Persistance::QueryAllNotAuthorizedOperators();
 }
 
+Dictionary<String^, Point^>^ SecurityController::Controller::QueryAllZones()
+{
+	try {
+		mallmap = (MallMap^)Persistance::LoadBinaryFile(BINARY_MAP_ZONES_FILE_NAME);
+		if (mallmap == nullptr) {
+			mallmap = gcnew MallMap();
+		}
+		return mallmap->Zones;
+	}
+	catch (Exception^ ex) {
+		throw ex;
+	}
+	return nullptr;
+}
+
 int SecurityController::Controller::AddNewQuestion(Question^ newquestion)
 {
 	/*try {
@@ -419,10 +434,10 @@ int SecurityController::Controller::DeleteZoneMap(String^ namezone)
 
 }
 
-Dictionary<String^, Point^>^ SecurityController::Controller::QueryAllZones()
+List<Zone^>^ SecurityController::Controller::QueryAllZona()
 {
 
-	try {
+	/*try {
 		mallmap = (MallMap^)Persistance::LoadBinaryFile(BINARY_MAP_ZONES_FILE_NAME);
 		if (mallmap == nullptr) {
 			mallmap = gcnew MallMap();
@@ -432,9 +447,11 @@ Dictionary<String^, Point^>^ SecurityController::Controller::QueryAllZones()
 	catch (Exception^ ex) {
 		throw ex;
 	}
-	return nullptr;
+	return nullptr;*/
+	return Persistance::QueryAllZonas();
 
 }
+
 
 Point^ SecurityController::Controller::QueryZonebyName(String^ namezone)
 {
@@ -523,6 +540,16 @@ List<SecurityBot^>^ SecurityController::Controller::QueryAllRobots()
 SecurityBot^ SecurityController::Controller::QueryRobotById(int robotId)
 {
 	return Persistance::QueryRobotById(robotId);
+}
+
+int SecurityController::Controller::AddCoordenada(Point^ p)
+{
+	return Persistance::AddPoint(p);
+}
+
+int SecurityController::Controller::AddZona(Zone^ z)
+{
+	return Persistance::AddZone(z);
 }
 
 

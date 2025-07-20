@@ -72,6 +72,7 @@ namespace SecurityController {
 		static int AddOperatortoValidation(SecurityOperator^ operador);  //-------------AddOperator (sin validar)
 		static int DeleteOperatortoValidation(SecurityOperator^ operadori);
 		static List<SecurityOperator^>^ QueryAllNoRegisteredOperators();   //
+		static Dictionary<String^, Point^>^ QueryAllZones();
 
 		/*------SISTEMA DE PREGUNTAS NUEVAS-----*/ //interacción operador y cliente
 		static int AddNewQuestion(Question^ newquestion); 
@@ -81,7 +82,7 @@ namespace SecurityController {
 		static int AddZoneMap(String^ namezone, Point^ coordenada);
 		static int UpdateZoneMap(String^ namezone, Point^ coordenada);
 		static int DeleteZoneMap(String^ namezone);
-		static Dictionary<String^, Point^>^ QueryAllZones();
+		static List<Zone^>^ QueryAllZona();
 		static Point^ QueryZonebyName(String^ namezone);
 
 		/*---------SISTEMA DE ASIGNACIÓN DE RUTAS-----*/
@@ -102,5 +103,8 @@ namespace SecurityController {
 		static int AddRobotCar(SecurityBot^ robot);
 		static List<SecurityBot^>^ QueryAllRobots();
 		static SecurityBot^ QueryRobotById(int robotId);
+		/*-------ZONE*/
+		static int AddCoordenada(Point^ p);
+		static int AddZona(Zone^ z);
 	};
 }

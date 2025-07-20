@@ -12,6 +12,7 @@ namespace SecurityGUIApp {
 	using namespace SecurityModel;
 	using namespace SecurityController; 
 	using namespace System::Collections::Generic;
+	using namespace System::IO;
 
 
 	/// <summary>
@@ -41,18 +42,20 @@ namespace SecurityGUIApp {
 			}
 		}
 	private: System::Windows::Forms::Button^ btnGoBackMenu;
+	private: System::Windows::Forms::PictureBox^ pbCamera;
+
 	protected:
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
+
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::PictureBox^ pictureBox2;
-	private: System::Windows::Forms::TextBox^ txtPointY;
-	private: System::Windows::Forms::TextBox^ txtPointX;
-	private: System::Windows::Forms::TextBox^ txtNameZone;
-	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::Label^ label6;
+
+
+
+
+
+
+
+
+
 	private: System::Windows::Forms::Button^ btnReviewAlarm;
 	private: System::Windows::Forms::Button^ btnStopWarning;
 	private: System::Windows::Forms::DataGridView^ dgvPendingAlarms;
@@ -79,25 +82,15 @@ namespace SecurityGUIApp {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(RecognizeAlertForm::typeid));
 			this->btnGoBackMenu = (gcnew System::Windows::Forms::Button());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->pbCamera = (gcnew System::Windows::Forms::PictureBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
-			this->txtPointY = (gcnew System::Windows::Forms::TextBox());
-			this->txtPointX = (gcnew System::Windows::Forms::TextBox());
-			this->txtNameZone = (gcnew System::Windows::Forms::TextBox());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->btnReviewAlarm = (gcnew System::Windows::Forms::Button());
 			this->btnStopWarning = (gcnew System::Windows::Forms::Button());
 			this->dgvPendingAlarms = (gcnew System::Windows::Forms::DataGridView());
 			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->label7 = (gcnew System::Windows::Forms::Label());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbCamera))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvPendingAlarms))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -117,14 +110,14 @@ namespace SecurityGUIApp {
 			this->btnGoBackMenu->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->btnGoBackMenu->UseVisualStyleBackColor = false;
 			// 
-			// pictureBox1
+			// pbCamera
 			// 
-			this->pictureBox1->Location = System::Drawing::Point(405, 78);
-			this->pictureBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(311, 414);
-			this->pictureBox1->TabIndex = 54;
-			this->pictureBox1->TabStop = false;
+			this->pbCamera->Location = System::Drawing::Point(509, 78);
+			this->pbCamera->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->pbCamera->Name = L"pbCamera";
+			this->pbCamera->Size = System::Drawing::Size(458, 414);
+			this->pbCamera->TabIndex = 54;
+			this->pbCamera->TabStop = false;
 			// 
 			// label1
 			// 
@@ -133,97 +126,11 @@ namespace SecurityGUIApp {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label1->Location = System::Drawing::Point(437, 30);
+			this->label1->Location = System::Drawing::Point(504, 30);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(118, 29);
 			this->label1->TabIndex = 56;
 			this->label1->Text = L"CAMARA";
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label2->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label2->Location = System::Drawing::Point(749, 30);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(94, 29);
-			this->label2->TabIndex = 58;
-			this->label2->Text = L"RUIDO";
-			// 
-			// pictureBox2
-			// 
-			this->pictureBox2->Location = System::Drawing::Point(755, 78);
-			this->pictureBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(197, 197);
-			this->pictureBox2->TabIndex = 57;
-			this->pictureBox2->TabStop = false;
-			// 
-			// txtPointY
-			// 
-			this->txtPointY->Location = System::Drawing::Point(889, 449);
-			this->txtPointY->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->txtPointY->Name = L"txtPointY";
-			this->txtPointY->Size = System::Drawing::Size(57, 22);
-			this->txtPointY->TabIndex = 64;
-			// 
-			// txtPointX
-			// 
-			this->txtPointX->Location = System::Drawing::Point(889, 414);
-			this->txtPointX->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->txtPointX->Name = L"txtPointX";
-			this->txtPointX->Size = System::Drawing::Size(57, 22);
-			this->txtPointX->TabIndex = 63;
-			// 
-			// txtNameZone
-			// 
-			this->txtNameZone->Location = System::Drawing::Point(889, 382);
-			this->txtNameZone->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->txtNameZone->Name = L"txtNameZone";
-			this->txtNameZone->Size = System::Drawing::Size(156, 22);
-			this->txtNameZone->TabIndex = 62;
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(760, 452);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(98, 16);
-			this->label4->TabIndex = 61;
-			this->label4->Text = L"Coordenada Y:";
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(760, 414);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(97, 16);
-			this->label3->TabIndex = 60;
-			this->label3->Text = L"Coordenada X:";
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(760, 382);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(96, 16);
-			this->label5->TabIndex = 59;
-			this->label5->Text = L"Nombre Zona: ";
-			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label6->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label6->Location = System::Drawing::Point(757, 322);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(138, 29);
-			this->label6->TabIndex = 65;
-			this->label6->Text = L"POSICION";
 			// 
 			// btnReviewAlarm
 			// 
@@ -300,25 +207,15 @@ namespace SecurityGUIApp {
 			this->Controls->Add(this->dgvPendingAlarms);
 			this->Controls->Add(this->btnStopWarning);
 			this->Controls->Add(this->btnReviewAlarm);
-			this->Controls->Add(this->label6);
-			this->Controls->Add(this->txtPointY);
-			this->Controls->Add(this->txtPointX);
-			this->Controls->Add(this->txtNameZone);
-			this->Controls->Add(this->label4);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label5);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->btnGoBackMenu);
-			this->Controls->Add(this->pictureBox1);
+			this->Controls->Add(this->pbCamera);
 			this->DoubleBuffered = true;
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"RecognizeAlertForm";
 			this->Text = L"RecognizeAlertForm";
 			this->Load += gcnew System::EventHandler(this, &RecognizeAlertForm::RecognizeAlertForm_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbCamera))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvPendingAlarms))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -343,6 +240,17 @@ namespace SecurityGUIApp {
 		}
 	private: System::Void RecognizeAlertForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		ShowWarnings();
+		array<Byte>^ imagen = Controller::GetImageFromCamara("http://10.101.51.237/capture");
+		if (imagen != nullptr) {
+			MemoryStream^ ms = gcnew MemoryStream(imagen);
+			//Usar memoryStream para convertir los bytes de la imagen en una imagen para subirla  
+			System::Drawing::Image^ img = System::Drawing::Image::FromStream(ms);
+			pbCamera->Image = img;
+			pbCamera->SizeMode = PictureBoxSizeMode::StretchImage;
+		}
+		else {
+			MessageBox::Show("No se pudo obtener la imagen de la cámara.");
+		}
 	}
 	private: System::Void btnStopWarning_Click(System::Object^ sender, System::EventArgs^ e); 
 

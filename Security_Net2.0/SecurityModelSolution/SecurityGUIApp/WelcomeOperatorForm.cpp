@@ -5,9 +5,8 @@
 System::Void SecurityGUIApp::WelcomeOperatorForm::btnRegistrar_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	OperatorRegistration^ operadorRegistrationForm = gcnew OperatorRegistration();
-	this->Hide();
+	//this->Hide();
 	operadorRegistrationForm->Show();
-	return System::Void();
 }
 
 System::Void SecurityGUIApp::WelcomeOperatorForm::btnLogInSecurity_Click(System::Object^ sender, System::EventArgs^ e)
@@ -22,9 +21,9 @@ System::Void SecurityGUIApp::WelcomeOperatorForm::btnLogInSecurity_Click(System:
 				SecurityOperatorForm::OperadorRegistrado = op;
 				refMainForm->Text = "Sistema de seguridad - Usuario: " + SecurityOperatorForm::OperadorRegistrado->Name + " " + SecurityOperatorForm::OperadorRegistrado->LastName + " (" + SecurityOperatorForm::OperadorRegistrado->UserName + ") - " + DateTime::Now;
 				//SecurityOperatorForm^ operationsOperadorForm = gcnew SecurityOperatorForm();
-				////this->Hide();
+				this->Hide();
 				//operationsOperadorForm->Show();
-				this->Close();
+				
 			}
 			else {
 				MessageBox::Show("El usuario ingresado no ha sido registrado o validado.");

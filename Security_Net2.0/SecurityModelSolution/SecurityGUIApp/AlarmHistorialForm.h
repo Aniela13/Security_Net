@@ -159,6 +159,7 @@ namespace SecurityGUIApp {
 			this->ReporteToolStripMenuItem->Name = L"ReporteToolStripMenuItem";
 			this->ReporteToolStripMenuItem->Size = System::Drawing::Size(155, 24);
 			this->ReporteToolStripMenuItem->Text = L"Reporte de Alarmas";
+			this->ReporteToolStripMenuItem->Click += gcnew System::EventHandler(this, &AlarmHistorialForm::ReporteToolStripMenuItem_Click_1);
 			// 
 			// label1
 			// 
@@ -566,5 +567,7 @@ namespace SecurityGUIApp {
 	private: System::Void btnSearch_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	}
+	private: System::Void ReporteToolStripMenuItem_Click_1(System::Object^ sender, System::EventArgs^ e); 
+	
 };
 }

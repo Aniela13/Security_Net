@@ -80,5 +80,9 @@ namespace SecurityPersistance {
 		static int AddRobot(SecurityBot^ robot);
 		static List<SecurityBot^>^ QueryAllRobots();
 		static SecurityBot^ QueryRobotById(int robotId);
+		//------zonas
+		static int AddPoint(Point^ p);
+		static int AddZone(Zone^ z);
+		static List<Zone^>^ QueryAllZonas();
 	};
 }

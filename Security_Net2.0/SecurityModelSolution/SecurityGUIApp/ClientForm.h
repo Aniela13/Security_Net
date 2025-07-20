@@ -2,6 +2,7 @@
 #include "FAQForm.h"
 #include "ZoneLocation.h"
 #include "EmergencyForm.h"
+#include "WebMapForm.h"
 
 namespace SecurityGUIApp {
 
@@ -153,9 +154,11 @@ namespace SecurityGUIApp {
 
 	
 	private: System::Void btnLocationClient_Click(System::Object^ sender, System::EventArgs^ e) {
-		ZoneLocation^ zonelocationForm = gcnew ZoneLocation();
+		//ZoneLocation^ zonelocationForm = gcnew ZoneLocation();
 		//this->Hide();
-		zonelocationForm->Show();
+		//zonelocationForm->Show();
+		WebMapForm^ map = gcnew WebMapForm();
+		map->Show();
 	}
 	private: System::Void btnAlert_Click(System::Object^ sender, System::EventArgs^ e) {
 		try {

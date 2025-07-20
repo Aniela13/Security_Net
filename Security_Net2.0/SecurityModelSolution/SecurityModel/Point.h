@@ -4,6 +4,7 @@ namespace SecurityModel {
     [Serializable]
     public ref class Point {
     public:
+        property int Id; 
         property double X;
         property double Y;
         Point() {}
