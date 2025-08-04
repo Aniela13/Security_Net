@@ -3,50 +3,43 @@
 #include <WiFi.h>
 #include <WebServer.h>
 #include "esp_camera.h"
+#include <Wire.h>
 #define CAMERA_MODEL_AI_THINKER // Has PSRAM
 #include "camera_pins.h"
+#include <ArduinoJson.h> // recomendable para JSON si no lo usas aún
 
-const char* ssid = "Sheldon";
-const char* password = "Sheldon&2019";
-// const char* ssid = "redpucp";
-// const char* password = "C9AA28BA93";
-
+// const char *ssid = "Sheldon";
+// const char *password = "Sheldon&2019";
+const char* ssid = "redpucp";
+const char* password = "C9AA28BA93";
+//void startCameraServer();
 void setupLedFlash(int pin);
 
 TinyGPSPlus gps;// Libreria para decodificar los datos de los modulos GPS(envia datos en formato NMEA)
-// SoftwareSerial gpsSerial(13, 15); // RX, TX (desde el punto de vista del ESP32)
-//SoftwareSerial gpsSerial(0,1); // RX, TX (desde el punto de vista del ESP32)
-HardwareSerial gpsSerial(1);
-// Pines GPS
-#define GPS_RX 12
-#define GPS_TX 13// no se usa, amenos que quiera controlar el gps por comandos
 bool fix_obtenido = false;
 unsigned long lastGPSMsg = 0;
+HardwareSerial gpsSerial(1);
+// Pines GPS
+#define GPS_RX 16
+#define GPS_TX -1// no se usa, amenos que quiera controlar el gps por comandos
+
+#define SLAVE_ADDR 0x08//Maestro del arduino
+float xGoal = 0.0;
+float yGoal = 0.0;
+
 WebServer server(80);
-
-//Sound Sensor y LED 
-const int sound_sensor = 14 ;
-//const int pinLED_R = 4;
-// const int pinLED_G = 12;
-// const int pinLED_B = 11;
-const int btn = 15;
-
-/////// ARDUINO
-// HardwareSerial arduinoSerial(2); // UART2 para comunicar con el Arduino
-// #define ESP_RX 16// no se usa, el arduino sera solo esclavo
-// #define ESP_TX 4
 
 void setup() {
   Serial.begin(115200);
-  // [PINES LED Y SOUND SENSOR]
-  pinMode(pinLED_R, OUTPUT);  
-  // pinMode(pinLED_G, OUTPUT);  
-  // pinMode(pinLED_B, OUTPUT);  
-  pinMode(sound_sensor, INPUT); 
+ 
   // Inicializa UART1 para GPS
   gpsSerial.begin(9600, SERIAL_8N1, GPS_RX, GPS_TX);//cada segundo el gps envia datos
-  arduinoSerial.begin(9600, SERIAL_8N1, 17, 16); // RX, TX (ESP32-CAM)
+  //I2C ARDUINO
+  Wire.begin(2, 14); // SDA = GPIO2, SCL = GPIO14
+  Wire.setClock(100000); // Reduce frecuencia para evitar errores
   //Asignacion de pines por sofwre, para que estos pines se comuniquen por UART
+  Serial.setDebugOutput(true);
+  Serial.println();
   camera_config_t config;
   config.ledc_channel = LEDC_CHANNEL_0;
   config.ledc_timer = LEDC_TIMER_0;
@@ -130,15 +123,24 @@ void setup() {
 #endif
 
   WiFi.begin(ssid, password);
+  WiFi.setSleep(false);
+
+  Serial.print("WiFi connecting");
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
   }
+  Serial.println("");
+  Serial.println("WiFi connected");
 
-  Serial.println("WiFi conectado");
-  Serial.println(WiFi.localIP());// imprime la IP conectadaaaaa
+  //startCameraServer(&server);
+
+  Serial.print("Camera Ready! Use 'http://");
+  Serial.print(WiFi.localIP());
+  Serial.println("' to connect");
+
   //Endpoint gps
-  server.on("/gps", []() {
+  server.on("/gps", HTTP_GET, []() {
     if (gps.location.isValid()) {
       String json = "{";
       json += "\"lat\": " + String(gps.location.lat(), 6) + ",";
@@ -149,93 +151,92 @@ void setup() {
       server.send(200, "application/json", "{\"error\": \"GPS no válido\"}");
     }
   });
+
   //Endpoint camera
-  server.on("/capture", []() {
-    camera_fb_t *fb = esp_camera_fb_get();
+  server.on("/capture", HTTP_GET, []() {
+
+    camera_fb_t * fb = esp_camera_fb_get();
     if (!fb) {
-      server.send(500, "text/plain", "Error al capturar imagen");
+      Serial.println("Fallo al capturar imagen");
+      server.send(500, "text/plain", "Camera capture failed");
       return;
     }
-    server.sendHeader("Content-Type", "image/jpeg");
-    server.sendHeader("Content-Length", String(fb->len));
-    server.send(200);
 
     WiFiClient client = server.client();
-    client.write(fb->buf, fb->len);
+    client.println("HTTP/1.1 200 OK");
+    client.println("Content-Type: image/jpeg");
+    client.print("Content-Length: ");
+    client.println(fb->len);
+    client.println(); // Línea en blanco para indicar fin de cabeceras
+
+    client.write(fb->buf, fb->len); // Enviar el cuerpo de la imagen
 
     esp_camera_fb_return(fb);
-  }); 
-  //Endpoint Ruta
-  server.on("/setcoords", HTTP_GET, []() {
-    String x = server.arg("x");
-    String y = server.arg("y");
-
-    if (x != "" && y != "") {
-      String data = "X:" + x + ",Y:" + y ;
-      Serial.println("Recibido del Visual:");
-      Serial.println(data);
-      arduinoSerial.print(data + "\n"); // Reenviar al Arduino por UART2
-      server.send(200, "text/plain", "OK");
-    } else {
-      server.send(400, "text/plain", "Faltan parámetros");
-    }
   });
-  //Endpoint Sonido
-  server.on("/decibeles", HTTP_GET, []() {
-    double Lectura =analogRead(14); 
-    //crear
+  // POST actualizar coords objetivo (antes GET, mejor POST para envío datos)
+   // Endpoint para recibir coordenadas desde el cliente
+  server.on("/setcoords", HTTP_POST, []() {
+    if (!server.hasArg("plain")) {
+      server.send(400, "text/plain", "Faltan datos");
+      return;
+    }
+
+    StaticJsonDocument<200> doc;
+    DeserializationError error = deserializeJson(doc, server.arg("plain"));
+
+    if (error) {
+      server.send(400, "text/plain", "JSON inválido");
+      return;
+    }
+
+    xGoal = doc["x"] | 0.0;
+    yGoal = doc["y"] | 0.0;
+    Serial.printf("➡ Coordenadas objetivo recibidas: X=%.4f, Y=%.4f\n", xGoal, yGoal);
+
+    // Enviar por I2C al Arduino esclavo
+    int32_t xInt = (int32_t)(xGoal * 10000);
+    int32_t yInt = (int32_t)(yGoal * 10000);
+
+    Wire.beginTransmission(SLAVE_ADDR);
+    Wire.write((uint8_t *)&xInt, sizeof(xInt));
+    Wire.write((uint8_t *)&yInt, sizeof(yInt));
+    byte err = Wire.endTransmission();
+
+    if (err == 0) {
+      Serial.println("✅ Coordenadas enviadas por I2C");
+    } else {
+      Serial.printf("❌ Error I2C (%d)\n", err);
+    }
+
+    server.send(200, "text/plain", "OK");
+  });
+    // Endpoint para que Arduino consulte las coords actuales
+  server.on("/getcoords", HTTP_GET, []() {
+    String json = "{\"x\": " + String(xGoal, 4) + ", \"y\": " + String(yGoal, 4) + "}";
+    server.send(200, "application/json", json);
+  });
+
+  server.on("/", HTTP_GET, []() {
+    server.send(200, "text/plain", "Servidor ESP32-CAM funcionando");
   });
   server.begin();
+  Serial.println("Servidor iniciado en puerto 80");
 }
 
 void loop() {
-  while (gpsSerial.available() > 0) {
-    gps.encode(gpsSerial.read());
-    lastGPSMsg = millis();  // Marcar último dato recibido
-  }
   server.handleClient();
-  if (gps.location.isValid()) {
-    if (!fix_obtenido) {
-      Serial.println("Satélites conectados.");
-      fix_obtenido = true;
-    }
+  while (gpsSerial.available()) {
+    char c = gpsSerial.read();
+    gps.encode(c);
+  }
 
-    if(millis() - lastGPSMsg > 2000){
-      Serial.print("Latitud: ");
-      Serial.println(gps.location.lat(), 6);
-      Serial.print("Longitud: ");
-      Serial.println(gps.location.lng(), 6);
-      // enviamos al Arduino como X, Y 
-      String data = "X:" + String(lat, 6) + ",Y:" + String(lon, 6) + ",T:0.00\n";
-      arduinoSerial.print(data); // UART2 → Arduino
-      Serial.println("Enviado al Arduino: " + data);
-      lastGPSMsg = millis();  // Evitar spam de mensajes
-    }
-  } else {
-    if (!fix_obtenido && millis() - lastGPSMsg > 2000) {
-      Serial.println("Esperando señal GPS...");
-      lastGPSMsg = millis();  // Evitar spam de mensajes
-    }
+  // Imprime en Serial si está fijado
+  if (gps.location.isUpdated()) {
+    Serial.print("Latitud: ");
+    Serial.println(gps.location.lat(), 6);
+    Serial.print("Longitud: ");
+    Serial.println(gps.location.lng(), 6);
   }
-  // // SOUND SENSOR AND RGB
-  // double Lectura =analogRead(A0); 
-  // Serial.println(Lectura);
-  // if(Lectura>700){
-  //   digitalWrite(pinLED_R, 200);
-  //   // digitalWrite(pinLED_G, 0);
-  //   // digitalWrite(pinLED_B, 0);
-  //   //delay(200) ;
-  // }
-  // // else if(Lectura<700 && Lectura>300){
-  // //   digitalWrite(pinLED_B, 200);
-  // //   digitalWrite(pinLED_R, 0);
-  // //   digitalWrite(pinLED_G, 0) ;
-  // //   delay(200) ;
-  // // }
-  // else if(Lectura<300){
-  //   // digitalWrite(pinLED_G, 200);
-  //   // digitalWrite(pinLED_B, 0);
-  //   digitalWrite(pinLED_R, 0);
-  //   //delay(200) ;
-  }
+
+  delay(100);
 }

@@ -1,9 +1,2 @@
-<<<<<<< HEAD
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\WebView2Loader.dll
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityModel\x64\Debug\SecurityModel.vcxproj.AssemblyReference.cache
 C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\WebView2Loader.dll
 C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityModel\x64\Debug\SecurityModel.vcxproj.AssemblyReference.cache
-=======
-C:\Users\angel\OneDrive\Documentos\2025_1\Poo\GIT HUB POO\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\WebView2Loader.dll
-C:\Users\angel\OneDrive\Documentos\2025_1\Poo\GIT HUB POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityModel\x64\Debug\SecurityModel.vcxproj.AssemblyReference.cache
->>>>>>> ff94bbd13376cb8b5dd40bc783b02e71557f4d17

@@ -38,8 +38,8 @@ void loop() {
     Serial.println();
 
     // Convertir a enteros para I2C (x10000)
-    int32_t xInt = (int32_t)(xGoal * 10000);
-    int32_t yInt = (int32_t)(yGoal * 10000);
+    int32_t xInt = (int32_t)(-xGoal * 10000);
+    int32_t yInt = (int32_t)(-yGoal * 10000);
 
     // Enviar por I2C como 8 bytes
     Wire.beginTransmission(SLAVE_ADDR);

@@ -36,9 +36,10 @@
 // ===========================
 // Enter your WiFi credentials
 // ===========================
-const char *ssid = "Sheldon";
-const char *password = "Sheldon&2019";
-
+// const char *ssid = "Sheldon";
+// const char *password = "Sheldon&2019";
+const char* ssid = "redpucp";
+const char* password = "C9AA28BA93";
 void startCameraServer();
 void setupLedFlash(int pin);
 

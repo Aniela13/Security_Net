@@ -1,17 +1,20 @@
 #include <TinyGPSPlus.h>
-#include <SoftwareSerial.h>
-
-// Configura el SoftwareSerial: evita usar (0,1) en Arduino Uno, porque son RX/TX hardware
-SoftwareSerial gpsSerial(4, 3); // RX, TXs
-
+#include <HardwareSerial.h>
 TinyGPSPlus gps;
+
+// Cofigura el SoftwareSerial: evita usar (0,1) en Arduino Uno, porque son RX/TX hardware
+HardwareSerial gpsSerial(1);
+// Pines GPS
+#define GPS_RX 16
+#define GPS_TX -1// no se usa, amenos que quiera controlar el gps por comandos
+
 
 // Variable para recordar si ya obtuvo fix por primera vez
 bool fix_obtenido = false;
 
 void setup() {
   Serial.begin(115200);
-  gpsSerial.begin(9600);
+  gpsSerial.begin(9600, SERIAL_8N1, GPS_RX, GPS_TX);//cada segundo el gps envia datos
   
   Serial.println("Esperando señal GPS...");
 }

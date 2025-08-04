@@ -467,70 +467,12 @@ namespace SecurityGUIApp {
 	}
 
 	private: System::Void btnAddZone_Click(System::Object^ sender, System::EventArgs^ e) {
-		int selectedIndex = cmbNameZone->SelectedIndex;
-		if (selectedIndex < 0) {
-			MessageBox::Show("Se debe seleccionar una zona");
-			return;
-		}
-		else {
-			ComboBoxItem^ itemSeleccionado = dynamic_cast<ComboBoxItem^>(cmbNameZone->SelectedItem);
-			String^ coordenadas = String::Format("({0:F4}, {1:F4})", txtPointX->Text, txtPointY->Text);
-			dgvZonesRoute->Rows->Add(gcnew array<String^> {itemSeleccionado->Name, coordenadas});
-			SecurityModel::Point^ coord = Controller::QueryZonebyName(itemSeleccionado->Name);
-			Drawing::Point^ punto = GeoToPixel(coord->Y, coord->X, pbMapRoutes->Width, pbMapRoutes->Height);
-			this->AgregarPunto(*punto);
-			pbMapRoutes->Invalidate(); // Forzar redibujado
-
-		}
-		ClearControls();
-	}
-	private: System::Void pbMapRoutes_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-		Graphics^ g = e->Graphics;
-		if (puntosRuta != nullptr) {
-			for each(Drawing::Point p in puntosRuta) {
-				g->FillEllipse(Brushes::Red, p.X - 3, p.Y - 3, 6, 6); // Círculo de radio 3 px
-			}
-		}
+		
 	}
 
 
 	private: System::Void btnDelete_Click(System::Object^ sender, System::EventArgs^ e) {
-		ComboBoxItem^ itemSeleccionado = dynamic_cast<ComboBoxItem^>(cmbNameZone->SelectedItem);
-		String^ namezone = itemSeleccionado->Name;
-		if (itemSeleccionado == nullptr) {
-			MessageBox::Show("Se debe seleccionar una zona del grid");
-			return;
-		}
-		if (VerifyIteminGrid(namezone) == false) {
-			MessageBox::Show("La zona no está registrada en la ruta");
-			return;
-		}
-		try {
-			System::Windows::Forms::DialogResult dlgResult = MessageBox::Show("¿Desea eliminar la zona?",
-				"Confirmación", MessageBoxButtons::YesNo, MessageBoxIcon::Question);
-
-			if (dlgResult == System::Windows::Forms::DialogResult::Yes) {
-				if (DeleteZoneinGrid(namezone) == 1) {
-					MessageBox::Show("Se ha eliminado la zona " + namezone + "de manera exitosa.");
-					SecurityModel::Point^ punto = Controller::QueryZonebyName(namezone);
-					Drawing::Point^ pixel = GeoToPixel(punto->Y, punto->X, pbMapRoutes->Width, pbMapRoutes->Height);
-					Drawing::Point puntor = *pixel;
-					for (int i = 0; i < puntosRuta->Count; i++) {
-						if (puntosRuta[i].X ==puntor.X && puntosRuta[i].Y ==puntor.Y) {
-							puntosRuta->RemoveAt(i);
-							pbMapRoutes->Invalidate();
-							break;
-						}
-					}
-					return;
-				}
-			}
-			ClearControls();
-		}
-		catch (Exception^ ex) {
-			MessageBox::Show("No ha sido posible eliminar la zona por el siguiente motivo:\n" +
-				ex->Message);
-		}
+		
 		
 	}
 	private: System::Void dgvZonesRoute_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {

@@ -40,10 +40,10 @@ namespace SecurityGUIApp {
 		}
 	private: System::Windows::Forms::Label^ label1;
 	private: Microsoft::Web::WebView2::WinForms::WebView2^ webView21;
-	private: System::Windows::Forms::TextBox^ txtPointY;
-	private: System::Windows::Forms::TextBox^ txtPointX;
-	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::Label^ label3;
+
+
+
+
 
 	/*private: void GetCoordinatesFromESP32();
 	private: void ProcessAnswerGPS(String^ json);
@@ -66,10 +66,6 @@ namespace SecurityGUIApp {
 		{
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->webView21 = (gcnew Microsoft::Web::WebView2::WinForms::WebView2());
-			this->txtPointY = (gcnew System::Windows::Forms::TextBox());
-			this->txtPointX = (gcnew System::Windows::Forms::TextBox());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->webView21))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -98,51 +94,11 @@ namespace SecurityGUIApp {
 			this->webView21->TabIndex = 2;
 			this->webView21->ZoomFactor = 1;
 			// 
-			// txtPointY
-			// 
-			this->txtPointY->Location = System::Drawing::Point(211, 569);
-			this->txtPointY->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->txtPointY->Name = L"txtPointY";
-			this->txtPointY->ReadOnly = true;
-			this->txtPointY->Size = System::Drawing::Size(133, 22);
-			this->txtPointY->TabIndex = 40;
-			// 
-			// txtPointX
-			// 
-			this->txtPointX->Location = System::Drawing::Point(211, 533);
-			this->txtPointX->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->txtPointX->Name = L"txtPointX";
-			this->txtPointX->ReadOnly = true;
-			this->txtPointX->Size = System::Drawing::Size(133, 22);
-			this->txtPointX->TabIndex = 39;
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(82, 572);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(98, 16);
-			this->label4->TabIndex = 38;
-			this->label4->Text = L"Coordenada Y:";
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(82, 533);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(97, 16);
-			this->label3->TabIndex = 37;
-			this->label3->Text = L"Coordenada X:";
-			// 
 			// WebMapForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1127, 645);
-			this->Controls->Add(this->txtPointY);
-			this->Controls->Add(this->txtPointX);
-			this->Controls->Add(this->label4);
-			this->Controls->Add(this->label3);
 			this->Controls->Add(this->webView21);
 			this->Controls->Add(this->label1);
 			this->Name = L"WebMapForm";
