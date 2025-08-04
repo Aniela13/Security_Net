@@ -55,6 +55,7 @@ C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Secu
       al hacer coincidir la lista de argumentos '(int, int)'
   
   AlarmHistorialForm.cpp
+<<<<<<< HEAD
   AnswerForm.cpp
 C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AnswerForm.h(258,26): warning C4101: 'ex': variable local sin referencia
   (compilando archivo de origen "AnswerForm.cpp")
@@ -282,3 +283,19 @@ C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Secu
   ZoneLocation.cpp
   .NETFramework,Version=v4.8.1.AssemblyAttributes.cpp
   Generando código...
+=======
+  MainForm.cpp
+C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AnswerForm.h(258,26): warning C4101: 'ex': variable local sin referencia
+  (compilando archivo de origen "MainForm.cpp")
+  
+C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\NewQuestionForm.h(243,26): warning C4101: 'ex': variable local sin referencia
+  (compilando archivo de origen "MainForm.cpp")
+  
+C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\SecurityOperatorForm.h(353,26): warning C4101: 'ex': variable local sin referencia
+  (compilando archivo de origen "MainForm.cpp")
+  
+  OperationsAdminForm.cpp
+  Generando código...
+  AdminForm.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
+  SecurityGUIApp.vcxproj -> C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityGUIApp.exe
+>>>>>>> aa1812c8a7579ddb6fde0a5ce1c65f971f0d2f7f

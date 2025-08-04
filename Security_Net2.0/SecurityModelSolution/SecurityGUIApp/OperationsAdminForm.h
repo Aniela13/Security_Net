@@ -4,6 +4,7 @@
 #include "ValidateOpForm.h"
 #include "MaintainUser.h"
 #include "ModifyFAQ.h"
+#include "WebMapForm.h"
 
 namespace SecurityGUIApp {
 	using namespace System;
@@ -189,9 +190,12 @@ namespace SecurityGUIApp {
 	}
 
 	private: System::Void btnUptateMap_Click(System::Object^ sender, System::EventArgs^ e) {
-		UpdateMapForm^ mapForm = gcnew UpdateMapForm(); 
+		//UpdateMapForm^ mapForm = gcnew UpdateMapForm(); 
+		////this->Hide();
+		//mapForm->Show(); 
+		WebMapForm^ mapForm = gcnew WebMapForm();
 		//this->Hide();
-		mapForm->Show(); 
+		mapForm->Show();
 
 	}
 	private: System::Void btnAlarmHistorial_Click(System::Object^ sender, System::EventArgs^ e) {

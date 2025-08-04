@@ -91,7 +91,7 @@ namespace SecurityGUIApp {
 			this->label1->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->label1->Location = System::Drawing::Point(348, 87);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(154, 35);
+			this->label1->Size = System::Drawing::Size(140, 32);
 			this->label1->TabIndex = 54;
 			this->label1->Text = L"CAMARA";
 			this->label1->Click += gcnew System::EventHandler(this, &SurveillanceCameraForm::label1_Click);
@@ -158,7 +158,7 @@ namespace SecurityGUIApp {
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void btnTakePhoto_Click(System::Object^ sender, System::EventArgs^ e) {
-	array<Byte>^ imagen = Controller::GetImageFromCamara("http://192.168.68.111/capture");
+	array<Byte>^ imagen = Controller::GetImageFromCamara("http://10.101.51.237/capture");
 	if (imagen != nullptr) {
 		MemoryStream^ ms = gcnew MemoryStream(imagen);
 		//Usar memoryStream para convertir los bytes de la imagen en una imagen para subirla  
@@ -171,5 +171,6 @@ private: System::Void btnTakePhoto_Click(System::Object^ sender, System::EventAr
 	}
 
 }
+
 };
 }

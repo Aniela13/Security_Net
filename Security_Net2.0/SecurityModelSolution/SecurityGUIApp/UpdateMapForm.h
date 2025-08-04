@@ -11,6 +11,11 @@ namespace SecurityGUIApp {
 	using namespace System::Drawing;
 	using namespace SecurityModel; 
 	using namespace SecurityController;
+	using namespace System::Net::Http;
+	using namespace System::Threading::Tasks;
+	using namespace System::Web::Script::Serialization; // Para deserializar JSON
+	using namespace Microsoft::Web::WebView2::WinForms;
+	using namespace Microsoft::Web::WebView2::Core;
 
 	/// <summary>
 	/// Resumen de UpdateMapForm
@@ -72,16 +77,6 @@ namespace SecurityGUIApp {
 
 
 
-
-
-
-
-
-
-
-
-
-
 	private:
 		/// <summary>
 		/// Variable del diseñador necesaria.
@@ -125,7 +120,7 @@ namespace SecurityGUIApp {
 			this->label1->ForeColor = System::Drawing::SystemColors::MenuHighlight;
 			this->label1->Location = System::Drawing::Point(343, 25);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(381, 39);
+			this->label1->Size = System::Drawing::Size(335, 36);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"Actualización de mapa";
 			// 
@@ -285,9 +280,9 @@ namespace SecurityGUIApp {
 			this->webViewZone->AllowExternalDrop = true;
 			this->webViewZone->CreationProperties = nullptr;
 			this->webViewZone->DefaultBackgroundColor = System::Drawing::Color::White;
-			this->webViewZone->Location = System::Drawing::Point(12, 71);
+			this->webViewZone->Location = System::Drawing::Point(12, 143);
 			this->webViewZone->Name = L"webViewZone";
-			this->webViewZone->Size = System::Drawing::Size(510, 478);
+			this->webViewZone->Size = System::Drawing::Size(510, 699);
 			this->webViewZone->TabIndex = 39;
 			this->webViewZone->ZoomFactor = 1;
 			// 
@@ -317,14 +312,77 @@ namespace SecurityGUIApp {
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"UpdateMapForm";
 			this->Text = L"UpdateMapForm";
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &UpdateMapForm::UpdateMapForm_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &UpdateMapForm::UpdateMapForm_Load);
-			this->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &UpdateMapForm::pbMap_MouseClick);
-			this->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &UpdateMapForm::pbMap_MouseMove);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvZonesPositions))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->webViewZone))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
+		}
+		void SecurityGUIApp::UpdateMapForm::DrawMarkInMap(double lat, double lon)
+		{
+			String^ script = String::Format(
+				"L.marker([{0}, {1}]).addTo(map).bindPopup('Ubicación GPS').openPopup(); map.setView([{0}, {1}], 16);",
+				lat, lon);
+
+			webViewZone->CoreWebView2->ExecuteScriptAsync(script);
+		}
+
+		void SecurityGUIApp::UpdateMapForm::ProcessAnswerGPS(String^ json)
+		{
+			JavaScriptSerializer^ serializer = gcnew JavaScriptSerializer();
+			auto dict = safe_cast<Collections::Generic::Dictionary<String^, Object^>^>(serializer->DeserializeObject(json));
+
+			if (dict->ContainsKey("lat") && dict->ContainsKey("lon")) {
+				double lat = System::Convert::ToDouble(dict["lat"]);
+				double lon = System::Convert::ToDouble(dict["lon"]);
+
+				DrawMarkInMap(lat, lon);
+				txtPointX->Text = lat.ToString("F6");  // o F5 si prefieres 5 decimales
+				txtPointY->Text = lon.ToString("F6");
+			}
+		}
+		void UpdateMapForm::OnReadJsonFinished(Task<String^>^ task) {
+			if (task->Status == TaskStatus::RanToCompletion) {
+				String^ json = task->Result;
+				this->Invoke(gcnew Action<String^>(this, &UpdateMapForm::ProcessAnswerGPS), json);
+			}
+		}
+
+		void SecurityGUIApp::UpdateMapForm::GetCoordinatesFromESP32()
+		{
+			HttpClient^ client = gcnew HttpClient();
+			String^ url = "http://192.168.68.108/gps"; // Cambia por tu IP
+
+			Task<HttpResponseMessage^>^ responseTask = client->GetAsync(url);
+			responseTask->ContinueWith(gcnew Action<Task<HttpResponseMessage^>^>(this, &UpdateMapForm::OnResponseReceived));
+		}
+		void UpdateMapForm::OnResponseReceived(Task<HttpResponseMessage^>^ task) {
+			if (task->Status == TaskStatus::RanToCompletion) {
+				HttpResponseMessage^ response = task->Result;
+				Task<String^>^ readTask = response->Content->ReadAsStringAsync();
+				readTask->ContinueWith(gcnew Action<Task<String^>^>(this, &UpdateMapForm::OnReadJsonFinished));
+			}
+		}
+
+		private: bool seguirActualizando = true;
+
+		private: void IniciarActualizacionContinuaGPS() {
+			Task::Run(gcnew Action(this, &UpdateMapForm::ActualizarLoopGPS));
+		}
+
+		private: void ActualizarLoopGPS() {
+			while (seguirActualizando) {
+				try {
+					GetCoordinatesFromESP32();
+
+				}
+				catch (Exception^ ex) {
+					Console::WriteLine("Error en actualización GPS: " + ex->Message);
+				}
+				Threading::Thread::Sleep(5000); // Espera 5 segundos
+			}
 		}
 #pragma endregion
 		
@@ -354,65 +412,13 @@ namespace SecurityGUIApp {
 			}
 		}
 
-	public:
-		//y es latitud e x es longitud 
-		double latTopLeft = -12.06464, lonTopLeft = -77.08229;   // Coordenadas de la esquina superior izquierda
-		double latBottomRight = -12.07356, lonBottomRight = -77.07797; // Coordenadas de la esquina inferior derecha
-		SecurityModel::Point^ pointbottomright = gcnew SecurityModel::Point(lonBottomRight, latBottomRight);
-		SecurityModel::Point^ pointtopleft = gcnew SecurityModel::Point(lonTopLeft, latTopLeft);
-	public:
-		SecurityModel::Point^ PixelToGeo(int x, int y, int imgWidth, int imgHeight)
-		{
-			/*double lon = pointtopleft->X + ((double)x / imgWidth) * (pointbottomright->X - pointtopleft->X);
-			double lat = pointtopleft->Y - ((double)y / imgHeight) * (pointbottomright->Y - pointtopleft->Y);
-			return gcnew SecurityModel::Point(lon, lat);*/
-
-			// 3. Cálculo de la longitud (X)
-			double xRatio = (double)x / imgWidth;
-			double lon = pointtopleft->X + xRatio * (pointbottomright->X - pointtopleft->X);
-
-			// 4. Cálculo de la latitud (Y) - invertido porque Y crece hacia abajo en píxeles
-			double yRatio = (double)y / imgHeight;
-			double lat = pointtopleft->Y - yRatio * (pointbottomright->Y - pointtopleft->Y);
-
-			// 5. Validación del resultad
-
-			return gcnew SecurityModel::Point(lon, lat);
-		}
-
-
 	private: System::Void btnShow_Click(System::Object^ sender, System::EventArgs^ e) {
 		NewMapForm^ map = gcnew NewMapForm();
 		map->MdiParent = this;
 		map->Show();
 	}
-		   /*private: System::Void btnGoBackMenu_Click(System::Object^ sender, System::EventArgs^ e) {
-			   MainForm^ form = gcnew MainForm();
-			   this->Hide();
-			   form->Show();
-			]
 
 	
-		   */
-
-	private: System::Void pbMap_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-		if (e->X >= 0 && e->X < pbMap->Width && e->Y >= 0 && e->Y < pbMap->Height){
-			int x = e->X;
-			int y = e->Y;
-
-			SecurityModel::Point^ coordenadas = PixelToGeo(x, y, pbMap->Width, pbMap->Height);
-			double lat = coordenadas->Y;
-			double lon = coordenadas->X;
-
-			// Mostrar coordenadas en los textbox
-			lblcoordenadas->Text = "Lat: " + Convert::ToString(lat) + " | Lon: " + Convert::ToString(lon);
-		}
-		else {
-			lblcoordenadas->Text = "Arrastra el cursor sobre el mapa";
-		}
-
-	}
-
 	private: System::Void btnAddZone_Click(System::Object^ sender, System::EventArgs^ e) {
 		String^ punto1 = txtPointX->Text->Trim();
 		String^ punto2 = txtPointY->Text->Trim();
@@ -432,16 +438,22 @@ namespace SecurityGUIApp {
 			Double coordenadax = Convert::ToDouble(txtPointX->Text);
 			Double coordenaday = Convert::ToDouble(txtPointY->Text);
 			SecurityModel::Point^ ZonePoint = gcnew SecurityModel::Point(coordenadax, coordenaday);
-			if (Controller::AddZoneMap(NameZone, ZonePoint) == 1) {
-				MessageBox::Show("Se ha agregado una nueva zona");
-				ShowZones();
-				ClearControls();
-				pbMap->Invalidate();
-				return;
+			int res = Controller::AddCoordenada(ZonePoint);
+			if (res > 0) {
+				Zone^ zona = gcnew Zone();
+				zona->Coordenada->Id = res;
+				zona->Coordenada->X = coordenadax;
+				zona->Coordenada->Y = coordenaday;
+				zona->Zona = NameZone;
+				if (Controller::AddZona(zona) > 0) {
+					MessageBox::Show("Se ha agregado una nueva zona");
+					ShowZones();
+					ClearControls();
+					return;
+				}
 			}
+		   }
 	
-
-		}
 		catch (Exception^ ex) {
 			MessageBox::Show("No se ha podido agregar la zona al mapa por el siguiente motivo:\n" +
 				ex->Message);
@@ -489,6 +501,11 @@ namespace SecurityGUIApp {
      private: System::Void UpdateMapForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		ShowZones();
 		ClearControls();
+		String^ path = Application::StartupPath + "\\mapa.html";
+		webViewZone->Source = gcnew Uri("file:///" + path->Replace("\\", "/"));
+		IniciarActualizacionContinuaGPS();
+		/*txtPointX->Text = System::Convert::ToString(lat);
+		txtPointY->Text = System::Convert::ToString(lon);*/
 	 }
 
 	private: System::Void btnDelete_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -515,31 +532,6 @@ namespace SecurityGUIApp {
 
 	}
 
-	private: System::Void pbMap_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-		if (e->X >= 0 && e->X < pbMap->Width && e->Y >= 0 && e->Y < pbMap->Height) {
-			int x = e->X;
-			int y = e->Y;
-			Graphics^ g = pbMap->CreateGraphics();
-			g->FillEllipse(Brushes::Red, x - 3, y - 3, 6, 6);
-
-			SecurityModel::Point^ coordenadas = PixelToGeo(x, y, pbMap->Width, pbMap->Height);
-			double lat = coordenadas->Y;
-			double lon = coordenadas->X;
-			if (lon < pointtopleft->X || lon > pointbottomright->X ||
-				lat > pointtopleft->Y || lat < pointbottomright->Y) {
-				throw gcnew Exception("Coordenadas geográficas calculadas fuera del rango esperado");
-			}
-			// Mostrar coordenadas en los textbox
-			txtPointX->Text = Convert::ToString(lon);
-			txtPointY->Text = Convert::ToString(lat);
-			//pbMap->Invalidate();
-		}
-		else {
-			MessageBox::Show("Selecciona un punto dentro del mapa");
-		}
-
-	}
-
 
 	private: System::Void dgvZonesPositions_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		String^ namezone = dgvZonesPositions->Rows[dgvZonesPositions->SelectedCells[0]->RowIndex]->Cells[0]->Value->ToString();
@@ -548,6 +540,9 @@ namespace SecurityGUIApp {
 		txtPointX->Text = Convert::ToString(coordenada->X);
 		txtPointY->Text = Convert::ToString(coordenada->Y);
 
+	}
+	private: System::Void UpdateMapForm_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
+		seguirActualizando = false;
 	}
 };
 }

@@ -1700,6 +1700,136 @@ SecurityBot^ SecurityPersistance::Persistance::QueryRobotById(int robotId)
     return robot;
 }
 
+int SecurityPersistance::Persistance::AddPoint(Point^ p)
+{
+    int pId = 0;
+    SqlConnection^ conn;
+    try {
+        //Paso 1: Abrir y obtener la conexión a la BD
+        conn = GetConnection();
+
+        //Paso 2: Preparar la sentencia de BD
+        String^ sqlStr = "dbo.usp_AddPoint";
+        SqlCommand^ cmd = gcnew SqlCommand(sqlStr, conn);
+        cmd->Parameters->Add("@X", System::Data::SqlDbType::Decimal);
+        cmd->Parameters["@X"]->Precision = 11;
+        cmd->Parameters["@X"]->Scale = 5;
+        cmd->Parameters->Add("@Y", System::Data::SqlDbType::Decimal);
+        cmd->Parameters["@Y"]->Precision = 10;
+        cmd->Parameters["@Y"]->Scale = 5;
+        SqlParameter^ outputIdParam = gcnew SqlParameter("@ID", System::Data::SqlDbType::Int);
+        outputIdParam->Direction = System::Data::ParameterDirection::Output;
+        cmd->Parameters->Add(outputIdParam);
+        cmd->Prepare();
+        cmd->Parameters["@X"]->Value = p->X;
+        cmd->Parameters["@Y"]->Value = p->Y;
+
+        //Paso 3: Ejecutar la sentencia de BD
+        cmd->ExecuteNonQuery();
+        pId = Convert::ToInt32(cmd->Parameters["@ID"]->Value);
+
+    }
+    catch (Exception^ ex) {
+        throw ex;
+    }
+    finally {
+        //Paso 5: Cerrar los objetos de conexión de la BD.
+        if (conn != nullptr) conn->Close();
+    }
+    return pId;
+    
+}
+
+int SecurityPersistance::Persistance::AddZone(Zone^ z)
+{
+    int Id = 0;
+    SqlConnection^ conn;
+    try {
+        //Paso 1: Abrir y obtener la conexión a la BD
+        conn = GetConnection();
+
+        //Paso 2: Preparar la sentencia de BD
+        String^ sqlStr = "dbo.usp_AddZone";
+        SqlCommand^ cmd = gcnew SqlCommand(sqlStr, conn);
+        cmd->CommandType = System::Data::CommandType::StoredProcedure;
+        cmd->Parameters->Add("@ZONE_NAME", System::Data::SqlDbType::VarChar, 200);
+        cmd->Parameters->Add("@ID_POINT", System::Data::SqlDbType::Int);
+        SqlParameter^ outputIdParam = gcnew SqlParameter("@ID", System::Data::SqlDbType::Int);
+        outputIdParam->Direction = System::Data::ParameterDirection::Output;
+        cmd->Parameters->Add(outputIdParam);
+        cmd->Prepare();
+        cmd->Parameters["@ZONE_NAME"]->Value = z->Zona;
+        cmd->Parameters["@ID_POINT"]->Value = z->Coordenada->Id;
+
+
+        //Paso 3: Ejecutar la sentencia de BD
+        cmd->ExecuteNonQuery();
+        Id = Convert::ToInt32(cmd->Parameters["@ID"]->Value);
+
+    }
+    catch (Exception^ ex) {
+        throw ex;
+    }
+    finally {
+        //Paso 5: Cerrar los objetos de conexión de la BD.
+        if (conn != nullptr) conn->Close();
+    }
+    return Id;
+}
+
+List<Zone^>^ SecurityPersistance::Persistance::QueryAllZonas()
+{
+    //List<Warning^>^ warningsList = gcnew List<Warning^>();
+    //SqlConnection^ conn;
+    //SqlDataReader^ reader;
+    //try {
+    //    //Paso 1: Obtener la conexión a la BD
+    //    conn = GetConnection();
+
+    //    //Paso 2: Preparar la sentencia SQL
+    //    //String^ sqlStr = "SELECT * FROM ROBOT_WAITER";
+    //    String^ sqlStr = "dbo.usp_QueryAllWarnings";
+    //    SqlCommand^ cmd = gcnew SqlCommand(sqlStr, conn);
+    //    cmd->CommandType = System::Data::CommandType::StoredProcedure;
+    //    cmd->Prepare();
+
+    //    //Paso 3: Ejecutar la sentencia SQL
+    //    reader = cmd->ExecuteReader();
+
+    //    //Paso 4: Procesar los resultados
+    //    while (reader->Read()) {
+    //        Warning^ warning = gcnew Warning();
+    //        WarningType^ type = gcnew WarningType();
+    //        // Asignar datos de WARNING
+    //        warning->Id = Convert::ToInt32(reader["ID"]);
+    //        warning->StartingDate = Convert::ToDateTime(reader["START_DATE"]);
+    //        warning->EndingDate = Convert::ToDateTime(reader["END_DATE"]);
+    //        warning->Description = reader["WARNING_DESCRIPTION"]->ToString();
+    //        warning->Zone = reader["ZONE"]->ToString();
+    //        warning->Active = reader["ACTIVE"]->ToString()->Trim()->ToUpper()->Equals("SI") ? true : false;
+
+    //        // Asignar datos del tipo de warning (instanciarlo primero)
+    //        type->Id = Convert::ToInt32(reader["WARNING_TYPE_ID"]);
+    //        type->Name = reader["WARNING_TYPE_NAME"]->ToString();
+    //        type->Description = reader["WARNING_TYPE_DESCRIPTION"]->ToString();
+    //        warning->Type = type;
+    //        // Agregar a la lista
+    //        warningsList->Add(warning);
+    //    }
+    //}
+    //catch (Exception^ ex) {
+    //    throw ex;
+    //}
+    //finally {
+    //    //Paso 5: Importante! Cerrar los objetos de conexión a la BD
+    //    if (reader != nullptr) reader->Close();
+    //    if (conn != nullptr) conn->Close();
+    //}
+    //return warningsList;
+    List<Zone^>^ lista = gcnew List<Zone^>();
+    return lista;
+}
+
 
 
 

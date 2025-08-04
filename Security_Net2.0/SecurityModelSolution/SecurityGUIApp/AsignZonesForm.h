@@ -11,6 +11,11 @@ namespace SecurityGUIApp {
 	using namespace System::Drawing;
 	using namespace SecurityModel; 
 	using namespace SecurityController; 
+	using namespace System::Net::Http;
+	using namespace System::Threading::Tasks;
+	using namespace System::Web::Script::Serialization; // Para deserializar JSON
+	using namespace Microsoft::Web::WebView2::WinForms;
+	using namespace Microsoft::Web::WebView2::Core;
 
 	/// <summary>
 	/// Resumen de AsignZonesForm
@@ -174,7 +179,7 @@ namespace SecurityGUIApp {
 			this->label1->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->label1->Location = System::Drawing::Point(198, 21);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(644, 35);
+			this->label1->Size = System::Drawing::Size(598, 32);
 			this->label1->TabIndex = 29;
 			this->label1->Text = L"¿Qué zonas de inspeccion desea asignar\? ";
 			// 
@@ -252,7 +257,7 @@ namespace SecurityGUIApp {
 				static_cast<System::Byte>(0)));
 			this->label5->Location = System::Drawing::Point(74, 78);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(167, 19);
+			this->label5->Size = System::Drawing::Size(159, 18);
 			this->label5->TabIndex = 40;
 			this->label5->Text = L"Asignar manualmente";
 			// 
@@ -363,6 +368,7 @@ namespace SecurityGUIApp {
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"AsignZonesForm";
 			this->Text = L"AsignZonesForm";
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &AsignZonesForm::AsignZonesForm_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &AsignZonesForm::AsignZonesForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvZonesRoute))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->webViewRuta))->EndInit();
@@ -370,16 +376,80 @@ namespace SecurityGUIApp {
 			this->PerformLayout();
 
 		}
+		void SecurityGUIApp::AsignZonesForm::DrawMarkInMap(double lat, double lon)
+		{
+			String^ script = String::Format(
+				"L.marker([{0}, {1}]).addTo(map).bindPopup('Ubicación GPS').openPopup(); map.setView([{0}, {1}], 16);",
+				lat, lon);
+
+			webViewRuta->CoreWebView2->ExecuteScriptAsync(script);
+		}
+
+		void SecurityGUIApp::AsignZonesForm::ProcessAnswerGPS(String^ json)
+		{
+			JavaScriptSerializer^ serializer = gcnew JavaScriptSerializer();
+			auto dict = safe_cast<Collections::Generic::Dictionary<String^, Object^>^>(serializer->DeserializeObject(json));
+
+			if (dict->ContainsKey("lat") && dict->ContainsKey("lon")) {
+				double lat = System::Convert::ToDouble(dict["lat"]);
+				double lon = System::Convert::ToDouble(dict["lon"]);
+
+				DrawMarkInMap(lat, lon);
+				txtPointX->Text = lat.ToString("F6");  // o F5 si prefieres 5 decimales
+				txtPointY->Text = lon.ToString("F6");
+			}
+		}
+		void AsignZonesForm::OnReadJsonFinished(Task<String^>^ task) {
+			if (task->Status == TaskStatus::RanToCompletion) {
+				String^ json = task->Result;
+				this->Invoke(gcnew Action<String^>(this, &AsignZonesForm::ProcessAnswerGPS), json);
+			}
+		}
+
+		void SecurityGUIApp::AsignZonesForm::GetCoordinatesFromESP32()
+		{
+			HttpClient^ client = gcnew HttpClient();
+			String^ url = "http://192.168.68.108/gps"; // Cambia por tu IP
+
+			Task<HttpResponseMessage^>^ responseTask = client->GetAsync(url);
+			responseTask->ContinueWith(gcnew Action<Task<HttpResponseMessage^>^>(this, &AsignZonesForm::OnResponseReceived));
+		}
+		void AsignZonesForm::OnResponseReceived(Task<HttpResponseMessage^>^ task) {
+			if (task->Status == TaskStatus::RanToCompletion) {
+				HttpResponseMessage^ response = task->Result;
+				Task<String^>^ readTask = response->Content->ReadAsStringAsync();
+				readTask->ContinueWith(gcnew Action<Task<String^>^>(this, &AsignZonesForm::OnReadJsonFinished));
+			}
+		}
+
+		private: bool seguirActualizando = true;
+
+		private: void IniciarActualizacionContinuaGPS() {
+			Task::Run(gcnew Action(this, &AsignZonesForm::ActualizarLoopGPS));
+		}
+
+		private: void ActualizarLoopGPS() {
+			while (seguirActualizando) {
+				try {
+					GetCoordinatesFromESP32();
+
+				}
+				catch (Exception^ ex) {
+					Console::WriteLine("Error en actualización GPS: " + ex->Message);
+				}
+				Threading::Thread::Sleep(5000); // Espera 5 segundos
+			}
+		}
 #pragma endregion
 
 	public:
 		void FillZonesInComboBox() {
 			cmbNameZone->Items->Clear();
-			Dictionary<String^, SecurityModel::Point^>^ zones = Controller::QueryAllZones();
+			List<Zone^>^ zones = Controller::QueryAllZona();
 			if (zones!= nullptr) {
 				int index = 0;
-				for each (KeyValuePair<String^, SecurityModel::Point^> zona in zones) {
-					cmbNameZone->Items->Add(gcnew ComboBoxItem(index++, zona.Key));
+				for each (Zone^ zona in zones) {
+					cmbNameZone->Items->Add(gcnew ComboBoxItem(index++, zona->Zona));
 				}
 			
 			}
@@ -467,12 +537,32 @@ namespace SecurityGUIApp {
 	}
 
 	private: System::Void btnAddZone_Click(System::Object^ sender, System::EventArgs^ e) {
+<<<<<<< HEAD
 		
 	}
 
 
 	private: System::Void btnDelete_Click(System::Object^ sender, System::EventArgs^ e) {
 		
+=======
+		int selectedIndex = cmbNameZone->SelectedIndex;
+		if (selectedIndex < 0) {
+			MessageBox::Show("Se debe seleccionar una zona");
+			return;
+		}
+		else {
+			ComboBoxItem^ itemSeleccionado = dynamic_cast<ComboBoxItem^>(cmbNameZone->SelectedItem);
+			String^ coordenadas = String::Format("({0:F4}, {1:F4})", txtPointX->Text, txtPointY->Text);
+			dgvZonesRoute->Rows->Add(gcnew array<String^> {itemSeleccionado->Name, coordenadas});
+
+		}
+		ClearControls();
+	}
+	
+
+
+	private: System::Void btnDelete_Click(System::Object^ sender, System::EventArgs^ e) {
+>>>>>>> aa1812c8a7579ddb6fde0a5ce1c65f971f0d2f7f
 		
 	}
 	private: System::Void dgvZonesRoute_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
@@ -519,8 +609,9 @@ namespace SecurityGUIApp {
 		FillZonesInComboBox();
 		dgvZonesRoute->Rows->Clear();
 		txtId->Text = "" + (Controller::GetLastRouteId() + 1);
-		//puntosRuta->Clear(); // borra todos los puntos 
-		//pbMapRoutes->Invalidate();
+		String^ path = Application::StartupPath + "\\mapa.html";
+		webViewRuta->Source = gcnew Uri("file:///" + path->Replace("\\", "/"));
+		IniciarActualizacionContinuaGPS();
 
 	}
 
@@ -531,5 +622,8 @@ namespace SecurityGUIApp {
 	}
 
 
+	private: System::Void AsignZonesForm_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
+		seguirActualizando = false;
+	}
 };
 }

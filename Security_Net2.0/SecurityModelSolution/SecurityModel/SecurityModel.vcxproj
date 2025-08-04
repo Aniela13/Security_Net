@@ -138,6 +138,7 @@
     <ClInclude Include="Warning.h" />
     <ClInclude Include="WarningReport.h" />
     <ClInclude Include="WarningType.h" />
+    <ClInclude Include="Zone.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Administrator.cpp" />
@@ -164,6 +165,7 @@
     <ClCompile Include="Warning.cpp" />
     <ClCompile Include="WarningReport.cpp" />
     <ClCompile Include="WarningType.cpp" />
+    <ClCompile Include="Zone.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc" />
