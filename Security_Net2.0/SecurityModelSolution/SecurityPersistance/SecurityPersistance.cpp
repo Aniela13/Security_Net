@@ -1740,7 +1740,12 @@ int SecurityPersistance::Persistance::AddPoint(Point^ p)
     
 }
 
-int SecurityPersistance::Persistance::AddZone(Zone^ z)
+//int SecurityPersistance::Persistance::AddZone(Zona^ z)
+//{
+//    return 0;
+//}
+
+int SecurityPersistance::Persistance::AddZone(Zona^ z)
 {
     int Id = 0;
     SqlConnection^ conn;
@@ -1758,7 +1763,7 @@ int SecurityPersistance::Persistance::AddZone(Zone^ z)
         outputIdParam->Direction = System::Data::ParameterDirection::Output;
         cmd->Parameters->Add(outputIdParam);
         cmd->Prepare();
-        cmd->Parameters["@ZONE_NAME"]->Value = z->Zona;
+        cmd->Parameters["@ZONE_NAME"]->Value = z->Zonita;
         cmd->Parameters["@ID_POINT"]->Value = z->Coordenada->Id;
 
 
@@ -1777,7 +1782,7 @@ int SecurityPersistance::Persistance::AddZone(Zone^ z)
     return Id;
 }
 
-List<Zone^>^ SecurityPersistance::Persistance::QueryAllZonas()
+List<Zona^>^ SecurityPersistance::Persistance::QueryAllZonas()
 {
     //List<Warning^>^ warningsList = gcnew List<Warning^>();
     //SqlConnection^ conn;
@@ -1826,7 +1831,7 @@ List<Zone^>^ SecurityPersistance::Persistance::QueryAllZonas()
     //    if (conn != nullptr) conn->Close();
     //}
     //return warningsList;
-    List<Zone^>^ lista = gcnew List<Zone^>();
+    List<Zona^>^ lista = gcnew List<Zona^>();
     return lista;
 }
 

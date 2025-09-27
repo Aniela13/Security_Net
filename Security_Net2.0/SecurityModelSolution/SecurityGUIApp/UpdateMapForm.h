@@ -440,11 +440,11 @@ namespace SecurityGUIApp {
 			SecurityModel::Point^ ZonePoint = gcnew SecurityModel::Point(coordenadax, coordenaday);
 			int res = Controller::AddCoordenada(ZonePoint);
 			if (res > 0) {
-				Zone^ zona = gcnew Zone();
+				Zona^ zona = gcnew Zona();
 				zona->Coordenada->Id = res;
 				zona->Coordenada->X = coordenadax;
 				zona->Coordenada->Y = coordenaday;
-				zona->Zona = NameZone;
+				zona->Zonita = NameZone;
 				if (Controller::AddZona(zona) > 0) {
 					MessageBox::Show("Se ha agregado una nueva zona");
 					ShowZones();

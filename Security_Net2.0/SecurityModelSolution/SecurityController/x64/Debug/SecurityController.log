@@ -4,8 +4,4 @@
   Generando código...
   .NETFramework,Version=v4.8.1.AssemblyAttributes.cpp
   AssemblyInfo.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-<<<<<<< HEAD
-  SecurityController.vcxproj -> C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityController.dll
-=======
-  SecurityController.vcxproj -> C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityController.dll
->>>>>>> aa1812c8a7579ddb6fde0a5ce1c65f971f0d2f7f
+  SecurityController.vcxproj -> D:\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityController.dll

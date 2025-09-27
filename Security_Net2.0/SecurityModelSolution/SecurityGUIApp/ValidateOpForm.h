@@ -54,6 +54,8 @@ namespace SecurityGUIApp {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ NameColumn;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ SurnameColumn;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ id;
+	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
+	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel2;
 
 
 
@@ -80,24 +82,29 @@ namespace SecurityGUIApp {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->btnApprove = (gcnew System::Windows::Forms::Button());
 			this->btnGoBackMenu = (gcnew System::Windows::Forms::Button());
+			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->tableLayoutPanel2 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvValidateOp))->BeginInit();
+			this->tableLayoutPanel1->SuspendLayout();
+			this->tableLayoutPanel2->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// dgvValidateOp
 			// 
-			this->dgvValidateOp->BackgroundColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->dgvValidateOp->BackgroundColor = System::Drawing::SystemColors::GradientInactiveCaption;
 			this->dgvValidateOp->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dgvValidateOp->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {
 				this->NameColumn,
 					this->SurnameColumn, this->id
 			});
-			this->dgvValidateOp->Location = System::Drawing::Point(163, 130);
-			this->dgvValidateOp->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->dgvValidateOp->Dock = System::Windows::Forms::DockStyle::Top;
+			this->dgvValidateOp->Location = System::Drawing::Point(266, 80);
+			this->dgvValidateOp->Margin = System::Windows::Forms::Padding(20, 20, 80, 20);
 			this->dgvValidateOp->Name = L"dgvValidateOp";
 			this->dgvValidateOp->ReadOnly = true;
 			this->dgvValidateOp->RowHeadersWidth = 51;
 			this->dgvValidateOp->RowTemplate->Height = 24;
-			this->dgvValidateOp->Size = System::Drawing::Size(515, 334);
+			this->dgvValidateOp->Size = System::Drawing::Size(389, 420);
 			this->dgvValidateOp->TabIndex = 0;
 			this->dgvValidateOp->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ValidateOpForm::dgvValidateOp_CellClick);
 			// 
@@ -128,31 +135,34 @@ namespace SecurityGUIApp {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Lucida Bright", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->tableLayoutPanel1->SetColumnSpan(this->label1, 2);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Lucida Bright", 30, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(225, 50);
+			this->label1->Location = System::Drawing::Point(3, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(211, 19);
+			this->label1->Size = System::Drawing::Size(676, 60);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"Aprobación de Usuario";
 			// 
 			// label2
 			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(12, 215);
+			this->label2->Location = System::Drawing::Point(50, 60);
+			this->label2->Margin = System::Windows::Forms::Padding(50, 60, 3, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(144, 32);
+			this->label2->Size = System::Drawing::Size(187, 32);
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"Operadores en espera\r\n de aprobación:";
 			// 
 			// btnApprove
 			// 
+			this->btnApprove->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->btnApprove->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
-			this->btnApprove->Location = System::Drawing::Point(15, 282);
-			this->btnApprove->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->btnApprove->Location = System::Drawing::Point(62, 304);
+			this->btnApprove->Margin = System::Windows::Forms::Padding(0, 0, 0, 0);
+			this->btnApprove->MaximumSize = System::Drawing::Size(150, 90);
 			this->btnApprove->Name = L"btnApprove";
-			this->btnApprove->Size = System::Drawing::Size(120, 41);
+			this->btnApprove->Size = System::Drawing::Size(115, 72);
 			this->btnApprove->TabIndex = 3;
 			this->btnApprove->Text = L"APROBAR";
 			this->btnApprove->UseVisualStyleBackColor = false;
@@ -161,18 +171,58 @@ namespace SecurityGUIApp {
 			// btnGoBackMenu
 			// 
 			this->btnGoBackMenu->BackColor = System::Drawing::SystemColors::ControlDark;
+			this->btnGoBackMenu->Dock = System::Windows::Forms::DockStyle::Right;
 			this->btnGoBackMenu->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 6.5F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnGoBackMenu->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnGoBackMenu.Image")));
 			this->btnGoBackMenu->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnGoBackMenu->Location = System::Drawing::Point(573, 482);
-			this->btnGoBackMenu->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->btnGoBackMenu->Location = System::Drawing::Point(506, 522);
+			this->btnGoBackMenu->Margin = System::Windows::Forms::Padding(3, 2, 80, 2);
 			this->btnGoBackMenu->Name = L"btnGoBackMenu";
-			this->btnGoBackMenu->Size = System::Drawing::Size(149, 69);
+			this->btnGoBackMenu->Size = System::Drawing::Size(149, 51);
 			this->btnGoBackMenu->TabIndex = 37;
 			this->btnGoBackMenu->Text = L"MENU PRINCIPAL";
 			this->btnGoBackMenu->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->btnGoBackMenu->UseVisualStyleBackColor = false;
+			this->btnGoBackMenu->Click += gcnew System::EventHandler(this, &ValidateOpForm::btnGoBackMenu_Click);
+			// 
+			// tableLayoutPanel1
+			// 
+			this->tableLayoutPanel1->BackColor = System::Drawing::Color::Transparent;
+			this->tableLayoutPanel1->ColumnCount = 2;
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				33.46939F)));
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				66.53061F)));
+			this->tableLayoutPanel1->Controls->Add(this->btnGoBackMenu, 1, 2);
+			this->tableLayoutPanel1->Controls->Add(this->label1, 0, 0);
+			this->tableLayoutPanel1->Controls->Add(this->tableLayoutPanel2, 0, 1);
+			this->tableLayoutPanel1->Controls->Add(this->dgvValidateOp, 1, 1);
+			this->tableLayoutPanel1->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->tableLayoutPanel1->Location = System::Drawing::Point(0, 0);
+			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
+			this->tableLayoutPanel1->RowCount = 3;
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 11.53846F)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 88.46154F)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 54)));
+			this->tableLayoutPanel1->Size = System::Drawing::Size(735, 575);
+			this->tableLayoutPanel1->TabIndex = 38;
+			// 
+			// tableLayoutPanel2
+			// 
+			this->tableLayoutPanel2->ColumnCount = 1;
+			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->tableLayoutPanel2->Controls->Add(this->label2, 0, 0);
+			this->tableLayoutPanel2->Controls->Add(this->btnApprove, 0, 1);
+			this->tableLayoutPanel2->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->tableLayoutPanel2->Location = System::Drawing::Point(3, 63);
+			this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
+			this->tableLayoutPanel2->RowCount = 2;
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tableLayoutPanel2->Size = System::Drawing::Size(240, 454);
+			this->tableLayoutPanel2->TabIndex = 38;
 			// 
 			// ValidateOpForm
 			// 
@@ -181,19 +231,18 @@ namespace SecurityGUIApp {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(735, 575);
-			this->Controls->Add(this->btnGoBackMenu);
-			this->Controls->Add(this->btnApprove);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
-			this->Controls->Add(this->dgvValidateOp);
+			this->Controls->Add(this->tableLayoutPanel1);
 			this->DoubleBuffered = true;
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"ValidateOpForm";
 			this->Text = L"ValidateOpForm";
+			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->Load += gcnew System::EventHandler(this, &ValidateOpForm::ValidateOpForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvValidateOp))->EndInit();
+			this->tableLayoutPanel1->ResumeLayout(false);
+			this->tableLayoutPanel1->PerformLayout();
+			this->tableLayoutPanel2->ResumeLayout(false);
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
@@ -259,5 +308,8 @@ namespace SecurityGUIApp {
 	
 
 
+private: System::Void btnGoBackMenu_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+}
 };
 }

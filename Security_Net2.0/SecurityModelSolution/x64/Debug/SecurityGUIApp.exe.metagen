@@ -71,6 +71,13 @@ Class ComboBoxItem: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     System.String Name : Public
   Methods:
     ToString(): PrivateScope, Public, Virtual, HideBySig
+Class SecurityGUIApp.ValidateOpForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.DataGridView dgvValidateOp : Public
+  Methods:
+    showAllNoRegisteredOperators(): PrivateScope, Public, HideBySig
 Class SecurityGUIApp.AlarmHistorialForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -81,13 +88,6 @@ Class SecurityGUIApp.AlarmHistorialForm: AutoLayout, AnsiClass, Class, Public, B
     FillSectorsInComboBox(): PrivateScope, Public, HideBySig
     ShowHistorialbyDate(DateTime, DateTime): PrivateScope, Public, HideBySig
     ShowHistorialbyType(Int32): PrivateScope, Public, HideBySig
-Class SecurityGUIApp.ValidateOpForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-  Fields:
-    System.Windows.Forms.DataGridView dgvValidateOp : Public
-  Methods:
-    showAllNoRegisteredOperators(): PrivateScope, Public, HideBySig
 Class SecurityGUIApp.MaintainUser: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -162,7 +162,10 @@ Class SecurityGUIApp.ZoneLocation: AutoLayout, AnsiClass, Class, Public, BeforeF
 Class SecurityGUIApp.EmergencyForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class SecurityGUIApp.ClientForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+Class SecurityGUIApp.RobotPositionForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class SecurityGUIApp.SurveillanceCameraForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class SecurityGUIApp.CreateAlarmForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
@@ -174,15 +177,6 @@ Class SecurityGUIApp.CreateAlarmForm: AutoLayout, AnsiClass, Class, Public, Befo
     ClearControls(): PrivateScope, Public, HideBySig
     InitializeDateTimePickers(): PrivateScope, Public, HideBySig
     FillSectorsInComboBox(): PrivateScope, Public, HideBySig
-Class SecurityGUIApp.LeaFletMapForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class SecurityGUIApp.RobotPositionForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class SecurityGUIApp.SurveillanceCameraForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class SecurityGUIApp.RecognizeAlertForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -197,9 +191,16 @@ Class SecurityGUIApp.SecurityOperatorForm: AutoLayout, AnsiClass, Class, Public,
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
-    SecurityModel.SecurityOperator OperadorRegistrado : Public, Static
+    SecurityModel.SecurityOperator OperadorLogueado : Public, Static
+    Int32 numero_alarmas : Public, Static
   Methods:
     FillRobotsInCombo(): PrivateScope, Public, HideBySig
+Class SecurityGUIApp.ClientForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class SecurityGUIApp.LeaFletMapForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class SecurityGUIApp.MainForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

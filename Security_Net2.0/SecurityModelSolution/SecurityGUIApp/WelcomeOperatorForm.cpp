@@ -18,8 +18,8 @@ System::Void SecurityGUIApp::WelcomeOperatorForm::btnLogInSecurity_Click(System:
 			SecurityOperator^ op = Controller::ValidateOperator(username, password);
 			// Devuelve nullptr si no esta en el archivo de usuarios validados
 			if (op != nullptr) {
-				SecurityOperatorForm::OperadorRegistrado = op;
-				refMainForm->Text = "Sistema de seguridad - Usuario: " + SecurityOperatorForm::OperadorRegistrado->Name + " " + SecurityOperatorForm::OperadorRegistrado->LastName + " (" + SecurityOperatorForm::OperadorRegistrado->UserName + ") - " + DateTime::Now;
+				SecurityOperatorForm::OperadorLogueado = op;
+				refMainForm->Text = "Sistema de seguridad - Usuario: " + SecurityOperatorForm::OperadorLogueado->Name + " " + SecurityOperatorForm::OperadorLogueado->LastName + " (" + SecurityOperatorForm::OperadorLogueado->UserName + ") - " + DateTime::Now;
 				//SecurityOperatorForm^ operationsOperadorForm = gcnew SecurityOperatorForm();
 				this->Hide();
 				//operationsOperadorForm->Show();

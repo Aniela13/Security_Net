@@ -82,7 +82,7 @@ namespace SecurityController {
 		static int AddZoneMap(String^ namezone, Point^ coordenada);
 		static int UpdateZoneMap(String^ namezone, Point^ coordenada);
 		static int DeleteZoneMap(String^ namezone);
-		static List<Zone^>^ QueryAllZona();
+		static List<Zona^>^ QueryAllZona();
 		static Point^ QueryZonebyName(String^ namezone);
 
 		/*---------SISTEMA DE ASIGNACIÓN DE RUTAS-----*/
@@ -105,6 +105,6 @@ namespace SecurityController {
 		static SecurityBot^ QueryRobotById(int robotId);
 		/*-------ZONE*/
 		static int AddCoordenada(Point^ p);
-		static int AddZona(Zone^ z);
+		static int AddZona(Zona^ z);
 	};
 }

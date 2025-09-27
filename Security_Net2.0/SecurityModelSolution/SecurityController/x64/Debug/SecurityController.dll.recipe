@@ -2,21 +2,13 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-<<<<<<< HEAD
-      <FullPath>C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityModel.dll</FullPath>
-=======
-      <FullPath>C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityModel.dll</FullPath>
->>>>>>> aa1812c8a7579ddb6fde0a5ce1c65f971f0d2f7f
+      <FullPath>D:\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityModel.dll</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityPersistance.dll</FullPath>
+      <FullPath>D:\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityPersistance.dll</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-<<<<<<< HEAD
-      <FullPath>C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityController.dll</FullPath>
-=======
-      <FullPath>C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityController.dll</FullPath>
->>>>>>> aa1812c8a7579ddb6fde0a5ce1c65f971f0d2f7f
+      <FullPath>D:\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityController.dll</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

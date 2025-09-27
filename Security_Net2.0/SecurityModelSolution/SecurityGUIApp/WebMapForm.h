@@ -40,6 +40,7 @@ namespace SecurityGUIApp {
 		}
 	private: System::Windows::Forms::Label^ label1;
 	private: Microsoft::Web::WebView2::WinForms::WebView2^ webView21;
+	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 
 
 
@@ -66,19 +67,24 @@ namespace SecurityGUIApp {
 		{
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->webView21 = (gcnew Microsoft::Web::WebView2::WinForms::WebView2());
+			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->webView21))->BeginInit();
+			this->tableLayoutPanel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// label1
 			// 
-			this->label1->AutoSize = true;
+			this->label1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->label1->Font = (gcnew System::Drawing::Font(L"Lucida Bright", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(398, 47);
+			this->label1->Location = System::Drawing::Point(3, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(164, 52);
+			this->label1->Size = System::Drawing::Size(1121, 65);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"MAPA";
+			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// webView21
 			// 
@@ -87,27 +93,46 @@ namespace SecurityGUIApp {
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->webView21->CreationProperties = nullptr;
+			this->webView21->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->webView21->DefaultBackgroundColor = System::Drawing::Color::White;
-			this->webView21->Location = System::Drawing::Point(57, 142);
+			this->webView21->Location = System::Drawing::Point(60, 125);
+			this->webView21->Margin = System::Windows::Forms::Padding(60, 60, 60, 120);
 			this->webView21->Name = L"webView21";
-			this->webView21->Size = System::Drawing::Size(1007, 359);
+			this->webView21->Size = System::Drawing::Size(1007, 400);
 			this->webView21->TabIndex = 2;
 			this->webView21->ZoomFactor = 1;
+			// 
+			// tableLayoutPanel1
+			// 
+			this->tableLayoutPanel1->ColumnCount = 1;
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->tableLayoutPanel1->Controls->Add(this->webView21, 0, 1);
+			this->tableLayoutPanel1->Controls->Add(this->label1, 0, 0);
+			this->tableLayoutPanel1->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->tableLayoutPanel1->Location = System::Drawing::Point(0, 0);
+			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
+			this->tableLayoutPanel1->RowCount = 2;
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 10.22495F)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 89.77505F)));
+			this->tableLayoutPanel1->Size = System::Drawing::Size(1127, 645);
+			this->tableLayoutPanel1->TabIndex = 3;
+			this->tableLayoutPanel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &WebMapForm::tableLayoutPanel1_Paint);
 			// 
 			// WebMapForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1127, 645);
-			this->Controls->Add(this->webView21);
-			this->Controls->Add(this->label1);
+			this->Controls->Add(this->tableLayoutPanel1);
 			this->Name = L"WebMapForm";
 			this->Text = L"WebMapForm";
+			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &WebMapForm::WebMapForm_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &WebMapForm::WebMapForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->webView21))->EndInit();
+			this->tableLayoutPanel1->ResumeLayout(false);
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 
@@ -187,5 +212,7 @@ namespace SecurityGUIApp {
 		seguirActualizando = false;
 
 	}
+private: System::Void tableLayoutPanel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
 };
 }

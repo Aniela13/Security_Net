@@ -48,6 +48,7 @@ namespace SecurityGUIApp {
 	private: System::Windows::Forms::Button^ btnAsk;
 	private: System::Windows::Forms::PictureBox^ pbCharging;
 	private: System::Windows::Forms::Label^ lblWaitAnswer;
+	private: System::Windows::Forms::Label^ label1;
 
 
 	protected:
@@ -74,23 +75,27 @@ namespace SecurityGUIApp {
 			this->btnAsk = (gcnew System::Windows::Forms::Button());
 			this->pbCharging = (gcnew System::Windows::Forms::PictureBox());
 			this->lblWaitAnswer = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbCharging))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// txtNewQuestion
 			// 
-			this->txtNewQuestion->Location = System::Drawing::Point(52, 28);
+			this->txtNewQuestion->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->txtNewQuestion->Location = System::Drawing::Point(63, 57);
 			this->txtNewQuestion->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtNewQuestion->Multiline = true;
 			this->txtNewQuestion->Name = L"txtNewQuestion";
-			this->txtNewQuestion->Size = System::Drawing::Size(413, 66);
+			this->txtNewQuestion->Size = System::Drawing::Size(449, 66);
 			this->txtNewQuestion->TabIndex = 0;
 			this->txtNewQuestion->Text = L"Escribe aquí tu pregunta (Máximo 50 palabras)...";
 			this->txtNewQuestion->Click += gcnew System::EventHandler(this, &NewQuestionForm::txtNewQuestion_Click);
-
 			// 
 			// txtAnswerbyOp
 			// 
+			this->txtAnswerbyOp->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->txtAnswerbyOp->Location = System::Drawing::Point(63, 287);
 			this->txtAnswerbyOp->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtAnswerbyOp->Multiline = true;
@@ -100,7 +105,6 @@ namespace SecurityGUIApp {
 			this->txtAnswerbyOp->TabIndex = 1;
 			this->txtAnswerbyOp->Text = L"Respuesta";
 			this->txtAnswerbyOp->Visible = false;
-
 			// 
 			// btnGoBackMenu
 			// 
@@ -117,11 +121,16 @@ namespace SecurityGUIApp {
 			this->btnGoBackMenu->Text = L"MENU PRINCIPAL";
 			this->btnGoBackMenu->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->btnGoBackMenu->UseVisualStyleBackColor = false;
+			this->btnGoBackMenu->Click += gcnew System::EventHandler(this, &NewQuestionForm::btnGoBackMenu_Click);
 			// 
 			// btnAsk
 			// 
-			this->btnAsk->Location = System::Drawing::Point(372, 110);
+			this->btnAsk->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->btnAsk->Location = System::Drawing::Point(383, 139);
 			this->btnAsk->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->btnAsk->MaximumSize = System::Drawing::Size(100, 40);
 			this->btnAsk->Name = L"btnAsk";
 			this->btnAsk->Size = System::Drawing::Size(93, 34);
 			this->btnAsk->TabIndex = 38;
@@ -131,11 +140,17 @@ namespace SecurityGUIApp {
 			// 
 			// pbCharging
 			// 
+			this->pbCharging->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->pbCharging->BackColor = System::Drawing::Color::Transparent;
 			this->pbCharging->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pbCharging.Image")));
 			this->pbCharging->Location = System::Drawing::Point(196, 235);
 			this->pbCharging->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->pbCharging->MaximumSize = System::Drawing::Size(140, 90);
+			this->pbCharging->MinimumSize = System::Drawing::Size(140, 90);
 			this->pbCharging->Name = L"pbCharging";
-			this->pbCharging->Size = System::Drawing::Size(133, 87);
+			this->pbCharging->Size = System::Drawing::Size(140, 90);
 			this->pbCharging->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pbCharging->TabIndex = 39;
 			this->pbCharging->TabStop = false;
@@ -143,16 +158,35 @@ namespace SecurityGUIApp {
 			// 
 			// lblWaitAnswer
 			// 
+			this->lblWaitAnswer->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->lblWaitAnswer->AutoSize = true;
 			this->lblWaitAnswer->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lblWaitAnswer->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->lblWaitAnswer->Location = System::Drawing::Point(87, 190);
 			this->lblWaitAnswer->Name = L"lblWaitAnswer";
-			this->lblWaitAnswer->Size = System::Drawing::Size(361, 25);
+			this->lblWaitAnswer->Size = System::Drawing::Size(440, 29);
 			this->lblWaitAnswer->TabIndex = 40;
 			this->lblWaitAnswer->Text = L"Espere a la respuesta del operador..";
 			this->lblWaitAnswer->Visible = false;
+			// 
+			// label1
+			// 
+			this->label1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::SystemColors::HotTrack;
+			this->label1->Location = System::Drawing::Point(25, 9);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(331, 29);
+			this->label1->TabIndex = 41;
+			this->label1->Text = L"En que podemos ayudarte\?";
+			this->label1->Visible = false;
 			// 
 			// NewQuestionForm
 			// 
@@ -161,6 +195,7 @@ namespace SecurityGUIApp {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(589, 581);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->lblWaitAnswer);
 			this->Controls->Add(this->pbCharging);
 			this->Controls->Add(this->btnAsk);
@@ -171,6 +206,7 @@ namespace SecurityGUIApp {
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"NewQuestionForm";
 			this->Text = L"NewQuestionForm";
+			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbCharging))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -250,5 +286,8 @@ namespace SecurityGUIApp {
 	}
 
 
+private: System::Void btnGoBackMenu_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+}
 };
 }

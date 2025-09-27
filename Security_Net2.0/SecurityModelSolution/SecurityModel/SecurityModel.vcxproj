@@ -138,7 +138,7 @@
     <ClInclude Include="Warning.h" />
     <ClInclude Include="WarningReport.h" />
     <ClInclude Include="WarningType.h" />
-    <ClInclude Include="Zone.h" />
+    <ClInclude Include="Zona.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Administrator.cpp" />

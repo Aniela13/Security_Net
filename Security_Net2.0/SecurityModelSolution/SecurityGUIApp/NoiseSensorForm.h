@@ -71,10 +71,10 @@ namespace SecurityGUIApp {
 				static_cast<System::Byte>(0)));
 			this->btnGoBackMenu->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnGoBackMenu.Image")));
 			this->btnGoBackMenu->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnGoBackMenu->Location = System::Drawing::Point(490, 348);
-			this->btnGoBackMenu->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnGoBackMenu->Location = System::Drawing::Point(653, 428);
+			this->btnGoBackMenu->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnGoBackMenu->Name = L"btnGoBackMenu";
-			this->btnGoBackMenu->Size = System::Drawing::Size(112, 56);
+			this->btnGoBackMenu->Size = System::Drawing::Size(149, 69);
 			this->btnGoBackMenu->TabIndex = 39;
 			this->btnGoBackMenu->Text = L"MENU PRINCIPAL";
 			this->btnGoBackMenu->TextAlign = System::Drawing::ContentAlignment::MiddleRight;
@@ -82,10 +82,10 @@ namespace SecurityGUIApp {
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->Location = System::Drawing::Point(101, 166);
-			this->pictureBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->pictureBox1->Location = System::Drawing::Point(135, 204);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(338, 238);
+			this->pictureBox1->Size = System::Drawing::Size(451, 293);
 			this->pictureBox1->TabIndex = 38;
 			this->pictureBox1->TabStop = false;
 			// 
@@ -96,20 +96,19 @@ namespace SecurityGUIApp {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label1->Location = System::Drawing::Point(182, 71);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Location = System::Drawing::Point(243, 87);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(252, 26);
+			this->label1->Size = System::Drawing::Size(342, 35);
 			this->label1->TabIndex = 49;
 			this->label1->Text = L"SENSOR DE SONIDO";
 			// 
 			// btnChangeRoute
 			// 
 			this->btnChangeRoute->BackColor = System::Drawing::Color::PeachPuff;
-			this->btnChangeRoute->Location = System::Drawing::Point(499, 236);
-			this->btnChangeRoute->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnChangeRoute->Location = System::Drawing::Point(665, 290);
+			this->btnChangeRoute->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnChangeRoute->Name = L"btnChangeRoute";
-			this->btnChangeRoute->Size = System::Drawing::Size(72, 58);
+			this->btnChangeRoute->Size = System::Drawing::Size(96, 71);
 			this->btnChangeRoute->TabIndex = 50;
 			this->btnChangeRoute->Text = L"CAMBIAR RUTA";
 			this->btnChangeRoute->UseVisualStyleBackColor = false;
@@ -119,29 +118,29 @@ namespace SecurityGUIApp {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(98, 128);
-			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label2->Location = System::Drawing::Point(131, 158);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(195, 17);
+			this->label2->Size = System::Drawing::Size(259, 24);
 			this->label2->TabIndex = 51;
 			this->label2->Text = L"Reporte del sensor de sonido";
 			// 
 			// NoiseSensorForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(693, 521);
+			this->ClientSize = System::Drawing::Size(924, 641);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->btnChangeRoute);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->btnGoBackMenu);
 			this->Controls->Add(this->pictureBox1);
 			this->DoubleBuffered = true;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"NoiseSensorForm";
 			this->Text = L"NoiseSensorForm";
+			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();

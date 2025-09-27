@@ -60,5 +60,5 @@ Class SecurityPersistance.Persistance: AutoLayout, AnsiClass, Class, Public, Bef
     QueryAllRobots(): PrivateScope, Public, Static, HideBySig
     QueryRobotById(Int32): PrivateScope, Public, Static, HideBySig
     AddPoint(Point): PrivateScope, Public, Static, HideBySig
-    AddZone(Zone): PrivateScope, Public, Static, HideBySig
+    AddZone(Zona): PrivateScope, Public, Static, HideBySig
     QueryAllZonas(): PrivateScope, Public, Static, HideBySig

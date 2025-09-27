@@ -1,204 +1,51 @@
-﻿  AdminForm.cpp
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(399,27): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "AdminForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(399,63): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "AdminForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(403,57): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "AdminForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(403,71): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "AdminForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(403,40): error C2660: 'SecurityGUIApp::UpdateMapForm::PixelToGeo': la función no acepta 2 argumentos
-  (compilando archivo de origen "AdminForm.cpp")
-      C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(364,25):
-      vea la declaración de 'SecurityGUIApp::UpdateMapForm::PixelToGeo'
-      C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(403,40):
-      al hacer coincidir la lista de argumentos '(int, int)'
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(23,16): error C3699: '&&': no se puede utilizar este direccionamiento indirecto en el tipo '_T'
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(23,16): error C3699:         with
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(23,16): error C3699:         [
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(23,16): error C3699:             _T=SecurityModel::Point ^
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(23,16): error C3699:         ]
-  (compilando archivo de origen "AdminForm.cpp")
-      C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(23,16):
-      el contexto de creación de instancias de la plantilla (el más antiguo primero) es
-          C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(26,72):
-          Vea la referencia a la creación de una instancia de clase plantilla "<add_rvalue_reference><SecurityModel::Point ^>" que se está compilando
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(439,5): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "AdminForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(519,27): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "AdminForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(519,63): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "AdminForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(522,18): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "AdminForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(525,57): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "AdminForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(525,71): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "AdminForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(525,40): error C2660: 'SecurityGUIApp::UpdateMapForm::PixelToGeo': la función no acepta 2 argumentos
-  (compilando archivo de origen "AdminForm.cpp")
-      C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(364,25):
-      vea la declaración de 'SecurityGUIApp::UpdateMapForm::PixelToGeo'
-      C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(525,40):
-      al hacer coincidir la lista de argumentos '(int, int)'
-  
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.MetaGen.targets(91,5): warning : Falta el archivo requerido "C:\USERS\AJUP1\ONEDRIVE\ESCRITORIO\6TO CICLO\PROG. ORIENTADA OBJETOS\GITHUB\SECURITY_NET\SECURITY_NET2.0\SECURITYMODELSOLUTION\PACKAGES\MICROSOFT.WEB.WEBVIEW2.1.0.3351.48\LIB_MANUAL\NETCOREAPP3.0\MICROSOFT.WEB.WEBVIEW2.CORE.DLL".
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.MetaGen.targets(91,5): warning : Falta el archivo requerido "C:\USERS\AJUP1\ONEDRIVE\ESCRITORIO\6TO CICLO\PROG. ORIENTADA OBJETOS\GITHUB\SECURITY_NET\SECURITY_NET2.0\SECURITYMODELSOLUTION\PACKAGES\MICROSOFT.WEB.WEBVIEW2.1.0.3351.48\LIB\NET462\MICROSOFT.WEB.WEBVIEW2.WINFORMS.DLL".
+  AdminForm.cpp
   AlarmHistorialForm.cpp
-<<<<<<< HEAD
   AnswerForm.cpp
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AnswerForm.h(258,26): warning C4101: 'ex': variable local sin referencia
+  AsignZonesForm.cpp
+D:\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AnswerForm.h(258,26): warning C4101: 'ex': variable local sin referencia
   (compilando archivo de origen "AnswerForm.cpp")
   
-  AsignZonesForm.cpp
   ClientForm.cpp
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AnswerForm.h(258,26): warning C4101: 'ex': variable local sin referencia
+D:\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AnswerForm.h(258,26): warning C4101: 'ex': variable local sin referencia
   (compilando archivo de origen "ClientForm.cpp")
   
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\NewQuestionForm.h(243,26): warning C4101: 'ex': variable local sin referencia
+D:\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\NewQuestionForm.h(279,26): warning C4101: 'ex': variable local sin referencia
   (compilando archivo de origen "ClientForm.cpp")
   
   ComboBoxItem.cpp
   CreateAlarmForm.cpp
   EmergencyForm.cpp
   FAQForm.cpp
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AnswerForm.h(258,26): warning C4101: 'ex': variable local sin referencia
+D:\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AnswerForm.h(258,26): warning C4101: 'ex': variable local sin referencia
   (compilando archivo de origen "FAQForm.cpp")
   
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\NewQuestionForm.h(243,26): warning C4101: 'ex': variable local sin referencia
+D:\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\NewQuestionForm.h(279,26): warning C4101: 'ex': variable local sin referencia
   (compilando archivo de origen "FAQForm.cpp")
   
   LeaFletMapForm.cpp
   MainForm.cpp
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(399,27): error C2065: 'pbMap': identificador no declarado
+D:\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AnswerForm.h(258,26): warning C4101: 'ex': variable local sin referencia
   (compilando archivo de origen "MainForm.cpp")
   
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(399,63): error C2065: 'pbMap': identificador no declarado
+D:\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\NewQuestionForm.h(279,26): warning C4101: 'ex': variable local sin referencia
   (compilando archivo de origen "MainForm.cpp")
   
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(403,57): error C2065: 'pbMap': identificador no declarado
+D:\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\MainForm.h(187,72): error C2512: 'SecurityGUIApp::WelcomeOperatorForm::WelcomeOperatorForm': no hay disponible un constructor predeterminado adecuado
   (compilando archivo de origen "MainForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(403,71): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "MainForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(403,40): error C2660: 'SecurityGUIApp::UpdateMapForm::PixelToGeo': la función no acepta 2 argumentos
-  (compilando archivo de origen "MainForm.cpp")
-      C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(364,25):
-      vea la declaración de 'SecurityGUIApp::UpdateMapForm::PixelToGeo'
-      C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(403,40):
-      al hacer coincidir la lista de argumentos '(int, int)'
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(23,16): error C3699: '&&': no se puede utilizar este direccionamiento indirecto en el tipo '_T'
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(23,16): error C3699:         with
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(23,16): error C3699:         [
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(23,16): error C3699:             _T=SecurityModel::Point ^
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(23,16): error C3699:         ]
-  (compilando archivo de origen "MainForm.cpp")
-      C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(23,16):
-      el contexto de creación de instancias de la plantilla (el más antiguo primero) es
-          C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(26,72):
-          Vea la referencia a la creación de una instancia de clase plantilla "<add_rvalue_reference><SecurityModel::Point ^>" que se está compilando
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(439,5): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "MainForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(519,27): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "MainForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(519,63): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "MainForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(522,18): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "MainForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(525,57): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "MainForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(525,71): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "MainForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(525,40): error C2660: 'SecurityGUIApp::UpdateMapForm::PixelToGeo': la función no acepta 2 argumentos
-  (compilando archivo de origen "MainForm.cpp")
-      C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(364,25):
-      vea la declaración de 'SecurityGUIApp::UpdateMapForm::PixelToGeo'
-      C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(525,40):
-      al hacer coincidir la lista de argumentos '(int, int)'
+      D:\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\MainForm.h(187,72):
+      al hacer coincidir la lista de argumentos '()'
   
   MaintainUser.cpp
   ModifyFAQ.cpp
   NewMapForm.cpp
   NewQuestionForm.cpp
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\NewQuestionForm.h(243,26): warning C4101: 'ex': variable local sin referencia
+D:\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\NewQuestionForm.h(279,26): warning C4101: 'ex': variable local sin referencia
   (compilando archivo de origen "NewQuestionForm.cpp")
   
   NoiseSensorForm.cpp
   OperationsAdminForm.cpp
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(399,27): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "OperationsAdminForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(399,63): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "OperationsAdminForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(403,57): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "OperationsAdminForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(403,71): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "OperationsAdminForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(403,40): error C2660: 'SecurityGUIApp::UpdateMapForm::PixelToGeo': la función no acepta 2 argumentos
-  (compilando archivo de origen "OperationsAdminForm.cpp")
-      C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(364,25):
-      vea la declaración de 'SecurityGUIApp::UpdateMapForm::PixelToGeo'
-      C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(403,40):
-      al hacer coincidir la lista de argumentos '(int, int)'
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(23,16): error C3699: '&&': no se puede utilizar este direccionamiento indirecto en el tipo '_T'
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(23,16): error C3699:         with
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(23,16): error C3699:         [
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(23,16): error C3699:             _T=SecurityModel::Point ^
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(23,16): error C3699:         ]
-  (compilando archivo de origen "OperationsAdminForm.cpp")
-      C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(23,16):
-      el contexto de creación de instancias de la plantilla (el más antiguo primero) es
-          C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(26,72):
-          Vea la referencia a la creación de una instancia de clase plantilla "<add_rvalue_reference><SecurityModel::Point ^>" que se está compilando
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(439,5): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "OperationsAdminForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(519,27): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "OperationsAdminForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(519,63): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "OperationsAdminForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(522,18): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "OperationsAdminForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(525,57): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "OperationsAdminForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(525,71): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "OperationsAdminForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(525,40): error C2660: 'SecurityGUIApp::UpdateMapForm::PixelToGeo': la función no acepta 2 argumentos
-  (compilando archivo de origen "OperationsAdminForm.cpp")
-      C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(364,25):
-      vea la declaración de 'SecurityGUIApp::UpdateMapForm::PixelToGeo'
-      C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(525,40):
-      al hacer coincidir la lista de argumentos '(int, int)'
-  
   OperatorForm.cpp
   OperatorRegistration.cpp
   RecognizeAlertForm.cpp
@@ -208,94 +55,17 @@ C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Secu
   RobotPosition.cpp
   SatisfactionQuestion.cpp
   SecurityOperatorForm.cpp
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AnswerForm.h(258,26): warning C4101: 'ex': variable local sin referencia
-  (compilando archivo de origen "SecurityOperatorForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\SecurityOperatorForm.h(355,26): warning C4101: 'ex': variable local sin referencia
+D:\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AnswerForm.h(258,26): warning C4101: 'ex': variable local sin referencia
   (compilando archivo de origen "SecurityOperatorForm.cpp")
   
   SurveillanceCameraForm.cpp
   UpdateMapForm.cpp
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(399,27): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "UpdateMapForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(399,63): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "UpdateMapForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(403,57): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "UpdateMapForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(403,71): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "UpdateMapForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(403,40): error C2660: 'SecurityGUIApp::UpdateMapForm::PixelToGeo': la función no acepta 2 argumentos
-  (compilando archivo de origen "UpdateMapForm.cpp")
-      C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(364,25):
-      vea la declaración de 'SecurityGUIApp::UpdateMapForm::PixelToGeo'
-      C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(403,40):
-      al hacer coincidir la lista de argumentos '(int, int)'
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(23,16): error C3699: '&&': no se puede utilizar este direccionamiento indirecto en el tipo '_T'
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(23,16): error C3699:         with
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(23,16): error C3699:         [
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(23,16): error C3699:             _T=SecurityModel::Point ^
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(23,16): error C3699:         ]
-  (compilando archivo de origen "UpdateMapForm.cpp")
-      C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(23,16):
-      el contexto de creación de instancias de la plantilla (el más antiguo primero) es
-          C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\predefined C++ types (compiler internal)(26,72):
-          Vea la referencia a la creación de una instancia de clase plantilla "<add_rvalue_reference><SecurityModel::Point ^>" que se está compilando
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(439,5): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "UpdateMapForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(519,27): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "UpdateMapForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(519,63): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "UpdateMapForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(522,18): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "UpdateMapForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(525,57): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "UpdateMapForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(525,71): error C2065: 'pbMap': identificador no declarado
-  (compilando archivo de origen "UpdateMapForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(525,40): error C2660: 'SecurityGUIApp::UpdateMapForm::PixelToGeo': la función no acepta 2 argumentos
-  (compilando archivo de origen "UpdateMapForm.cpp")
-      C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(364,25):
-      vea la declaración de 'SecurityGUIApp::UpdateMapForm::PixelToGeo'
-      C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\UpdateMapForm.h(525,40):
-      al hacer coincidir la lista de argumentos '(int, int)'
-  
   ValidateOpForm.cpp
   WebMapForm.cpp
   WelcomeOperatorForm.cpp
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AnswerForm.h(258,26): warning C4101: 'ex': variable local sin referencia
-  (compilando archivo de origen "WelcomeOperatorForm.cpp")
-  
-C:\Users\ajup1\OneDrive\Escritorio\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\SecurityOperatorForm.h(355,26): warning C4101: 'ex': variable local sin referencia
+D:\6TO CICLO\PROG. ORIENTADA OBJETOS\GitHub\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AnswerForm.h(258,26): warning C4101: 'ex': variable local sin referencia
   (compilando archivo de origen "WelcomeOperatorForm.cpp")
   
   ZoneLocation.cpp
   .NETFramework,Version=v4.8.1.AssemblyAttributes.cpp
   Generando código...
-=======
-  MainForm.cpp
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\AnswerForm.h(258,26): warning C4101: 'ex': variable local sin referencia
-  (compilando archivo de origen "MainForm.cpp")
-  
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\NewQuestionForm.h(243,26): warning C4101: 'ex': variable local sin referencia
-  (compilando archivo de origen "MainForm.cpp")
-  
-C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\SecurityGUIApp\SecurityOperatorForm.h(353,26): warning C4101: 'ex': variable local sin referencia
-  (compilando archivo de origen "MainForm.cpp")
-  
-  OperationsAdminForm.cpp
-  Generando código...
-  AdminForm.obj : se encontró un módulo MSIL; vinculación incremental deshabilitada para MSIL; ejecutando vínculo completo
-  SecurityGUIApp.vcxproj -> C:\Users\Letizia Castillo\OneDrive\Documentos\POO\Security_Net\Security_Net2.0\SecurityModelSolution\x64\Debug\SecurityGUIApp.exe
->>>>>>> aa1812c8a7579ddb6fde0a5ce1c65f971f0d2f7f

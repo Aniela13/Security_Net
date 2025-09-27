@@ -89,6 +89,11 @@ namespace SecurityGUIApp {
 
 
 	private: System::Windows::Forms::Label^ lblFullfilldata;
+	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
+	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel2;
+	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel3;
+	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel4;
+	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel5;
 
 
 	private:
@@ -139,15 +144,24 @@ namespace SecurityGUIApp {
 			this->txtOpPhoneNumber = (gcnew System::Windows::Forms::TextBox());
 			this->btnUploadPhoto = (gcnew System::Windows::Forms::Button());
 			this->lblFullfilldata = (gcnew System::Windows::Forms::Label());
+			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->tableLayoutPanel2 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->tableLayoutPanel3 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->tableLayoutPanel4 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->tableLayoutPanel5 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbPhoto))->BeginInit();
-			this->groupBoxGender->SuspendLayout();
+			this->tableLayoutPanel1->SuspendLayout();
+			this->tableLayoutPanel2->SuspendLayout();
+			this->tableLayoutPanel3->SuspendLayout();
+			this->tableLayoutPanel4->SuspendLayout();
+			this->tableLayoutPanel5->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// txtOpPassword
 			// 
 			this->txtOpPassword->BackColor = System::Drawing::SystemColors::InactiveCaption;
 			this->txtOpPassword->Enabled = false;
-			this->txtOpPassword->Location = System::Drawing::Point(645, 349);
+			this->txtOpPassword->Location = System::Drawing::Point(460, 355);
 			this->txtOpPassword->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtOpPassword->Name = L"txtOpPassword";
 			this->txtOpPassword->ReadOnly = true;
@@ -157,9 +171,9 @@ namespace SecurityGUIApp {
 			// label6
 			// 
 			this->label6->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->label6->Location = System::Drawing::Point(447, 346);
+			this->label6->Location = System::Drawing::Point(278, 353);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(355, 25);
+			this->label6->Size = System::Drawing::Size(124, 31);
 			this->label6->TabIndex = 33;
 			this->label6->Text = L"Contraseña: ";
 			// 
@@ -167,7 +181,7 @@ namespace SecurityGUIApp {
 			// 
 			this->txtSecurityUser->BackColor = System::Drawing::SystemColors::InactiveCaption;
 			this->txtSecurityUser->Enabled = false;
-			this->txtSecurityUser->Location = System::Drawing::Point(235, 349);
+			this->txtSecurityUser->Location = System::Drawing::Point(96, 355);
 			this->txtSecurityUser->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtSecurityUser->Name = L"txtSecurityUser";
 			this->txtSecurityUser->ReadOnly = true;
@@ -176,7 +190,7 @@ namespace SecurityGUIApp {
 			// 
 			// txtOpDNI
 			// 
-			this->txtOpDNI->Location = System::Drawing::Point(634, 203);
+			this->txtOpDNI->Location = System::Drawing::Point(460, 198);
 			this->txtOpDNI->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtOpDNI->Name = L"txtOpDNI";
 			this->txtOpDNI->Size = System::Drawing::Size(118, 22);
@@ -186,19 +200,21 @@ namespace SecurityGUIApp {
 			// label4
 			// 
 			this->label4->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->label4->Location = System::Drawing::Point(27, 346);
+			this->label4->Location = System::Drawing::Point(50, 353);
+			this->label4->Margin = System::Windows::Forms::Padding(50, 0, 3, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(400, 25);
+			this->label4->Size = System::Drawing::Size(40, 25);
 			this->label4->TabIndex = 30;
 			this->label4->Text = L"Usuario: ";
+			this->label4->Click += gcnew System::EventHandler(this, &OperatorRegistration::label4_Click);
 			// 
 			// label5
 			// 
 			this->label5->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
 			this->label5->ForeColor = System::Drawing::SystemColors::MenuText;
-			this->label5->Location = System::Drawing::Point(447, 201);
+			this->label5->Location = System::Drawing::Point(278, 196);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(355, 25);
+			this->label5->Size = System::Drawing::Size(167, 27);
 			this->label5->TabIndex = 29;
 			this->label5->Text = L"Núm. de Doc. Id.";
 			// 
@@ -209,34 +225,36 @@ namespace SecurityGUIApp {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::SystemColors::HotTrack;
-			this->label1->Location = System::Drawing::Point(391, 22);
+			this->label1->Location = System::Drawing::Point(460, 30);
+			this->label1->Margin = System::Windows::Forms::Padding(3, 30, 3, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(168, 32);
+			this->label1->Size = System::Drawing::Size(184, 35);
 			this->label1->TabIndex = 28;
 			this->label1->Text = L"REGISTRO";
 			// 
 			// txtOpLastName
 			// 
-			this->txtOpLastName->Location = System::Drawing::Point(174, 156);
+			this->txtOpLastName->Location = System::Drawing::Point(96, 136);
 			this->txtOpLastName->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtOpLastName->Name = L"txtOpLastName";
-			this->txtOpLastName->Size = System::Drawing::Size(194, 22);
+			this->txtOpLastName->Size = System::Drawing::Size(176, 22);
 			this->txtOpLastName->TabIndex = 27;
 			// 
 			// txtOpName
 			// 
-			this->txtOpName->Location = System::Drawing::Point(174, 104);
+			this->txtOpName->Location = System::Drawing::Point(96, 74);
 			this->txtOpName->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtOpName->Name = L"txtOpName";
-			this->txtOpName->Size = System::Drawing::Size(194, 22);
+			this->txtOpName->Size = System::Drawing::Size(176, 22);
 			this->txtOpName->TabIndex = 26;
 			// 
 			// label3
 			// 
 			this->label3->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->label3->Location = System::Drawing::Point(27, 156);
+			this->label3->Location = System::Drawing::Point(50, 134);
+			this->label3->Margin = System::Windows::Forms::Padding(50, 0, 3, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(400, 25);
+			this->label3->Size = System::Drawing::Size(40, 25);
 			this->label3->TabIndex = 25;
 			this->label3->Text = L"Apellidos: ";
 			// 
@@ -244,15 +262,16 @@ namespace SecurityGUIApp {
 			// 
 			this->label2->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
 			this->label2->ForeColor = System::Drawing::SystemColors::MenuText;
-			this->label2->Location = System::Drawing::Point(27, 104);
+			this->label2->Location = System::Drawing::Point(50, 72);
+			this->label2->Margin = System::Windows::Forms::Padding(50, 0, 3, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(400, 25);
+			this->label2->Size = System::Drawing::Size(40, 25);
 			this->label2->TabIndex = 24;
 			this->label2->Text = L"Nombres: ";
 			// 
 			// btnSolicitarRegistro
 			// 
-			this->btnSolicitarRegistro->Location = System::Drawing::Point(580, 402);
+			this->btnSolicitarRegistro->Location = System::Drawing::Point(460, 397);
 			this->btnSolicitarRegistro->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnSolicitarRegistro->Name = L"btnSolicitarRegistro";
 			this->btnSolicitarRegistro->Size = System::Drawing::Size(225, 28);
@@ -264,9 +283,12 @@ namespace SecurityGUIApp {
 			// pbPhoto
 			// 
 			this->pbPhoto->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			this->pbPhoto->Location = System::Drawing::Point(845, 104);
+			this->pbPhoto->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->pbPhoto->Location = System::Drawing::Point(797, 112);
+			this->pbPhoto->Margin = System::Windows::Forms::Padding(40, 40, 80, 40);
 			this->pbPhoto->Name = L"pbPhoto";
-			this->pbPhoto->Size = System::Drawing::Size(236, 222);
+			this->tableLayoutPanel1->SetRowSpan(this->pbPhoto, 4);
+			this->pbPhoto->Size = System::Drawing::Size(255, 152);
 			this->pbPhoto->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pbPhoto->TabIndex = 35;
 			this->pbPhoto->TabStop = false;
@@ -275,16 +297,17 @@ namespace SecurityGUIApp {
 			// 
 			this->label7->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
 			this->label7->ForeColor = System::Drawing::SystemColors::MenuText;
-			this->label7->Location = System::Drawing::Point(27, 201);
+			this->label7->Location = System::Drawing::Point(50, 196);
+			this->label7->Margin = System::Windows::Forms::Padding(50, 0, 3, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(400, 25);
+			this->label7->Size = System::Drawing::Size(40, 25);
 			this->label7->TabIndex = 36;
 			this->label7->Text = L"Tipo de Doc. Id.";
 			// 
 			// cmbDocument_Type
 			// 
 			this->cmbDocument_Type->FormattingEnabled = true;
-			this->cmbDocument_Type->Location = System::Drawing::Point(212, 201);
+			this->cmbDocument_Type->Location = System::Drawing::Point(96, 199);
 			this->cmbDocument_Type->Name = L"cmbDocument_Type";
 			this->cmbDocument_Type->Size = System::Drawing::Size(130, 24);
 			this->cmbDocument_Type->TabIndex = 37;
@@ -293,9 +316,9 @@ namespace SecurityGUIApp {
 			// 
 			this->label8->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
 			this->label8->ForeColor = System::Drawing::SystemColors::MenuText;
-			this->label8->Location = System::Drawing::Point(447, 104);
+			this->label8->Location = System::Drawing::Point(278, 72);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(355, 25);
+			this->label8->Size = System::Drawing::Size(67, 25);
 			this->label8->TabIndex = 38;
 			this->label8->Text = L"Dirección: ";
 			// 
@@ -303,9 +326,9 @@ namespace SecurityGUIApp {
 			// 
 			this->txtOpEmail->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
 			this->txtOpEmail->ForeColor = System::Drawing::SystemColors::MenuText;
-			this->txtOpEmail->Location = System::Drawing::Point(447, 153);
+			this->txtOpEmail->Location = System::Drawing::Point(278, 134);
 			this->txtOpEmail->Name = L"txtOpEmail";
-			this->txtOpEmail->Size = System::Drawing::Size(355, 25);
+			this->txtOpEmail->Size = System::Drawing::Size(67, 25);
 			this->txtOpEmail->TabIndex = 39;
 			this->txtOpEmail->Text = L"Correo:";
 			// 
@@ -313,9 +336,9 @@ namespace SecurityGUIApp {
 			// 
 			this->label10->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
 			this->label10->ForeColor = System::Drawing::SystemColors::MenuText;
-			this->label10->Location = System::Drawing::Point(613, 252);
+			this->label10->Location = System::Drawing::Point(3, 0);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(192, 25);
+			this->label10->Size = System::Drawing::Size(141, 25);
 			this->label10->TabIndex = 40;
 			this->label10->Text = L"Teléfono:";
 			// 
@@ -323,9 +346,10 @@ namespace SecurityGUIApp {
 			// 
 			this->label11->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
 			this->label11->ForeColor = System::Drawing::SystemColors::MenuText;
-			this->label11->Location = System::Drawing::Point(27, 252);
+			this->label11->Location = System::Drawing::Point(50, 241);
+			this->label11->Margin = System::Windows::Forms::Padding(50, 0, 3, 0);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(341, 25);
+			this->label11->Size = System::Drawing::Size(40, 25);
 			this->label11->TabIndex = 41;
 			this->label11->Text = L"Fecha de nacimiento:";
 			// 
@@ -333,80 +357,80 @@ namespace SecurityGUIApp {
 			// 
 			this->label12->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
 			this->label12->ForeColor = System::Drawing::SystemColors::MenuText;
-			this->label12->Location = System::Drawing::Point(27, 296);
+			this->label12->Location = System::Drawing::Point(50, 304);
+			this->label12->Margin = System::Windows::Forms::Padding(50, 0, 3, 0);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(341, 25);
+			this->label12->Size = System::Drawing::Size(40, 25);
 			this->label12->TabIndex = 42;
 			this->label12->Text = L"Fecha de contrato:";
+			this->label12->Click += gcnew System::EventHandler(this, &OperatorRegistration::label12_Click);
 			// 
 			// label13
 			// 
 			this->label13->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
 			this->label13->ForeColor = System::Drawing::SystemColors::MenuText;
-			this->label13->Location = System::Drawing::Point(386, 299);
+			this->label13->Location = System::Drawing::Point(3, 0);
 			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(203, 25);
+			this->label13->Size = System::Drawing::Size(82, 25);
 			this->label13->TabIndex = 43;
 			this->label13->Text = L"Salario:";
 			// 
 			// dtpHireDate
 			// 
-			this->dtpHireDate->Location = System::Drawing::Point(174, 299);
+			this->dtpHireDate->Location = System::Drawing::Point(96, 307);
 			this->dtpHireDate->Name = L"dtpHireDate";
-			this->dtpHireDate->Size = System::Drawing::Size(182, 22);
+			this->dtpHireDate->Size = System::Drawing::Size(176, 22);
 			this->dtpHireDate->TabIndex = 44;
 			// 
 			// dtpBirthday
 			// 
-			this->dtpBirthday->Location = System::Drawing::Point(174, 255);
+			this->dtpBirthday->Location = System::Drawing::Point(96, 244);
 			this->dtpBirthday->Name = L"dtpBirthday";
-			this->dtpBirthday->Size = System::Drawing::Size(182, 22);
+			this->dtpBirthday->Size = System::Drawing::Size(176, 22);
 			this->dtpBirthday->TabIndex = 45;
 			// 
 			// label14
 			// 
 			this->label14->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
 			this->label14->ForeColor = System::Drawing::SystemColors::MenuText;
-			this->label14->Location = System::Drawing::Point(610, 301);
+			this->label14->Location = System::Drawing::Point(3, 0);
 			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(192, 25);
+			this->label14->Size = System::Drawing::Size(141, 25);
 			this->label14->TabIndex = 46;
 			this->label14->Text = L"Horario:";
 			// 
 			// txtOpAddress
 			// 
-			this->txtOpAddress->Location = System::Drawing::Point(523, 104);
+			this->txtOpAddress->Location = System::Drawing::Point(460, 75);
 			this->txtOpAddress->Name = L"txtOpAddress";
 			this->txtOpAddress->Size = System::Drawing::Size(270, 22);
 			this->txtOpAddress->TabIndex = 47;
 			// 
 			// txtOpMail
 			// 
-			this->txtOpMail->Location = System::Drawing::Point(523, 153);
+			this->txtOpMail->Location = System::Drawing::Point(460, 137);
 			this->txtOpMail->Name = L"txtOpMail";
 			this->txtOpMail->Size = System::Drawing::Size(270, 22);
 			this->txtOpMail->TabIndex = 48;
 			// 
 			// txtOpSalary
 			// 
-			this->txtOpSalary->Location = System::Drawing::Point(469, 301);
+			this->txtOpSalary->Location = System::Drawing::Point(91, 3);
 			this->txtOpSalary->Name = L"txtOpSalary";
 			this->txtOpSalary->ReadOnly = true;
-			this->txtOpSalary->Size = System::Drawing::Size(109, 22);
+			this->txtOpSalary->Size = System::Drawing::Size(82, 22);
 			this->txtOpSalary->TabIndex = 49;
 			// 
 			// txtOpSchedule
 			// 
-			this->txtOpSchedule->Location = System::Drawing::Point(671, 301);
+			this->txtOpSchedule->Location = System::Drawing::Point(150, 3);
 			this->txtOpSchedule->Name = L"txtOpSchedule";
 			this->txtOpSchedule->Size = System::Drawing::Size(122, 22);
 			this->txtOpSchedule->TabIndex = 50;
 			// 
 			// groupBoxGender
 			// 
-			this->groupBoxGender->Controls->Add(this->rbtnMujer);
-			this->groupBoxGender->Controls->Add(this->rbtnHombre);
-			this->groupBoxGender->Location = System::Drawing::Point(389, 247);
+			this->groupBoxGender->Location = System::Drawing::Point(760, 307);
 			this->groupBoxGender->Name = L"groupBoxGender";
 			this->groupBoxGender->Size = System::Drawing::Size(200, 30);
 			this->groupBoxGender->TabIndex = 51;
@@ -415,7 +439,7 @@ namespace SecurityGUIApp {
 			// rbtnMujer
 			// 
 			this->rbtnMujer->AutoSize = true;
-			this->rbtnMujer->Location = System::Drawing::Point(109, 8);
+			this->rbtnMujer->Location = System::Drawing::Point(91, 3);
 			this->rbtnMujer->Name = L"rbtnMujer";
 			this->rbtnMujer->Size = System::Drawing::Size(61, 20);
 			this->rbtnMujer->TabIndex = 55;
@@ -426,7 +450,7 @@ namespace SecurityGUIApp {
 			// rbtnHombre
 			// 
 			this->rbtnHombre->AutoSize = true;
-			this->rbtnHombre->Location = System::Drawing::Point(26, 8);
+			this->rbtnHombre->Location = System::Drawing::Point(3, 3);
 			this->rbtnHombre->Name = L"rbtnHombre";
 			this->rbtnHombre->Size = System::Drawing::Size(77, 20);
 			this->rbtnHombre->TabIndex = 54;
@@ -436,14 +460,14 @@ namespace SecurityGUIApp {
 			// 
 			// txtOpPhoneNumber
 			// 
-			this->txtOpPhoneNumber->Location = System::Drawing::Point(680, 252);
+			this->txtOpPhoneNumber->Location = System::Drawing::Point(150, 3);
 			this->txtOpPhoneNumber->Name = L"txtOpPhoneNumber";
 			this->txtOpPhoneNumber->Size = System::Drawing::Size(122, 22);
 			this->txtOpPhoneNumber->TabIndex = 52;
 			// 
 			// btnUploadPhoto
 			// 
-			this->btnUploadPhoto->Location = System::Drawing::Point(845, 340);
+			this->btnUploadPhoto->Location = System::Drawing::Point(760, 356);
 			this->btnUploadPhoto->Name = L"btnUploadPhoto";
 			this->btnUploadPhoto->Size = System::Drawing::Size(236, 28);
 			this->btnUploadPhoto->TabIndex = 53;
@@ -454,15 +478,144 @@ namespace SecurityGUIApp {
 			// lblFullfilldata
 			// 
 			this->lblFullfilldata->AutoSize = true;
+			this->tableLayoutPanel1->SetColumnSpan(this->lblFullfilldata, 2);
 			this->lblFullfilldata->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lblFullfilldata->ForeColor = System::Drawing::Color::Red;
-			this->lblFullfilldata->Location = System::Drawing::Point(27, 76);
+			this->lblFullfilldata->Location = System::Drawing::Point(96, 50);
+			this->lblFullfilldata->Margin = System::Windows::Forms::Padding(3, 50, 3, 0);
 			this->lblFullfilldata->Name = L"lblFullfilldata";
-			this->lblFullfilldata->Size = System::Drawing::Size(283, 16);
+			this->lblFullfilldata->Size = System::Drawing::Size(309, 18);
 			this->lblFullfilldata->TabIndex = 54;
 			this->lblFullfilldata->Text = L"*Tiene que completar todos los campos";
 			this->lblFullfilldata->Visible = false;
+			// 
+			// tableLayoutPanel1
+			// 
+			this->tableLayoutPanel1->BackColor = System::Drawing::Color::Transparent;
+			this->tableLayoutPanel1->ColumnCount = 5;
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+				93)));
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				37.70492F)));
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+				182)));
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				62.29508F)));
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+				374)));
+			this->tableLayoutPanel1->Controls->Add(this->tableLayoutPanel2, 3, 4);
+			this->tableLayoutPanel1->Controls->Add(this->label1, 3, 0);
+			this->tableLayoutPanel1->Controls->Add(this->lblFullfilldata, 1, 0);
+			this->tableLayoutPanel1->Controls->Add(this->tableLayoutPanel3, 3, 5);
+			this->tableLayoutPanel1->Controls->Add(this->btnUploadPhoto, 4, 6);
+			this->tableLayoutPanel1->Controls->Add(this->pbPhoto, 4, 1);
+			this->tableLayoutPanel1->Controls->Add(this->label2, 0, 1);
+			this->tableLayoutPanel1->Controls->Add(this->label3, 0, 2);
+			this->tableLayoutPanel1->Controls->Add(this->label7, 0, 3);
+			this->tableLayoutPanel1->Controls->Add(this->label11, 0, 4);
+			this->tableLayoutPanel1->Controls->Add(this->label12, 0, 5);
+			this->tableLayoutPanel1->Controls->Add(this->txtOpPassword, 3, 6);
+			this->tableLayoutPanel1->Controls->Add(this->btnSolicitarRegistro, 3, 7);
+			this->tableLayoutPanel1->Controls->Add(this->txtOpMail, 3, 2);
+			this->tableLayoutPanel1->Controls->Add(this->label6, 2, 6);
+			this->tableLayoutPanel1->Controls->Add(this->label4, 0, 6);
+			this->tableLayoutPanel1->Controls->Add(this->txtOpAddress, 3, 1);
+			this->tableLayoutPanel1->Controls->Add(this->txtOpName, 1, 1);
+			this->tableLayoutPanel1->Controls->Add(this->txtOpLastName, 1, 2);
+			this->tableLayoutPanel1->Controls->Add(this->dtpHireDate, 1, 5);
+			this->tableLayoutPanel1->Controls->Add(this->txtOpDNI, 3, 3);
+			this->tableLayoutPanel1->Controls->Add(this->dtpBirthday, 1, 4);
+			this->tableLayoutPanel1->Controls->Add(this->txtOpEmail, 2, 2);
+			this->tableLayoutPanel1->Controls->Add(this->cmbDocument_Type, 1, 3);
+			this->tableLayoutPanel1->Controls->Add(this->label8, 2, 1);
+			this->tableLayoutPanel1->Controls->Add(this->txtSecurityUser, 1, 6);
+			this->tableLayoutPanel1->Controls->Add(this->label5, 2, 3);
+			this->tableLayoutPanel1->Controls->Add(this->tableLayoutPanel4, 2, 4);
+			this->tableLayoutPanel1->Controls->Add(this->tableLayoutPanel5, 2, 5);
+			this->tableLayoutPanel1->Controls->Add(this->groupBoxGender, 4, 5);
+			this->tableLayoutPanel1->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->tableLayoutPanel1->Location = System::Drawing::Point(0, 0);
+			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
+			this->tableLayoutPanel1->RowCount = 8;
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 72)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 45)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 63)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 49)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 42)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 62)));
+			this->tableLayoutPanel1->Size = System::Drawing::Size(1132, 458);
+			this->tableLayoutPanel1->TabIndex = 55;
+			// 
+			// tableLayoutPanel2
+			// 
+			this->tableLayoutPanel2->ColumnCount = 2;
+			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->tableLayoutPanel2->Controls->Add(this->label10, 0, 0);
+			this->tableLayoutPanel2->Controls->Add(this->txtOpPhoneNumber, 1, 0);
+			this->tableLayoutPanel2->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->tableLayoutPanel2->Location = System::Drawing::Point(460, 244);
+			this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
+			this->tableLayoutPanel2->RowCount = 1;
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tableLayoutPanel2->Size = System::Drawing::Size(294, 57);
+			this->tableLayoutPanel2->TabIndex = 0;
+			// 
+			// tableLayoutPanel3
+			// 
+			this->tableLayoutPanel3->ColumnCount = 2;
+			this->tableLayoutPanel3->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->tableLayoutPanel3->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->tableLayoutPanel3->Controls->Add(this->label14, 0, 0);
+			this->tableLayoutPanel3->Controls->Add(this->txtOpSchedule, 1, 0);
+			this->tableLayoutPanel3->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->tableLayoutPanel3->Location = System::Drawing::Point(460, 307);
+			this->tableLayoutPanel3->Name = L"tableLayoutPanel3";
+			this->tableLayoutPanel3->RowCount = 1;
+			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tableLayoutPanel3->Size = System::Drawing::Size(294, 43);
+			this->tableLayoutPanel3->TabIndex = 1;
+			// 
+			// tableLayoutPanel4
+			// 
+			this->tableLayoutPanel4->ColumnCount = 2;
+			this->tableLayoutPanel4->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->tableLayoutPanel4->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->tableLayoutPanel4->Controls->Add(this->rbtnMujer, 1, 0);
+			this->tableLayoutPanel4->Controls->Add(this->rbtnHombre, 0, 0);
+			this->tableLayoutPanel4->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->tableLayoutPanel4->Location = System::Drawing::Point(278, 244);
+			this->tableLayoutPanel4->Name = L"tableLayoutPanel4";
+			this->tableLayoutPanel4->RowCount = 1;
+			this->tableLayoutPanel4->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tableLayoutPanel4->Size = System::Drawing::Size(176, 57);
+			this->tableLayoutPanel4->TabIndex = 49;
+			// 
+			// tableLayoutPanel5
+			// 
+			this->tableLayoutPanel5->ColumnCount = 2;
+			this->tableLayoutPanel5->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->tableLayoutPanel5->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->tableLayoutPanel5->Controls->Add(this->label13, 0, 0);
+			this->tableLayoutPanel5->Controls->Add(this->txtOpSalary, 1, 0);
+			this->tableLayoutPanel5->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->tableLayoutPanel5->Location = System::Drawing::Point(278, 307);
+			this->tableLayoutPanel5->Name = L"tableLayoutPanel5";
+			this->tableLayoutPanel5->RowCount = 1;
+			this->tableLayoutPanel5->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tableLayoutPanel5->Size = System::Drawing::Size(176, 43);
+			this->tableLayoutPanel5->TabIndex = 54;
 			// 
 			// OperatorRegistration
 			// 
@@ -472,48 +625,25 @@ namespace SecurityGUIApp {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1132, 458);
-			this->Controls->Add(this->lblFullfilldata);
-			this->Controls->Add(this->btnUploadPhoto);
-			this->Controls->Add(this->txtOpPhoneNumber);
-			this->Controls->Add(this->groupBoxGender);
-			this->Controls->Add(this->txtOpSchedule);
-			this->Controls->Add(this->txtOpSalary);
-			this->Controls->Add(this->txtOpMail);
-			this->Controls->Add(this->txtOpAddress);
-			this->Controls->Add(this->label14);
-			this->Controls->Add(this->dtpBirthday);
-			this->Controls->Add(this->dtpHireDate);
-			this->Controls->Add(this->label13);
-			this->Controls->Add(this->label12);
-			this->Controls->Add(this->label11);
-			this->Controls->Add(this->label10);
-			this->Controls->Add(this->txtOpEmail);
-			this->Controls->Add(this->label8);
-			this->Controls->Add(this->cmbDocument_Type);
-			this->Controls->Add(this->label7);
-			this->Controls->Add(this->pbPhoto);
-			this->Controls->Add(this->txtOpPassword);
-			this->Controls->Add(this->label6);
-			this->Controls->Add(this->txtSecurityUser);
-			this->Controls->Add(this->txtOpDNI);
-			this->Controls->Add(this->label4);
-			this->Controls->Add(this->label5);
-			this->Controls->Add(this->label1);
-			this->Controls->Add(this->txtOpLastName);
-			this->Controls->Add(this->txtOpName);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->btnSolicitarRegistro);
+			this->Controls->Add(this->tableLayoutPanel1);
 			this->DoubleBuffered = true;
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"OperatorRegistration";
 			this->Text = L"Registration";
+			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->Load += gcnew System::EventHandler(this, &OperatorRegistration::OperatorRegistration_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbPhoto))->EndInit();
-			this->groupBoxGender->ResumeLayout(false);
-			this->groupBoxGender->PerformLayout();
+			this->tableLayoutPanel1->ResumeLayout(false);
+			this->tableLayoutPanel1->PerformLayout();
+			this->tableLayoutPanel2->ResumeLayout(false);
+			this->tableLayoutPanel2->PerformLayout();
+			this->tableLayoutPanel3->ResumeLayout(false);
+			this->tableLayoutPanel3->PerformLayout();
+			this->tableLayoutPanel4->ResumeLayout(false);
+			this->tableLayoutPanel4->PerformLayout();
+			this->tableLayoutPanel5->ResumeLayout(false);
+			this->tableLayoutPanel5->PerformLayout();
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
@@ -644,6 +774,10 @@ namespace SecurityGUIApp {
 			pbPhoto->Image = gcnew Bitmap(ofd->FileName);
 		}
 	}
+private: System::Void label12_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 
 }

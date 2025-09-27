@@ -76,7 +76,7 @@ namespace SecurityGUIApp {
 				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(321, 66);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(143, 45);
+			this->label1->Size = System::Drawing::Size(164, 52);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"MAPA";
 			// 
@@ -151,6 +151,7 @@ namespace SecurityGUIApp {
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"NewMapForm";
 			this->Text = L"NewMapForm";
+			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);

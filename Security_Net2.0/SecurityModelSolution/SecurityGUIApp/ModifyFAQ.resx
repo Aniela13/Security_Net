@@ -123,6 +123,12 @@
   <metadata name="AColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="QColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="AColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnGoBackMenu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -144,7 +150,7 @@
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAp4AAAHWCAYAAADelYkPAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAA/7JJREFUeF7M3YnSZcltHWq9/2PK8yhrHixZN1bbH724Gnuf8zdJx2UEIjMxJYBE
+        vwAADr8BOAVTJAAA/7JJREFUeF7M3YnSZcltHWq9/2PK8yhrHixZN1bbH724Gnuf8zdJx2UEIjMxJYBE
         IlH7VDX/7G//9m//9W/+5m/+1Wh+rZ8AX/Mb//qv//pXtN8K38j/3d/93e9415eeLzS+bTa/5EIDS3uD
         lWk9gb/6q7/6BZ7wDU37y7/8y99B81g3PjJ4yb/p2TXc//gf/+NXtJaHD9/6sOu1k28bu5ZfWN6NPbhy
         5A+B5N3qkotg6X//93//C4TPGPiHf/iH38lnHlrGf/zHf/zXf/qnf/pltA7Qg5csgNv9264LnmLa8HRO

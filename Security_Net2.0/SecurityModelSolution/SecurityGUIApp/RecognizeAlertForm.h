@@ -128,7 +128,7 @@ namespace SecurityGUIApp {
 			this->label1->ForeColor = System::Drawing::SystemColors::HotTrack;
 			this->label1->Location = System::Drawing::Point(504, 30);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(118, 29);
+			this->label1->Size = System::Drawing::Size(136, 31);
 			this->label1->TabIndex = 56;
 			this->label1->Text = L"CAMARA";
 			// 
@@ -140,7 +140,7 @@ namespace SecurityGUIApp {
 			this->btnReviewAlarm->Name = L"btnReviewAlarm";
 			this->btnReviewAlarm->Size = System::Drawing::Size(133, 73);
 			this->btnReviewAlarm->TabIndex = 66;
-			this->btnReviewAlarm->Text = L"INICIAR ALERTA";
+			this->btnReviewAlarm->Text = L"CONFIRMAR ALERTA";
 			this->btnReviewAlarm->UseVisualStyleBackColor = false;
 			this->btnReviewAlarm->Click += gcnew System::EventHandler(this, &RecognizeAlertForm::btnReviewAlarm_Click);
 			// 

@@ -434,7 +434,7 @@ int SecurityController::Controller::DeleteZoneMap(String^ namezone)
 
 }
 
-List<Zone^>^ SecurityController::Controller::QueryAllZona()
+List<Zona^>^ SecurityController::Controller::QueryAllZona()
 {
 
 	/*try {
@@ -547,7 +547,7 @@ int SecurityController::Controller::AddCoordenada(Point^ p)
 	return Persistance::AddPoint(p);
 }
 
-int SecurityController::Controller::AddZona(Zone^ z)
+int SecurityController::Controller::AddZona(Zona^ z)
 {
 	return Persistance::AddZone(z);
 }

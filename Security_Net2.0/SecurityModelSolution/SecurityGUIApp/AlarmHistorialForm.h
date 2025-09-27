@@ -1,5 +1,6 @@
 #pragma once
 #include "ComboBoxItem.h"
+#include "ValidateOpForm.h"
 
 namespace SecurityGUIApp {
 
@@ -91,6 +92,9 @@ namespace SecurityGUIApp {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
 	private: System::Windows::Forms::LinkLabel^ linklblSearch;
+	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
+	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel2;
+	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel3;
 
 
 
@@ -139,42 +143,52 @@ namespace SecurityGUIApp {
 			this->btnClearSearch = (gcnew System::Windows::Forms::Button());
 			this->btnSearchbyDate = (gcnew System::Windows::Forms::Button());
 			this->linklblSearch = (gcnew System::Windows::Forms::LinkLabel());
+			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->tableLayoutPanel2 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->tableLayoutPanel3 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvAlarmHistorial))->BeginInit();
+			this->tableLayoutPanel1->SuspendLayout();
+			this->tableLayoutPanel2->SuspendLayout();
+			this->tableLayoutPanel3->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// menuStrip1
 			// 
+			this->menuStrip1->GripMargin = System::Windows::Forms::Padding(2, 2, 0, 2);
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->ReporteToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Padding = System::Windows::Forms::Padding(5, 2, 0, 2);
-			this->menuStrip1->Size = System::Drawing::Size(1204, 28);
+			this->menuStrip1->Size = System::Drawing::Size(1204, 34);
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
 			// ReporteToolStripMenuItem
 			// 
 			this->ReporteToolStripMenuItem->Name = L"ReporteToolStripMenuItem";
-			this->ReporteToolStripMenuItem->Size = System::Drawing::Size(155, 24);
+			this->ReporteToolStripMenuItem->Size = System::Drawing::Size(176, 27);
 			this->ReporteToolStripMenuItem->Text = L"Reporte de Alarmas";
 			this->ReporteToolStripMenuItem->Click += gcnew System::EventHandler(this, &AlarmHistorialForm::ReporteToolStripMenuItem_Click_1);
 			// 
 			// label1
 			// 
-			this->label1->AutoSize = true;
 			this->label1->BackColor = System::Drawing::SystemColors::ControlLightLight;
+			this->tableLayoutPanel2->SetColumnSpan(this->label1, 3);
 			this->label1->Font = (gcnew System::Drawing::Font(L"Lucida Bright", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(259, 39);
+			this->label1->Location = System::Drawing::Point(30, 0);
+			this->label1->Margin = System::Windows::Forms::Padding(30, 0, 0, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(318, 26);
+			this->label1->Size = System::Drawing::Size(352, 30);
 			this->label1->TabIndex = 2;
 			this->label1->Text = L"HISTORIAL DE ALARMAS";
+			this->label1->Click += gcnew System::EventHandler(this, &AlarmHistorialForm::label1_Click);
 			// 
 			// dgvAlarmHistorial
 			// 
+			this->dgvAlarmHistorial->AllowUserToOrderColumns = true;
 			this->dgvAlarmHistorial->BackgroundColor = System::Drawing::SystemColors::GradientActiveCaption;
 			this->dgvAlarmHistorial->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dgvAlarmHistorial->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
@@ -182,14 +196,16 @@ namespace SecurityGUIApp {
 				this->cstarting,
 					this->cending, this->Column1, this->Column2
 			});
+			this->dgvAlarmHistorial->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->dgvAlarmHistorial->GridColor = System::Drawing::Color::Gray;
-			this->dgvAlarmHistorial->Location = System::Drawing::Point(68, 254);
-			this->dgvAlarmHistorial->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->dgvAlarmHistorial->Location = System::Drawing::Point(40, 247);
+			this->dgvAlarmHistorial->Margin = System::Windows::Forms::Padding(40, 20, 120, 40);
 			this->dgvAlarmHistorial->Name = L"dgvAlarmHistorial";
 			this->dgvAlarmHistorial->RowHeadersWidth = 51;
 			this->dgvAlarmHistorial->RowTemplate->Height = 24;
-			this->dgvAlarmHistorial->Size = System::Drawing::Size(927, 345);
+			this->dgvAlarmHistorial->Size = System::Drawing::Size(828, 307);
 			this->dgvAlarmHistorial->TabIndex = 3;
+			this->dgvAlarmHistorial->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &AlarmHistorialForm::dgvAlarmHistorial_CellContentClick);
 			this->dgvAlarmHistorial->CellToolTipTextNeeded += gcnew System::Windows::Forms::DataGridViewCellToolTipTextNeededEventHandler(this, &AlarmHistorialForm::dgvAlarmHistorial_CellToolTipTextNeeded);
 			// 
 			// cstarting
@@ -222,7 +238,7 @@ namespace SecurityGUIApp {
 			// 
 			// dtpFirstDate
 			// 
-			this->dtpFirstDate->Location = System::Drawing::Point(263, 87);
+			this->dtpFirstDate->Location = System::Drawing::Point(307, 51);
 			this->dtpFirstDate->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dtpFirstDate->Name = L"dtpFirstDate";
 			this->dtpFirstDate->Size = System::Drawing::Size(271, 22);
@@ -230,11 +246,13 @@ namespace SecurityGUIApp {
 			// 
 			// btnValidateOp
 			// 
-			this->btnValidateOp->BackColor = System::Drawing::Color::LimeGreen;
-			this->btnValidateOp->Location = System::Drawing::Point(1075, 254);
-			this->btnValidateOp->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->btnValidateOp->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
+			this->btnValidateOp->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->btnValidateOp->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->btnValidateOp->Location = System::Drawing::Point(20, 20);
+			this->btnValidateOp->Margin = System::Windows::Forms::Padding(20);
 			this->btnValidateOp->Name = L"btnValidateOp";
-			this->btnValidateOp->Size = System::Drawing::Size(117, 79);
+			this->btnValidateOp->Size = System::Drawing::Size(170, 92);
 			this->btnValidateOp->TabIndex = 10;
 			this->btnValidateOp->Text = L"Aprobar \r\nOperador";
 			this->btnValidateOp->UseVisualStyleBackColor = false;
@@ -242,7 +260,7 @@ namespace SecurityGUIApp {
 			// 
 			// btnSearch
 			// 
-			this->btnSearch->Location = System::Drawing::Point(387, 203);
+			this->btnSearch->Location = System::Drawing::Point(307, 186);
 			this->btnSearch->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnSearch->Name = L"btnSearch";
 			this->btnSearch->Size = System::Drawing::Size(147, 23);
@@ -258,8 +276,8 @@ namespace SecurityGUIApp {
 				static_cast<System::Byte>(0)));
 			this->btnGoBackMenu->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnGoBackMenu.Image")));
 			this->btnGoBackMenu->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btnGoBackMenu->Location = System::Drawing::Point(1043, 351);
-			this->btnGoBackMenu->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->btnGoBackMenu->Location = System::Drawing::Point(30, 152);
+			this->btnGoBackMenu->Margin = System::Windows::Forms::Padding(30, 20, 15, 20);
 			this->btnGoBackMenu->Name = L"btnGoBackMenu";
 			this->btnGoBackMenu->Size = System::Drawing::Size(149, 69);
 			this->btnGoBackMenu->TabIndex = 37;
@@ -271,7 +289,8 @@ namespace SecurityGUIApp {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(65, 87);
+			this->label4->Location = System::Drawing::Point(30, 49);
+			this->label4->Margin = System::Windows::Forms::Padding(30, 0, 3, 0);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(187, 16);
 			this->label4->TabIndex = 38;
@@ -280,15 +299,17 @@ namespace SecurityGUIApp {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(65, 119);
+			this->label5->Location = System::Drawing::Point(30, 98);
+			this->label5->Margin = System::Windows::Forms::Padding(30, 0, 3, 0);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(187, 16);
 			this->label5->TabIndex = 39;
 			this->label5->Text = L"Selecciona una fecha y/u hora";
+			this->label5->Click += gcnew System::EventHandler(this, &AlarmHistorialForm::label5_Click);
 			// 
 			// dtpEndDate
 			// 
-			this->dtpEndDate->Location = System::Drawing::Point(263, 119);
+			this->dtpEndDate->Location = System::Drawing::Point(307, 100);
 			this->dtpEndDate->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dtpEndDate->Name = L"dtpEndDate";
 			this->dtpEndDate->Size = System::Drawing::Size(271, 22);
@@ -297,7 +318,7 @@ namespace SecurityGUIApp {
 			// cmbAlarmType
 			// 
 			this->cmbAlarmType->FormattingEnabled = true;
-			this->cmbAlarmType->Location = System::Drawing::Point(263, 161);
+			this->cmbAlarmType->Location = System::Drawing::Point(307, 150);
 			this->cmbAlarmType->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->cmbAlarmType->Name = L"cmbAlarmType";
 			this->cmbAlarmType->Size = System::Drawing::Size(271, 24);
@@ -306,7 +327,8 @@ namespace SecurityGUIApp {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(65, 161);
+			this->label2->Location = System::Drawing::Point(30, 148);
+			this->label2->Margin = System::Windows::Forms::Padding(30, 0, 3, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(66, 16);
 			this->label2->TabIndex = 42;
@@ -314,10 +336,10 @@ namespace SecurityGUIApp {
 			// 
 			// btnFilterbyType
 			// 
-			this->btnFilterbyType->Location = System::Drawing::Point(569, 139);
+			this->btnFilterbyType->Location = System::Drawing::Point(714, 100);
 			this->btnFilterbyType->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnFilterbyType->Name = L"btnFilterbyType";
-			this->btnFilterbyType->Size = System::Drawing::Size(220, 23);
+			this->btnFilterbyType->Size = System::Drawing::Size(181, 23);
 			this->btnFilterbyType->TabIndex = 43;
 			this->btnFilterbyType->Text = L"BUSCAR POR CATEGORIA";
 			this->btnFilterbyType->UseVisualStyleBackColor = true;
@@ -326,7 +348,7 @@ namespace SecurityGUIApp {
 			// 
 			// btnClearSearch
 			// 
-			this->btnClearSearch->Location = System::Drawing::Point(855, 226);
+			this->btnClearSearch->Location = System::Drawing::Point(714, 187);
 			this->btnClearSearch->Name = L"btnClearSearch";
 			this->btnClearSearch->Size = System::Drawing::Size(140, 23);
 			this->btnClearSearch->TabIndex = 44;
@@ -337,9 +359,9 @@ namespace SecurityGUIApp {
 			// 
 			// btnSearchbyDate
 			// 
-			this->btnSearchbyDate->Location = System::Drawing::Point(569, 89);
+			this->btnSearchbyDate->Location = System::Drawing::Point(714, 52);
 			this->btnSearchbyDate->Name = L"btnSearchbyDate";
-			this->btnSearchbyDate->Size = System::Drawing::Size(220, 30);
+			this->btnSearchbyDate->Size = System::Drawing::Size(181, 30);
 			this->btnSearchbyDate->TabIndex = 45;
 			this->btnSearchbyDate->Text = L"BUSCAR POR FECHA";
 			this->btnSearchbyDate->UseVisualStyleBackColor = true;
@@ -349,13 +371,82 @@ namespace SecurityGUIApp {
 			// linklblSearch
 			// 
 			this->linklblSearch->AutoSize = true;
-			this->linklblSearch->Location = System::Drawing::Point(566, 206);
+			this->linklblSearch->Location = System::Drawing::Point(714, 148);
 			this->linklblSearch->Name = L"linklblSearch";
 			this->linklblSearch->Size = System::Drawing::Size(133, 16);
 			this->linklblSearch->TabIndex = 46;
 			this->linklblSearch->TabStop = true;
 			this->linklblSearch->Text = L"Búsqueda Avanzada";
 			this->linklblSearch->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &AlarmHistorialForm::linklblSearch_LinkClicked);
+			// 
+			// tableLayoutPanel1
+			// 
+			this->tableLayoutPanel1->BackColor = System::Drawing::Color::Transparent;
+			this->tableLayoutPanel1->ColumnCount = 2;
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				82.09983F)));
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				17.90017F)));
+			this->tableLayoutPanel1->Controls->Add(this->tableLayoutPanel2, 0, 0);
+			this->tableLayoutPanel1->Controls->Add(this->dgvAlarmHistorial, 0, 1);
+			this->tableLayoutPanel1->Controls->Add(this->tableLayoutPanel3, 1, 1);
+			this->tableLayoutPanel1->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->tableLayoutPanel1->Location = System::Drawing::Point(0, 34);
+			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
+			this->tableLayoutPanel1->RowCount = 2;
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 38.23529F)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 61.76471F)));
+			this->tableLayoutPanel1->Size = System::Drawing::Size(1204, 594);
+			this->tableLayoutPanel1->TabIndex = 47;
+			// 
+			// tableLayoutPanel2
+			// 
+			this->tableLayoutPanel2->BackColor = System::Drawing::Color::Transparent;
+			this->tableLayoutPanel2->ColumnCount = 3;
+			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				42.69973F)));
+			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				57.30027F)));
+			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+				186)));
+			this->tableLayoutPanel2->Controls->Add(this->label1, 0, 0);
+			this->tableLayoutPanel2->Controls->Add(this->btnClearSearch, 2, 4);
+			this->tableLayoutPanel2->Controls->Add(this->linklblSearch, 2, 3);
+			this->tableLayoutPanel2->Controls->Add(this->label4, 0, 1);
+			this->tableLayoutPanel2->Controls->Add(this->btnSearchbyDate, 2, 1);
+			this->tableLayoutPanel2->Controls->Add(this->btnFilterbyType, 2, 2);
+			this->tableLayoutPanel2->Controls->Add(this->label5, 0, 2);
+			this->tableLayoutPanel2->Controls->Add(this->label2, 0, 3);
+			this->tableLayoutPanel2->Controls->Add(this->dtpFirstDate, 1, 1);
+			this->tableLayoutPanel2->Controls->Add(this->cmbAlarmType, 1, 3);
+			this->tableLayoutPanel2->Controls->Add(this->btnSearch, 1, 4);
+			this->tableLayoutPanel2->Controls->Add(this->dtpEndDate, 1, 2);
+			this->tableLayoutPanel2->Location = System::Drawing::Point(3, 3);
+			this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
+			this->tableLayoutPanel2->RowCount = 5;
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 36)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 37)));
+			this->tableLayoutPanel2->Size = System::Drawing::Size(898, 221);
+			this->tableLayoutPanel2->TabIndex = 48;
+			// 
+			// tableLayoutPanel3
+			// 
+			this->tableLayoutPanel3->ColumnCount = 1;
+			this->tableLayoutPanel3->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->tableLayoutPanel3->Controls->Add(this->btnGoBackMenu, 0, 1);
+			this->tableLayoutPanel3->Controls->Add(this->btnValidateOp, 0, 0);
+			this->tableLayoutPanel3->Dock = System::Windows::Forms::DockStyle::Bottom;
+			this->tableLayoutPanel3->Location = System::Drawing::Point(991, 324);
+			this->tableLayoutPanel3->Name = L"tableLayoutPanel3";
+			this->tableLayoutPanel3->RowCount = 2;
+			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tableLayoutPanel3->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 135)));
+			this->tableLayoutPanel3->Size = System::Drawing::Size(210, 267);
+			this->tableLayoutPanel3->TabIndex = 49;
 			// 
 			// AlarmHistorialForm
 			// 
@@ -364,31 +455,22 @@ namespace SecurityGUIApp {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1204, 628);
-			this->Controls->Add(this->linklblSearch);
-			this->Controls->Add(this->btnSearchbyDate);
-			this->Controls->Add(this->btnClearSearch);
-			this->Controls->Add(this->btnFilterbyType);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->cmbAlarmType);
-			this->Controls->Add(this->dtpEndDate);
-			this->Controls->Add(this->label5);
-			this->Controls->Add(this->label4);
-			this->Controls->Add(this->btnGoBackMenu);
-			this->Controls->Add(this->btnSearch);
-			this->Controls->Add(this->btnValidateOp);
-			this->Controls->Add(this->dtpFirstDate);
-			this->Controls->Add(this->dgvAlarmHistorial);
-			this->Controls->Add(this->label1);
+			this->Controls->Add(this->tableLayoutPanel1);
 			this->Controls->Add(this->menuStrip1);
 			this->DoubleBuffered = true;
 			this->MainMenuStrip = this->menuStrip1;
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"AlarmHistorialForm";
 			this->Text = L"AlarmHistorialForm";
+			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->Load += gcnew System::EventHandler(this, &AlarmHistorialForm::AlarmHistorialForm_Load);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvAlarmHistorial))->EndInit();
+			this->tableLayoutPanel1->ResumeLayout(false);
+			this->tableLayoutPanel2->ResumeLayout(false);
+			this->tableLayoutPanel2->PerformLayout();
+			this->tableLayoutPanel3->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -483,7 +565,7 @@ namespace SecurityGUIApp {
 			}
 		}
 	private: System::Void btnGoBackMenu_Click(System::Object^ sender, System::EventArgs^ e) {
-		
+		this->Hide();
 	}
 	
 	private: System::Void btnSearchbyDate_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -509,7 +591,20 @@ namespace SecurityGUIApp {
 	}
 
 	private: System::Void btnValidateOp_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Hide();
+		List<SecurityOperator^>^ lista = Controller::QueryAllNoRegisteredOperators();
+		if (lista != nullptr) {
+			this->btnValidateOp->Visible = true;
+			this->btnValidateOp->Enabled = true;
+			this->btnValidateOp->BackColor = System::Drawing::Color::Green;
+			ValidateOpForm^ validateOpForm = gcnew ValidateOpForm();
+			this->Hide();
+			validateOpForm->Show();
+
+		}
+		else {
+			this->btnValidateOp->BackColor = System::Drawing::Color::White;
+			this->btnValidateOp->Enabled = false;
+		}
 	}
 	
 	private: System::Void btnFilterbyType_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -570,5 +665,11 @@ namespace SecurityGUIApp {
 	}
 	private: System::Void ReporteToolStripMenuItem_Click_1(System::Object^ sender, System::EventArgs^ e); 
 	
+private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void dgvAlarmHistorial_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
 };
 }

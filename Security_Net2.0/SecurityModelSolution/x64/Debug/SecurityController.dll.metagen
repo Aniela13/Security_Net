@@ -73,4 +73,4 @@ Class SecurityController.Controller: AutoLayout, AnsiClass, Class, Public, Befor
     QueryAllRobots(): PrivateScope, Public, Static, HideBySig
     QueryRobotById(Int32): PrivateScope, Public, Static, HideBySig
     AddCoordenada(Point): PrivateScope, Public, Static, HideBySig
-    AddZona(Zone): PrivateScope, Public, Static, HideBySig
+    AddZona(Zona): PrivateScope, Public, Static, HideBySig

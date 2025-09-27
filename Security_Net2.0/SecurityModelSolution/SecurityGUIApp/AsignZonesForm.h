@@ -445,11 +445,11 @@ namespace SecurityGUIApp {
 	public:
 		void FillZonesInComboBox() {
 			cmbNameZone->Items->Clear();
-			List<Zone^>^ zones = Controller::QueryAllZona();
+			List<Zona^>^ zones = Controller::QueryAllZona();
 			if (zones!= nullptr) {
 				int index = 0;
-				for each (Zone^ zona in zones) {
-					cmbNameZone->Items->Add(gcnew ComboBoxItem(index++, zona->Zona));
+				for each (Zona^ zona in zones) {
+					cmbNameZone->Items->Add(gcnew ComboBoxItem(index++, zona->Zonita));
 				}
 			
 			}
@@ -537,14 +537,12 @@ namespace SecurityGUIApp {
 	}
 
 	private: System::Void btnAddZone_Click(System::Object^ sender, System::EventArgs^ e) {
-<<<<<<< HEAD
 		
 	}
 
 
 	private: System::Void btnDelete_Click(System::Object^ sender, System::EventArgs^ e) {
 		
-=======
 		int selectedIndex = cmbNameZone->SelectedIndex;
 		if (selectedIndex < 0) {
 			MessageBox::Show("Se debe seleccionar una zona");
@@ -559,12 +557,6 @@ namespace SecurityGUIApp {
 		ClearControls();
 	}
 	
-
-
-	private: System::Void btnDelete_Click(System::Object^ sender, System::EventArgs^ e) {
->>>>>>> aa1812c8a7579ddb6fde0a5ce1c65f971f0d2f7f
-		
-	}
 	private: System::Void dgvZonesRoute_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		String^ namezone = dgvZonesRoute->Rows[dgvZonesRoute->SelectedCells[0]->RowIndex]->Cells[0]->Value->ToString();
 		SecurityModel::Point^ coordenada = Controller::QueryZonebyName(namezone);

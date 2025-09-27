@@ -257,11 +257,11 @@ Class SecurityModel.WarningReport: AutoLayout, AnsiClass, Class, Public, BeforeF
     System.Collections.Generic.List`1[SecurityModel.Warning] WarningHistorial : Public
   Methods:
     AddWarning(): PrivateScope, Public, HideBySig
-Class SecurityModel.Zone: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+Class SecurityModel.Zona: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(SecurityModel.Point, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Properties:
-    System.String Zona 'get set' : 
+    System.String Zonita 'get set' : 
     SecurityModel.Point Coordenada 'get set' : 
     Int32 Id   'get set' : 
   Methods:
@@ -269,5 +269,5 @@ Class SecurityModel.Zone: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     set_Id(Int32): PrivateScope, Public, HideBySig, SpecialName
     get_Coordenada(): PrivateScope, Public, HideBySig, SpecialName
     set_Coordenada(Point): PrivateScope, Public, HideBySig, SpecialName
-    get_Zona(): PrivateScope, Public, HideBySig, SpecialName
-    set_Zona(String): PrivateScope, Public, HideBySig, SpecialName
+    get_Zonita(): PrivateScope, Public, HideBySig, SpecialName
+    set_Zonita(String): PrivateScope, Public, HideBySig, SpecialName

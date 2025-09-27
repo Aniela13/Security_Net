@@ -72,7 +72,7 @@
     <ClInclude Include="WarningType.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Zone.h">
+    <ClInclude Include="Zona.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
